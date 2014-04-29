@@ -21,12 +21,13 @@ module("content.gathering", package.seeall)
 
 function InitGathering()
 	if(Init == nil) then
+	
 		-- if FastAction==true then the probabilities are again reduced in FindRandomItem, see gatheringcraft.lua
 
-		local prob_frequently = 0.005; --0.5%
-		local prob_occasionally = 0.0025; --0.25%
-		local prob_rarely = 0.001; --0.1%
-		local prob_extremely_rarely = 0.0005; --0.05%
+		local prob_frequently = 0.005; --0.5% (1/200)
+		local prob_occasionally = 0.0025; --0.25% (1/400)
+		local prob_rarely = 0.001; --0.1% (1/1000)
+		local prob_extremely_rarely = 0.00025; --0.025% (1/4000)
 
 		woodchopping = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.woodcutting, LearnLimit = 100}; -- id_74_axe
 		honeygathering = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.farming}; -- id_1005_beehive
@@ -47,7 +48,7 @@ function InitGathering()
 		flailing = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.farming, FastActionFactor = 0.5, LearnLimit = 100}; -- id_258_flail
 		grainharvesting = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.farming, FastActionFactor = 0.5, LearnLimit = 100}; -- id_271_scythe
 		threadproducing = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.tailoring}; -- id_171_spinningwheel
-		oilsqueezing = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.farming, LearnLimit = 100}; -- id_44_squeezer
+		oilsqueezing = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.herblore, LearnLimit = 100}; -- id_44_squeezer
 		doughproducing = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.cookingAndBaking}; -- id_118_rollingpin
 		weaving = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.tailoring}; -- id_169_loom
 		oremelting = base.gatheringcraft.GatheringCraft:new{LeadSkill = Character.smithing}; -- id_2836_forge
@@ -79,9 +80,9 @@ function InitGathering()
 		egggathering:AddRandomItem(259,1,333,{},prob_frequently,"Du findest eine handvoll Getreide.","You find some grain."); --Steppe fern
 		egggathering:SetTreasureMap(prob_rarely,"Im Nest findest du eine Karte.","You find a map in the nest");
 		egggathering:AddMonster(1081,prob_rarely,"Während du die Eier stiehlst, hüpft ein wütendes Hühnchen aus dem Nest.","While you steal eggs an angry chickens hops out of the nest!",4,7);
-		
+
 		egggathering:AddInterruptMessage("Du wischst dir den Schweiß von der Stirn.", "You wipe sweat off your forehead.");
-	
+
 		--honeygathering
 		honeygathering:AddRandomItem(2551,1,333,{},prob_extremely_rarely,"Für deine harte und ehrliche Arbeit belohnt dich Findari, die Göttin der Luft, mit einem Kleinod aus Reiner Luft.","For your hard and honest labor Findari, the Godess of Air, rewards you with a treasure of Pure Air."); --Pure air
 		honeygathering:AddRandomItem(item.gems.getMagicGemId(item.gems.RUBY),1,999,item.gems.getMagicGemData(1),prob_extremely_rarely,"Im Inneren des Bienenstocks bemerkst du ein rot glühendes Licht. Du findest einen magischen Rubin.","Inside the hive, you notice a red light. With a closer look you realize it is a magical ruby."); --Magical ruby
@@ -104,7 +105,7 @@ function InitGathering()
 		milking:AddRandomItem(156,1,333,{},prob_frequently,"Etwas Gras hat sich im Fell des tieres verfangen. Du entfernst das klebrige Grünzeug.","Some grass was ensnared in the fur of the animal. Before you can continue milking you have to remove the sticky green weed."); --Steppe fern
 		milking:SetTreasureMap(prob_rarely,"Das Tier kratzt und schnüffelt aufgeregt am Boden. Dort findest du eine seltsame Karte.","The animal scratches and sniffs on the ground excitdly. You find a strange map there.");
 		milking:AddMonster(271,prob_rarely,"Während du das Tiel melkst, umschwirrt dich eine ungewöhnlich agressive Wespe.","While you milk the animal an annoyingly aggressive wasp comes after you!",4,7);
-		
+
 		--farming
 		farming:AddRandomItem(2552,1,333,{},prob_extremely_rarely,"Für deine harte und ehrliche Arbeit belohnt dich Ushara, die Göttin der Erde, mit einem Kleinod aus Reiner Erde.","For your hard and honest labor Ushara, the Godess of Earth, rewards you with a treasure of Pure Earth."); --Pure earth
 		farming:AddRandomItem(item.gems.getMagicGemId(item.gems.RUBY),1,999,item.gems.getMagicGemData(1),prob_extremely_rarely,"Beim Durchpflügen des Erdbodens stößt du auf einen rot scheinenden Stein. Du findest einen magischen Rubin.","While plowing the soil you notice a red stone shining brightly. As you get closer you notice it is a magical ruby."); --Magical ruby

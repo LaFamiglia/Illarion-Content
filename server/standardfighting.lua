@@ -366,6 +366,8 @@ function ArmourAbsorption(Attacker, Defender, Globals)
 
 	--Essentially what this does is choose how much the values are divided. So stroke is half as effective as punc is half as effective as thrust for one type etc.
 
+	
+	-- B I G mistake below: Level 0 armours have a armourValue of exactly 0. A dude in plate armour has the same armorValue as a naked moron- FIX!!! ~Estralis
 	local ArmourDefenseScalingFactor = 2;
 	local GeneralScalingFactor = 2.8;
 
@@ -467,7 +469,7 @@ function ArmourAbsorption(Attacker, Defender, Globals)
 				armourValue = armourValue + armour.punctureArmor;
 			end;
 		end;
-
+		  
     Globals.Damage = Globals.Damage - (Globals.Damage * armourValue * qualitymod / 140);
 
 	Globals.Damage = skillmod*Globals.Damage;
@@ -478,6 +480,7 @@ end;
 
 function ArmourDegrade(Defender, Globals)
 
+	--WHAT IS THIS? Pleae use comments. ~Estralis
 	local Rarity = NotNil(tonumber(Globals.HittedItem:getData("RareArmour")));
 
 	if(Rarity<0) then
@@ -505,6 +508,7 @@ function ArmourDegrade(Defender, Globals)
 		"Du solltest dein kaputtes Artefakt '"..nameText.."' ablegen bevor es zerbricht!",
 		"You should take off your broken artifact '"..nameText.."' before it shatters!");
 
+		
 	elseif (base.common.Chance(Globals.Damage, 12000)) and (Globals.HittedItem.id ~= 0) then -- do not damage non existing items
 
 		local durability = math.mod(Globals.HittedItem.quality, 100);
@@ -1929,8 +1933,8 @@ function NewbieIsland(Attacker, Defender)
         _AntiSpamVar[Attacker.id] =_AntiSpamVar[Attacker.id] + 1;
     else
         base.common.InformNLS(Attacker,
-        "[Tutorial] Du darfst während des Tutorials noch keine anderen Spieler angreifen. Klicke nochmals auf deinen Gegner in der Angriffsliste um den Kampf abzubrechen.",
-        "[Tutorial] You are not allowed to attack other players during the tutorial. Click again on your enemy in the attack list to cancel the attack.");
+        "[Tutorial] Du darfst während des Tutorials noch keine anderen Spieler angreifen. Klicke nochmals rechts auf deinen Gegner um den Kampf abzubrechen.",
+        "[Tutorial] You are not allowed to attack other players during the tutorial. Right click again on your enemy to cancel the attack.");
         _AntiSpamVar[Attacker.id] = 0;
     end;
     return false;
