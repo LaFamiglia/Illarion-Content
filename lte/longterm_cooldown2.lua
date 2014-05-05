@@ -1,4 +1,4 @@
-	--Addition by Caldarion: Quest 181/182/183 Spy Informant (Bula Glasha) Cooldown
+	--Addition by Namexyz: Quest 181/182/183 Spy Informant (Bula Glasha) Cooldown
 	theQuestStatus=Char:getQuestProgress(182);
 	
 	if theQuestStatus == 1 then --Time over!

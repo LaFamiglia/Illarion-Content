@@ -313,30 +313,38 @@ function iniQuests()
     questList[2000]={}; --Guards
 
 
-		--Quest 50: Spy Informant
-    local id=50;
-    germanTitle[id]="Spitzel Informant";
-    englishTitle[id]="Spy Informant";
-    NPCName[id]="Bula Glasha";
-    statusId[id]=181;
-    germanRace[id]="Wespen";
-    englishRace[id]="wasps";
-	table.insert(questList[271],id); --All wasps
-	table.insert(questList[272],id); --All wasps
-	table.insert(questList[273],id); --All wasps
-	table.insert(questList[274],id); --All wasps
-	table.insert(questList[278],id); --All wasps
+		--Quest 71: The Researcher
+	local id=71;
+    germanTitle[id]="Die Forscher";
+    englishTitle[id]="The Researcher";
+    NPCName[id]="Maelyrra Umrielyth";
+    statusId[id]=184;
+    germanRace[id]="Schleime";
+    englishRace[id]="Slimes";
+	table.insert(questList[611],id); -- all slimes
+    table.insert(questList[612],id); -- all slimes
+    table.insert(questList[613],id); -- all slimes
+    table.insert(questList[614],id); -- all slimes
+    table.insert(questList[1031],id); -- all slimes
+	table.insert(questList[1032],id); -- all slimes
+	table.insert(questList[1033],id); -- all slimes
+    table.insert(questList[1041],id); -- all slimes
+	table.insert(questList[1042],id); -- all slimes
+	table.insert(questList[1043],id); -- all slimes
+    table.insert(questList[1051],id); -- all slimes
+	table.insert(questList[1052],id); -- all slimes
+	table.insert(questList[1053],id); -- all slimes
     minimumQueststatus[id]=1;
     maximumQueststatus[id]=5;	
-	questLocation[id]=position(514, 178, 0);
+	questLocation[id]=position(, 178, 0);
     radius[id]=250;
 	
-		--Quest 51: Spy Informant
-    local id=51;
-    germanTitle[id]="Spitzel Informant";
-    englishTitle[id]="Spy Informant";
-    NPCName[id]="Bula Glasha";
-    statusId[id]=181;
+		--Quest 71: Spy Informant
+    local id=71;
+    germanTitle[id]="Die Forscher";
+    englishTitle[id]="The Researcher";
+    NPCName[id]="Maelyrra Umrielyth";
+    statusId[id]=184;
     germanRace[id]="Wespen";
     englishRace[id]="wasps";
 	table.insert(questList[271],id); --All wasps
@@ -373,8 +381,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Schleime";
-    englishRace[id]="Slimes";
+    germanRace[id]="Wespen";
+    englishRace[id]="wasps";
 	table.insert(questList[611],id); -- all slimes
     table.insert(questList[612],id); -- all slimes
     table.insert(questList[613],id); -- all slimes
@@ -399,8 +407,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Schleime";
-    englishRace[id]="Slimes";
+    germanRace[id]="Wespen";
+    englishRace[id]="wasps";
 	table.insert(questList[611],id); -- all slimes
     table.insert(questList[612],id); -- all slimes
     table.insert(questList[613],id); -- all slimes
@@ -425,8 +433,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Schleime";
-    englishRace[id]="Slimes";
+    germanRace[id]="Wespen";
+    englishRace[id]="wasps";
 	table.insert(questList[611],id); -- all slimes
     table.insert(questList[612],id); -- all slimes
     table.insert(questList[613],id); -- all slimes
