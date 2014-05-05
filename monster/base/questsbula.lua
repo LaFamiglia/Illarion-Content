@@ -511,6 +511,25 @@ function iniQuests()
 	questLocation[id]=position(514, 178, 0);
     radius[id]=250;
 	
+		--Quest 59: Spy Informant
+    local id=59;
+    germanTitle[id]="Spitzel Informant";
+    englishTitle[id]="Spy Informant";
+    NPCName[id]="Bula Glasha";
+    statusId[id]=181;
+    germanRace[id]="Füchse";
+    englishRace[id]="foxes";
+	table.insert(questList[601],id); --All foxes
+	table.insert(questList[602],id); --All foxes
+	table.insert(questList[603],id); --All foxes
+	table.insert(questList[604],id); --All foxes
+	table.insert(questList[1021],id); --All foxes
+	table.insert(questList[1022],id); --All foxes
+    minimumQueststatus[id]=82;
+    maximumQueststatus[id]=86;	
+	questLocation[id]=position(514, 178, 0);
+    radius[id]=250;
+	
 		--Quest 60: Spy Informant
     local id=60;
     germanTitle[id]="Spitzel Informant";
