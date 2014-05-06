@@ -328,154 +328,154 @@ queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 109: Kill four humans (314) in three hours
--- 109: Bounty 109 taken, kill four humans, reward: six sp, 2 rankpoints
-queststatus(181) = 0, english, chance(11.11111111), town = Galmair, "quest", "mission" -> inform("[New Information] Kill four rats."), "Da Don needs information. Scout da area and smash foor rats, yus reward bes sex silber coins.", queststatus(181) = 109, queststatus(182) = 36
-queststatus(162) = 0, german, chance(11.11111111), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte vier Menschen."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von sechs Silberstücken an denjenigen auszuzahlen, der vier Menschen erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort.", queststatus(162) = 109, queststatus(163) = 36
-queststatus(181) = 0, chance(11.11111111), town = Galmair, "task", "adventure", "order"-> inform("[New Information] Kill four rats."), "Da Don needs information. Scout da area and smash foor rats, yus reward bes sex silber coins.", queststatus(181) = 109, queststatus(182) = 36
-queststatus(162) = 0, chance(11.11111111), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte vier Menschen."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von sechs Silberstücken an denjenigen auszuzahlen, der vier Menschen erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort .", queststatus(162) = 109, queststatus(163) = 36
+-- Research 109: Kill four humans in three hours
+-- 109: Research 109 taken, kill four humans, reward: six sp, 2 rankpoints
+queststatus(184) = 0, english, chance(11.11111111), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four humans."), "There is research to be done and help required getting the information.  Kill four humans and bring the evidence, the reward is six silver coins.", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, german, chance(11.11111111), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Menschen."), "", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, chance(11.11111111), town = Runewick, "task", "adventure", "order"-> inform("[New Research] Kill four humans."), "There is research to be done and help required getting the information.  Kill four humans and bring the evidence, the reward is six silver coins.", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, chance(11.11111111), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Menschen."), "", queststatus(184) = 109, queststatus(185) = 36
 
--- Bounty 109 solved, reward: six sp, 5 rankpoints, delay: 5h
-queststatus(181) = 113, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded six silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 600, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 2
-queststatus(162) = 113, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst sechs Silberstücke."), "Ah, eine erneute Ruhmestat. Ihr habt euren Auftrag erledigt und so werde ich meinen Dienst tun. Nehmt euer Kopfgeld.", money + 600, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 2
+-- Research solved, reward: six sp, 5 rankpoints, delay: 5h
+queststatus(184) = 113, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded six silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 113, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechs Silberstücke."), "", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
 
--- Bounty 109 taken but not solved, repeat the instructions
+-- Research 109 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 114: Kill eight humans (314) in three hours
--- 114: Bounty 114 taken, get eight humans, reward: twelve sp, 4 rankpoints
-queststatus(181) = 0, english, chance(12.5), town = Galmair, "quest", "mission" -> inform("[New Information] Kill eight rats."), "Da Don needs information. Scout da area and smash ate rats, yus reward bes delve silber coins.", queststatus(181) = 114, queststatus(182) = 36
-queststatus(162) = 0, german, chance(12.5), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte acht Menschen."), "Ihre Majestät hat ein Kopfgeld auf acht Menschen ausgesetzt. Wenn ihr euch zwölf Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 114, queststatus(163) = 36
-queststatus(181) = 0, chance(12.5), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill eight rats."), "Da Don needs information. Scout da area and smash ate rats, yus reward bes delve silber coins.", queststatus(181) = 114, queststatus(182) = 36
-queststatus(162) = 0, chance(12.5), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte acht Menschen."), "Ihre Majestät hat ein Kopfgeld auf acht Menschen ausgesetzt. Wenn ihr euch zwölf Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 114, queststatus(163) = 36
+-- Research 114: Kill eight humans in three hours
+-- 114: Research 114 taken, get eight humans, reward: twelve sp, 4 rankpoints
+queststatus(184) = 0, english, chance(12.5), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight humans."), "Runewick is the cornerstone of academic research.  Please assist by killing eight humans and bringing back the evidence.  Your reward is twelve silver coins.", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, german, chance(12.5), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht Menschen."), "", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, chance(12.5), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight humans."), "Runewick is the cornerstone of academic research.  Please assist by killing eight humans and bringing back the evidence.  Your reward is twelve silver coins.", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, chance(12.5), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht Menschen."), "", queststatus(184) = 114, queststatus(185) = 36
 
--- Bounty 114 solved, reward: twelve sp, 4 rankpoints, delay: 5h
-queststatus(181) = 122, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded twelve silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 1200, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 4
-queststatus(162) = 122, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst zwölf Silberstücke."), "Gerade noch rechtzeitig. Befehle ihrer Majestät sind sofort zu befolgen. Egal, hier ist euer Kopfgeld.", money + 1200, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 4
+-- Research 114 solved, reward: twelve sp, 4 rankpoints, delay: 5h
+queststatus(184) = 122, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded twelve silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 122, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwölf Silberstücke."), "", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
 
--- Bounty 114 taken but not solved, repeat the instructions
+-- Research 114 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 123: Kill twelve humans (314) in three hours
--- 123: Bounty 123 taken, get twelve humans, reward: eighteen sp, 6 rankpoints
-queststatus(181) = 0, english, chance(14.28571429), town = Galmair, "quest", "mission" -> inform("[New Information] Kill twelve rats."), "Da Don needs information. Scout da area and smash delve rats, yus reward bes den and ate silber coins.", queststatus(162) = 123, queststatus(163) = 36
-queststatus(162) = 0, german, chance(14.28571429), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte zwölf Menschen."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Menschen ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, achtzehn Silberstücke werden eure Belohnung sein.", queststatus(162) = 123, queststatus(163) = 36
-queststatus(181) = 0, chance(14.28571429), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill twelve rats."), "Da Don needs information. Scout da area and smash delve rats, yus reward bes den and ate silber coins.", queststatus(162) = 123, queststatus(163) = 36
-queststatus(162) = 0, chance(14.28571429), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte zwölf Menschen."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Menschen ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, achtzehn Silberstücke werden eure Belohnung sein.", queststatus(162) = 123, queststatus(163) = 36
+-- Research 123: Kill twelve humans in three hours
+-- 123: Research 123 taken, get twelve humans, reward: eighteen sp, 6 rankpoints
+queststatus(184) = 0, english, chance(14.28571429), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve humans"), "Research the area and kill twelve humans bringing back the evidence. Your reward is eighteen silver coins.", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, german, chance(14.28571429), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Menschen."), "", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, chance(14.28571429), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve humans"), "Research the area and kill twelve humans bringing back the evidence. Your reward is eighteen silver coins.", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, chance(14.28571429), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf Menschen."), "", queststatus(184) = 123, queststatus(185) = 36
 
--- Bounty 123 solved, reward: eighteen sp, 6 rankpoints, delay: 5h
-queststatus(181) = 135, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded eighteen silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 1800, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 6
-queststatus(162) = 135, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst achtzehn Silberstücke."), "Gut gemacht. Ihr habt die Welt zu einem besseren Ort gemacht, zumindest einen Teil von ihr. Zahltag!", money + 1800, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 6
+-- Research 123 solved, reward: eighteen sp, 6 rankpoints, delay: 5h
+queststatus(184) = 135, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded eighteen silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 135, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst achtzehn Silberstücke."), "", money + 1800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
 
--- Bounty 123 taken but not solved, repeat the instructions
+-- Research 123 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 136: Kill four orcs (355) in three hours
--- 136: Bounty 136 taken, kill four orcs, reward: eight sp, 2 rankpoints
-queststatus(181) = 0, english, chance(16.66666667), town = Galmair, "quest", "mission" -> inform("[New Information] Kill four bears."), "Da Don needs information. Scout da area and smash foor bears, yus reward bes ate silber coins.", queststatus(181) = 136, queststatus(182) = 36
-queststatus(162) = 0, german, chance(16.66666667), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte vier Orks."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von acht Silberstücken an denjenigen auszuzahlen, der vier Orks erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort.", queststatus(162) = 136, queststatus(163) = 36
-queststatus(181) = 0, chance(16.66666667), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill four bears."), "Da Don needs information. Scout da area and smash foor bears, yus reward bes ate silber coins.", queststatus(181) = 136, queststatus(182) = 36
-queststatus(162) = 0, chance(16.66666667), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte vier Orks."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von acht Silberstücken an denjenigen auszuzahlen, der vier Orks erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort .", queststatus(162) = 136, queststatus(163) = 36
+-- Research 136: Kill four thieves in three hours
+-- 136: Research 136 taken, kill four thieves, reward: eight sp, 2 rankpoints
+queststatus(184) = 0, english, chance(16.66666667), town = Runewick, "quest", "mission" -> inform("[New research] Kill four thieves."), "There is research to be done and help required getting the information.  Kill four thieves and bring the evidence, the reward is eight silver coins.", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, german, chance(16.66666667), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, chance(16.66666667), town = Runewick, "task", "adventure", "order" -> inform("[New research] Kill four thieves."), "There is research to be done and help required getting the information.  Kill four thieves and bring the evidence, the reward is eight silver coins.", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, chance(16.66666667), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 136, queststatus(185) = 36
 
--- Bounty 136 solved, reward: eight sp, 5 rankpoints, delay: 5h
-queststatus(181) = 140, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded eight silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 800, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 2
-queststatus(162) = 140, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst acht Silberstücke."), "Ah, eine erneute Ruhmestat. Ihr habt euren Auftrag erledigt und so werde ich meinen Dienst tun. Nehmt euer Kopfgeld.", money + 800, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 2
+-- Research 136 solved, reward: eight sp, 5 rankpoints, delay: 5h
+queststatus(184) = 140, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded eight silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 140, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst acht Silberstücke."), "", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
 
--- Bounty 136 taken but not solved, repeat the instructions
+-- Research 136 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 141: Kill eight orcs (355) in three hours
--- 141: Bounty 141 taken, get eight orcs, reward: sixteen sp, 4 rankpoints
-queststatus(181) = 0, english, chance(20), town = Galmair, "quest", "mission" -> inform("[New Information] Kill eight bears."), "Da Don needs information. Scout da area and smash ate bears, yus reward bes sex and den silber coins.", queststatus(181) = 141, queststatus(182) = 36
-queststatus(162) = 0, german, chance(20), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte acht Orks."), "Ihre Majestät hat ein Kopfgeld auf acht Orks ausgesetzt. Wenn ihr euch sechzehn Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 141, queststatus(163) = 36
-queststatus(181) = 0, chance(20), town = Galmair, "task", "adventure", "order"-> inform("[New Information] Kill eight bears."), "Da Don needs information. Scout da area and smash ate bears, yus reward bes sex and den silber coins.", queststatus(181) = 141, queststatus(182) = 36
-queststatus(162) = 0, chance(20), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte acht Orks."), "Ihre Majestät hat ein Kopfgeld auf acht Orks ausgesetzt. Wenn ihr euch sechzehn Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 141, queststatus(163) = 36
+-- Research 141: Kill eight thieves (355) in three hours
+-- 141: Research 141 taken, get eight thieves, reward: sixteen sp, 4 rankpoints
+queststatus(184) = 0, english, chance(20), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight thieves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight thieves and bringing back the evidence.  Your reward is sixteen silver coins.", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, german, chance(20), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, chance(20), town = Runewick, "task", "adventure", "order"-> inform("[New Research] Kill eight thieves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight thieves and bringing back the evidence.  Your reward is sixteen silver coins.", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, chance(20), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 141, queststatus(185) = 36
 
--- Bounty 141 solved, reward: sixteen sp, 4 rankpoints, delay: 5h
-queststatus(181) = 149, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded sixteen silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 1600, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 4
-queststatus(162) = 149, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst sechzehn Silberstücke."), "Gerade noch rechtzeitig. Befehle ihrer Majestät sind sofort zu befolgen. Egal, hier ist euer Kopfgeld.", money + 1600, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 4
+-- Research 141 solved, reward: sixteen sp, 4 rankpoints, delay: 5h
+queststatus(184) = 149, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded sixteen silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 149, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechzehn Silberstücke."), "", money + 1600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
 
--- Bounty 141 taken but not solved, repeat the instructions
+-- Research 141 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 150: Kill twelve orcs (355) in three hours
--- 150: Bounty 150 taken, get twelve orcs, reward: twenty four sp, 6 rankpoints
-queststatus(181) = 0, english, chance(25), town = Galmair, "quest", "mission" -> inform("[New Information] Kill twelve bears."), "Da Don needs information. Scout da area and smash delve bears, yus reward bes denty foor silber coins.", queststatus(181) = 150, queststatus(182) = 36
-queststatus(162) = 0, german, chance(25), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte zwölf Orks."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Orks ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, vierundzwanzig Silberstücke werden eure Belohnung sein.", queststatus(162) = 150, queststatus(163) = 36
-queststatus(181) = 0, chance(25), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill twelve bears."), "Da Don needs information. Scout da area and smash delve bears, yus reward bes denty foor silber coins.", queststatus(181) = 150, queststatus(182) = 36
-queststatus(162) = 0, chance(25), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte zwölf Orks."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Orks ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, vierundzwanzig Silberstücke werden eure Belohnung sein.", queststatus(162) = 150, queststatus(163) = 36
+-- Research 150: Kill twelve thieves in three hours
+-- 150: Research 150 taken, get twelve thieves, reward: twenty four sp, 6 rankpoints
+queststatus(184) = 0, english, chance(25), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve theives."), "Research the area and kill twelve theives bringing back the evidence. Your reward is twenty four silver coins.", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, german, chance(25), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, chance(25), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve theives."), "Research the area and kill twelve theives bringing back the evidence. Your reward is twenty four silver coins.", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, chance(25), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 150, queststatus(185) = 36
 
--- Bounty 150 solved, reward: twenty four sp, 6 rankpoints, delay: 5h
-queststatus(181) = 162, english, town = Galmair, ".*" -> inform("[Information Collected] You are awarded twenty four silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 2400, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 6
-queststatus(162) = 162, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst vierundzwanzig Silberstücke."), "Gut gemacht. Ihr habt die Welt zu einem besseren Ort gemacht, zumindest einen Teil von ihr. Zahltag!", money + 2400, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 6
+-- Research 150 solved, reward: twenty four sp, 6 rankpoints, delay: 5h
+queststatus(184) = 162, english, town = Runewick, ".*" -> inform("[Research Collected] You are awarded twenty four silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 2400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 162, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst vierundzwanzig Silberstücke."), "", money + 2400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
 
--- Bounty 150 taken but not solved, repeat the instructions
+-- Research 150 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 163: Kill four golems (726) in three hours
--- 163: Bounty 163 taken, kill four golems, reward: ten sp, 2 rankpoints
-queststatus(181) = 0, english, chance(33.33333333), town = Galmair, "quest", "mission" -> inform("[New Information] Kill four trolls."), "Da Don needs information. Scout da area and smash foor trolls, yus reward bes den silber coins.", queststatus(181) = 163, queststatus(182) = 36
-queststatus(162) = 0, german, chance(33.33333333), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte vier Golems."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von zehn Silberstücken an denjenigen auszuzahlen, der vier Golems erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort.", queststatus(162) = 163, queststatus(163) = 36
-queststatus(181) = 0, chance(33.33333333), town = Galmair, "task", "adventure", "order"-> inform("[New Information] Kill four trolls."), "Da Don needs information. Scout da area and smash foor trolls, yus reward bes den silber coins.", queststatus(181) = 163, queststatus(182) = 36
-queststatus(162) = 0, chance(33.33333333), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte vier Golems."), "Zeit für eine Kopfgeldjagd! Ihre Majestät hat mich ermächtigt, ein Kopfgeld von zehn Silberstücken an denjenigen auszuzahlen, der vier Golems erschlägt. Geht in die Kantabiwüste und macht sie zu einem besseren Ort .", queststatus(162) = 163, queststatus(163) = 36
+-- Research 163: Kill four zombies in three hours
+-- 163: Research 163 taken, kill four Zombies, reward: ten sp, 2 rankpoints
+queststatus(184) = 0, english, chance(33.33333333), town = Runewick, "quest", "mission" -> inform("[New Reearch] Kill four zombies."), "There is research to be done and help required getting the information.  Kill four zombies and bring the evidence, the reward is ten silver coins.", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, german, chance(33.33333333), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier zombies."), "", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, chance(33.33333333), town = Runewick, "task", "adventure", "order"-> inform("[New Reearch] Kill four zombies."), "There is research to be done and help required getting the information.  Kill four zombies and bring the evidence, the reward is ten silver coins.", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, chance(33.33333333), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier zombies."), "", queststatus(184) = 163, queststatus(185) = 36
 
--- Bounty 163 solved, reward: ten sp, 5 rankpoints, delay: 5h
-queststatus(181) = 167, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded ten silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 1000, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 2
-queststatus(162) = 167, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst zehn Silberstücke."), "Ah, eine erneute Ruhmestat. Ihr habt euren Auftrag erledigt und so werde ich meinen Dienst tun. Nehmt euer Kopfgeld.", money + 1000, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 2
+-- Research 163 solved, reward: ten sp, 5 rankpoints, delay: 5h
+queststatus(184) = 167, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded ten silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 167, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zehn Silberstücke."), "", money + 1000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
 
--- Bounty 163 taken but not solved, repeat the instructions
+-- Research 163 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 168: Kill eight golems (726) in three hours
--- 168: Bounty 168 taken, get eight golems, reward: twenty sp, 4 rankpoints
-queststatus(181) = 0, english, chance(50), town = Galmair, "quest", "mission" -> inform("[New Information] Kill eight trolls."), "Da Don needs information. Scout da area and smash ate trolls, yus reward bes denty silber coins.!", queststatus(181) = 168, queststatus(182) = 36
-queststatus(162) = 0, german, chance(50), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte acht Golems."), "Ihre Majestät hat ein Kopfgeld auf acht Golems ausgesetzt. Wenn ihr euch zwanzig Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 168, queststatus(163) = 36
-queststatus(181) = 0, chance(50), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill eight trolls."), "Da Don needs information. Scout da area and smash ate trolls, yus reward bes denty silber coins.!", queststatus(181) = 168, queststatus(182) = 36
-queststatus(162) = 0, chance(50), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte acht Golems."), "Ihre Majestät hat ein Kopfgeld auf acht Golems ausgesetzt. Wenn ihr euch zwanzig Silberstücke verdienen möchtet, beendet ihr Leben in der Kantabiwüste. Tot oder nicht lebendig!", queststatus(162) = 168, queststatus(163) = 36
+-- Zombies 168: Kill eight zombies in three hours
+-- 168: Research 168 taken, get eight zombie, reward: twenty sp, 4 rankpoints
+queststatus(184) = 0, english, chance(50), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight zombies"), "Runewick is the cornerstone of academic research.  Please assist by killing eight zombies and bringing back the evidence.  Your reward is twenty silver coins.", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, german, chance(50), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht zombies."), "", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, chance(50), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight zombies"), "Runewick is the cornerstone of academic research.  Please assist by killing eight zombies and bringing back the evidence.  Your reward is twenty silver coins.", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, chance(50), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht zombies."), "", queststatus(184) = 168, queststatus(185) = 36
 
--- Bounty 168 solved, reward: twenty sp, 4 rankpoints, delay: 5h
-queststatus(181) = 176, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded twenty silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 2000, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 4
-queststatus(162) = 176, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst zwanzig Silberstücke."), "Gerade noch rechtzeitig. Befehle ihrer Majestät sind sofort zu befolgen. Egal, hier ist euer Kopfgeld.", money + 2000, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 4
+-- Research 168 solved, reward: twenty sp, 4 rankpoints, delay: 5h
+queststatus(184) = 176, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded twenty silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 2000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 176, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwanzig Silberstücke."), "", money + 2000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
 
--- Bounty 168 taken but not solved, repeat the instructions
+-- Research 168 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
--- Bounty 177: Kill twelve golems (726) in three hours
--- 177: Bounty 177 taken, get twelve golems, reward: thirty sp, 6 rankpoints
-queststatus(181) = 0, english, chance(100), town = Galmair, "quest", "mission" -> inform("[New Information] Kill twelve trolls."), "Da Don needs information. Scout da area and smash delve trolls, yus reward bes dirty silber coins.", queststatus(181) = 177, queststatus(182) = 36
-queststatus(162) = 0, german, chance(100), town = Cadomyr, "quest", "mission" -> inform("[Neues Kopfgeld] Töte zwölf Golems."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Golems ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, dreißig Silberstücke werden eure Belohnung sein.", queststatus(162) = 177, queststatus(163) = 36
-queststatus(181) = 0, chance(100), town = Galmair, "task", "adventure", "order" -> inform("[New Information] Kill twelve trolls."), "Da Don needs information. Scout da area and smash delve trolls, yus reward bes dirty silber coins.", queststatus(181) = 177, queststatus(182) = 36
-queststatus(162) = 0, chance(100), town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Kopfgeld] Töte zwölf Golems."), "Die Kantabiwüste ist zu einem gefährlichen Ort geworden. Ein Kopfgeld ist auf zwölf Golems ausgesetzt, um die Wüste wieder friedvoller zu machen. Geht nun und erledigt sie, dreißig Silberstücke werden eure Belohnung sein.", queststatus(162) = 177, queststatus(163) = 36
+-- Research 177: Kill twelve zombies in three hours
+-- 177: Research 177 taken, get twelve zombies, reward: thirty sp, 6 rankpoints
+queststatus(184) = 0, english, chance(100), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve zombies"), "Research the area and kill twelve zombies bringing back the evidence. Your reward is thirty silver coins.", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, german, chance(100), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf zombies."), "", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, chance(100), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve zombies"), "Research the area and kill twelve zombies bringing back the evidence. Your reward is thirty silver coins.", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, chance(100), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf zombies."), "", queststatus(184) = 177, queststatus(185) = 36
 
--- Bounty 177 solved, reward: thirty sp, 6 rankpoints, delay: 5h
-queststatus(181) = 189, english, town = Galmair, ".*" -> inform("[Information collected] You are awarded thirty silver coins."), "Yubba, yus did goods.  Mes be tellin' da Stumpy.  Take des reward.", money + 3000, queststatus(181) = 0, queststatus(182) = 0, queststatus(183) = 60, rankpoints + 6
-queststatus(162) = 189, town = Cadomyr, ".*" -> inform("[Kopfgeld erhalten] Du erhältst dreißig Silberstücke."), "Gut gemacht. Ihr habt die Welt zu einem besseren Ort gemacht, zumindest einen Teil von ihr. Zahltag!", money + 3000, queststatus(162) = 0, queststatus(163) = 0, queststatus(164) = 60, rankpoints + 6
+-- Research 177 solved, reward: thirty sp, 6 rankpoints, delay: 5h
+queststatus(184) = 189, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded thirty silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 3000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 189, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst dreißig Silberstücke."), "", money + 3000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
 
--- Bounty 177 taken but not solved, repeat the instructions
+-- Research 177 taken but not solved, repeat the instructions
 queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
 queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
@@ -485,22 +485,22 @@ queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgab
 
 -- Optional: Gods - use the triggers of the god the NPC worships or fights
 english, "Urshara" -> "We must research all manifestations of evil on Urshara's gift."
-"Urshara", -> "Ronagan beschützt uns, wir im Schatten leben."
+"Urshara", -> ""
 english, "Elara" -> "Goddess Elara, grant us knowledge."
-"Elara" -> "Nargun liebt das Unheil, yub."
+"Elara" -> "."
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
 -- Every NPC should contain at least 10 of those messages.
 -- Emotes are possible also starting with "#me ....".
 
-cycletext "Ich viel wissen.", "Every bit of information gets us closer to our goal."
-cycletext "Ich hier, Du gehen zu Information, los, los.", "We have to find and research all manifestations of evil."
-cycletext "#me sieht sich um mit einem verschlagenen Blick.", "#me talks to herself while marking things off a piece of parchment."
-cycletext "He Du! Da seien Arbweit für Dich,", "My world is research and unlocking mysteries."
-cycletext "#me blickt den Weg entlang als würde er jemand erwarten.", "Only so much information can be gathered in a library."
-cycletext "Yubba, der Don freuen sich wenn Du mir helfen.", "I am on special assignment from the Archmage."
-cycletext "Hurr hurr, wir wissen Antwort.", "It is a privelage to be able to assist in this matter."
-cycletext "Du denken ich nicht wissen und seinen dumm?", "Runewick is the center of learning."
-cycletext "Die plumpe Regel der Stadt.", "There are still exciting things about the lands to be discovered."
-cycletext "Wir Dich schlagen wenn uns nicht helfen. ", "All devoted citizens should help with the research."
+cycletext "", "Every bit of information gets us closer to our goal."
+cycletext "", "We have to find and research all manifestations of evil."
+cycletext "", "#me talks to herself while marking things off a piece of parchment."
+cycletext "", "My world is research and unlocking mysteries."
+cycletext "", "Only so much information can be gathered in a library."
+cycletext "", "I am on special assignment from the Archmage."
+cycletext "", "It is a privelage to be able to assist in this matter."
+cycletext "", "Runewick is the center of learning."
+cycletext "", "There are still exciting things about the lands to be discovered."
+cycletext "", "All devoted citizens should help with the research."
