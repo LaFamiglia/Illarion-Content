@@ -1,0 +1,506 @@
+-- Illarion Server
+-- 
+-- This program is free software: you can redistribute it and/or modify it under
+-- the terms of the GNU Affero General Public License as published by the Free
+-- Software Foundation, either version 3 of the License, or (at your option) any
+-- later version.
+-- 
+-- This program is distributed in the hope that it will be useful, but WITHOUT
+-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+-- FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
+-- details.
+-- 
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+------------------------------------------------------------------------------AC
+-- NPC Name: Maelyrra Umrielyth                                      Runewick --
+-- NPC Job:  Researcher                                                       --
+--                                                                            --
+-- NPC Race: elf                        NPC Position:  861, 809, 0            --
+-- NPC Sex:  female                     NPC Direction: west                   --
+--                                                                            --
+-- Author:   Evie                                                             --
+--                                                     easyNPC Parser v1.23.1 --
+--------------------------------------------------------------------------------
+
+name = "Maelyrra Umrielyth"
+race = elf
+sex = female
+position = 861, 809, 0
+direction = west
+affiliation = "Runewick"
+job = "Researcher"
+
+language = common
+language = human
+defaultLanguage = common
+autointroduce = on
+
+author = "Evie"
+
+lookatDE = "Dieser NPC ist Maelyrra Umrielyth der Forscher."
+lookatUS = "This NPC is Maelyrra Umrielyth the researcher."
+useMsgDE = "Fasst mich nicht an!"
+useMsgUS = "Do not touch me!"
+wrongLangDE = "#me schaut verwirrt."
+wrongLangUS = "#me looks around confused."
+radius = 0
+hairID = 7
+beardID = 0
+colorHair = 53, 46, 30
+colorSkin = 230, 223, 208
+
+itemHead = 0
+itemChest = 820
+itemCoat = 2380
+itemMainHand = 1090
+itemSecondHand = 0
+itemHands = 48
+itemTrousers = 839
+itemShoes = 369
+
+-- Template Version 1.08, 10/18/2012 by Estralis Seborian
+-- Instructions: Replace all talk consequences with strings ending with a full stop, maximum length is 250 characters. Try to provide more than one answer, one is chosen at random.
+-- Order of triggers: Triggers are checked from top to bottom in the script. Never use very general triggers like "hi" or even ".*" on top of the script unless you know exactly what you are doing.
+-- Style of triggers: Keywords are preferred. Avoid usage of phrases such as "tell me more"
+-- Valid races: human, elf, dwarf, lizardman, orc, halfling
+-- Valid directions: north, northeast, east, southeast, south, southwest, west, northwest
+-- Appearance: If you don't change anything your NPC will wear a blue shirt, black trousers, leather glowes and leather boots at least. S/he will also have fair skin and brown hairs. Please use red-green-blue values as indicator. Ex.: colorHair = 123 (red), 62 (green), 9 (blue) = brown hair.
+-- Equipment: You can find a graphical item list here: http://illarion.org/~martin/itemlist.pdf
+-- Keep radius=0 and the NPC won't walk around, a value greater than 0 will make the NPC run around his position randomly
+-- When you are done, please hit the "Rebuild Script" button and save the LUA script. Both, this npc file and the LUA file have to be uploaded to the script repository
+-- After uploading, your NPC needs to be submitted to the database and a developer has to perform a full reload (!fr) of the server
+
+-- MANDATORY TRIGGERS
+
+-- Mandatory: Help
+"Help" -> inform("[Game Help] This NPC is Maelyrra Umrielyth the researcher. Keywords: Hello, mission.")
+"Hilfe" -> inform("[Spielhilfe] [Hilfe] Dieser NPC ist Maelyrra Umrielyth, Forscher. Schlüsselwörter: Hallo, Auftrag.")
+
+-- Mandatory: General speech
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Be greeted. Have you come to be of assistance?"
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" ->
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Be greeted. Have you come to be of assistance?"
+"Hiho", "Hallo", "Hey", "Greeb" ->
+"Farewell", "Bye", "Fare well", "See you" -> "Farewell for now, may the five watch over you."
+"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" ->
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Farewell for now, may the five watch over you."
+"Ciao", "Adieu", "Au revoir", "Farebba" ->
+"How are you", "How feel", "How do you do" -> "I am quite well, busy working."
+"Wie geht", "Wie fühlst", "Wie ist es ergangen", "Wie Befind" ->
+"your name", "who are you", "who art thou" -> "My name is Maelyrra Umrielyth, I work as a researcher for the Archmage."
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" ->
+
+-- OPTIONAL TRIGGERS
+
+-- Catching quest triggers of other factions' members.
+english, town = none, "quest", "mission" -> "I do not condone, nor will I work with outlaws."
+town = none, "quest", "mission" ->
+town = none, "task", "adventure", "order" -> "I do not condone, nor will I work with outlaws."
+town = none, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+english, town = Cadomyr, "quest", "mission" -> "Cadomyrian citizens will find no work here."
+town = Cadomyr, "quest", "mission" ->
+town = Cadomyr, "task", "adventure", "order" -> "Cadomyrian citizens will find no work here."
+town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl"->
+english, town = Galmair, "quest", "mission" -> "Galmairian citizens will find no work here."
+town = Galmair, "quest", "mission" ->
+town = Galmair, "task", "adventure", "order"-> "Galmairian citizens will find no work here."
+town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+
+-- Catching quest triggers of those who have to wait for a new quest
+queststatus(186) ~= 0, english, town = Runewick, "quest", "mission" -> "There is nothing I need research information on at the moment, but thank you for asking."
+queststatus(186) ~= 0, town = Runewick, "quest", "mission" ->
+queststatus(186) ~= 0, town = Runewick, "task", "adventure", "order" -> "There is nothing I need research information on at the moment, but thank you for asking."
+queststatus(186) ~= 0, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+
+-- Small Talk
+"Research", english -> "There is important research in the works.  Discovery of the world is at our fingertips."
+"Forscher" ->
+"Archmage", english -> "#me boasts proudly 'I work closely with the Archmage himself.'"
+"Erzmagier" ->
+
+-- ATTENTION: The lines below are generated. Do not do any manual changes. Tell me (Estralis) what is wrong and I will regenerate the lines. (duplicating Estralis work!)
+-- A quest is chosen at random!
+-- Countdown is saved in queststatus (185)
+-- Cooldown works like this: Set queststatus (186) to delay time [minutes]/5. Example: 5 hours = 300 minutes -> queststatus(183) = 60
+
+-- Research 1: Kill slimes in three hours
+-- 1: Research 1 taken, kill four slimes, reward: one sp, 2 rankpoints
+queststatus(184) = 0, english, chance(4.761904762), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four slimes."), "There is research to be done and help required getting the information.  Kill four slimes and bring the evidence, the reward is one silver coin.", queststatus(184) = 1, queststatus(185) = 36
+queststatus(184) = 0, german, chance(4.761904762), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Schleime."), "", queststatus(184) = 1, queststatus(185) = 36
+queststatus(184) = 0, chance(4.761904762), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill four slimes."), "There is research to be done and help required getting the information.  Kill four slimes and bring the evidence, the reward is one silver coin.", queststatus(184) = 1, queststatus(185) = 36
+queststatus(184) = 0, chance(4.761904762), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Schleime."), "", queststatus(184) = 1, queststatus(185) = 36
+
+-- Research 1 solved, reward: one sp, 5 rankpoints, delay: 5h
+queststatus(184) = 5, english, town = Runewick, ".*" -> inform("[Research collected.] You are awarded one silver coin."), "Thank you so much! Here have some coins I must get to work!", money + 100, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 5, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst ein Silberstück."), "", money + 100, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 1 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 6: Kill eight slimes in three hours
+-- 6: Research 6 taken, get eight slimes, reward: two sp, 4 rankpoints
+queststatus(184) = 0, english, chance(5), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight slimes."), "Runewick is the cornerstone of academic research.  Please assist by killing eight slimes and bringing back the evidence.  Your reward is two silver coins.", queststatus(184) = 6, queststatus(185) = 36
+queststatus(184) = 0, german, chance(5), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht Schleime."."), "", queststatus(184) = 6, queststatus(185) = 36
+queststatus(184) = 0, chance(5), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight beetles."), "Runewick is the cornerstone of academic research.  Please assist by killing eight slimes and bringing back the evidence.  Your reward is two silver coins.", queststatus(184) = 6, queststatus(185) = 36
+queststatus(184) = 0, chance(5), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht Schleime."."), "", queststatus(184) = 6, queststatus(185) = 36
+
+-- Research 6 solved, reward: two sp, 4 rankpoints, delay: 5h
+queststatus(184) = 14, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded two silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 14, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwei Silberstücke."), "", money + 200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 6 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 15: Kill twelve slimes in three hours
+-- 15: Research 15 taken, get twelve slimes, reward: three sp, 6 rankpoints
+queststatus(184) = 0, english, chance(5.263157895), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve slimes."), "Research the area and kill twelve slimes bringing back the evidence. Your reward is three silver coins.", queststatus(184) = 15, queststatus(185) = 36
+queststatus(184) = 0, german, chance(5.263157895), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Schleime."), "", queststatus(184) = 15, queststatus(185) = 36
+queststatus(184) = 0, chance(5.263157895), town = Runewick, "task", "adventure", "order" -> inform("[New Information] Kill twelve slimes."), "Research the area and kill twelve slimes bringing back the evidence. Your reward is three silver coins.", queststatus(184) = 15, queststatus(185) = 36
+queststatus(184) = 0, chance(5.263157895), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl"-> inform("[Neues Forschung] Töte zwölf Schleime."), "", queststatus(184) = 15, queststatus(185) = 36
+
+-- Research 15 solved, reward: three sp, 6 rankpoints, delay: 5h
+queststatus(184) = 27, english, town = Runewick, ".*" -> inform("[Research Collected.] You are awarded three silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 300, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 27, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst drei Silberstücke."), "", money + 300, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 15 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 28: Kill four dogs in three hours
+-- 28: Research 28 taken, kill four dogs, reward: two sp, 2 rankpoints
+queststatus(184) = 0, english, chance(5.555555556), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four dogs."), "There is research to be done and help required getting the information.  Kill four dogs and bring the evidence, the reward is two silver coins.", queststatus(184) = 28, queststatus(185) = 36
+queststatus(184) = 0, german, chance(5.555555556), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Hunde."), "", queststatus(184) = 28, queststatus(185) = 36
+queststatus(184) = 0, chance(5.555555556), town = Runewick, "task", "adventure", "order" ->inform("[New Information] Kill four dogs."),  "There is research to be done and help required getting the information.  Kill four dogs and bring the evidence, the reward is two silver coins.", queststatus(184) = 28, queststatus(185) = 36", queststatus(184) = 28, queststatus(185) = 36
+queststatus(184) = 0, chance(5.555555556), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl"-> inform("[Neues Forschung] Töte vier Hunde."), "", queststatus(184) = 28, queststatus(185) = 36
+.
+-- Research 28 solved, reward: two sp, 5 rankpoints, delay: 5h
+queststatus(184) = 32, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded two silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 32, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwei Silberstücke."), "", money + 200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 28 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 33: Kill eight dogs in three hours
+-- 33: Research 33 taken, get eight dogs, reward: four sp, 4 rankpoints
+queststatus(184) = 0, english, chance(5.882352941), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight dogs."), "Runewick is the cornerstone of academic research.  Please assist by killing eight dogs and bringing back the evidence.  Your reward is four silver coins.", queststatus(181) = 33, queststatus(182) = 36
+queststatus(184) = 0, german, chance(5.882352941), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht Hunde."), "", queststatus(184) = 33, queststatus(185) = 36
+queststatus(184) = 0, chance(5.882352941), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight dogs."), "Runewick is the cornerstone of academic research.  Please assist by killing eight dogs and bringing back the evidence.  Your reward is four silver coins.", queststatus(181) = 33, queststatus(182) = 36
+queststatus(184) = 0, chance(5.882352941), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht Hunde."), "", queststatus(184) = 33, queststatus(185) = 36
+
+-- Research 33 solved, reward: four sp, 4 rankpoints, delay: 5h
+queststatus(184) = 41, english, town = Runewick, ".*" -> inform("[Research collected.] You are awarded four silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 41, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst vier Silberstücke."), "", money + 400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 33 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 42: Kill twelve dogs in three hours
+-- 42: Research 42 taken, get twelve dogs, reward: six sp, 6 rankpoints
+queststatus(184) = 0, english, chance(6.25), town = Runewick, "quest", "mission" -> inform("[New research] Kill twelve dogs."), "Research the area and kill twelve dogs bringing back the evidence. Your reward is eight silver coins.", queststatus(184) = 42, queststatus(185) = 36
+queststatus(184) = 0, german, chance(6.25), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Hunde."), "", queststatus(184) = 42, queststatus(185) = 36
+queststatus(184) = 0, chance(6.25), town = Runewick, "task", "adventure", "order"->inform("[New research] Kill twelve dogs."), "Research the area and kill twelve dogs bringing back the evidence. Your reward is eight silver coins.", queststatus(184) = 42, queststatus(185) = 36
+queststatus(184) = 0, chance(6.25), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf Hunde."), "", queststatus(184) = 42, queststatus(185) = 36
+
+-- Reseaarch 42 solved, reward: six sp, 6 rankpoints, delay: 5h
+queststatus(184) = 54, english, town = Runewick, ".*" -> inform("Research Collected] You are awarded six silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 54, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechs Silberstücke."), "", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+--  Research 42 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 55: Kill four wolves in three hours
+-- 55: Research 55 taken, kill four wolves, reward: three sp, 2 rankpoints
+queststatus(184) = 0, english, chance(6.666666667), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four wolves."), "There is research to be done and help required getting the information.  Kill four wolves and bring the evidence, the reward is three silver coins.", queststatus(184) = 55, queststatus(185) = 36
+queststatus(184) = 0, german, chance(6.666666667), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Wölfe."), ".", queststatus(184) = 55, queststatus(185) = 36
+queststatus(184) = 0, chance(6.666666667), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill four wolves."), "There is research to be done and help required getting the information.  Kill four wolves and bring the evidence, the reward is three silver coins.", queststatus(184) = 55, queststatus(185) = 36
+queststatus(184) = 0, chance(6.666666667), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Wölfe."), ".", queststatus(184) = 55, queststatus(185) = 36
+
+-- Research 55 solved, reward: three sp, 5 rankpoints, delay: 5h
+queststatus(184) = 59, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded three silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 300, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 59, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst drei Silberstücke."), "", money + 300, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 55 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 60: Kill eight wolves in three hours
+-- 60: Research 60 taken, get eight wolves, reward: six sp, 4 rankpoints
+queststatus(184) = 0, english, chance(7.142857143), town = Runewick, "quest", "mission" -> inform("[New research] Kill eight wolves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight wolves and bringing back the evidence.  Your reward is six silver coins.", queststatus(184) = 60, queststatus(185) = 36
+queststatus(184) = 0, german, chance(7.142857143), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht Wölfe."), "", queststatus(184) = 60, queststatus(185) = 36
+queststatus(184) = 0, chance(7.142857143), town = Runewick, "task", "adventure", "order" -> inform("[New research] Kill eight wolves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight wolves and bringing back the evidence.  Your reward is six silver coins.", queststatus(184) = 60, queststatus(185) = 36
+queststatus(184) = 0, chance(7.142857143), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl"-> inform("[Neues Forschung] Töte acht Wölfe."), "", queststatus(184) = 60, queststatus(185) = 36
+
+-- Research 60 solved, reward: six sp, 4 rankpoints, delay: 5h
+queststatus(184) = 68, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded six silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 68, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechs Silberstücke."), "", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 60 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 69: Kill twelve wolves in three hours
+-- 69: Research 69 taken, get twelve wolves reward: nine sp, 6 rankpoints
+queststatus(184) = 0, english, chance(7.692307692), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve wolves."), "Research the area and kill twelve wolves bringing back the evidence. Your reward is nine silver coins.", queststatus(184) = 69, queststatus(185) = 36
+queststatus(184) = 0, german, chance(7.692307692), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Wölfe"), "", queststatus(184) = 69, queststatus(185) = 36
+queststatus(184) = 0, chance(7.692307692), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve wolves."), "Research the area and kill twelve wolves bringing back the evidence. Your reward is nine silver coins.", queststatus(184) = 69, queststatus(185) = 36
+queststatus(184) = 0, chance(7.692307692), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf Wölfe"), "", queststatus(184) = 69, queststatus(185) = 36
+
+-- Research 69 solved, reward: nine sp, 6 rankpoints, delay: 5h
+queststatus(184) = 81, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded nine silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 900, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 81, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst neun Silberstücke."), "", money + 900, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 69 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 82: Kill four bears in three hours
+-- 82: Research 82 taken, kill four bears, reward: four sp, 2 rankpoints
+queststatus(184) = 0, english, chance(8.333333333), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four bears."), "There is research to be done and help required getting the information.  Kill four bears and bring the evidence, the reward is four silver coins.", queststatus(184) = 82, queststatus(185) = 36
+queststatus(184) = 0, german, chance(8.333333333), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Barin."), "", queststatus(184) = 82, queststatus(185) = 36
+queststatus(184) = 0, chance(8.333333333), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill four bears."), "There is research to be done and help required getting the information.  Kill four bears and bring the evidence, the reward is four silver coins.", queststatus(184) = 82, queststatus(185) = 36
+queststatus(184) = 0, chance(8.333333333), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Barin."), "", queststatus(184) = 82, queststatus(185) = 36
+
+-- Research 82 solved, reward: four sp, 5 rankpoints, delay: 5h
+queststatus(184) = 86, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded four silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 86, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst vier Silberstücke."), "", money + 400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 82 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 87: Kill eight bears in three hours
+-- 87: Research 87 taken, get eight bears, reward: eight sp, 4 rankpoints
+queststatus(184) = 0, english, chance(9.090909091), town = Runewick, "quest", "mission" -> inform("[New research] Kill eight bears."), "Runewick is the cornerstone of academic research.  Please assist by killing eight bears and bringing back the evidence.  Your reward is eight silver coins.", queststatus(184) = 87, queststatus(185) = 36
+queststatus(184) = 0, german, chance(9.090909091), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Barin."), "", queststatus(184) = 87, queststatus(185) = 36
+queststatus(184) = 0, chance(9.090909091), town = Runewick, "task", "adventure", "order" -> inform("[New research] Kill eight bears."), "Runewick is the cornerstone of academic research.  Please assist by killing eight bears and bringing back the evidence.  Your reward is eight silver coins.", queststatus(184) = 87, queststatus(185) = 36
+queststatus(184) = 0, chance(9.090909091), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Barin."), "", queststatus(184) = 87, queststatus(185) = 36
+
+-- Research 87 solved, reward: eight sp, 4 rankpoints, delay: 5h
+queststatus(184) = 95, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded eight silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 95, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst acht Silberstücke."), "", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 87 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Researc 96: Kill twelve bears in three hours
+-- 96: Research 96 taken, get twelve bears, reward: twelve sp, 6 rankpoints
+queststatus(184) = 0, english, chance(10), town = Runewick, "quest", "mission" -> inform("[New research] Kill twelve bears."), "Research the area and kill twelve bears bringing back the evidence. Your reward is twelve silver coins.", queststatus(184) = 96, queststatus(185) = 36
+queststatus(184) = 0, german, chance(10), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Füchse."), "", queststatus(184) = 96, queststatus(185) = 36
+queststatus(184) = 0, chance(10), town = Runewick, "task", "adventure", "order"-> inform("[New research] Kill twelve bears."), "Research the area and kill twelve bears bringing back the evidence. Your reward is twelve silver coins.", queststatus(184) = 96, queststatus(185) = 36
+queststatus(184) = 0, chance(10), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf Füchse."), "", queststatus(184) = 96, queststatus(185) = 36
+
+-- Research 96 solved, reward: twelve sp, 6 rankpoints, delay: 5h
+queststatus(184) = 108, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded twelve silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 108, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwölf Silberstücke."), "", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 96 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 109: Kill four humans in three hours
+-- 109: Research 109 taken, kill four humans, reward: six sp, 2 rankpoints
+queststatus(184) = 0, english, chance(11.11111111), town = Runewick, "quest", "mission" -> inform("[New Research] Kill four humans."), "There is research to be done and help required getting the information.  Kill four humans and bring the evidence, the reward is six silver coins.", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, german, chance(11.11111111), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Menschen."), "", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, chance(11.11111111), town = Runewick, "task", "adventure", "order"-> inform("[New Research] Kill four humans."), "There is research to be done and help required getting the information.  Kill four humans and bring the evidence, the reward is six silver coins.", queststatus(184) = 109, queststatus(185) = 36
+queststatus(184) = 0, chance(11.11111111), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Menschen."), "", queststatus(184) = 109, queststatus(185) = 36
+
+-- Research solved, reward: six sp, 5 rankpoints, delay: 5h
+queststatus(184) = 113, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded six silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 113, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechs Silberstücke."), "", money + 600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 109 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 114: Kill eight humans in three hours
+-- 114: Research 114 taken, get eight humans, reward: twelve sp, 4 rankpoints
+queststatus(184) = 0, english, chance(12.5), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight humans."), "Runewick is the cornerstone of academic research.  Please assist by killing eight humans and bringing back the evidence.  Your reward is twelve silver coins.", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, german, chance(12.5), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht Menschen."), "", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, chance(12.5), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight humans."), "Runewick is the cornerstone of academic research.  Please assist by killing eight humans and bringing back the evidence.  Your reward is twelve silver coins.", queststatus(184) = 114, queststatus(185) = 36
+queststatus(184) = 0, chance(12.5), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht Menschen."), "", queststatus(184) = 114, queststatus(185) = 36
+
+-- Research 114 solved, reward: twelve sp, 4 rankpoints, delay: 5h
+queststatus(184) = 122, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded twelve silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 122, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwölf Silberstücke."), "", money + 1200, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 114 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 123: Kill twelve humans in three hours
+-- 123: Research 123 taken, get twelve humans, reward: eighteen sp, 6 rankpoints
+queststatus(184) = 0, english, chance(14.28571429), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve humans"), "Research the area and kill twelve humans bringing back the evidence. Your reward is eighteen silver coins.", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, german, chance(14.28571429), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf Menschen."), "", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, chance(14.28571429), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve humans"), "Research the area and kill twelve humans bringing back the evidence. Your reward is eighteen silver coins.", queststatus(184) = 123, queststatus(185) = 36
+queststatus(184) = 0, chance(14.28571429), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf Menschen."), "", queststatus(184) = 123, queststatus(185) = 36
+
+-- Research 123 solved, reward: eighteen sp, 6 rankpoints, delay: 5h
+queststatus(184) = 135, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded eighteen silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 135, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst achtzehn Silberstücke."), "", money + 1800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 123 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 136: Kill four thieves in three hours
+-- 136: Research 136 taken, kill four thieves, reward: eight sp, 2 rankpoints
+queststatus(184) = 0, english, chance(16.66666667), town = Runewick, "quest", "mission" -> inform("[New research] Kill four thieves."), "There is research to be done and help required getting the information.  Kill four thieves and bring the evidence, the reward is eight silver coins.", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, german, chance(16.66666667), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, chance(16.66666667), town = Runewick, "task", "adventure", "order" -> inform("[New research] Kill four thieves."), "There is research to be done and help required getting the information.  Kill four thieves and bring the evidence, the reward is eight silver coins.", queststatus(184) = 136, queststatus(185) = 36
+queststatus(184) = 0, chance(16.66666667), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 136, queststatus(185) = 36
+
+-- Research 136 solved, reward: eight sp, 5 rankpoints, delay: 5h
+queststatus(184) = 140, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded eight silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 140, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst acht Silberstücke."), "", money + 800, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 136 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 141: Kill eight thieves (355) in three hours
+-- 141: Research 141 taken, get eight thieves, reward: sixteen sp, 4 rankpoints
+queststatus(184) = 0, english, chance(20), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight thieves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight thieves and bringing back the evidence.  Your reward is sixteen silver coins.", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, german, chance(20), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, chance(20), town = Runewick, "task", "adventure", "order"-> inform("[New Research] Kill eight thieves."), "Runewick is the cornerstone of academic research.  Please assist by killing eight thieves and bringing back the evidence.  Your reward is sixteen silver coins.", queststatus(184) = 141, queststatus(185) = 36
+queststatus(184) = 0, chance(20), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 141, queststatus(185) = 36
+
+-- Research 141 solved, reward: sixteen sp, 4 rankpoints, delay: 5h
+queststatus(184) = 149, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded sixteen silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 149, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst sechzehn Silberstücke."), "", money + 1600, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 141 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 150: Kill twelve thieves in three hours
+-- 150: Research 150 taken, get twelve thieves, reward: twenty four sp, 6 rankpoints
+queststatus(184) = 0, english, chance(25), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve theives."), "Research the area and kill twelve theives bringing back the evidence. Your reward is twenty four silver coins.", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, german, chance(25), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, chance(25), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve theives."), "Research the area and kill twelve theives bringing back the evidence. Your reward is twenty four silver coins.", queststatus(184) = 150, queststatus(185) = 36
+queststatus(184) = 0, chance(25), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier Diebe."), "", queststatus(184) = 150, queststatus(185) = 36
+
+-- Research 150 solved, reward: twenty four sp, 6 rankpoints, delay: 5h
+queststatus(184) = 162, english, town = Runewick, ".*" -> inform("[Research Collected] You are awarded twenty four silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 2400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 162, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst vierundzwanzig Silberstücke."), "", money + 2400, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 150 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 163: Kill four zombies in three hours
+-- 163: Research 163 taken, kill four Zombies, reward: ten sp, 2 rankpoints
+queststatus(184) = 0, english, chance(33.33333333), town = Runewick, "quest", "mission" -> inform("[New Reearch] Kill four zombies."), "There is research to be done and help required getting the information.  Kill four zombies and bring the evidence, the reward is ten silver coins.", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, german, chance(33.33333333), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte vier zombies."), "", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, chance(33.33333333), town = Runewick, "task", "adventure", "order"-> inform("[New Reearch] Kill four zombies."), "There is research to be done and help required getting the information.  Kill four zombies and bring the evidence, the reward is ten silver coins.", queststatus(184) = 163, queststatus(185) = 36
+queststatus(184) = 0, chance(33.33333333), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte vier zombies."), "", queststatus(184) = 163, queststatus(185) = 36
+
+-- Research 163 solved, reward: ten sp, 5 rankpoints, delay: 5h
+queststatus(184) = 167, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded ten silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 1000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+queststatus(184) = 167, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zehn Silberstücke."), "", money + 1000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 2
+
+-- Research 163 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Zombies 168: Kill eight zombies in three hours
+-- 168: Research 168 taken, get eight zombie, reward: twenty sp, 4 rankpoints
+queststatus(184) = 0, english, chance(50), town = Runewick, "quest", "mission" -> inform("[New Research] Kill eight zombies"), "Runewick is the cornerstone of academic research.  Please assist by killing eight zombies and bringing back the evidence.  Your reward is twenty silver coins.", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, german, chance(50), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte acht zombies."), "", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, chance(50), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill eight zombies"), "Runewick is the cornerstone of academic research.  Please assist by killing eight zombies and bringing back the evidence.  Your reward is twenty silver coins.", queststatus(184) = 168, queststatus(185) = 36
+queststatus(184) = 0, chance(50), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte acht zombies."), "", queststatus(184) = 168, queststatus(185) = 36
+
+-- Research 168 solved, reward: twenty sp, 4 rankpoints, delay: 5h
+queststatus(184) = 176, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded twenty silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 2000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+queststatus(184) = 176, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst zwanzig Silberstücke."), "", money + 2000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 4
+
+-- Research 168 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Research 177: Kill twelve zombies in three hours
+-- 177: Research 177 taken, get twelve zombies, reward: thirty sp, 6 rankpoints
+queststatus(184) = 0, english, chance(100), town = Runewick, "quest", "mission" -> inform("[New Research] Kill twelve zombies"), "Research the area and kill twelve zombies bringing back the evidence. Your reward is thirty silver coins.", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, german, chance(100), town = Runewick, "quest", "mission" -> inform("[Neues Forschung] Töte zwölf zombies."), "", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, chance(100), town = Runewick, "task", "adventure", "order" -> inform("[New Research] Kill twelve zombies"), "Research the area and kill twelve zombies bringing back the evidence. Your reward is thirty silver coins.", queststatus(184) = 177, queststatus(185) = 36
+queststatus(184) = 0, chance(100), town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Forschung] Töte zwölf zombies."), "", queststatus(184) = 177, queststatus(185) = 36
+
+-- Research 177 solved, reward: thirty sp, 6 rankpoints, delay: 5h
+queststatus(184) = 189, english, town = Runewick, ".*" -> inform("[Research collected] You are awarded thirty silver coins."), "Thank you so much! Here have some coins I must get to work!", money + 3000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+queststatus(184) = 189, town = Runewick, ".*" -> inform("[Forschung erhalten] Du erhältst dreißig Silberstücke."), "", money + 3000, queststatus(184) = 0, queststatus(185) = 0, queststatus(186) = 60, rankpoints + 6
+
+-- Research 177 taken but not solved, repeat the instructions
+queststatus(184) ~= 0, queststatus(184) < 5, english, town = Runewick, "quest", "mission" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "quest", "mission" -> ""
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "task", "adventure", "order" -> "I really need to finish my research, can you hurry to complete your task?"
+queststatus(184) ~= 0, queststatus(184) < 5, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+-- Generate stuff end
+
+-- Optional: Gods - use the triggers of the god the NPC worships or fights
+english, "Urshara" -> "We must research all manifestations of evil on Urshara's gift."
+"Urshara", -> ""
+english, "Elara" -> "Goddess Elara, grant us knowledge."
+"Elara" -> "."
+
+------------------------------------------------------------------------------AC
+-- Cycle Texts - Messages spoken automatically in random intervals.
+-- Every NPC should contain at least 10 of those messages.
+-- Emotes are possible also starting with "#me ....".
+
+cycletext "", "Every bit of information gets us closer to our goal."
+cycletext "", "We have to find and research all manifestations of evil."
+cycletext "", "#me talks to herself while marking things off a piece of parchment."
+cycletext "", "My world is research and unlocking mysteries."
+cycletext "", "Only so much information can be gathered in a library."
+cycletext "", "I am on special assignment from the Archmage."
+cycletext "", "It is a privelage to be able to assist in this matter."
+cycletext "", "Runewick is the center of learning."
+cycletext "", "There are still exciting things about the lands to be discovered."
+cycletext "", "All devoted citizens should help with the research."
