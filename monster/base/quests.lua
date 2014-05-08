@@ -1974,8 +1974,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Ratten";
-    englishRace[id]="rats";
+    germanRace[id]="Rattenmenschen";
+    englishRace[id]="Ratmen";
 	table.insert(questList[921],id); -- all rats
 	table.insert(questList[922],id); --all rats
 	table.insert(questList[931],id); --all rats
@@ -1993,8 +1993,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Ratten";
-    englishRace[id]="rats";
+    germanRace[id]="Rattenmenschen";
+    englishRace[id]="Ratmen";
 	table.insert(questList[921],id); -- all rats
 	table.insert(questList[922],id); --all rats
 	table.insert(questList[931],id); --all rats
@@ -2012,8 +2012,8 @@ function iniQuests()
     englishTitle[id]="Spy Informant";
     NPCName[id]="Bula Glasha";
     statusId[id]=181;
-    germanRace[id]="Ratten";
-    englishRace[id]="rats";
+    germanRace[id]="Rattenmenschen";
+    englishRace[id]="Ratmen";
 	table.insert(questList[921],id); -- all rats
 	table.insert(questList[922],id); --all rats
 	table.insert(questList[931],id); --all rats
