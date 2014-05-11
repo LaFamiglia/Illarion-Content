@@ -16,14 +16,14 @@
 -- NPC Name: Akaltuts Guardian 901                                            --
 -- NPC Job:  Guardian                                                         --
 --                                                                            --
--- NPC Race: human                      NPC Position:  482, 835, -9           --
+-- NPC Race: Golden Magnus (783)        NPC Position:  482, 835, -9           --
 -- NPC Sex:  male                       NPC Direction: west                   --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 name = "Akaltuts Guardian 901"
-race = human
+race = Golden Magnus (783)
 sex = male
 position = 482, 835, -9
 direction = west
@@ -54,7 +54,6 @@ itemSecondHand =2447
 itemHands = 531
 itemTrousers = 2116
 itemShoes = 770
-
 
 -- QuestID=525
 -- 0: No Quest taken
@@ -95,10 +94,10 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 
 -- Quests
 -- Guardian task one.  Collect 4 elven swords.
-queststatus(525) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber I"), queststatus(525) = 1, "I am the first guardian of Akaltuts. to pass my test you must collect 4 elven swords from the drow that roam these halls."
-queststatus(525) = 0,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber I"), queststatus(525) = 1, ""
-queststatus(525) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber I"), queststatus(525) = 1, "I am the first guardian of Akaltuts. to pass my test you must collect 4 elven swords from the drow that roam these halls."
-queststatus(525) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber I"), queststatus(525) = 1, ""
+queststatus(525) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, "I am the first guardian of Akaltuts. to pass my test you must collect 4 elven swords from the drow that roam these halls."
+queststatus(525) = 0,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, ""
+queststatus(525) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, "I am the first guardian of Akaltuts. to pass my test you must collect 4 elven swords from the drow that roam these halls."
+queststatus(525) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, ""
 queststatus(525) = 1, item(2778, all) < 4, english,"quest", "mission", "test" . ->"Do you have 4 elven swords, if you do not pass this test you can't continue."
 queststatus(525) = 1, item(2778, all) < 4, "quest", "mission", "Test" ->""
 queststatus(525) = 1, item(2778, all) < 4, "task", "adventure", "order" -> "Do you have 4 elven swords, if you do not pass this test you can't continue."."

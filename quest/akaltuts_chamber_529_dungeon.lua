@@ -14,10 +14,10 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
--- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (525, 'quest.Akaltuts_Chamber_525_dungeon');
+-- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (529, 'quest.Akaltuts_Chamber_529_dungeon');
 
 require("base.common")
-module("quest.Akaltuts_Chamber_525_dungeon", package.seeall)
+module("quest.Akaltuts_Chamber_529_dungeon", package.seeall)
 
 GERMAN = Player.german
 ENGLISH = Player.english
@@ -25,7 +25,7 @@ ENGLISH = Player.english
 -- Insert the quest title here, in both languages
 Title = {}
 Title[GERMAN] = ""
-Title[ENGLISH] = "Akaltuts Chamber I"
+Title[ENGLISH] = "Akaltuts Chamber V"
 
 -- Insert an extensive description of each status here, in both languages
 -- Make sure that the player knows exactly where to go and what to do
@@ -33,53 +33,92 @@ Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
 Description[GERMAN][1] = ""
-Description[ENGLISH][1] = "Collect 4 elven swords and bring them to Guardian 1."
+Description[ENGLISH][1] = "Collect 2 drow blades for Guardian 17."
 Description[GERMAN][2] = ""
 Description[ENGLISH][2] = "The next Guardian may have a task for you."
 
 Description[GERMAN][3] = ""
-Description[ENGLISH][3] = "Collect 2 elven silversteel armour for Guardian 2."
+Description[ENGLISH][3] = "Kill drow for Guardian 18. You still need 15."
 Description[GERMAN][4] = ""
-Description[ENGLISH][4] = "The next Guardian may have a task for you."
-
+Description[ENGLISH][4] = "Kill drow for Guardian 18. You still need 14."
 Description[GERMAN][5] = ""
-Description[ENGLISH][5] = "Kill drow archers for Guardian 3.  You still need 5."
+Description[ENGLISH][5] = "Kill drow for Guardian 18. You still need 13."
 Description[GERMAN][6] = ""
-Description[ENGLISH][6] = "Kill drow archers for Guardian 3.  You still need 4."
+Description[ENGLISH][6] = "Kill drow for Guardian 18.  You still need 12."
 Description[GERMAN][7] = ""
-Description[ENGLISH][7] = "Kill drow archers for Guardian 3.  You still need 3."
+Description[ENGLISH][7] = "Kill drow for Guardian 18.  You still need 11."
 Description[GERMAN][8] = ""
-Description[ENGLISH][8] = "Kill drow archers for Guardian 3.  You still need 2."
+Description[ENGLISH][8] = "Kill drow for Guardian 18. You still need 10."
 Description[GERMAN][9] = ""
-Description[ENGLISH][9] = "Kill drow archers for Guardian 3.  You still need 1."
+Description[ENGLISH][9] = "Kill drow for Guardian 18. You still need 9."
 Description[GERMAN][10] = ""
-Description[ENGLISH][10] = "Report back to Guardian 3, you have finished his test."
-
-Description[GERMAN][11] = "."
-Description[ENGLISH][11] = "The next Guardian may have a task for you."
-
+Description[ENGLISH][10] = "Kill drow for Guardian 18. You still need 8."
+Description[GERMAN][11] = ""
+Description[ENGLISH][11] = "Kill drow for Guardian 18. You still need 7."
 Description[GERMAN][12] = ""
-Description[ENGLISH][12] = "Kill drow for Guardian 4. You still need 8."
+Description[ENGLISH][12] = "Kill drow for Guardian 18. You still need 6."
 Description[GERMAN][13] = ""
-Description[ENGLISH][13] = "Kill drow for Guardian 4. You still need 7."
+Description[ENGLISH][13] = "Kill drow for Guardian 18. You still need 5."
 Description[GERMAN][14] = ""
-Description[ENGLISH][14] = "Kill drow for Guardian 4. You still need 6."
+Description[ENGLISH][14] = "Kill drow for Guardian 18. You still need 4."
 Description[GERMAN][15] = ""
-Description[ENGLISH][15] = "Kill drow for Guardian 4. You still need 5."
+Description[ENGLISH][15] = "Kill drow for Guardian 18. You still need 3."
 Description[GERMAN][16] = ""
-Description[ENGLISH][16] = "Kill drow for Guardian 4. You still need 4."
+Description[ENGLISH][16] = "Kill drow for Guardian 18. You still need 2."
 Description[GERMAN][17] = ""
-Description[ENGLISH][17] = "Kill drow for Guardian 4. You still need 3."
+Description[ENGLISH][17] = "Kill drow for Guardian 18. You still need 1."
 Description[GERMAN][18] = ""
-Description[ENGLISH][18] = "Kill drow for Guardian 4. You still need 2."
-Description[GERMAN][19] = ""
-Description[ENGLISH][19] = "Kill drow for Guardian 4. You still need 1."
-Description[GERMAN][20] = ""
-Description[ENGLISH][20] = "Report back to Guardian 4, you have finished his test."
+Description[ENGLISH][18] = "Report back to Guardian 18, you have finished his test."
 
+Description[GERMAN][19] = ""
+Description[ENGLISH][19] = "The Next Guardian may have a task for you."
+
+Description[GERMAN][20] = ""
+Description[ENGLISH][20] = "Collect 1 sky shield for Guardian 19."
 Description[GERMAN][21] = ""
 Description[ENGLISH][21] = "The next Guardian may have a task for you."
 
+Description[GERMAN][22] = ""
+Description[ENGLISH][22] = "Kill drow for Guardian 20. You still need 18."
+Description[GERMAN][23] = ""
+Description[ENGLISH][23] = "Kill drow for Guardian 20. You still need 17."
+Description[GERMAN][24] = ""
+Description[ENGLISH][24] = "Kill drow for Guardian 20. You still need 16."
+Description[GERMAN][25] = ""
+Description[ENGLISH][25] = "Kill drow for Guardian 20. You still need 15."
+Description[GERMAN][26] = ""
+Description[ENGLISH][26] = "Kill drow for Guardian 20. You still need 14."
+Description[GERMAN][27] = ""
+Description[ENGLISH][27] = "Kill drow for Guardian 20. You still need 13."
+Description[GERMAN][28] = ""
+Description[ENGLISH][28] = "Kill drow for Guardian 20.  You still need 12."
+Description[GERMAN][29] = ""
+Description[ENGLISH][29] = "Kill drow for Guardian 20.  You still need 11."
+Description[GERMAN][30] = ""
+Description[ENGLISH][30] = "Kill drow for Guardian 20. You still need 10."
+Description[GERMAN][31] = ""
+Description[ENGLISH][31] = "Kill drow for Guardian 20. You still need 9."
+Description[GERMAN][32] = ""
+Description[ENGLISH][32] = "Kill drow for Guardian 20. You still need 8."
+Description[GERMAN][33] = ""
+Description[ENGLISH][33] = "Kill drow for Guardian 20. You still need 7."
+Description[GERMAN][34] = ""
+Description[ENGLISH][34] = "Kill drow for Guardian 20. You still need 6."
+Description[GERMAN][35] = ""
+Description[ENGLISH][35] = "Kill drow for Guardian 20. You still need 5."
+Description[GERMAN][36] = ""
+Description[ENGLISH][36] = "Kill drow for Guardian 20. You still need 4."
+Description[GERMAN][37] = ""
+Description[ENGLISH][37] = "Kill drow for Guardian 20. You still need 3."
+Description[GERMAN][38] = ""
+Description[ENGLISH][38] = "Kill drow for Guardian 20. You still need 2."
+Description[GERMAN][39] = ""
+Description[ENGLISH][39] = "Kill drow for Guardian 20. You still need 1."
+Description[GERMAN][40] = ""
+Description[ENGLISH][40] = "Report back to Guardian 20, you have finished his test."
+
+Description[GERMAN][41] = ""
+Description[ENGLISH][41] = "The Next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {816, 440, 0}
