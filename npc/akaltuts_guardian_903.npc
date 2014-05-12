@@ -69,9 +69,9 @@ itemShoes = 770
 "Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
 english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
 "Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", ""
-"Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare.	"
+"Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
 "Tschüß", "Tschüss", "Wiedersehen" -> "."
-english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare.	"
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
 "Ciao", "Adieu", "Au revoir", "Farebba" -> ""
 "your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
@@ -83,9 +83,9 @@ english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
 "job" -> ""
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
-"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number three."."
+"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number three."
 "" -> ".", "."
-english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"."
+english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
 "Drow" -> ""
 english, "Number" -> "I am Guardian number three."
 "" -> ""
@@ -95,7 +95,7 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 -- Quests
 -- Guardian task three.  Kill five drow archers.
 -- If haven't completed previous Guardianss tasks
-queststatus(525) < 4, english, "quest", "mission", "test" -> "See the Guardian before me.".
+queststatus(525) < 4, english, "quest", "mission", "test" -> "See the Guardian before me."
 queststatus(525) < 4,  "quest", "mission", "Test" -> ""
 queststatus(525) < 4, "task", "adventure", "order" -> "See the Guardian before me."
 queststatus(525) < 4, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
@@ -110,7 +110,7 @@ queststatus(525) > 4, queststatus(525) < 10, "quest", "mission", "Test" ->""
 queststatus(525) > 4, queststatus(525) < 10, "task", "adventure", "order" -> "Have you killed five drow archers?  If you do not pass this test you can't continue."
 queststatus(525) > 4, queststatus(525) < 10,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(525) = 10, english, ".+" -> inform("[Quest solved] You are awarded an elven shortbow."), item(2685, 1, 699), queststatus(525) = 11, "You have passed this test and are awarded and elven shortbow."
+queststatus(525) = 10, english, ".+" -> inform("[Quest solved] You are awarded an elven shortbow."), item(2685, 1, 699), queststatus(525) = 11, "You have passed this test and are awarded an elven shortbow."
 queststatus(525) = 10, ".+" -> inform("[Quest gelöst] Du erhältst ???."), item(2685, 1, 699), queststatus(525) = 11, ""
 --If finished with the Guardian
 queststatus(525) > 10, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."

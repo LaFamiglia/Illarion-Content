@@ -69,9 +69,9 @@ itemShoes = 770
 "Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
 english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
 "Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", ""
-"Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare.	"
+"Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
 "Tschüß", "Tschüss", "Wiedersehen" -> "."
-english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare.	"
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
 "Ciao", "Adieu", "Au revoir", "Farebba" -> ""
 "your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
@@ -83,9 +83,9 @@ english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
 "job" -> ""
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
-"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number nine."."
+"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number nine."
 "" -> ".", "."
-english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"."
+english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
 "Drow" -> ""
 english, "Number" -> "I am Guardian number nine."
 "" -> ""
@@ -95,7 +95,7 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 -- Quests
 -- Guardian task nine.  Collect 1 drow armour.
 -- If haven't completed previous Guardianss tasks
-queststatus(526) < 28, english, "quest", "mission", "test" -> "See the Guardian before me.".
+queststatus(526) < 28, english, "quest", "mission", "test" -> "See the Guardian before me."
 queststatus(526) < 28,  "quest", "mission", "Test" -> ""
 queststatus(526) < 28, "task", "adventure", "order" -> "See the Guardian before me."
 queststatus(526) < 28, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
