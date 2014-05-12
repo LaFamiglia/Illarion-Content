@@ -95,49 +95,44 @@ Description[GERMAN][28] = ""
 Description[ENGLISH][28] = "The next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
-Start = {816, 440, 0}
+Start = {438, 856, -9}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
-QuestTarget[1] = {position(816, 440, 0)}
-QuestTarget[2] = {position(816, 440, 0)}
+QuestTarget[1] = {position(438, 856, -9)}
+QuestTarget[2] = {position(438, 856, -9)}
 
-QuestTarget[3] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[4] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[5] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[6] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[7] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[8] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[9] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[10] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[11] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[12] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[13] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[14] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[15] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[16] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[17] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[18] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[19] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[20] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[21] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[22] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[23] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[24] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[25] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[26] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[27] = {position(816, 440, 0), position(786, 474, 0)}
-QuestTarget[28] = {position(816, 440, 0)}
+QuestTarget[3] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[4] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[5] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[6] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[7] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[8] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[9] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[10] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[11] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[12] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[13] = {position(466, 843, -9), position(464, 842, -9)}
+QuestTarget[14] = {position(466, 843, -9), position(464, 842, -9)}
 
-QuestTarget[29] = {position(816, 440, 0)}
-QuestTarget[30] = {position(816, 440, 0), position(773,444,0)}
-QuestTarget[31] = {position(816, 440, 0)}
+QuestTarget[15] = {position(462, 840, -9)}
+QuestTarget[16] = {position(462, 840, -9)}
 
-QuestTarget[32] = {position(816, 440, 0)}
-QuestTarget[33] = {position(816, 440, 0)}
+QuestTarget[17] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[18] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[19] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[20] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[21] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[22] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[23] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[24] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[25] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[26] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[27] = {position(462, 847, -9), position(464, 842, -9)}
+QuestTarget[28] = {position(462, 847, -9), position(464, 842, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 34
+FINAL_QUEST_STATUS = 28
 
 
 function QuestTitle(user)

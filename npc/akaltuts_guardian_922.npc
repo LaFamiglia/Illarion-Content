@@ -13,20 +13,20 @@
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
--- NPC Name: Akaltuts Guardian 915                                            --
+-- NPC Name: Akaltuts Guardian 922                                            --
 -- NPC Job:  Guardian                                                         --
 --                                                                            --
--- NPC Race: Golden Magnus (78)        NPC Position:  491, 825, -9            --
--- NPC Sex:  male                       NPC Direction: west                   --
+-- NPC Race: Golden Magnus (78)          NPC Position:  464, 807, -9          --
+-- NPC Sex:  male                       NPC Direction:  south                 --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
-name = "Akaltuts Guardian 915"
+name = "Akaltuts Guardian 922"
 race = Golden Magnus (78)
 sex = male
-position = 491, 825, -9
-direction = west
+position = 464, 807, -9
+direction = south
 job = "Guardian"
 
 language = common
@@ -55,10 +55,10 @@ itemHands = 531
 itemTrousers = 2116
 itemShoes = 770
 
--- QuestID=528
--- 34: No Quest taken
--- 35: Quest taken - collect 20 white cloth, reward black cultist robe
--- 36: Quest 15 solved
+-- QuestID=530
+--  22: No Quest taken
+--  23: Quest taken - Kill fifteen drow, reward 20000cp
+--  48: Quest 21 solved
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
@@ -83,40 +83,40 @@ english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
 "job" -> ""
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
-"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number fifteen."."
+"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number twenty-two."."
 "" -> ".", "."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"."
 "Drow" -> ""
-english, "Number" -> "I am Guardian number fifteen."
+english, "Number" -> "I am Guardian number twenty-two."
 "" -> ""
 english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
 "Akaltut" -> ""
 
 -- Quests
--- Guardian task fifteen.  Collect 20 white cloth.
+-- Guardian task twenty.  Kill twenty five drow.
 -- If haven't completed previous Guardianss tasks
-queststatus(528) < 34, english, "quest", "mission", "test" -> "See the Guardian before me.".
-queststatus(528) < 34,  "quest", "mission", "Test" -> ""
-queststatus(528) < 34, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(528) < 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
--- Receiving the task of Collecting 20 white cloth.
-queststatus(528) = 34, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the fifteenth guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, ""
-queststatus(528) = 34, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the fifteenth guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, ""
+queststatus(530) < 22, english, "quest", "mission", "test" -> "See the Guardian before me.".
+queststatus(530) < 22,  "quest", "mission", "Test" -> ""
+queststatus(530) < 22, "task", "adventure", "order" -> "See the Guardian before me."
+queststatus(530) < 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+-- Receiving the task of Killing twenty five drow
+queststatus(530) = 22, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the twenty-second guardian of Akaltuts, to pass my test you must kill twenty five drow."
+queststatus(530) = 22,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, ""
+queststatus(530) = 22, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the twenty-second guardian of Akaltuts, to pass my test you must kill twenty five drow."
+queststatus(530) = 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, ""
 -- If quest received but task not finished
-queststatus(528) = 35, item(178, all) < 20, english,"quest", "mission", "test" . ->"Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20, "quest", "mission", "Test" ->""
-queststatus(528) = 35, item(178, all) < 20, "task", "adventure", "order" -> "Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(530) > 22, queststatus(530) < 48, english,"quest", "mission", "test" . -> "Have you killed the twenty five drow?  If you do not pass this test you can't continue."
+queststatus(530) > 22, queststatus(530) < 48, "quest", "mission", "Test" ->""
+queststatus(530) > 22, queststatus(530) < 48, "task", "adventure", "order" -> "Have you killed the twenty five drow?  If you do not pass this test you can't continue."
+queststatus(530) > 22, queststatus(530) < 48,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(528) = 35, item(178, all) > 19, english, ".+" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, "You have passed this test and are awarded a black cultist robe."
-queststatus(528) = 35, item(178, all) > 19, ".+" -> inform("[Quest gelöst] Du erhältst ??."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, ""
+queststatus(530) = 48, english, ".+" -> inform("[Quest solved] You are awarded a drow bow."), item(2739, 1, 866), queststatus(530) = 49, "You have passed this test and are awarded a drow bow."
+queststatus(530) = 48, ".+" -> inform("[Quest gelöst] Du erhältst ??? ."), item(2739, 1, 866), queststatus(530) = 49,""
 --If finished with the Guardian
-queststatus(528) > 35, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "quest", "mission", "Test" -> ""
-queststatus(528) > 35, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(530) > 48, english, "quest", "mission", "test" -> "You have passed all of the Guardians tests.  In time you, you may face Akaltut."
+queststatus(530) > 48, "quest", "mission", "Test" -> ""
+queststatus(530) > 48, "task", "adventure", "order" -> "You have passed all of the Guardians tests.  In time you, you may face Akaltut."
+queststatus(530) > 48, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."
