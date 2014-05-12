@@ -74,8 +74,8 @@ Description[ENGLISH][18] = "The next Guardian may have a task for you."
 
 Description[GERMAN][19] = ""
 Description[ENGLISH][19] = "Collect 4 drow helmets for Guardian 12."
-Description[GERMAN][19] = ""
-Description[ENGLISH][19] = "The next Guardian may have a task for you."
+Description[GERMAN][20] = ""
+Description[ENGLISH][20] = "The next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {816, 440, 0}
