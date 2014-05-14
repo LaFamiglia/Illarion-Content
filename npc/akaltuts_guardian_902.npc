@@ -23,7 +23,7 @@
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 name = "Akaltuts Guardian 902"
-race = Golden Magnus (78)
+race = human
 sex = male
 position = 478, 846, -9
 direction = south
@@ -62,48 +62,48 @@ itemShoes = 770
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist ":"
+"Hilfe" -> inform("[Spielhilfe]  (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Wächter, Nummer)"
 
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Ahh, have you come to test your skills today?"
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Ahh, bist Du heute gekommen um dein Können zu testen?"
 english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
-"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", ""
+"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", "Ahh, bist Du heute gekommen um dein Können zu testen?"
 "Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
-"Tschüß", "Tschüss", "Wiedersehen" -> "."
+"Tschüß", "Tschüss", "Wiedersehen" -> "Komm wieder wenn Du dich traust."
 english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
-"Ciao", "Adieu", "Au revoir", "Farebba" -> ""
+"Ciao", "Adieu", "Au revoir", "Farebba" -> "Komm wieder wenn Du dich traust."
 "your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Wächter von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "My job is a Guardian, I make sure only the worthy move on."
-"beruf" -> ""
+"beruf" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
 english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
-"job" -> ""
+"job" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
 "Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number two."
-"" -> ".", "."
+"Wächter" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin der zwei Wächter."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
-"Drow" -> ""
+"Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
 english, "Number" -> "I am Guardian number two."
-"" -> ""
+"Nummer" -> "Ich bin der zwei Wächter."
 english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
-"Akaltut" -> ""
+"Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
 -- Guardian task two.  Collect 2 elven silversteel armour.
 -- If haven't completed previous Guardianss tasks
 queststatus(525) < 2, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(525) < 2,  "quest", "mission", "Test" -> ""
+queststatus(525) < 2,  "quest", "mission", "Test" -> "Suche den vorigen Wächter."
 queststatus(525) < 2, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(525) < 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(525) < 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Wächter."
 -- Receiving the task of Collecting 2 elven silversteel armour.
 queststatus(525) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "I am the second guardian of Akaltuts, to pass my test you must collect 2 elven silversteel armour from the drow that roam these halls."
-queststatus(525) = 2,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, ""
+queststatus(525) = 2,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "Ich bin der zwei Wächter der Akaltuts. Um meinen Test zu bestehen mußt du 2 Elbensilberstahlrüstungen von den Drows, welche hier herum schweifen sammeln."
 queststatus(525) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "I am the second guardian of Akaltuts, to pass my test you must collect 2 elven silversteel armour from the drow that roam these halls."
-queststatus(525) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, ""
+queststatus(525) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "Ich bin der zwei Wächter der Akaltuts. Um meinen Test zu bestehen mußt du 2 Elbensilberstahlrüstungen von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
 queststatus(525) = 3, item(2403, all) < 2, english,"quest", "mission", "test" . ->"Do you have 2 elven silversteel armour?  If you do not pass this test you can't continue."
 queststatus(525) = 3, item(2403, all) < 2, "quest", "mission", "Test" ->""
