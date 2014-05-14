@@ -32,29 +32,29 @@ Title[ENGLISH] = "Akaltuts Chamber III"
 Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
-Description[GERMAN][1] = ""
+Description[GERMAN][1] = "Sammle 1 Drowrüstung und bringe sie zum 9. Wächter"
 Description[ENGLISH][1] = "Collect 1 drow armour for Guardian 9."
-Description[GERMAN][2] = ""
+Description[GERMAN][2] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][2] = "The next Guardian may have a task for you."
 
-Description[GERMAN][3] = ""
+Description[GERMAN][3] = "Töte Drow Führer für den 10. Wächter. Du benötigst noch 2."
 Description[ENGLISH][3] = "Kill drow leader for Guardian 10.  You still need 2."
-Description[GERMAN][4] = ""
+Description[GERMAN][4] = "Töte Drow Führer für den 10. Wächter. Du benötigst noch 1."
 Description[ENGLISH][4] = "Kill drow leader for Guardian 10.  You still need 1."
-Description[GERMAN][5] = ""
+Description[GERMAN][5] = "Kehre zurück zum 10. Wächter. Du hast seinen Test bestanden."
 Description[ENGLISH][5] = "Report back to Guardian 10, you have finished his test."
 
-Description[GERMAN][6] = ""
+Description[GERMAN][6] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][6] = "The next Guardian may have a task for you."
 
-Description[GERMAN][7] = ""
+Description[GERMAN][7] = "Sammle 5 Elbenregenbogenschwerter und bringe sie zum 11. Wächter"
 Description[ENGLISH][7] = "Collect 5 elven rainbow swords for Guardian 11."
-Description[GERMAN][8] = ""
+Description[GERMAN][8] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][8] = "The next Guardian may have a task for you."
 
-Description[GERMAN][9] = ""
+Description[GERMAN][9] = "Sammle 4 Drowhelme und bringe sie zum 12. Wächter"
 Description[ENGLISH][9] = "Collect 4 drow helmets for Guardian 12."
-Description[GERMAN][10] = ""
+Description[GERMAN][10] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][10] = "The next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
