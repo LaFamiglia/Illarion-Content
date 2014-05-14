@@ -56,9 +56,9 @@ itemTrousers = 2116
 itemShoes = 770
 
 -- QuestID=527
--- 16: No Quest taken
--- 17: Quest taken - collect 5 elven rainbow swords, reward 17500cp
--- 18: Quest 11 solved
+-- 6: No Quest taken
+-- 7: Quest taken - collect 5 elven rainbow swords, reward 17500cp
+-- 8: Quest 11 solved
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
@@ -95,28 +95,28 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 -- Quests
 -- Guardian task eleven.  Collect 5 elven rainbow swords.
 -- If haven't completed previous Guardianss tasks
-queststatus(527) < 16, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(527) < 16,  "quest", "mission", "Test" -> ""
-queststatus(527) < 16, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(527) < 16, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(527) < 6, english, "quest", "mission", "test" -> "See the Guardian before me."
+queststatus(527) < 6,  "quest", "mission", "Test" -> ""
+queststatus(527) < 6, "task", "adventure", "order" -> "See the Guardian before me."
+queststatus(527) < 6, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- Receiving the task of Collecting 5 elven rainbow swords.
-queststatus(527) = 16, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 17, "I am the eleventh guardian of Akaltuts, to pass my test you must collect 5 elven rainbow swords."
-queststatus(527) = 16,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 17, ""
-queststatus(527) = 16, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 17, "I am the eleventh guardian of Akaltuts, to pass my test you must collect 5 elven rainbow swords."
-queststatus(527) = 16, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 17, ""
+queststatus(527) = 6, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 7, "I am the eleventh guardian of Akaltuts, to pass my test you must collect 5 elven rainbow swords."
+queststatus(527) = 6,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 7, ""
+queststatus(527) = 6, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 7, "I am the eleventh guardian of Akaltuts, to pass my test you must collect 5 elven rainbow swords."
+queststatus(527) = 6, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 11"), queststatus(527) = 7, ""
 -- If quest received but task not finished
-queststatus(527) = 17, item(2775, all) < 5, english,"quest", "mission", "test" . ->"Do you have 5 elven rainbow swords?  If you do not pass this test you can't continue."
-queststatus(527) = 17, item(2775, all) < 5, "quest", "mission", "Test" ->""
-queststatus(527) = 17, item(2775, all) < 5, "task", "adventure", "order" -> "Do you have 5 elven rainbowswords?  If you do not pass this test you can't continue."
-queststatus(527) = 17, item(2775, all) < 5,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(527) = 7, item(2775, all) < 5, english,"quest", "mission", "test" . ->"Do you have 5 elven rainbow swords?  If you do not pass this test you can't continue."
+queststatus(527) = 7, item(2775, all) < 5, "quest", "mission", "Test" ->""
+queststatus(527) = 7, item(2775, all) < 5, "task", "adventure", "order" -> "Do you have 5 elven rainbowswords?  If you do not pass this test you can't continue."
+queststatus(527) = 7, item(2775, all) < 5,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(527) = 17, item(2775, all) > 4, english, ".+" -> inform("[Quest solved] You are awarded one hundred seventy-five silver coins."), money + 17500, deleteItem(2775, 5), queststatus(527) = 18, "You have passed this test and are awarded one hundred seventy-five silver coins."
-queststatus(527) = 17, item(2775, all) > 4, ".+" -> inform("[Quest gelöst] Du erhältst ??."), money + 17500, deleteItem(2775, 5), queststatus(527) = 18, ""
+queststatus(527) = 7, item(2775, all) > 4, english, ".+" -> inform("[Quest solved] You are awarded one hundred seventy-five silver coins."), money + 17500, deleteItem(2775, 5), queststatus(527) = 8, "You have passed this test and are awarded one hundred seventy-five silver coins."
+queststatus(527) = 7, item(2775, all) > 4, ".+" -> inform("[Quest gelöst] Du erhältst ??."), money + 17500, deleteItem(2775, 5), queststatus(527) = 8, ""
 --If finished with the Guardian
-queststatus(527) > 17, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(527) > 17, "quest", "mission", "Test" -> ""
-queststatus(527) > 17, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(527) > 17, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(527) > 7, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
+queststatus(527) > 7, "quest", "mission", "Test" -> ""
+queststatus(527) > 7, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
+queststatus(527) > 7, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."

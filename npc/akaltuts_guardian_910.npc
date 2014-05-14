@@ -58,7 +58,7 @@ itemShoes = 770
 -- QuestID=527
 --  2: No Quest taken
 --  3: Quest taken - Kill twevle drow, reward 17500cp
--- 15: Quest 8 solved
+--  5: Quest 8 solved
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
@@ -93,30 +93,30 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 "Akaltut" -> ""
 
 -- Quests
--- Guardian task ten.  Kill twelve drow.
+-- Guardian task ten.  Kill two drow leader.
 -- If haven't completed previous Guardianss tasks
 queststatus(527) < 2, english, "quest", "mission", "test" -> "See the Guardian before me."
 queststatus(527) < 2,  "quest", "mission", "Test" -> ""
 queststatus(527) < 2, "task", "adventure", "order" -> "See the Guardian before me."
 queststatus(527) < 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
--- Receiving the task of Killing twelve drow
-queststatus(527) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, "I am the tenth guardian of Akaltuts, to pass my test you must kill twelve drow that roam these halls."
+-- Receiving the task of Killing two drow leader
+queststatus(527) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, "I am the tenth guardian of Akaltuts, to pass my test you must kill two drow leaders that roam these halls."
 queststatus(527) = 2,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, ""
-queststatus(527) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, "I am the tenth guardian of Akaltuts, to pass my test you must kill twelve drow that roam these halls."
+queststatus(527) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, "I am the tenth guardian of Akaltuts, to pass my test you must kill two drow leaders that roam these halls."
 queststatus(527) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 10"), queststatus(527) = 3, ""
 -- If quest received but task not finished
-queststatus(527) > 2, queststatus(527) < 15, english,"quest", "mission", "test" . -> "Have you killed twelve drow?  If you do not pass this test you can't continue."
-queststatus(527) > 2, queststatus(527) < 15, "quest", "mission", "Test" ->""
-queststatus(527) > 2, queststatus(527) < 15, "task", "adventure", "order" -> "Have you killed twelve drow?  If you do not pass this test you can't continue."
-queststatus(527) > 2, queststatus(527) < 15,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(527) > 2, queststatus(527) < 5, english,"quest", "mission", "test" . -> "Have you killed two drow leader?  If you do not pass this test you can't continue."
+queststatus(527) > 2, queststatus(527) < 5, "quest", "mission", "Test" ->""
+queststatus(527) > 2, queststatus(527) < 5, "task", "adventure", "order" -> "Have you killed two drow leader?  If you do not pass this test you can't continue."
+queststatus(527) > 2, queststatus(527) < 5,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(527) = 15, english, ".+" -> inform("[Quest solved] You are awarded one hundred seventy-five silver coins."), money + 17500, queststatus(527) = 16, "You have passed this test and are awarded one hundred seventy-five silver coins."
-queststatus(527) = 15, ".+" -> inform("[Quest gelöst] Du erhältst ??? Silberstücke."), money + 17500, queststatus(527) = 16, ""
+queststatus(527) = 5, english, ".+" -> inform("[Quest solved] You are awarded one hundred seventy-five silver coins."), money + 17500, queststatus(527) = 6, "You have passed this test and are awarded one hundred seventy-five silver coins."
+queststatus(527) = 5, ".+" -> inform("[Quest gelöst] Du erhältst ??? Silberstücke."), money + 17500, queststatus(527) = 6, ""
 --If finished with the Guardian
-queststatus(527) > 15, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(527) > 15, "quest", "mission", "Test" -> ""
-queststatus(527) > 15, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(527) > 15, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(527) > 5, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
+queststatus(527) > 5, "quest", "mission", "Test" -> ""
+queststatus(527) > 5, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
+queststatus(527) > 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."

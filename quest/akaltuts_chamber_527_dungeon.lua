@@ -38,44 +38,24 @@ Description[GERMAN][2] = ""
 Description[ENGLISH][2] = "The next Guardian may have a task for you."
 
 Description[GERMAN][3] = ""
-Description[ENGLISH][3] = "Kill drow for Guardian 10.  You still need 12."
+Description[ENGLISH][3] = "Kill drow leader for Guardian 10.  You still need 2."
 Description[GERMAN][4] = ""
-Description[ENGLISH][4] = "Kill drow for Guardian 10.  You still need 11."
+Description[ENGLISH][4] = "Kill drow leader for Guardian 10.  You still need 1."
 Description[GERMAN][5] = ""
-Description[ENGLISH][5] = "Kill drow for Guardian 10. You still need 10."
+Description[ENGLISH][5] = "Report back to Guardian 10, you have finished his test."
+
 Description[GERMAN][6] = ""
-Description[ENGLISH][6] = "Kill drow for Guardian 10. You still need 9."
+Description[ENGLISH][6] = "The next Guardian may have a task for you."
+
 Description[GERMAN][7] = ""
-Description[ENGLISH][7] = "Kill drow for Guardian 10. You still need 8."
+Description[ENGLISH][7] = "Collect 5 elven rainbow swords for Guardian 11."
 Description[GERMAN][8] = ""
-Description[ENGLISH][8] = "Kill drow for Guardian 10. You still need 7."
+Description[ENGLISH][8] = "The next Guardian may have a task for you."
+
 Description[GERMAN][9] = ""
-Description[ENGLISH][9] = "Kill drow for Guardian 10. You still need 6."
+Description[ENGLISH][9] = "Collect 4 drow helmets for Guardian 12."
 Description[GERMAN][10] = ""
-Description[ENGLISH][10] = "Kill drow for Guardian 10. You still need 5."
-Description[GERMAN][11] = ""
-Description[ENGLISH][11] = "Kill drow for Guardian 10. You still need 4."
-Description[GERMAN][12] = ""
-Description[ENGLISH][12] = "Kill drow for Guardian 10. You still need 3."
-Description[GERMAN][13] = ""
-Description[ENGLISH][13] = "Kill drow for Guardian 10. You still need 2."
-Description[GERMAN][14] = ""
-Description[ENGLISH][14] = "Kill drow for Guardian 10. You still need 1."
-Description[GERMAN][15] = ""
-Description[ENGLISH][15] = "Report back to Guardian 10, you have finished his test."
-
-Description[GERMAN][16] = ""
-Description[ENGLISH][16] = "The next Guardian may have a task for you."
-
-Description[GERMAN][17] = ""
-Description[ENGLISH][17] = "Collect 5 elven rainbow swords for Guardian 11."
-Description[GERMAN][18] = ""
-Description[ENGLISH][18] = "The next Guardian may have a task for you."
-
-Description[GERMAN][19] = ""
-Description[ENGLISH][19] = "Collect 4 drow helmets for Guardian 12."
-Description[GERMAN][20] = ""
-Description[ENGLISH][20] = "The next Guardian may have a task for you."
+Description[ENGLISH][10] = "The next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {476, 782, -9}
@@ -89,22 +69,12 @@ QuestTarget[3] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[4] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[5] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[6] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[7] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[8] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[9] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[10] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[11] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[12] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[13] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[14] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[15] = {position(427, 783, -9), position(431, 802, -9)}
-QuestTarget[16] = {position(427, 783, -9), position(431, 802, -9)}
 
-QuestTarget[17] = {position(424, 783, -9)}
-QuestTarget[18] = {position(424, 783, -9)}
+QuestTarget[7] = {position(424, 783, -9)}
+QuestTarget[8] = {position(424, 783, -9)}
 
-QuestTarget[19] = {position(441, 761, -9)}
-QuestTarget[20] = {position(441, 761, -9)}
+QuestTarget[9] = {position(441, 761, -9)}
+QuestTarget[10] = {position(441, 761, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 20

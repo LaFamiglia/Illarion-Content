@@ -95,10 +95,10 @@ english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know
 -- Quests
 -- Guardian task thirteen.  Kill fifteen zombies.
 -- If haven't completed previous Guardianss tasks
-queststatus(527) < 20, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(527) < 2&0,  "quest", "mission", "Test" -> ""
-queststatus(527) < 20, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(527) < 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(527) < 10, english, "quest", "mission", "test" -> "See the Guardian before me."
+queststatus(527) < 1&0,  "quest", "mission", "Test" -> ""
+queststatus(527) < 10, "task", "adventure", "order" -> "See the Guardian before me."
+queststatus(527) < 10, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- Receiving the task of Killing fifteen zombies
 queststatus(528) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(528) = 1, "I am the thirteenth guardian of Akaltuts, to pass my test you must kill fifteen zombies in the undead lake."
 queststatus(528) = 0,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(528) = 1, ""

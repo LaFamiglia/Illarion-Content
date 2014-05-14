@@ -313,7 +313,7 @@ function iniQuests()
 	questLocation[id]=position(470, 802, -9);
     radius[id]=75;
 
-		--Quest 94: Akaltut's Chambers
+	--Quest 94: Akaltut's Chambers
     germanTitle[id]="Akaltut's Chambers";
     englishTitle[id]="Akaltut's Chambers";
     NPCName[id]="Akaltuts Guardian 906";
@@ -335,7 +335,7 @@ function iniQuests()
 	questLocation[id]=position(470, 802, -9);
     radius[id]=75;
 	
-		--Quest 95: Akaltut's Chambers
+	--Quest 95: Akaltut's Chambers
     germanTitle[id]="Akaltut's Chambers";
     englishTitle[id]="Akaltut's Chambers";
     NPCName[id]="Akaltuts Guardian 908";
@@ -349,11 +349,58 @@ function iniQuests()
 	questLocation[id]=position(470, 802, -9);
     radius[id]=75;
 	
-		--Quest 96: Akaltut's Chambers
+	--Quest 96: Akaltut's Chambers
     germanTitle[id]="Akaltut's Chambers";
     englishTitle[id]="Akaltut's Chambers";
     NPCName[id]="Akaltuts Guardian 910";
     statusId[id]=527;
+    germanRace[id]="Drow Führer";
+    englishRace[id]="Drow Leader";	
+	table.insert(questList[65]={}; --Drow Patriarch
+	minimumQueststatus[id]=3;
+    maximumQueststatus[id]=5;
+	questLocation[id]=position(470, 802, -9);
+    radius[id]=75;
+	
+	--Quest 97: Akaltut's Chambers
+    germanTitle[id]="Akaltut's Chambers";
+    englishTitle[id]="Akaltut's Chambers";
+    NPCName[id]="Akaltuts Guardian 913";
+    statusId[id]=528;
+    germanRace[id]="Zombie";
+    englishRace[id]="Zombie";	
+	table.insert(questList[821]={}; --Bog Body
+    table.insert(questList[822]={}; --Ragged Bog Body
+    table.insert(questList[831]={}; --Poltergeist
+	table.insert(questList[841]={}; --Coffinguard
+	table.insert(questList[842]={}; --Undead Warlock
+	minimumQueststatus[id]=3;
+    maximumQueststatus[id]=16;
+	questLocation[id]=position(470, 802, -9);
+    radius[id]=75;
+	
+	--Quest 98: Akaltut's Chambers
+    germanTitle[id]="Akaltut's Chambers";
+    englishTitle[id]="Akaltut's Chambers";
+    NPCName[id]="Akaltuts Guardian 914";
+    statusId[id]=528;
+    germanRace[id]="skeleton";
+    englishRace[id]="skeleton";	
+	table.insert(questList[111]={}; --Skeleton
+    table.insert(questList[112]={}; --Scruffy Skeleton
+	table.insert(questList[113]={}; --Armored Skeleton
+	table.insert(questList[114]={}; --Crippled Skeleton
+	table.insert(questList[115]={}; --Mystic Skeleton
+	minimumQueststatus[id]=18;
+    maximumQueststatus[id]=33;
+	questLocation[id]=position(470, 802, -9);
+    radius[id]=75;
+	
+	--Quest 99: Akaltut's Chambers
+    germanTitle[id]="Akaltut's Chambers";
+    englishTitle[id]="Akaltut's Chambers";
+    NPCName[id]="Akaltuts Guardian 918";
+    statusId[id]=529;
     germanRace[id]="Drow";
     englishRace[id]="Drow";	
 	table.insert(questList[61]={}; --Drow Archer
@@ -367,37 +414,20 @@ function iniQuests()
 	table.insert(questList[74]={}; --Female Drow Priest
 	table.insert(questList[75]={}; --Drow Matriarch
 	minimumQueststatus[id]=3;
-    maximumQueststatus[id]=15;
+    maximumQueststatus[id]=18;
 	questLocation[id]=position(470, 802, -9);
     radius[id]=75;
 	
-			--Quest 97: Akaltut's Chambers
+	--Quest 100: Akaltut's Chambers
     germanTitle[id]="Akaltut's Chambers";
     englishTitle[id]="Akaltut's Chambers";
-    NPCName[id]="Akaltuts Guardian 913";
-    statusId[id]=528;
-    germanRace[id]="Zombie";
-    englishRace[id]="Zombie";	
-	table.insert(questList[821]={}; --Bog Body
-    table.insert(questList[822]={}; --Ragged Bog Body
-    table.insert(questList[831]={}; --Poltergeist
-	table.insert(questList[841]={}; --Coffinguard
-	table.insert(questList[842]={}; --Undead Warlock
-	minimumQueststatus[id]=3;
-    maximumQueststatus[id]=13;
-	questLocation[id]=position(470, 802, -9);
-    radius[id]=75;
-	
-			--Quest 98: Akaltut's Chambers
-    germanTitle[id]="Akaltut's Chambers";
-    englishTitle[id]="Akaltut's Chambers";
-    NPCName[id]="Akaltuts Guardian 914";
-    statusId[id]=528;
-    germanRace[id]="skeleton";
-    englishRace[id]="skeleton";	
+    NPCName[id]="Akaltuts Guardian 920";
+    statusId[id]=529;
+    germanRace[id]="Drow";
+    englishRace[id]="Drow";	
 	table.insert(questList[61]={}; --Drow Archer
     table.insert(questList[62]={}; --Drow Warrior
-	table.insert(questList[63]={}; --Drow Mage?? need skele numbers
+	table.insert(questList[63]={}; --Drow Mage
 	table.insert(questList[64]={}; --Drow Priest
 	table.insert(questList[65]={}; --Drow Patriarch
 	table.insert(questList[71]={}; --Female Drow Archer
@@ -405,8 +435,52 @@ function iniQuests()
 	table.insert(questList[73]={}; --Female Drow Mage
 	table.insert(questList[74]={}; --Female Drow Priest
 	table.insert(questList[75]={}; --Drow Matriarch
-	minimumQueststatus[id]=18;
-    maximumQueststatus[id]=23;
+	minimumQueststatus[id]=22;
+    maximumQueststatus[id]=40;
+	questLocation[id]=position(470, 802, -9);
+    radius[id]=75;
+	
+	--Quest 101: Akaltut's Chambers
+    germanTitle[id]="Akaltut's Chambers";
+    englishTitle[id]="Akaltut's Chambers";
+    NPCName[id]="Akaltuts Guardian 921";
+    statusId[id]=530;
+    germanRace[id]="Drow";
+    englishRace[id]="Drow";	
+	table.insert(questList[61]={}; --Drow Archer
+    table.insert(questList[62]={}; --Drow Warrior
+	table.insert(questList[63]={}; --Drow Mage
+	table.insert(questList[64]={}; --Drow Priest
+	table.insert(questList[65]={}; --Drow Patriarch
+	table.insert(questList[71]={}; --Female Drow Archer
+	table.insert(questList[72]={}; --Female Drow Warrior
+	table.insert(questList[73]={}; --Female Drow Mage
+	table.insert(questList[74]={}; --Female Drow Priest
+	table.insert(questList[75]={}; --Drow Matriarch
+	minimumQueststatus[id]=1;
+    maximumQueststatus[id]=21;
+	questLocation[id]=position(470, 802, -9);
+    radius[id]=75;
+	
+	--Quest 102: Akaltut's Chambers
+    germanTitle[id]="Akaltut's Chambers";
+    englishTitle[id]="Akaltut's Chambers";
+    NPCName[id]="Akaltuts Guardian 922";
+    statusId[id]=530;
+    germanRace[id]="Drow";
+    englishRace[id]="Drow";	
+	table.insert(questList[61]={}; --Drow Archer
+    table.insert(questList[62]={}; --Drow Warrior
+	table.insert(questList[63]={}; --Drow Mage
+	table.insert(questList[64]={}; --Drow Priest
+	table.insert(questList[65]={}; --Drow Patriarch
+	table.insert(questList[71]={}; --Female Drow Archer
+	table.insert(questList[72]={}; --Female Drow Warrior
+	table.insert(questList[73]={}; --Female Drow Mage
+	table.insert(questList[74]={}; --Female Drow Priest
+	table.insert(questList[75]={}; --Drow Matriarch
+	minimumQueststatus[id]=23;
+    maximumQueststatus[id]=48;
 	questLocation[id]=position(470, 802, -9);
     radius[id]=75;
 end
