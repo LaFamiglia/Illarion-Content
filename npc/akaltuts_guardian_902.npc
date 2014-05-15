@@ -106,27 +106,18 @@ queststatus(525) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltu
 queststatus(525) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "Ich bin der zwei Wächter der Akaltuts. Um meinen Test zu bestehen mußt du 2 Elbensilberstahlrüstungen von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
 queststatus(525) = 3, item(2403, all) < 2, english,"quest", "mission", "test" . ->"Do you have 2 elven silversteel armour?  If you do not pass this test you can't continue."
-queststatus(525) = 3, item(2403, all) < 2, "quest", "mission", "Test" ->""
+queststatus(525) = 3, item(2403, all) < 2, "quest", "mission", "Test" ->"Hast Du 2 Elbensilberstahlrüstungen ? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(525) = 3, item(2403, all) < 2, "task", "adventure", "order" -> "Do you have 2 elven silversteel armour?  If you do not pass this test you can't continue."
-queststatus(525) = 3, item(2403, all) < 2,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(525) = 3, item(2403, all) < 2,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du 2 Elbensilberstahlrüstungen ? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(525) = 3, item(2403, all) > 1, english, ".+" -> inform("[Quest solved] You are awarded forty-five silver coins."), money + 4500, deleteItem(2403, 2), queststatus(525) = 4, "You have passed this test and are awarded 45 silver coins."
-queststatus(525) = 3, item(2403, all) > 1, ".+" -> inform("[Quest gelöst] Du erhältst fünfundvierzig Silberstücke."), money + 4500, deleteItem(2403, 2), queststatus(525) = 4, ""
+queststatus(525) = 3, item(2403, all) > 1, ".+" -> inform("[Quest gelöst] Du erhältst fünfundvierzig Silberstücke."), money + 4500, deleteItem(2403, 2), queststatus(525) = 4, "Du hast den Test bestanden. Du bekommst 45 Silberstücke."
 --If finished with the Guardian
 queststatus(525) > 3, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(525) > 3, "quest", "mission", "Test" -> ""
+queststatus(525) > 3, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum nächsten Wächter."
 queststatus(525) > 3, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(525) > 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(525) > 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum nächsten Wächter."
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."
-german, ".*" -> "."
-
-------------------------------------------------------------------------------AC
--- Cycle Texts - Messages spoken automatically in random intervals.
--- Every NPC should contain at least 10 of those messages.
--- Emotes are possible also starting with "#me ....".
-
-cycletext "", "You have invaded Akaltut's Lair where few dare go."
-cycletext ".", "Those who die become part of the Pile of Bones."
-cycletext "", "#me stares at you with cold, hard eyes 'Are you worthy?'."
+german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."

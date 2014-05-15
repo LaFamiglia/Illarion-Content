@@ -357,6 +357,7 @@ function iniQuests()
     germanRace[id]="Drow Führer";
     englishRace[id]="Drow Leader";	
 	table.insert(questList[65]={}; --Drow Patriarch
+	table.insert(questList[75]={}; --Drow Matriarch
 	minimumQueststatus[id]=3;
     maximumQueststatus[id]=5;
 	questLocation[id]=position(470, 802, -9);
