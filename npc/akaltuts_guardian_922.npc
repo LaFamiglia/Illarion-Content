@@ -23,7 +23,7 @@
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 name = "Akaltuts Guardian 922"
-race = Golden Magnus (78)
+race = human
 sex = male
 position = 464, 807, -9
 direction = south
@@ -57,76 +57,67 @@ itemShoes = 770
 
 -- QuestID=530
 --  22: No Quest taken
---  23: Quest taken - Kill fifteen drow, reward 20000cp
+--  23: Quest taken - Kill twenty five drow, reward drow bow
 --  48: Quest 21 solved
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist ":"
+"Hilfe" -> inform("[Spielhilfe] (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Wächter, Nummer)":"
 
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Ahh, have you come to test your skills today?"
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Ahh, bist Du heute gekommen um dein Können zu testen?"
 english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
-"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", ""
+"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", "Ahh, bist Du heute gekommen um dein Können zu testen?"
 "Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
-"Tschüß", "Tschüss", "Wiedersehen" -> "."
+"Tschüß", "Tschüss", "Wiedersehen" -> "Komm wieder wenn Du dich traust."
 english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
-"Ciao", "Adieu", "Au revoir", "Farebba" -> ""
+"Ciao", "Adieu", "Au revoir", "Farebba" -> "Komm wieder wenn Du dich traust."
 "your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Wächter von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "My job is a Guardian, I make sure only the worthy move on."
-"beruf" -> """\"
+"beruf" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.""\"
 english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
-"job" -> ""
+"job" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
 "Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number twenty-two."
-"" -> ".", "."
+"Wächter" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin der 22 Wächter."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
-"Drow" -> ""
+"Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
 english, "Number" -> "I am Guardian number twenty-two."
-"" -> ""
+"Nummer" -> "Ich bin der 22 Wächter."
 english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
-"Akaltut" -> ""
+"Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
 -- Guardian task twenty.  Kill twenty five drow.
 -- If haven't completed previous Guardianss tasks
 queststatus(530) < 22, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(530) < 22,  "quest", "mission", "Test" -> ""
+queststatus(530) < 22,  "quest", "mission", "Test" -> "Suche den vorigen Wächter."
 queststatus(530) < 22, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(530) < 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(530) < 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Wächter."
 -- Receiving the task of Killing twenty five drow
-queststatus(530) = 22, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the twenty-second guardian of Akaltuts, to pass my test you must kill twenty five drow."
-queststatus(530) = 22,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, ""
-queststatus(530) = 22, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the twenty-second guardian of Akaltuts, to pass my test you must kill twenty five drow."
-queststatus(530) = 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, ""
+queststatus(530) = 22, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the 22nd guardian of Akaltuts, to pass my test you must kill 25 drow."
+queststatus(530) = 22,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "Ich bin der 22. Wächter der Akaltuts. Um meinen Test zu bestehen mußt Du 25 Drow töten, welche diese Hallen durchstreifen."
+queststatus(530) = 22, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "I am the 22nd guardian of Akaltuts, to pass my test you must kill 25 drow."
+queststatus(530) = 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 22"), queststatus(530) = 23, "Ich bin der 22. Wächter der Akaltuts. Um meinen Test zu bestehen mußt Du 25 Drow töten, welche diese Hallen durchstreifen."
 -- If quest received but task not finished
-queststatus(530) > 22, queststatus(530) < 48, english,"quest", "mission", "test" . -> "Have you killed the twenty five drow?  If you do not pass this test you can't continue."
-queststatus(530) > 22, queststatus(530) < 48, "quest", "mission", "Test" ->""
-queststatus(530) > 22, queststatus(530) < 48, "task", "adventure", "order" -> "Have you killed the twenty five drow?  If you do not pass this test you can't continue."
-queststatus(530) > 22, queststatus(530) < 48,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(530) > 22, queststatus(530) < 48, english,"quest", "mission", "test" . -> "Have you killed the 25 drow?  If you do not pass this test you can't continue."
+queststatus(530) > 22, queststatus(530) < 48, "quest", "mission", "Test" -> "Hast Du 25 Drow getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
+queststatus(530) > 22, queststatus(530) < 48, "task", "adventure", "order" -> "Have you killed the 25 drow?  If you do not pass this test you can't continue."
+queststatus(530) > 22, queststatus(530) < 48,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du 25 Drow getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(530) = 48, english, ".+" -> inform("[Quest solved] You are awarded a drow bow."), item(2739, 1, 866), queststatus(530) = 49, "You have passed this test and are awarded a drow bow."
-queststatus(530) = 48, ".+" -> inform("[Quest gelöst] Du erhältst ??? ."), item(2739, 1, 866), queststatus(530) = 49,""
+queststatus(530) = 48, ".+" -> inform("[Quest gelöst] Du erhältst ein Drowbogen."), item(2739, 1, 866), queststatus(530) = 49,"Du hast den Test bestanden. Du bekommst ein Drowbogen."
 --If finished with the Guardian
 queststatus(530) > 48, english, "quest", "mission", "test" -> "You have passed all of the Guardians tests.  In time, you may face Akaltut."
-queststatus(530) > 48, "quest", "mission", "Test" -> ""
+queststatus(530) > 48, "quest", "mission", "Test" -> "Du hast alle Tests der Wächter bestanden. Zur rechten Zeit wirst Du Akaltut gegenüberstehen."
 queststatus(530) > 48, "task", "adventure", "order" -> "You have passed all of the Guardians tests.  In time you, you may face Akaltut."
-queststatus(530) > 48, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(530) > 48, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast alle Tests der Wächter bestanden. Zur rechten Zeit wirst Du Akaltut gegenüberstehen."
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."
-german, ".*" -> "."
-
-------------------------------------------------------------------------------AC
--- Cycle Texts - Messages spoken automatically in random intervals.
--- Every NPC should contain at least 10 of those messages.
--- Emotes are possible also starting with "#me ....".
-
-cycletext "", "You have invaded Akaltut's Lair where few dare go."
-cycletext ".", "Those who die become part of the Pile of Bones."
-cycletext "", "#me stares at you with cold, hard eyes 'Are you worthy?'."
+german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."

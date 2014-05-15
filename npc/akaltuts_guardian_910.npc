@@ -121,12 +121,3 @@ queststatus(527) > 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast be
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."
 german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."
-
-------------------------------------------------------------------------------AC
--- Cycle Texts - Messages spoken automatically in random intervals.
--- Every NPC should contain at least 10 of those messages.
--- Emotes are possible also starting with "#me ....".
-
-cycletext "Du bist in Akaltut´s Versteck eingedrungen in das sich nur wenige trauen.", "You have invaded Akaltut's Lair where few dare go."
-cycletext "Die die sterben werden Teil der Knochenhaufen.", "Those who die become part of the Pile of Bones."
-cycletext "#me start dich mit kaltem hartem Blick an. 'Bist Du würdig?'", "#me stares at you with cold, hard eyes 'Are you worthy?'"

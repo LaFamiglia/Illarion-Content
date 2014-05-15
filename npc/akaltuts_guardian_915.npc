@@ -23,7 +23,7 @@
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 name = "Akaltuts Guardian 915"
-race = Golden Magnus (78)
+race = human
 sex = male
 position = 491, 825, -9
 direction = west
@@ -62,71 +62,62 @@ itemShoes = 770
 
 -- Help
 "Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist ":"
+"Hilfe" -> inform("[Spielhilfe] (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Wächter, Nummer)":"
 
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Ahh, have you come to test your skills today?"
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Ahh, bist Du heute gekommen um dein Können zu testen?"
 english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
-"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", ""
+"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", "Ahh, bist Du heute gekommen um dein Können zu testen?"
 "Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
-"Tschüß", "Tschüss", "Wiedersehen" -> "."
+"Tschüß", "Tschüss", "Wiedersehen" -> "Komm wieder wenn Du dich traust."
 english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
-"Ciao", "Adieu", "Au revoir", "Farebba" -> ""
+"Ciao", "Adieu", "Au revoir", "Farebba" -> "Komm wieder wenn Du dich traust."
 "your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Wächter von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "My job is a Guardian, I make sure only the worthy move on."
-"beruf" -> """\"
+"beruf" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.""\"
 english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
-"job" -> ""
+"job" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
 "Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number fifteen."
-"" -> ".", "."
+"Wächter" -> "Ich bin der 15. Wächter.", "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
-"Drow" -> ""
+"Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
 english, "Number" -> "I am Guardian number fifteen."
-"" -> ""
+"Nummer" -> "Ich bin der 15 Wächter."
 english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
-"Akaltut" -> ""
+"Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
 -- Guardian task fifteen.  Collect 20 white cloth.
 -- If haven't completed previous Guardianss tasks
 queststatus(528) < 34, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(528) < 34,  "quest", "mission", "Test" -> ""
+queststatus(528) < 34,  "quest", "mission", "Test" -> "Suche den vorigen Wächter."
 queststatus(528) < 34, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(528) < 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(528) < 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Wächter."
 -- Receiving the task of Collecting 20 white cloth.
-queststatus(528) = 34, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the fifteenth guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, ""
-queststatus(528) = 34, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the fifteenth guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, ""
+queststatus(528) = 34, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the 15th guardian of Akaltuts, to pass my test you must collect 20 white cloth."
+queststatus(528) = 34,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "Ich bin der 15. Wächter der Akaltuts. Um meinen Test zu bestehen mußt du  20 weiße Stoffballen von den Drows, welche hier herum schweifen sammeln."
+queststatus(528) = 34, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the 15th guardian of Akaltuts, to pass my test you must collect 20 white cloth."
+queststatus(528) = 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "Ich bin der 15. Wächter der Akaltuts. Um meinen Test zu bestehen mußt du  20 weiße Stoffballen von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
 queststatus(528) = 35, item(178, all) < 20, english,"quest", "mission", "test" . ->"Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20, "quest", "mission", "Test" ->""
+queststatus(528) = 35, item(178, all) < 20, "quest", "mission", "Test" ->"Hast Du  20 weiße Stoffballen? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(528) = 35, item(178, all) < 20, "task", "adventure", "order" -> "Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(528) = 35, item(178, all) < 20,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du  20 weiße Stoffballen? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(528) = 35, item(178, all) > 19, english, ".+" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, "You have passed this test and are awarded a black cultist robe."
-queststatus(528) = 35, item(178, all) > 19, ".+" -> inform("[Quest gelöst] Du erhältst ??."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, ""
+queststatus(528) = 35, item(178, all) > 19, ".+" -> inform("[Quest gelöst] Du erhältst eine Schwarzkultrobe zuerkannt."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, "Du hast den Test bestanden. Du bekommst eine Schwarzkultrobe zuerkannt."
 --If finished with the Guardian
 queststatus(528) > 35, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "quest", "mission", "Test" -> ""
+queststatus(528) > 35, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum nächsten Wächter."
 queststatus(528) > 35, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->
+queststatus(528) > 35, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum nächsten Wächter."
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 english, ".*" -> "Finish our tasks in order and you will be rewarded."
-german, ".*" -> "."
-
-------------------------------------------------------------------------------AC
--- Cycle Texts - Messages spoken automatically in random intervals.
--- Every NPC should contain at least 10 of those messages.
--- Emotes are possible also starting with "#me ....".
-
-cycletext "", "You have invaded Akaltut's Lair where few dare go."
-cycletext ".", "Those who die become part of the Pile of Bones."
-cycletext "", "#me stares at you with cold, hard eyes 'Are you worthy?'."
+german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."
