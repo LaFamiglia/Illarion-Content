@@ -47,7 +47,7 @@ radius = 0
 
 -- Help
 "Help" -> inform("[Game Help] This NPC is the spider Gorgophone. Keywords: Hello, quest, spider, exit.")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist die Spinne Gorgophone. Schlüsselwörter: Hallo, Quest, spinne, Ausfahrt.")
+"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist die Spinne Gorgophone. Schlüsselwörter: Hallo, Quest, Spinne, Ausgang.")
 
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "#me clicks her jaws and looks at you appraisingly."
@@ -73,12 +73,12 @@ english, "Gobaith", "Gobiath" -> "I know nothing of that land."
 "my name" -> "I am Gorgophone, the grim slayer."
 "mein Name" -> "Ich bin Gorgophone, die grimmige Schlächterin."
 english, "exit", "way out", "escape" -> "There is an exit somewhere. Maybe you will find it before you die."
-"Ausfahrt" -> "Es gibt eine Ausfahrt irgendwo. Vielleicht finden Sie es, bevor Sie sterben."
+"Ausgang" -> "Es gibt einen Ausgang irgendwo. Vielleicht findet ihr ihn, bevor ihr hier zugrunde geht."
 
 
--- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
-"Mother", "spider" -> "I am mother of many... hundreds... maybe thousands?"
-"Mutter", "spinne" -> "Ich bin Mutter von vielen ... Hunderten ... vielleicht Tausenden."
+-- More small talk; add at least five triggers, e.g. about the profession of the NPC or his environment
+"mother", "spider" -> "I am mother of many... hundreds... maybe thousands?"
+"Mutter", "Spinne" -> "Ich bin Mutter von vielen ... Hunderten ... vielleicht Tausenden."
 english, "egg" -> "My egg sac is like a cocoon and is suspended from my large web, containing hundreds of eggs."
 "Ei" -> "Mein Eierbündel ist wie ein Kokon und hängt an meinem Netz, mit Hunderten von Eiern."
 english, "eat" -> " I puncture my prey with my fangs and administer digestive enzymes into the corpses. By using these enzymes, and my gnashing fangs, the prey's body liquefies, letting me suck up the resulting fluid."
