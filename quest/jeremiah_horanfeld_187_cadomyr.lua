@@ -14,11 +14,11 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
--- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (187, 'quest.jeremiah_hornanfeld_187_cadomyr');
+-- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (187, 'quest.jeremiah_horanfeld_187_cadomyr');
 
 require("base.common")
 require("base.factions")
-module("quest.jeremiah_hornanfeld_187_cadomyr", package.seeall)
+module("quest.jeremiah_horanfeld_187_cadomyr", package.seeall)
 
 GERMAN = Player.german
 ENGLISH = Player.english
@@ -43,16 +43,16 @@ Description[GERMAN][4] = "Töte in der Zisterne 5 Ratten, Du mußt noch 2 töten
 Description[ENGLISH][4] = "Kill 5 rats in the Cistern, you still have 2 left."
 Description[GERMAN][5] = "Töte in der Zisterne 5 Ratten, Du mußt noch 1 töten."
 Description[ENGLISH][5] = "Kill 5 rats in the Cistern, you still have 1 left."
-Description[GERMAN][6] = "Kehre zu Jeremiah Hornanfeld für Deine Belohnung zurück."
-Description[ENGLISH][6] = "Return to Jeremiah Hornanfeld for you reward."
+Description[GERMAN][6] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
+Description[ENGLISH][6] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][7] = "Gehe zurück zum Rattenwächter Jeremiah Hornanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][7] = "Check back with Rat Monitor Jeremiah Hornanfeld, he may have another task for you."
+Description[GERMAN][7] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][7] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
 
-Description[GERMAN][8] = "Sammle 10 Rattenfelle und bringe sie als Beweis zu Jeremiah Hornanfeld."
-Description[ENGLISH][8] = "Collect ten rat furs and bring them to Jeremiah Hornanfeld as evidence."
-Description[GERMAN][9] = "Vielleicht hat Jeremiah Hornanfeld eine weitere Aufgabe für Dich."
-Description[ENGLISH][9] = "Perhaps Jeremiah Hornanfeld has another task to be done."
+Description[GERMAN][8] = "Sammle 10 Rattenfelle und bringe sie als Beweis zu Jeremiah Horanfeld."
+Description[ENGLISH][8] = "Collect ten rat furs and bring them to Jeremiah Horanfeld as evidence."
+Description[GERMAN][9] = "Vielleicht hat Jeremiah Horanfeld eine weitere Aufgabe für Dich."
+Description[ENGLISH][9] = "Perhaps Jeremiah Horanfeld has another task to be done."
 
 Description[GERMAN][10] = "Töte 10 aggressive und Bisamratten, Du benötigst noch 10."
 Description[ENGLISH][10] = "Kill 10 Agressive and Muskrats, you still need 10."
@@ -74,16 +74,16 @@ Description[GERMAN][18] = "Töte 10 aggressive und Bisamratten, Du benötigst no
 Description[ENGLISH][18] = "Kill 10 Agressive and Muskrats, you still need 2."
 Description[GERMAN][19] = "Töte 10 aggressive und Bisamratten, Du benötigst noch 1."
 Description[ENGLISH][19] = "Kill 10 Agressive and Muskrats, you still need 1."
-Description[GERMAN][20] = "Kehre zu Jeremiah Hornanfeld für Deine Belohnung zurück."
-Description[ENGLISH][20] = "Return to Jeremiah Hornanfeld for you reward."
+Description[GERMAN][20] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
+Description[ENGLISH][20] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][21] = "Gehe zurück zum Rattenwächter Jeremiah Hornanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][21] = "Check back with Rat Monitor Jeremiah Hornanfeld, he may have another task for you."
+Description[GERMAN][21] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][21] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
 
 Description[GERMAN][22] = "Sammle 25 Pottasche von den Ratten der Zisterne."
 Description[ENGLISH][22] = "Collect 25 potash from the Cistern rats."
-Description[GERMAN][23] = "Vielleicht hat Jeremiah Hornanfeld eine weitere Aufgabe für Dich."
-Description[ENGLISH][23] = "Perhaps Jeremiah Hornanfeld has another task to be done."
+Description[GERMAN][23] = "Vielleicht hat Jeremiah Horanfeld eine weitere Aufgabe für Dich."
+Description[ENGLISH][23] = "Perhaps Jeremiah Horanfeld has another task to be done."
 
 Description[GERMAN][24] = "Töte 10 Kanalratten, Du benötigst noch 10."
 Description[ENGLISH][24] = "Kill 10 Sewer Rats, you still need 10."
@@ -105,16 +105,16 @@ Description[GERMAN][32] = "Töte 10 Kanalratten, Du benötigst noch 2."
 Description[ENGLISH][32] = "Kill 10 Sewer Rats, you still need 2."
 Description[GERMAN][33] = "Töte 10 Kanalratten, Du benötigst noch 1."
 Description[ENGLISH][33] = "Kill 10 Sewer Rats, you still need 1."
-Description[GERMAN][34] = "Kehre zu Jeremiah Hornanfeld für Deine Belohnung zurück."
-Description[ENGLISH][34] = "Return to Jeremiah Hornanfeld for you reward."
+Description[GERMAN][34] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
+Description[ENGLISH][34] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][35] = "Gehe zurück zum Rattenwächter Jeremiah Hornanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][35] = "Check back with Rat Monitor Jeremiah Hornanfeld, he may have another task for you."
+Description[GERMAN][35] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][35] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
 
-Description[GERMAN][36] = "Sammle 10 Rohleder von den Pest Ratten in der Zisternenhöhle und bringe diese zu Jeremiah Hornanfeld."
-Description[ENGLISH][36] = "Collect 10 raw leather from the plague rats in the Cistern Cave and return them to Jeremiah Hornanfeld."
-Description[GERMAN][37] = "You have fulfilled all of Jeremiah Hornanfeld's tasks."
-Description[ENGLISH][37] = "You have fulfilled all of Jeremiah Hornanfeld's tasks."
+Description[GERMAN][36] = "Sammle 10 Rohleder von den Pest Ratten in der Zisternenhöhle und bringe diese zu Jeremiah Horanfeld."
+Description[ENGLISH][36] = "Collect 10 raw leather from the plague rats in the Cistern Cave and return them to Jeremiah Horanfeld."
+Description[GERMAN][37] = "You have fulfilled all of Jeremiah Horanfeld's tasks."
+Description[ENGLISH][37] = "You have fulfilled all of Jeremiah Horanfeld's tasks."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {104, 600, 0}

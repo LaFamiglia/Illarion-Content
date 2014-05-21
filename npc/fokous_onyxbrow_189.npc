@@ -130,7 +130,6 @@ queststatus(189) = 0, town = Galmair, "quest", "mission" -> inform("[Neues Quest
 queststatus(189) = 0, town = Galmair, "task", "adventure" -> inform("[New quest] Save Da Beer I"), item(2760, 1, 566), queststatus(189) = 1, "Arr!! Dere be rats in da storage and dey be drinkin' da beer!!! Go now and kill me 5, dis can not continue! Take dis rope and access da area through dis well just over dere.  (Place the rope in your belt or hand and double click it to use it in front of the well)"
 queststatus(189) = 0, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Speichern Sie das Bier I"), item(2760, 1, 566), queststatus(19) = 1, ""
 
-
 -- Quest 1 solved, reward: 2000cp, +5 rankpoints
 queststatus(189) = 6, english, town = Galmair, ".+" -> inform("[Quest solved] You are awarded 20 silver coins."), money + 2000, queststatus(189) = 7, rankpoints + 5, "#me takes a long drink of beer, 'Here is your reward, but there is more work to be done!"
 queststatus(189) = 6, town = Galmair, ".+" -> inform("[Quest gelöst] Du erhältst 20 Silberstücke."), money + 2000, queststatus(187) = 7, rankpoints + 5, ""
@@ -198,7 +197,7 @@ queststatus(189) = 23, town = Galmair, english, "quest", "mission" -> inform("[N
 queststatus(189) = 23, town = Galmair, "quest", "mission" -> inform("[Neues Quest] Speichern Sie das Bier V"), queststatus(189) = 24, ""
 queststatus(189) = 23, town = Galmair, "task", "adventure" -> inform("[New quest] Save Da Beer V"), queststatus(189) = 24, "To furder save our beer, kill 10 sewer rats."
 queststatus(189) = 23, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Speichern Sie das Bier V"), queststatus(189) = 24, ""
- 
+
 -- Quest 5 solved, 30 silver, +10 rankpoints
 queststatus(189) = 34, english, town = Galmair, ".+" -> inform("[Quest solved] You are awarded 30 silver coins."), money + 3000, queststatus(189) = 35, rankpoints + 10, "Arr! The Don be happy your helping. Come back later for more work."
 queststatus(189) = 34, town = Galmair, ".+" -> inform("[Quest gelöst] Du erhältst 30 Silberstücke."), money + 3000, queststatus(189) = 35, rankpoints + 10, ""
@@ -227,10 +226,10 @@ queststatus(189) = 36, item(69, all) < 25, town = Galmair, "task", "adventure" -
 queststatus(189) = 36, item(69, all) < 25, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer" -> ""
 
 -- No more quests, just nice words of gratitude
-queststatus(189) = 37, english, "quest", "mission" -> "Arr!!! Da beer be safe, I have no more work for you."
-queststatus(189) = 37, "quest", "mission" -> ""
-queststatus(189) = 37, "task", "adventure" -> "Arr!!! Da beer be safe, I have no more work for you."
-queststatus(189) = 37, "Auftrag", "Aufgabe", "Abenteuer" -> ""
+queststatus(189) = 37, town = Galmair, english, "quest", "mission" -> "Arr!!! Da beer be safe, I have no more work for you."
+queststatus(189) = 37, town = Galmair, "quest", "mission" -> ""
+queststatus(189) = 37, town = Galmair, "task", "adventure" -> "Arr!!! Da beer be safe, I have no more work for you."
+queststatus(189) = 37, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer" -> ""
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "Meh job is Beer Supply Quartermaster.  Its a special task from the Don himself!"
@@ -255,7 +254,7 @@ english, "Irmorom" -> "All honor Irmorom our father."
 "was verkauf", "was kauf", "warenliste", "preis von" -> "Ich bin kein Händler. Ihr könnt mir aber trotzdem euer Gold geben."
 "tell something" -> "Leave me alone."
 "erzähl was", "erzähl etwas" ->  "Haut ab."
-"
+
 -- Cycletext: Please add at least(!) ten cycletext messages. The more, the better. You can use emotes (#me is green), too.
 
 ------------------------------------------------------------------------------AC

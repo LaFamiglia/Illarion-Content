@@ -13,55 +13,56 @@
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
--- NPC Name: Cilivren Itiireae                                       Runewick --
--- NPC Job:  Guardian of the Fields                                           --
+-- NPC Name: Jeremiah Horanfeld                                       Cadomyr --
+-- NPC Job:  Vermin Monitor                                                   --
 --                                                                            --
--- NPC Race: elf                        NPC Position:  843, 844, 0            --
--- NPC Sex:  female                     NPC Direction: west                   --
+-- NPC Race: human                       NPC Position:  104, 600, 0           --
+-- NPC Sex:  male                        NPC Direction: south                 --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                       easyNPC Parser v1.23 --
 --------------------------------------------------------------------------------
 
-name = "Cilivren Itiireae"
-race = elf
-sex = female
-position = 843, 844, 0
-direction = west
-affiliation = "Runewick"
-job = "Guardian of the Fields"
+name = "Jeremiah Horanfeld"
+race = human
+sex = male
+position = 104, 600, 0
+direction = south
+affiliation = "Cadomyr"
+job = "Vermin Monitor"
 
 language = common
-language = elf
+language = human
 defaultLanguage = common
 autointroduce = on
 
 author = "Evie"
 
-lookatDE = "Dieser NPC ist Cilivren Itiireae, der Wächter der Felder."
-lookatUS = "This NPC is Cilivren Itiireae, the Guardian of the Fields."
+lookatDE = "Dieser NPC ist Jeremiah Horanfeld, der Schädlingswächter."
+lookatUS = "This NPC is Jeremiah Horanfeld, the vermin monitor."
 useMsgDE = "Fass mich nicht an!"
 useMsgUS = "Do not touch me!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
-hairID = 7
-colorHair = 174, 56, 0
-colorSkin = 255, 232, 221
-itemHead = 356
-itemChest = 364
-itemCoat = 2380
-itemMainHand = 2780
-itemSecondHand = 64
+hairID = 1
+beardID = 3
+colorHair = 238, 218, 79
+colorSkin = 218, 177, 148
+itemHead = 2287
+itemChest = 2369
+itemCoat = 2377
+itemMainHand = 2656
+itemSecondHand = 2388
 itemHands = 2295
-itemTrousers = 2113
-itemShoes = 697
+itemTrousers = 2111
+itemShoes = 771
 
 -- NPC by Evie
--- Cilivren Itiireae, Guardian of the fields of Runewick
+-- Jeremiah Horanfeld, Vermin Monitor of Cadomyr
 
--- queststatus(188) Overview
--- QuestID=188
+-- queststatus(187) Overview
+-- QuestID=187
 -- 0: No Quest taken
 -- 1: Quest 1 taken - kill 5 rats, player receives rope
 -- 2-6: Killing 5 rats
@@ -71,7 +72,7 @@ itemShoes = 697
 -- 10: Quest 3 taken - kill 10 aggressive rats and muskrats
 -- 11-20: killing 10 aggressive rats and muskrats
 -- 21: Quest 3 solved, reward: 3000 cp, +10 rankpoints
--- 22: Quest 4 taken - collect 25 grain
+-- 22: Quest 4 taken - collect 25 potash
 -- 23: Quest 4 solved - reward: 3000cp, +10 rankpoints
 -- 24: Quest 5 taken -  kill 10 sewer rats
 -- 25-34: killing sewer rats
@@ -80,35 +81,35 @@ itemShoes = 697
 -- 37 Quest 6 solved -  reward: 3000 cp, +15 rankpoints
 
 -- Help
-"Help" -> inform("[Game Help] This NPC is Cilivren Itiireae, the Guardian of the Fields. Keywords: Hello, rats, quest, knowledge.")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Cilivren Itiireae, the Wächter der Felder. Schlüsselwörter: Hallo, ratten, Quest, Wissen.")
+"Help" -> inform("[Game Help] This NPC is Jeremiah Horanfeld, the vermin monitor. Keywords: Hello, rats, quest, pride.")
+"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Jeremiah Horanfeld, da Schädlingswächter. Schlüsselwörter: Hallo, ratten, Quest, Stolz.")
 
 -- General speech
-"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Be Greeted."
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Begrüßt."
-english, "Hiho", "Hallo", "Hey", "Greeb" -> "Be Greeted."
-"Hiho", "Hallo", "Hey", "Greeb" ->"Begrüßt."
-"Farewell", "Bye", "Fare well", "See you" -> "May the five guide you."
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetings, it is a lovely day."
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetings, it is a lovely day."
+"Hiho", "Hallo", "Hey", "Greeb" ->"."
+"Farewell", "Bye", "Fare well", "See you" -> "Farewell til we meet again."
 "Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> ""
-english, "Ciao", "Adieu", "Au revoir" -> "May the five guide you."
+english, "Ciao", "Adieu", "Au revoir" -> "Farewell til we meet again."
 "Ciao", "Adieu", "Au revoir" -> ""
-"How are you", "How feel", "How do you do" -> "I am most blessed."
+"How are you", "How feel", "How do you do" -> "I am quite well."
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> ""
-"your name", "who are you", "who art thou" -> "My name is Cilivren Itiireae."
+"your name", "who are you", "who art thou" -> "My name is Jeremiah Horanfeld."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
 
 -- Catching quest triggers of other factions' members.
-english, town = none, "quest", "mission" -> "Only those from the realm of wisdom will find work here."
+english, town = none, "quest", "mission" -> "I do not have work for you outsider."
 town = none, "quest", "mission" -> ""
-town = none, "task", "adventure", "order"-> "Only those from the realm of wisdom will find work here."
+town = none, "task", "adventure", "order"-> "I do not have work for you outsider."
 town = none, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
-english, town = Cadomyr, "quest", "mission" -> "Only those from the realm of wisdom will find work here."
+english, town = Cadomyr, "quest", "mission" -> "I do not have work for you outsider."
 town = Cadomyr, "quest", "mission" -> ""
-town = Cadomyr, "task", "adventure", "order" -> "Only those from the realm of wisdom will find work here."
+town = Cadomyr, "task", "adventure", "order" -> "I do not have work for you outsider."
 town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
-english, town = Galmair, "quest", "mission" -> "Only those from the realm of wisdom will find work here."
+english, town = Galmair, "quest", "mission" -> "I do not have work for you outsider."
 town = Galmair, "quest", "mission" -> "."
-town = Galmair, "task", "adventure", "order" -> "Only those from the realm of wisdom will find work here."
+town = Galmair, "task", "adventure", "order" -> "I do not have work for you outsider."
 town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
 .--- fix if quest started and sent to NPC by Florian
@@ -237,8 +238,8 @@ english, "job" -> "My job is Guadian of the fields, I help protect the farmers a
 "job" -> "."
 "rat" -> "The rats are steal more crops every day."
 "ratten" -> ""
-"knowledge" -> "Knowledge is the cornerstone of all things."
-"Wissen" -> ""
+"pride" -> "Knowledge is the cornerstone of all things."
+"Stolz" -> ""
 "my name" -> "My name is Cilivren Itiireae, I am the Guardian of the Fields."
 "mein Name" -> ""
 
