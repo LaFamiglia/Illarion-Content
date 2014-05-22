@@ -310,6 +310,12 @@ function iniQuests()
     questList[1061]={}; --Brown Chicken
     questList[1071]={}; --Crazy Chicken
     questList[1081]={}; --Black Chicken
+	questList[1111]={}; --Rat
+	questList[1112]={}; --Small Rat
+	questList[1113]={}; --Agressive Rat
+	questList[1114]={}; --Muskrat
+	questList[1115]={}; --Plague Rat
+	questList[1116]={}; --Sewer Rat
     questList[2000]={}; --Guards
 
     --Quest 1: Galmair Sewers I (77)
