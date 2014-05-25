@@ -17,7 +17,7 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- triggerfields for better atmosphere
 
 --[[ SQL Statements:
-INSERT INTO triggerfields VALUES (X,Y,Z,'triggerfield.Akaltuts_Chamber');
+INSERT INTO triggerfields VALUES (X,Y,Z,'triggerfield.ambient');
 
 ]]
 
