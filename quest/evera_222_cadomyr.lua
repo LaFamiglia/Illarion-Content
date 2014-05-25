@@ -38,10 +38,10 @@ Description[ENGLISH][1] = "Please bring Evera an apple pie."
 Description[GERMAN][2] = "Rede mit Evera, vielleicht hat sie eine Aufgabe für dich."
 Description[ENGLISH][2] = "Check with Evera he may have another task for you."
 
-Description[GERMAN][3] = "Bitte bring Evera einen Traubensaft."
-Description[ENGLISH][3] = "Please bring Evera a grape juice."
+Description[GERMAN][3] = "Bitte bring Evera ein Flasche Traubensaft."
+Description[ENGLISH][3] = "Please bring Evera a bottle of grape juice."
 Description[GERMAN][4] = "Du hast alle Aufgaben für Evera erledigt."
-Description[ENGLISH][4] = "You have completed all of Evera's task."
+Description[ENGLISH][4] = "You have completed all of Evera's tasks."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {139, 622, 0 }
