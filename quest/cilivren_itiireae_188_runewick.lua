@@ -25,8 +25,8 @@ ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 Title = {}
-Title[GERMAN] = "Wächter der Felder"
-Title[ENGLISH] = "Guardian of the Fields"
+Title[GERMAN] = "Sie das Feld"
+Title[ENGLISH] = "Save The Field"
 
 -- Insert an extensive description of each status here, in both languages
 -- Make sure that the player knows exactly where to go and what to do
@@ -121,46 +121,46 @@ Start = {843, 844, 0}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
-QuestTarget[1] = {position(843, 844, 0), position(8, 5010, -6)}
-QuestTarget[2] = {position(843, 844, 0), position(8, 5010, -6)}
-QuestTarget[3] = {position(843, 844, 0), position(8, 5010, -6)}
-QuestTarget[4] = {position(843, 844, 0), position(8, 5010, -6)}
-QuestTarget[5] = {position(843, 844, 0), position(8, 5010, -6)}
-QuestTarget[6] = {position(843, 844, 0), position(8, 5010, -6)}
+QuestTarget[1] = {position(843, 844, 0), position(832,832,-3)}
+QuestTarget[2] = {position(843, 844, 0), position(832,832,-3)}
+QuestTarget[3] = {position(843, 844, 0), position(832,832,-3)}
+QuestTarget[4] = {position(843, 844, 0), position(832,832,-3)}
+QuestTarget[5] = {position(843, 844, 0), position(832,832,-3)}
+QuestTarget[6] = {position(843, 844, 0), position(832,832,-3)}
 
 QuestTarget[7] = {position(843, 844, 0)}
 
 QuestTarget[8] = {position(843, 844, 0)}
 QuestTarget[9] = {position(843, 844, 0)}
 
-QuestTarget[10] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[11] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[12] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[13] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[14] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[15] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[16] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[17] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[18] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[19] = {position(843, 844, 0), position(10, 5020, -9)}
-QuestTarget[20] = {position(843, 844, 0), position(10, 5020, -9)}
+QuestTarget[10] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[11] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[12] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[13] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[14] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[15] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[16] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[17] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[18] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[19] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[20] = {position(843, 844, 0), position(840,840,-6)}
 
 QuestTarget[21] = {position(843, 844, 0)}
 
 QuestTarget[22] = {position(843, 844, 0)}
 QuestTarget[23] = {position(843, 844, 0)}
 
-QuestTarget[24] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[25] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[26] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[27] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[28] = {position(843, 844, 0), position(33,5014,-9)} 
-QuestTarget[29] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[30] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[31] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[32] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[33] = {position(843, 844, 0), position(33,5014,-9)}
-QuestTarget[34] = {position(843, 844, 0), position(33,5014,-9)} 
+QuestTarget[24] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[25] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[26] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[27] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[28] = {position(843, 844, 0), position(840,840,-6)} 
+QuestTarget[29] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[30] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[31] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[32] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[33] = {position(843, 844, 0), position(840,840,-6)}
+QuestTarget[34] = {position(843, 844, 0), position(840,840,-6)} 
 
 QuestTarget[35] = {position(843, 844, 0)}
 

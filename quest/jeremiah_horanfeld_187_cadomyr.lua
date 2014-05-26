@@ -121,46 +121,46 @@ Start = {104, 600, 0}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
-QuestTarget[1] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[2] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[3] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[4] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[5] = {position(104, 600, 0), position(5025, 23, -3)} 
-QuestTarget[6] = {position(104, 600, 0), position(5025, 23, -3)}
+QuestTarget[1] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[2] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[3] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[4] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[5] = {position(104, 600, 0), position(125,565,-6)} 
+QuestTarget[6] = {position(104, 600, 0), position(125,565,-6)}
 
 QuestTarget[7] = {position(104, 600, 0)}
 
 QuestTarget[8] = {position(104, 600, 0)}
 QuestTarget[9] = {position(104, 600, 0)}
 
-QuestTarget[10] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[11] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[12] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[13] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[14] = {position(104, 600, 0), position(5025, 23, -3)} 
-QuestTarget[15] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[16] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[17] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[18] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[19] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[20] = {position(104, 600, 0), position(5025, 23, -3)} 
+QuestTarget[10] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[11] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[12] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[13] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[14] = {position(104, 600, 0), position(125,565,-6)} 
+QuestTarget[15] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[16] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[17] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[18] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[19] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[20] = {position(104, 600, 0), position(125,565,-6)} 
 
 QuestTarget[21] = {position(104, 600, 0)}
 
 QuestTarget[22] = {position(104, 600, 0)}
 QuestTarget[23] = {position(104, 600, 0)}
 
-QuestTarget[24] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[25] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[26] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[27] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[28] = {position(104, 600, 0), position(5025, 23, -3)} 
-QuestTarget[29] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[30] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[31] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[32] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[33] = {position(104, 600, 0), position(5025, 23, -3)}
-QuestTarget[34] = {position(104, 600, 0), position(5025, 23, -3)} 
+QuestTarget[24] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[25] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[26] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[27] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[28] = {position(104, 600, 0), position(125,565,-6)} 
+QuestTarget[29] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[30] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[31] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[32] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[33] = {position(104, 600, 0), position(125,565,-6)}
+QuestTarget[34] = {position(104, 600, 0), position(125,565,-6)} 
 
 QuestTarget[35] = {position(104, 600, 0)}
 

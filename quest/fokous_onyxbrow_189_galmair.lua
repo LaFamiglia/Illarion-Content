@@ -25,8 +25,8 @@ ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 Title = {}
-Title[GERMAN] = "Bierlieferant Quartiermeister"
-Title[ENGLISH] = "Beer Supply Quartermaster"
+Title[GERMAN] = "Sie das Bier"
+Title[ENGLISH] = "Save Da Beer"
 
 -- Insert an extensive description of each status here, in both languages
 -- Make sure that the player knows exactly where to go and what to do
@@ -121,12 +121,12 @@ Start = {348, 273, 0}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
-QuestTarget[1] = {position(348, 273, 0), position(372, 464, -6)}
-QuestTarget[2] = {position(348, 273, 0), position(372, 464, -6)}
-QuestTarget[3] = {position(348, 273, 0), position(372, 464, -6)}
-QuestTarget[4] = {position(348, 273, 0), position(372, 464, -6)}
-QuestTarget[5] = {position(348, 273, 0), position(372, 464, -6)} 
-QuestTarget[6] = {position(348, 273, 0), position(372, 464, -6)}
+QuestTarget[1] = {position(348, 273, 0), position(370,470,-6)}
+QuestTarget[2] = {position(348, 273, 0), position(370,470,-6}
+QuestTarget[3] = {position(348, 273, 0), position(370,470,-6)}
+QuestTarget[4] = {position(348, 273, 0), position(370,470,-6)}
+QuestTarget[5] = {position(348, 273, 0), position(370,470,-6)} 
+QuestTarget[6] = {position(348, 273, 0), position(370,470,-6)}
 
 QuestTarget[7] = {position(348, 273, 0)}
 
