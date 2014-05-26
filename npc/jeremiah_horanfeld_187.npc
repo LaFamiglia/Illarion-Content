@@ -113,17 +113,17 @@ town = Galmair, "task", "adventure", "order" -> "I do not have work for you outs
 town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
 .--- fix if quest started and sent to NPC by Jakob
-queststatus(187) > 0, queststatus(703) = 15, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 16, "Ah Jakob sent you, but you have already asked me for something to do."
-queststatus(187) > 0, queststatus(703) = 15, town = Cadomyr, "quest", "mission", "jakob", "lindron" -> queststatus(703) = 16, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
-queststatus(187) > 0, queststatus(703) = 15, town = Cadomyr, "task", "adventure", "order" -> queststatus(703) = 16, "Ah Jakob sent you, but you have already asked me for something to do."
-queststatus(187) > 0, queststatus(703) = 15, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(703) = 16, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
+queststatus(187) > 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah Jakob sent you, but you have already asked me for something to do."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission", "jakob", "lindron" -> queststatus(703) = 18, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> queststatus(703) = 18, "Ah Jakob sent you, but you have already asked me for something to do."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(703) = 18, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
 
 -- 1st quest: Kill 5 rats, player receives rope
 -- Give out quest 1 and a rope
-queststatus(187) = 0, queststatus(703) = 15, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 16, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
-queststatus(187) = 0, queststatus(703) = 15, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 16, ""
-queststatus(187) = 0, queststatus(703) = 15, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor  I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 16, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
-queststatus(187) = 0, queststatus(703) = 15, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 16, ""
+queststatus(187) = 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, ""
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor  I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, ""
 
 queststatus(187) = 0, english, town = Cadomyr,"quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)."
 queststatus(187) = 0, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] SchädlingswächterI"), item(2760, 1, 566), queststatus(187) = 1, ""
