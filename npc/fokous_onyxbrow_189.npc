@@ -233,20 +233,20 @@ queststatus(189) = 37, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer" -> "Arr
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "Meh job is Beer Supply Quartermaster.  Its a special task from the Don himself!"
-"beruf" -> "."
+"beruf" -> "Von Beruf bin ich der Quartiermeister für's Bierlager. Das is nen Spezialauftrag vom Don persönlich!"
 english, "job" -> "Meh job is Beer Supply Quartermaster.  Its a special task from the Don himself!"
-"job" -> "."
+"job" -> "Von Beruf bin ich der Quartiermeister für's Bierlager. Das is nen Spezialauftrag vom Don persönlich!"
 "rat" -> "The rats, they be taken me ... I mean da Don's beer!"
 "ratten" -> "Dir Ratten, sie haben mein Bier.... meine das Bier des Don's gestohlen!"
 "Beer" -> "Beer!!  Arr!! There be always room for one more."
 "Bier" -> "Bier!!! Arr!! Es ist immer Platz für noch eins."
 "my name" -> "Arr!! Call me Fokous, Fokous Onyxbrow."
-"mein Name" -> ""
+"mein Name" -> "Arr!! Ich bin Fokous, Fokous Onyxbrow."
 
 -- Gods - use the triggers of the god the NPC worships or fights
 english, "Nargun" -> "Arr!! Nargun has sent rats into the well!"
 "Nargun" -> "Arr!! Nargun hat uns Ratten in den Brunnen geschickt!"
-english, "Irmorom" -> "All honor Irmorom our father."
+english, "Irmorom" -> "All honour Irmorom our father."
 "Irmorom" -> "Alle Ehre für Irmorom unseren Vater."
 
 -- Catching typical NPC phrases

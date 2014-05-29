@@ -131,7 +131,7 @@ queststatus(188) = 0, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer" -> info
 
 -- Quest 1 solved, reward: 2000cp, +5 rankpoints
 queststatus(188) = 6, english, town = Runewick, ".+" -> inform("[Quest solved] You are awarded 20 silver coins."), money + 2000, queststatus(188) = 7, rankpoints + 5, "#me smiles glancing over the field to her left 'Thank you perhaps you could assist more?'"
-queststatus(188) = 6, town = Runewick, ".+" -> inform("[Quest gelöst] Du erhältst 20 Silberstücke."), money + 2000, queststatus(188) = 7, rankpoints + 5, "#me läßt lächelnd den Blick über das Feld zu ihrer linken streifen. Vielleicht kannst du noch mehr helfen?"
+queststatus(188) = 6, town = Runewick, ".+" -> inform("[Quest gelöst] Du erhältst 20 Silberstücke."), money + 2000, queststatus(188) = 7, rankpoints + 5, "#me läßt lächelnd den Blick über das Feld zu ihrer linken streifen.'Vielleicht kannst du noch mehr helfen?'"
 
 -- Quest 1 taken but not solved, repeat the instructions
 queststatus(188) > 0, queststatus(188) < 6, english, town = Runewick, "quest", "mission" -> "The farmers can't withstand much more theft by the rats, please hurry up and kill 5 rats."
@@ -262,9 +262,9 @@ english, "Oldra" -> "Oldra grants us a lovely harvest, and the rats steal it awa
 cycletext "Die Bauern drohen zu streiken. Die Ratten müssen gestoppt werden.", "The farmers are threatening to strike, the rats must be stopped."
 cycletext "Die Ratten schleppen täglich mehr Essen weg.", "The rats carry off more food every day."
 cycletext "Der Erzmagier ist ein sehr weiser Mann.", "The Archmage is a very wise man."
-cycletext "#me sucht das Gelände voller Stolz ab", "#me scans the area with pride."
-cycletext "#me erschaudert sichtbar vor Ekel, als eine große Ratte nahe vorbeirennt", "#me visibly shudders in revulsion as a large rat scampers nearby."
-cycletext "#me bereitet ihren Bogen und Pfeile vor, auf etwas in der Ferne zielend", "#me prepares her bow and arrow, taking aim at a target in the distance."
+cycletext "#me sucht das Gelände voller Stolz ab.", "#me scans the area with pride."
+cycletext "#me erschaudert sichtbar vor Ekel, als eine große Ratte nahe vorbeirennt.", "#me visibly shudders in revulsion as a large rat scampers nearby."
+cycletext "#me bereitet ihren Bogen und Pfeile vor, auf etwas in der Ferne zielend.", "#me prepares her bow and arrow, taking aim at a target in the distance."
 cycletext "Du da, komm hilf bei dieser Pest.", "You there, come help with these pests."
 cycletext "Es muß etwas getan werden. Gibt es hier eine brave Seele dafür?", "Something must be done, is there any brave souls about?"
 cycletext "#me lächelt zu den Lebewesen am Boden", "#me smiles to the creatures above ground."
