@@ -120,6 +120,7 @@ Description[ENGLISH][37] = "You have fulfilled all of Cilivren Itiireae's tasks.
 Start = {843, 844, 0}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
+
 QuestTarget = {}
 QuestTarget[1] = {position(843, 844, 0), position(832,832,-3)}
 QuestTarget[2] = {position(843, 844, 0), position(832,832,-3)}

@@ -92,7 +92,6 @@ cisternList:add( position(135,556,-6),nil,"Ein strenger Geruch liegt in der Luft
 cisternList:add( position(105,563,-6),nil,"Die Brücke knarrt laut und unheilvoll während du darüber läufst.","The bridge creaks ominously and loud as you walk over it.",nil,nil,30); --cistern_cave
 cisternList:add( position(113,570,-6),nil,"Eine Riesige Kanalratte springt überraschend hinter dem großen glühendem Pilz hervor und erschreckt dich.","A giant sewer rat jumps out from behind the huge glowing mushroom, startling the unprepared mind.",nil,nil,30); --cistern_cave
 
-
 function MoveToField(Char)
 	local this = getcistern(Char);
 	if this then

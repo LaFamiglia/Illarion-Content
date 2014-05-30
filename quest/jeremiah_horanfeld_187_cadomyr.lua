@@ -46,8 +46,8 @@ Description[ENGLISH][5] = "Kill 5 rats in the Cistern, you still have 1 left."
 Description[GERMAN][6] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][6] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][7] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][7] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
+Description[GERMAN][7] = "Gehe zurück zum Schädlingswächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][7] = "Check back with Vermin Monitor Jeremiah Horanfeld, he may have another task for you."
 
 Description[GERMAN][8] = "Sammle 10 Rattenfelle und bringe sie als Beweis zu Jeremiah Horanfeld."
 Description[ENGLISH][8] = "Collect ten rat furs and bring them to Jeremiah Horanfeld as evidence."
@@ -77,8 +77,8 @@ Description[ENGLISH][19] = "Kill 10 Agressive and Muskrats, you still need 1."
 Description[GERMAN][20] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][20] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][21] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][21] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
+Description[GERMAN][21] = "Gehe zurück zum Schädlingswächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][21] = "Check back with Vermin Monitor Jeremiah Horanfeld, he may have another task for you."
 
 Description[GERMAN][22] = "Sammle 25 Pottasche von den Ratten der Zisterne."
 Description[ENGLISH][22] = "Collect 25 potash from the Cistern rats."
@@ -108,8 +108,8 @@ Description[ENGLISH][33] = "Kill 10 Sewer Rats, you still need 1."
 Description[GERMAN][34] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][34] = "Return to Jeremiah Horanfeld for you reward."
 
-Description[GERMAN][35] = "Gehe zurück zum Rattenwächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
-Description[ENGLISH][35] = "Check back with Rat Monitor Jeremiah Horanfeld, he may have another task for you."
+Description[GERMAN][35] = "Gehe zurück zum Schädlingswächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
+Description[ENGLISH][35] = "Check back with Vermin Monitor Jeremiah Horanfeld, he may have another task for you."
 
 Description[GERMAN][36] = "Sammle 10 Rohleder von den Pest Ratten in der Zisternenhöhle und bringe diese zu Jeremiah Horanfeld."
 Description[ENGLISH][36] = "Collect 10 raw leather from the plague rats in the Cistern Cave and return them to Jeremiah Horanfeld."

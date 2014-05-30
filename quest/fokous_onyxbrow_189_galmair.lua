@@ -122,7 +122,7 @@ Start = {348, 273, 0}
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
 QuestTarget[1] = {position(348, 273, 0), position(370,470,-6)}
-QuestTarget[2] = {position(348, 273, 0), position(370,470,-6}
+QuestTarget[2] = {position(348, 273, 0), position(370,470,-6)}
 QuestTarget[3] = {position(348, 273, 0), position(370,470,-6)}
 QuestTarget[4] = {position(348, 273, 0), position(370,470,-6)}
 QuestTarget[5] = {position(348, 273, 0), position(370,470,-6)} 

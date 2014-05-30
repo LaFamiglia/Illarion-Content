@@ -2285,6 +2285,7 @@ function iniQuests()
     maximumQueststatus[id]=34;
 	questLocation[id]=position(370,470,-6);
     radius[id]=30;
+	
 end
 
 

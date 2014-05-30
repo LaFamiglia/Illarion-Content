@@ -112,9 +112,9 @@ town = Galmair, "task", "adventure", "order" -> "Only those from the realm of wi
 town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Nur Jene aus dem Reich der Wahrheit werden hier etwas zu tun finden."
 
 .--- fix if quest started and sent to NPC by Florian
-queststatus(188) > 0, queststatus(820) = 21, english, town = Runewick, "quest", "mission", "florain", "dreyndel" -> queststatus(820) = 22, "Ah Florain send you but you already ask me for something to do."
+queststatus(188) > 0, queststatus(820) = 21, english, town = Runewick, "quest", "mission", "florain", "dreyndel" -> queststatus(820) = 22, "Ah Florain sent you but you already asked me for something to do."
 queststatus(188) > 0, queststatus(820) = 21, town = Runewick, "quest", "mission", "florain", "dreyndel" -> queststatus(820) = 22, "Ah Florain hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
-queststatus(188) > 0, queststatus(820) = 21, town = Runewick, "task", "adventure", "order" -> queststatus(820) = 22, "Ah Florain send you but you already ask me for something to do."
+queststatus(188) > 0, queststatus(820) = 21, town = Runewick, "task", "adventure", "order" -> queststatus(820) = 22, "Ah Florain sent you but you already asked me for something to do."
 queststatus(188) > 0, queststatus(820) = 21, town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(820) = 22, "Ah Florain hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
 
 -- 1st quest: Kill 5 rats, player receives rope
@@ -240,7 +240,7 @@ english, "job" -> "My job is Guadian of the fields, I help protect the farmers a
 "knowledge" -> "Knowledge is the cornerstone of all things."
 "Wissen" -> "Wissen ist der Grundstein aller Dinge."
 "my name" -> "My name is Cilivren Itiireae, I am the Guardian of the Fields."
-"mein Name" -> ""
+"mein Name" -> "Mein Name ist Cilivren Itiireae, Ich bin der Wächter der Felder."
 
 -- Gods - use the triggers of the god the NPC worships or fights
 english, "Elara" -> "Elara grants us the knowledge needed to understand how foul rats are."

@@ -110,7 +110,7 @@ town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Ich habe keine 
 english, town = Galmair, "quest", "mission" -> "I do not have work for you outsider."
 town = Galmair, "quest", "mission" -> "Ich habe keine Arbeit für dich Vogelfreier."
 town = Galmair, "task", "adventure", "order" -> "I do not have work for you outsider."
-town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Ich habe keine Arbeit für dich Vogelfreier."
 
 .--- fix if quest started and sent to NPC by Jakob
 queststatus(187) > 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah Jakob sent you, but you have already asked me for something to do."
@@ -120,14 +120,14 @@ queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe
 
 -- 1st quest: Kill 5 rats, player receives rope
 -- Give out quest 1 and a rope
-queststatus(187) = 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
+queststatus(187) = 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and descend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
 queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "Töte 5 Ratten in der Zisterne für den Ruhm und die Ehre Cadomyr´s. Nimm dieses Seil und begib dich hinab in den Schacht! (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"
-queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and descend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)"
 queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "Töte 5 Ratten in der Zisterne für den Ruhm und die Ehre Cadomyr´s. Nimm dieses Seil und begib dich hinab in den Schacht! (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"
 
-queststatus(187) = 0, english, town = Cadomyr,"quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)."
+queststatus(187) = 0, english, town = Cadomyr,"quest", "mission" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and descend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)."
 queststatus(187) = 0, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] SchädlingswächterI"), item(2760, 1, 566), queststatus(187) = 1, "Töte 5 Ratten in der Zisterne für den Ruhm und die Ehre Cadomyr´s. Nimm dieses Seil und begib dich hinab in den Schacht! (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"
-queststatus(187) = 0, town = Cadomyr, "task", "adventure" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and decend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)."
+queststatus(187) = 0, town = Cadomyr, "task", "adventure" -> inform("[New quest] Vermin Monitor I"), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill 5 rats in the cistern.  Take this rope and descend into the well! (Place the rope in your belt or hand and double click it to use it in front of the well)."
 queststatus(187) = 0, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Schädlingswächter I"), item(2760, 1, 566), queststatus(18) = 1, "Töte 5 Ratten in der Zisterne für den Ruhm und die Ehre Cadomyr´s. Nimm dieses Seil und begib dich hinab in den Schacht! (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"
 
 -- Quest 1 solved, reward: 2000cp, +5 rankpoints
@@ -233,11 +233,11 @@ queststatus(187) = 37, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> "Du 
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
 "profession" -> "I am a Vermin Monitor, like my father, and his father before him!"
-"beruf" -> "Ich bin ein Rattenfänger, wie mein Vater und Großvater vor mir."
+"beruf" -> "Ich bin ein Schädlingswächter, wie mein Vater und Großvater vor mir."
 english, "job" -> "I am a Vermin Monitor, like my father, and his father before him!"
-"job" -> "Ich bin ein Rattenfänger, wie mein Vater und Großvater vor mir."
+"job" -> "Ich bin ein Schädlingswächter, wie mein Vater und Großvater vor mir."
 "rat" -> "My father was a vermin monitor too!"
-"ratten" -> "Mein Vater war auch Rattenfänger!"
+"ratten" -> "Mein Vater war auch Schädlingswächter!"
 "pride" -> "One must exhibit pride in all they do!"
 "Stolz" -> "Man muß Stolz zeigen, bei allem was man tut."
 "my name" -> "My name is Jeremiah Horafeld, I am the Queen's own Vermin Monitor."
