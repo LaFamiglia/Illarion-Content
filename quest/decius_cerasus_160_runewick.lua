@@ -62,62 +62,80 @@ Description[ENGLISH][9] = "A very urgent and quite elaborate order by our Archma
 Description[GERMAN][10] = "Ich brauche eine Rubinkette. Wärt ihr so freundlich mir eine zu bringen?"
 Description[ENGLISH][10] = "I need a ruby amulet. Would you be so kind to get me one?"
 
-Description[GERMAN][11] = "Der Don hat ein Gelage für einige Händler abgehalten und seine Lieblingssuppe servieren lassen, aber keiner der Händler hat seine Suppenschüsseln wieder abgegeben! Wir benötigen Ersatz. Bringt mir 20 Suppenschüsseln."
-Description[ENGLISH][11] = "The Don had a party for some merchants travelling through this land. We served some of our most famous soup but the damn merchants left without returning the bowls! We need to replace them! Bring me twenty soup bowls."
+Description[GERMAN][11] = "Heute benötige ich 5 Muffins. Bringt sie mir und fragt nicht weiter."
+Description[ENGLISH][11] = "Today I need five blackberry muffins. Bring them to me and no further questions."
 
-Description[GERMAN][12] = "Der Don hat eine neue Rüstung in Auftrag gegeben. Dafür wurden Materialien aus unserem Lager für den Schmied verwendet. Wir haben bereits alles bis auf das Leder ersetzt, da es hier kaum Schweine gibt. Woher ist mir egal, aber besorge zehn getrocknete Lederhäute."
-Description[ENGLISH][12] = "The Don commissioned a new set of armour to be made. For this he took materials from our storage for the smith. We've been able to replace everything except the leather since there are no pigs around. Please venture out and gather us ten pieces of dried leather."
+Description[GERMAN][12] = "Eine Anfrage von unseren forschenden Alchemisten wurde gestellt. Sie brauchen 10 mal Sonnenkraut. Bringt sie mir einfach und die Tränkepanscher werden zufrieden sein."
+Description[ENGLISH][12] = "A request was made by our researching alchemists. They need ten sun herbs. Just bring them to me and those potion makers will be happy."
 
-Description[GERMAN][13] = "Der persönliche Goldkelch des Dons hat über die Jahre an Glanz verloren, daher hat er sich einen neuen aus dem Lager genommen. Ich will, dass Ihr für Ersatz sorgt."
-Description[ENGLISH][13] = "The Don's personal golden goblet has been tarnished over the years, he's taken a new one from the storage. I'll need ya to go and fetch a new golden goblet for the storage."
+Description[GERMAN][13] = "Eine Anfrage von unseren forschenden Alchemisten wurde gestellt. Sie brauchen 10 mal Flammkelchblüte. Bringt sie mir einfach und die Tränkepanscher werden zufrieden sein."
+Description[ENGLISH][13] = "A request was made by our researching alchemists. They need ten flamegoblet blossoms. Just bring them to me and those potion makers will be happy."
 
-Description[GERMAN][14] = "Einer der Leibwachen des Dons hat gestern auf einem Jagdausflug seinen Bogen zerbrochen. Ein neuer Langbogen wurde aus dem Lager genommen, wir müssen ihn ersetzen! Bringt mir einen Langbogen."
-Description[ENGLISH][14] = "One of the Don's bodyguards was out hunting yesterday and his bow broke. The Don had a longbow taken from the storage, we must replace it! Bring me one longbow."
+Description[GERMAN][14] = "Eine Anfrage von unseren forschenden Alchemisten wurde gestellt. Sie brauchen eine Wüstenbeere. Bringt sie mir einfach und die Tränkepanscher werden zufrieden sein."
+Description[ENGLISH][14] = "A request was made by our researching alchemists. They need a desert berry. Just bring it to me and those potion makers will be happy."
 
-Description[GERMAN][15] = "Eine unserer Jagdgruppen ist mit viel gutem Fleisch zurückgekehrt! Jedoch haben sie dabei eine größere Anzahl an Armbrustbolzen verbraucht. Besorgt mir 100 neue Bolzen."
-Description[ENGLISH][15] = "One of our hunting parties went out again and brought back a good stock of meat for us! But they used quite a large amount of crossbow bolts. I need you to get me one hundred crossbow bolts."
+Description[GERMAN][15] = "Unser erhabener Erzmagier erwartet Besuch. Für die Verköstigung brauchen wir noch eine Flasche runewicker Wein. Bring mir doch schnell eine."
+Description[ENGLISH][15] = "Our elevated Archmage expects a visitor. For his supply we still need a bottle of Runewicker wine. Please get me one quickly."
 
-Description[GERMAN][16] = "Heute Abend gibt es ein Gelage und das hat unsere Vorräte sehr belastet. Es kommen so viele Gäste, dass wir nicht genug für alle haben! Ich möchte, dass Ihr mir fünf fertige Wildgerichte bringt!"
-Description[ENGLISH][16] = "We're having a feast tonight and many of our materials were taken from the storage for food. There are so many people that we ran out! I need you to skip the storage part and just bring me five venison dishes for the feast!"
+Description[GERMAN][16] = "Eine Katastrophe. Das Pfeifenkraut unseres erhabenen Erzmagiers ist feucht geworden. Er benötigt 5 Blätter Tabak. Sofort!"
+Description[ENGLISH][16] = "A catastrophe. The Archmage's tobacco has got wet. He needs five leaves of tobacco. Immediately!"
 
-Description[GERMAN][17] = "Unsere Alchemisten arbeiten sehr hart. Sie haben neulich einige Beutel Edelsteinstaub aus dem Lager genommen. Also... müssen sie ersetzt werden! Bringt mir fünf Beutel Saphirstaub!"
-Description[ENGLISH][17] = "Our alchemists are hard at work! They've recently taken some of our powders from the storage, therefore.... they must be replaced! Bring me five bags of sapphire powder."
+Description[GERMAN][17] = "Eines der besten Mittel gegen eine Erkältung ist Jungfernkrauttee. Bringe mir bitte eine Flasche."
+Description[ENGLISH][17] = "One of the best remedies for a cold is virgins weed tea. Get me a bottle."
 
-Description[GERMAN][18] = "Einige unserer Schmiede haben sich hier eingeschlichen und etwas Kohle genommen. Ohne Genehmigung hätte ich sie ihnen nie gegeben! Egal, wir sind nun knapp an Kohle und müssen nachbessern. Bringt mit 15 Kohlebrocken."
-Description[ENGLISH][18] = "Some of our smiths snuck in and snatched some of our coal. I would've given it to them if they had filled out a requisition order! Nonetheless, we are short and I need you to get me fifteen lumps of coal."
+Description[GERMAN][18] = "Unser gelehrsamer Erzmagier braucht für ein Ritual einen Bäutel Diamantstaub. Bring es mir so schnell wie möglich."
+Description[ENGLISH][18] = "Our studious Archmage needs a bag of diamond dust for a ritual. Bring me one as fast as possible."
 
-Description[GERMAN][19] = "Der Don hat einen Helm aus dem Lager genommen, um einen der neuen Leibwachen auszurüsten. Er ist der Don, also hatte ich da nichts zu sagen, aber jetzt muss der Helm ersetzt werden! Bringt mir einen neuen Topfhelm."
-Description[ENGLISH][19] = "The Don has taken a helmet from our storage to armour one of his new bodyguards. He's the Don so I've no say in the matter, but now we're short! I need you to go and get me one pot helmet."
+Description[GERMAN][19] = "Es werden fünf Forellen benötigt. Frag mich nicht warum, bring sie mir bitte einfach."
+Description[ENGLISH][19] = "Five trout are needed. Do not ask me why, please just get them for me."
 
-Description[GERMAN][20] = "Der Don hat einen Ring in Auftrag gegeben und dafür wurde ein Goldnugget aus dem Lager verwendet. Es ist vielleicht nur ein einziges Nugget, aber es muss dennoch ersetzt werden! Bring mir ein Goldnugget."
-Description[ENGLISH][20] = "The Don commissioned a ring to be made and used a gold nugget from the storage. It might only be a single nugget, but it must be replaced! I need you to get me one gold nugget."
+Description[GERMAN][20] = "Ich habe wieder eine Aufgabe für euch. Bringt mir 20 Kirschen, am besten die süßen, dunkelroten, runewicker Kirschen."
+Description[ENGLISH][20] = "I've got another task for you. Bring me twenty cherries, preferrably the sweet dark red Runewicker cherries."
 
+Description[GERMAN][21] = "Runewick muss in Stand gehalten werden. Bringt mir zehn Ziegelsteine, damit ich einige beschädigte Teile ausbessern kann."
+Description[ENGLISH][21] = "Runewick needs to be kept in shape. Bring me ten bricks so I can mend a few damaged parts."
+
+Description[GERMAN][22] = "Runewick muss in Stand gehalten werden. Bringt mir zehn Naldorholzbretter, damit die Schreiner neue Regale bauen können."
+Description[ENGLISH][22] = "Runewick needs to be kept in shape. Get me ten naldor wood boards, so the carpenters can build new shelves."
+
+Description[GERMAN][23] = "Der Vorrat an Kohle für die Öfen geht zur Neige. Wenn wir nicht frieren wollen benötige ich fünf Kohleklumpen. Und zwar so schnell wie möglich."
+Description[ENGLISH][23] = "Our stock of coal for the ovens is running low. If we don't want to freeze I need five lumps of coal. As fast as possible."
+
+Description[GERMAN][24] = "Unser Erzmagier ist zwar meist fleißig am lehren und studieren, aber manchmal braucht auch er eine Pause. Nun ist allerdings seine Lieblingspfeife zu Bruch gegangen, bringt mir dafür Ersatz. Und zwar so schnell wie möglich."
+Description[ENGLISH][24] = "Our Archmage is usually busy teaching and studying, but sometimes even he needs a break. Now his beloved pipe has broken, bring me a replacement. Do it as fast as possible."
+
+Description[GERMAN][25] = "Für Umbau- und Renovierungsarbeiten benötige ich noch einen Hammer. Natürlich wird unser Erzmagier davon erfahren, wenn ihr mir helft."
+Description[ENGLISH][25] = "For the reconstructions and renovations I still need a hammer. Of course our Archmage will hear about your help."
 -- Insert the position of the quest start here (probably the position of an NPC or item)
-Start = {369, 236, 0}
+Start = {906, 828, 3}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 QuestTarget = {}
-QuestTarget[1] = {position(369, 236, 0)} 
-QuestTarget[2] = {position(369, 236, 0)} 
-QuestTarget[3] = {position(369, 236, 0)} 
-QuestTarget[4] = {position(369, 236, 0)} 
-QuestTarget[5] = {position(369, 236, 0)} 
-QuestTarget[6] = {position(369, 236, 0)} 
-QuestTarget[7] = {position(369, 236, 0)} 
-QuestTarget[8] = {position(369, 236, 0)} 
-QuestTarget[9] = {position(369, 236, 0)} 
-QuestTarget[10] = {position(369, 236, 0)} 
-QuestTarget[11] = {position(369, 236, 0)} 
-QuestTarget[12] = {position(369, 236, 0)} 
-QuestTarget[13] = {position(369, 236, 0)} 
-QuestTarget[14] = {position(369, 236, 0)} 
-QuestTarget[15] = {position(369, 236, 0)} 
-QuestTarget[16] = {position(369, 236, 0)} 
-QuestTarget[17] = {position(369, 236, 0)} 
-QuestTarget[18] = {position(369, 236, 0)} 
-QuestTarget[19] = {position(369, 236, 0)} 
-QuestTarget[20] = {position(369, 236, 0)} 
-
+QuestTarget[1] = {position(906, 828, 3)} 
+QuestTarget[2] = {position(906, 828, 3)} 
+QuestTarget[3] = {position(906, 828, 3)} 
+QuestTarget[4] = {position(906, 828, 3)} 
+QuestTarget[5] = {position(906, 828, 3)} 
+QuestTarget[6] = {position(906, 828, 3)} 
+QuestTarget[7] = {position(906, 828, 3)} 
+QuestTarget[8] = {position(906, 828, 3)} 
+QuestTarget[9] = {position(906, 828, 3)} 
+QuestTarget[10] = {position(906, 828, 3)} 
+QuestTarget[11] = {position(906, 828, 3)} 
+QuestTarget[12] = {position(906, 828, 3)} 
+QuestTarget[13] = {position(906, 828, 3)} 
+QuestTarget[14] = {position(906, 828, 3)} 
+QuestTarget[15] = {position(906, 828, 3)} 
+QuestTarget[16] = {position(906, 828, 3)} 
+QuestTarget[17] = {position(906, 828, 3)} 
+QuestTarget[18] = {position(906, 828, 3)} 
+QuestTarget[19] = {position(906, 828, 3)} 
+QuestTarget[20] = {position(906, 828, 3)} 
+QuestTarget[21] = {position(906, 828, 3)} 
+QuestTarget[22] = {position(906, 828, 3)} 
+QuestTarget[23] = {position(906, 828, 3)} 
+QuestTarget[24] = {position(906, 828, 3)} 
+QuestTarget[25] = {position(906, 828, 3)} 
 --QuestTarget[1] = {position(x, y, 100), position(x, y, 100)}
 
 -- Insert the quest status which is reached at the end of the quest
