@@ -1304,7 +1304,7 @@ end
 ]]
 function Hour_To_String(hour)
     if (hour >= 0 and hour < 2 or hour == 24) then
-        return "gegen Mitternacht", "at midnight";
+        return "gegen Mitternacht", "around midnight";
     elseif (hour >= 2 and hour < 4) then
         return "nach Mitternacht", "after midnight";
     elseif (hour >= 4 and hour < 6) then
@@ -1316,7 +1316,7 @@ function Hour_To_String(hour)
     elseif (hour >= 10 and hour < 12) then
         return "vormittags", "before noon";
     elseif (hour >= 12 and hour < 14) then
-        return "gegen Mittag", "at noon";
+        return "gegen Mittag", "around noon";
     elseif (hour >= 14 and hour < 16) then
         return "nachmittags", "in the afternoon";
     elseif (hour >= 16 and hour < 18) then
@@ -1732,38 +1732,66 @@ end
 -- @return String  The name of the corresponding lead attribute.
 --                 NOTE: in case there is no lead attribute, nil will be returned.
 function GetLeadAttributeName(Skill)
+
   if leadAttribTable==nil then
+  
     leadAttribTable={};
-    leadAttribTable[Character.tailoring]="dexterity"
-    leadAttribTable[Character.alchemy]="essence"
-    --leadAttribTable[Character.tactics]="perception" --deactivated
-    leadAttribTable[Character.farming]="constitution"
-    --leadAttribTable[Character.poisoning]="perception" --deactivated
-    leadAttribTable[Character.harp]="dexterity"
-    leadAttribTable[Character.woodcutting]="constitution"
-    leadAttribTable[Character.smithing]="dexterity"
-    leadAttribTable[Character.punctureWeapons]="agility"
-    leadAttribTable[Character.horn]="dexterity"
-    leadAttribTable[Character.distanceWeapons]="perception"
-    leadAttribTable[Character.gemcutting]="dexterity"
-    leadAttribTable[Character.slashingWeapons]="strength"
-    --leadAttribTable[Character.magicResistance]="wilpower" --please reconsider once you work on magic
-    leadAttribTable[Character.carpentry]="dexterity"
-    leadAttribTable[Character.cookingAndBaking]="dexterity"
-    leadAttribTable[Character.goldsmithing]="dexterity"
-    leadAttribTable[Character.concussionWeapons]="strength"
-    leadAttribTable[Character.flute]="dexterity"
-    leadAttribTable[Character.parry]="agility"
-    leadAttribTable[Character.lute]="dexterity"
-    --leadAttribTable[Character.dodge]="agility" --deactivated
-    leadAttribTable[Character.herblore]="constitution"
-    leadAttribTable[Character.mining]="constitution"
-    leadAttribTable[Character.glassBlowing]="dexterity"
-    leadAttribTable[Character.fishing]="constitution"
-    leadAttribTable[Character.wrestling]="strength"
-    leadAttribTable[Character.firingBricks]="constitution"
+	
+	--Dexterity: All crafting skills for final products and instruments (please remove these skills in future)
+	leadAttribTable[Character.tailoring]="dexterity"
+	leadAttribTable[Character.smithing]="dexterity"
+	leadAttribTable[Character.gemcutting]="dexterity"
+	leadAttribTable[Character.carpentry]="dexterity"
+	leadAttribTable[Character.cookingAndBaking]="dexterity"
+	leadAttribTable[Character.goldsmithing]="dexterity"
+	leadAttribTable[Character.glassBlowing]="dexterity"
+	leadAttribTable[Character.harp]="dexterity"
+	leadAttribTable[Character.horn]="dexterity"
+	leadAttribTable[Character.flute]="dexterity"
+	leadAttribTable[Character.lute]="dexterity"
+	
+	--Constitution: All gathering skills
+	leadAttribTable[Character.herblore]="constitution"
+	leadAttribTable[Character.mining]="constitution"
+	leadAttribTable[Character.fishing]="constitution"
+	leadAttribTable[Character.firingBricks]="constitution"
+	leadAttribTable[Character.farming]="constitution"
+	leadAttribTable[Character.woodcutting]="constitution"
+		
+	--Agility: Defensive fighting skills
+	leadAttribTable[Character.parry]="agility"
+	leadAttribTable[Character.heavyArmour]="agility"
+	leadAttribTable[Character.mediumArmour]="agility"
+	leadAttribTable[Character.lightArmour]="agility"
+			
+	--Perception: Archery
+	leadAttribTable[Character.distanceWeapons]="perception"
+		
+	--Strength: Offensive fighting skills
+	leadAttribTable[Character.slashingWeapons]="strength"
+	leadAttribTable[Character.wrestling]="strength"
+	leadAttribTable[Character.concussionWeapons]="strength"
+	leadAttribTable[Character.punctureWeapons]="strength"
+
+	--Essence: Alchemy
+	leadAttribTable[Character.alchemy]="essence"
+		
+	--Intelligence: Magic
+	--No skills yet
+		
+	--Willpower: Priests
+	--No skills yet
+		
+	--Deactivated skills	
+	--leadAttribTable[Character.dodge]="agility" --deactivated
+	--leadAttribTable[Character.tactics]="perception" --deactivated
+	--leadAttribTable[Character.magicResistance]="wilpower" --please reconsider once you work on magic
+	--leadAttribTable[Character.poisoning]="perception" --deactivated
+	
   end
+  
   return leadAttribTable[Skill]
+  
 end
 
 --- Searches in an area for an item id.

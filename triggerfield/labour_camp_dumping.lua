@@ -45,7 +45,7 @@ function PutItemOnField(Item,User)
 		if town then -- security check: only if the char as been sent to forced labour by a faction
 		
 			local theItemStats=world:getItemStats(Item)
-			itemNumberPay = base.common.Limit(workLoad-Item.number,0,nil) -- we do only count the items a char has to deliver
+			itemNumberPay = base.common.Limit(Item.number,0,workLoad) -- we do only count the items a char has to deliver
 			local payToFaction = itemNumberPay*theItemStats.Worth*0.1 -- 10% of teh value
 			
 			if town ~= "None" then	
@@ -75,7 +75,7 @@ function PutItemOnField(Item,User)
 				User:setQuestProgress(26,0)
 			else
 				User:setQuestProgress(25,workLoad-Item.number)
-			    base.common.InformNLS(User,"Du bemerkt, wie der Aufseher sich kurz etwas notiert. Scheinbar noch nicht deine letzte Ladung. [Du musst noch "..(workLoad - Item.number).." Bodenschätze abliefern.]","You notice that the guard seems to take a short note. Obviously, not your last charge. [You still have to deliver "..(workLoad - Item.number).." resource.")
+			    base.common.InformNLS(User,"Du bemerkt, wie der Aufseher sich kurz etwas notiert. Scheinbar noch nicht deine letzte Ladung. Du musst noch "..(workLoad - Item.number).." Bodenschätze abliefern.","You notice that the guard seems to take a short note. Obviously, not your last charge. You still have to deliver "..(workLoad - Item.number).." resources.")
 			end
 		end
 		world:gfx(46,Item.pos)

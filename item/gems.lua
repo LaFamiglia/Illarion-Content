@@ -65,8 +65,8 @@ gemDataKey[TOPAZ] = "magicalTopaz"
 
 levelDataKey = "gemLevel"
 
-gemPrefixDE = {"latent", "bedingt", "leicht", "m‰ﬂig", "durchschnittlich", "bemerkenswert", "stark", "sehr stark", "unglaublich", "einzigartig"}
-gemPrefixEN = {"latent", "limited", "slight", "moderate", "average", "notable", "strong", "very strong", "unbelievable", "unique"}
+gemPrefixDE = {"Latent", "Bedingt", "Leicht", "M‰ﬂig", "Durchschnittlich", "Bemerkenswert", "Stark", "Sehr stark", "Unglaublich", "Einzigartig"}
+gemPrefixEN = {"Latent", "Limited", "Slight", "Moderate", "Average", "Notable", "Strong", "Very Strong", "Unbelievable", "Unique"}
 
 gemLevelRareness = {}
 gemLevelRareness[1] = ItemLookAt.uncommonItem
@@ -87,7 +87,7 @@ function lookAtFilter(user, lookAt, data)
         if user:getPlayerLanguage() == 0 then
             lookAt.name = gemPrefixDE[gemLevel] .. " magischer " .. lookAt.name
         else
-            lookAt.name = gemPrefixEN[gemLevel] .. " magical " .. lookAt.name
+            lookAt.name = gemPrefixEN[gemLevel] .. " Magical " .. lookAt.name
         end
 
         lookAt.rareness = gemLevelRareness[gemLevel]
@@ -106,12 +106,12 @@ gemCraft = item.base.crafts.Craft:new{
 }
 
 local categoryId = {}
-categoryId[EMERALD] = gemCraft:addCategory("emerald", "Smaragd")
-categoryId[RUBY] = gemCraft:addCategory("ruby", "Rubin")
-categoryId[OBSIDIAN] = gemCraft:addCategory("obsidian", "Obsidian")
-categoryId[SAPPHIRE] = gemCraft:addCategory("sapphire", "Saphir")
-categoryId[AMETHYST] = gemCraft:addCategory("amethyst", "Amethyst")
-categoryId[TOPAZ] = gemCraft:addCategory("topaz", "Topas")
+categoryId[EMERALD] = gemCraft:addCategory("Emerald", "Smaragd")
+categoryId[RUBY] = gemCraft:addCategory("Ruby", "Rubin")
+categoryId[OBSIDIAN] = gemCraft:addCategory("Obsidian", "Obsidian")
+categoryId[SAPPHIRE] = gemCraft:addCategory("Sapphire", "Saphir")
+categoryId[AMETHYST] = gemCraft:addCategory("Amethyst", "Amethyst")
+categoryId[TOPAZ] = gemCraft:addCategory("Topaz", "Topas")
 
 local gem, level, product
 for gem=1,7 do
