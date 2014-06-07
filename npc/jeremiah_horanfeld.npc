@@ -113,10 +113,10 @@ town = Galmair, "task", "adventure", "order" -> "I do not have work for you outs
 town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Ich habe keine Arbeit für dich Vogelfreier."
 
 .--- fix if quest started and sent to NPC by Jakob
-queststatus(187) > 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah Jakob sent you, but you have already asked me for something to do."
-queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission", "jakob", "lindron" -> queststatus(703) = 18, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
-queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> queststatus(703) = 18, "Ah Jakob sent you, but you have already asked me for something to do."
-queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(703) = 18, "Ah Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
+queststatus(187) > 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah, Jakob sent you, but you have already asked me for something to do."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission", "jakob", "lindron" -> queststatus(703) = 18, "Ah, Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> queststatus(703) = 18, "Ah, Jakob sent you, but you have already asked me for something to do."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(703) = 18, "Ah, Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
 
 -- 1st quest: Kill five rats, player receives rope
 -- Give out quest 1 and a rope
@@ -169,9 +169,9 @@ queststatus(187) = 20, english, town = Cadomyr, ".+" -> inform("[Quest solved] Y
 queststatus(187) = 20, town = Cadomyr, ".+" -> inform("[Quest gelöst] Du erhältst 20 Silberstücke."), money + 2000, queststatus(187) = 21, rankpoints + 5, "Die Königin wird sehr erfreut sein, wenn ich Ihr von deinen Bemühungen berichte."
 
 -- Quest 3 taken but not solved, repeat the instructions
-queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, english, "quest", "mission" -> "The Queen has ordered that the rat population be controlled, kill ten rats."
+queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, english, "quest", "mission" -> "The Queen has ordered that the rat population be controlled. Kill ten rats."
 queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, "quest", "mission" -> "Die Königin hat den Befehl gegeben die Rattenanzahl zu dezimieren. Töte zehn Ratten."
-queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, "task", "adventure" -> "The Queen has ordered that the rat population be controlled, kill ten rats."
+queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, "task", "adventure" -> "The Queen has ordered that the rat population be controlled. Kill ten rats."
 queststatus(187) > 9, queststatus(187) < 20, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> "Die Königin hat den Befehl gegeben die Rattenanzahl zu dezimieren. Töte zehn Ratten."
 
 -- 4th quest collect 15 rat furs from cistern rats
@@ -216,7 +216,7 @@ queststatus(187) = 35, town = Cadomyr, "task", "adventure" -> inform("[New quest
 queststatus(187) = 35, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Schädlingswächter VI"), queststatus(187) = 36, "Töte den Rattenmenschen in der Zisterne, er ist der Befehlshaber und trägt den Namen 'Schnüffler'. Vielleicht werden die Ratten sich dann zurückziehen!"
 
 -- Quest 6 solved, 30 silver, +10 rankpoints
-queststatus(187) = 37, english, town = Cadomyr, ".+" -> inform("[Quest solved] You are awarded 30 silver coins."), money + 3000, queststatus(187) = 38, rankpoints + 10, "You have proven your valour and honour and will make a good subject for the Queen."
+queststatus(187) = 37, english, town = Cadomyr, ".+" -> inform("[Quest solved] You are awarded 30 silver coins."), money + 3000, queststatus(187) = 38, rankpoints + 10, "You have proven your valour and honour. You will make a good subject for the Queen."
 queststatus(187) = 37, town = Cadomyr, ".+" -> inform("[Quest gelöst] Du erhältst 30 Silberstücke."), money + 3000, queststatus(187) = 38, rankpoints + 10, "Du hast deinen Mut und deine Ehre bewiesen. Du wirst ein guter Diener der Königin sein."
 
 -- Quest 6 taken but not finished
@@ -226,9 +226,9 @@ queststatus(187) > 35, queststatus(187) < 37, town = Cadomyr, "task", "adventure
 queststatus(187) > 35, queststatus(187) < 37, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> "Töte den Rattenmenschen in der Zisterne, er ist der Befehlshaber und trägt den Namen 'Schnüffler'. Vielleicht werden die Ratten sich dann zurückziehen!"
 
 -- No more quests, just nice words of gratitude
-queststatus(187) = 38, town = Cadomyr, english, "quest", "mission" -> "You have done your duty, I have no more work for you."
+queststatus(187) = 38, town = Cadomyr, english, "quest", "mission" -> "You have done your duty. I have no more work for you."
 queststatus(187) = 38, town = Cadomyr, "quest", "mission" -> "Du hast deine Arbeit getan. Ich habe Nichts mehr für dich zu tun."
-queststatus(187) = 38, town = Cadomyr, "task", "adventure" -> "You have done your duty, I have no more work for you."
+queststatus(187) = 38, town = Cadomyr, "task", "adventure" -> "You have done your duty. I have no more work for you."
 queststatus(187) = 38, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> "Du hast deine Arbeit getan. Ich habe Nichts mehr für dich zu tun."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
@@ -244,9 +244,9 @@ english, "name" -> "My name is Jeremiah Horanfeld, I am the Queen's own Vermin M
 "name" -> "Mein Name ist Jeremiah Horanfeld. Ich bin der Rattenfänger der Königin."
 
 -- Gods - use the triggers of the god the NPC worships or fights
-english, "Malachin" -> "Malachin god of the hunt will guide you if you let him."
+english, "Malachin" -> "Malachin, god of the hunt, will guide you if you let him."
 "Malachin" -> "Malachin, der Gott der Jagd wird dich leiten, wenn DU ihm vertraust."
-english, "Zhambra" -> "By the mercy of Zhambra our subjects are loyal to our Queen."
+english, "Zhambra" -> "By the mercy of Zhambra, our subjects are loyal to our Queen."
 "Zhambra" -> "Bei der Gnade Zhambras, unsere Diener stehen loyal zur Königin."
 
 -- Catching typical NPC phrases
@@ -268,5 +268,5 @@ cycletext "Erwirb Ehre für Cadomyr mit allem was du tust.", "Bring honour to Cad
 cycletext "Es lohnt sich für die Königin zu arbeiten.", "It is rewarding, working for the Queen."
 cycletext "#me looks around with pride.", "#me looks around with pride."
 cycletext "Dies ist die Wüste. Selbst das Rattenjagen ist eine ehrbare Tätigkeit.", "Here in the desert, even rat hunting is an honourable profession."
-cycletext "#me reckt seinen Brustkorb so vor, das die Rüstung im Sonnenlicht glänzt", "#me puffs out his chest making his armour glint in the sun as you arrive."
+cycletext "#me reckt seinen Brustkorb so vor, das die Rüstung im Sonnenlicht glänzt", "#me puffs out his chest, making his armour glint in the sun as you arrive."
 cycletext "Ich bin ein loyaler Diener der Königin. Das solltest du auch sein!", "I am the Queens loyal subject. You should be too!"

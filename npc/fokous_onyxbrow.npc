@@ -99,24 +99,24 @@ english, "Ciao", "Adieu", "Au revoir" -> "Go on with you, I have work to do."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Arr!! Ich bin Fokous, Fokous Onyxbrow."
 
 -- Catching quest triggers of other factions' members.
-english, town = none, "quest", "mission" -> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
+english, town = none, "quest", "mission" -> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
 town = none, "quest", "mission" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
-town = none, "task", "adventure", "order"-> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
+town = none, "task", "adventure", "order"-> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
 town = none, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
-english, town = Cadomyr, "quest", "mission" -> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
+english, town = Cadomyr, "quest", "mission" -> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
 town = Cadomyr, "quest", "mission" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
-town = Cadomyr, "task", "adventure", "order" -> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
+town = Cadomyr, "task", "adventure", "order" -> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
 town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
-english, town = Runewick, "quest", "mission" -> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
+english, town = Runewick, "quest", "mission" -> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
 town = Runewick, "quest", "mission" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
-town = Runewick, "task", "adventure", "order" -> "#me looks at you with suspicious eyes 'I do not have work for non citizens, you could be a spy!'"
-town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "#me schaut dich misstrauisch an 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
+town = Runewick, "task", "adventure", "order" -> "#me looks at you with suspicious eyes, 'I do not have work for non citizens, you could be a spy!'"
+town = Runewick, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "#me schaut dich misstrauisch an, 'Für Fremde hab ich keine Arbeit, du könntest ein Spion sein!'"
 
 .--- fix if quest started and sent to NPC by Joey
-queststatus(189) > 0, queststatus(712) = 17, english, town = Galmair, "quest", "mission", "joey", "licavoli" -> queststatus(712) = 18, "Ah Joey send you but you already ask me for something to do."
-queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "quest", "mission", "joey", "licavoli" -> queststatus(712) = 18, "Ah Joey hat dich geschickt aber du hast mich bereits nach einer Aufgabe gefragt."
-queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "task", "adventure", "order" -> queststatus(712) = 18, "Ah Joey send you but you already ask me for something to do."
-queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(712) = 18, "Ah Joey hat dich geschickt aber du hast mich bereits nach einer Aufgabe gefragt."
+queststatus(189) > 0, queststatus(712) = 17, english, town = Galmair, "quest", "mission", "joey", "licavoli" -> queststatus(712) = 18, "Ah, Joey sent you, but you already asked me for something to do."
+queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "quest", "mission", "joey", "licavoli" -> queststatus(712) = 18, "Ah, Joey hat dich geschickt aber du hast mich bereits nach einer Aufgabe gefragt."
+queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "task", "adventure", "order" -> queststatus(712) = 18, "Ah, Joey sent you, but you already asked me for something to do."
+queststatus(189) > 0, queststatus(712) = 17, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(712) = 18, "Ah, Joey hat dich geschickt aber du hast mich bereits nach einer Aufgabe gefragt."
 
 -- 1st quest: Kill 5 rats, player receives rope
 -- Give out quest 1 and a rope

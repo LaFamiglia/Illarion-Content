@@ -44,7 +44,7 @@ Description[ENGLISH][4] = "Kill five rats in the Cistern, you still have two lef
 Description[GERMAN][5] = "Töte in der Zisterne fünf Ratten, Du musst noch eine töten."
 Description[ENGLISH][5] = "Kill five rats in the Cistern, you still have one left."
 Description[GERMAN][6] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
-Description[ENGLISH][6] = "Return to Cilivren Itiireae for you reward."
+Description[ENGLISH][6] = "Return to Cilivren Itiireae for your reward."
 
 Description[GERMAN][7] = "Kehre zurück zur Bereichswächterin Cilivren Itiireae, sie hat möglicherweise noch eine Aufgabe für Dich."
 Description[ENGLISH][7] = "Check back with Field Guardian Cilivren Itiireae, she may have another task for you."
@@ -75,7 +75,7 @@ Description[ENGLISH][18] = "Kill ten rats in the Cistern, you still have two lef
 Description[GERMAN][19] = "Töte in der Zisterne zehn Ratten, Du musst noch eine töten."
 Description[ENGLISH][19] = "Kill ten rats in the Cistern, you still have one left."
 Description[GERMAN][20] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
-Description[ENGLISH][20] = "Return to Cilivren Itiireae for you reward."
+Description[ENGLISH][20] = "Return to Cilivren Itiireae for your reward."
 
 Description[GERMAN][21] = "Kehre zurück zur Bereichswächterin Cilivren Itiireae, sie hat möglicherweise noch eine Aufgabe für Dich."
 Description[ENGLISH][21] = "Check back with Field Guardian Cilivren Itiireae, she may have another task for you."
@@ -106,7 +106,7 @@ Description[ENGLISH][32] = "Kill ten rats in the Cistern, you still have two lef
 Description[GERMAN][33] = "Töte in der Zisterne zehn Ratten, Du musst noch eine töten."
 Description[ENGLISH][33] = "Kill ten rats in the Cistern, you still have one left."
 Description[GERMAN][34] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
-Description[ENGLISH][34] = "Return to Cilivren Itiireae for you reward."
+Description[ENGLISH][34] = "Return to Cilivren Itiireae for your reward."
 
 Description[GERMAN][35] = "Kehre zurück zur Bereichswächterin Cilivren Itiireae, sie hat möglicherweise noch eine Aufgabe für Dich."
 Description[ENGLISH][35] = "Check back with Field Guardian Cilivren Itiireae, she may have another task for you."
@@ -114,7 +114,7 @@ Description[ENGLISH][35] = "Check back with Field Guardian Cilivren Itiireae, sh
 Description[GERMAN][36] = "Töte in der Zisterne den Rattenmenschen"
 Description[ENGLISH][36] = "Kill the Ratman boss in the Cistern."
 Description[GERMAN][37] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
-Description[ENGLISH][37] = "Return to Cilivren Itiireae for you reward."
+Description[ENGLISH][37] = "Return to Cilivren Itiireae for your reward."
 Description[GERMAN][38] = "Du hast alle Aufgaben von Cilivren Itiireae erfüllt."
 Description[ENGLISH][38] = "You have fulfilled all of Cilivren Itiireae's tasks."
 
