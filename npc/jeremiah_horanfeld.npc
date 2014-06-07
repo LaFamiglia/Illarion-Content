@@ -7,9 +7,23 @@
 -- 
 -- This program is distributed in the hope that it will be useful, but WITHOUT
 -- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
--- FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+-- FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
 -- details.
 -- 
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-- Illarion Server
+--
+-- This program is free software: you can redistribute it and/or modify it under
+-- the terms of the GNU Affero General Public License as published by the Free
+-- Software Foundation, either version 3 of the License, or (at your option) any
+-- later version.
+--
+-- This program is distributed in the hope that it will be useful, but WITHOUT
+-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+-- FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+-- details.
+--
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program. If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
@@ -52,8 +66,7 @@ colorSkin = 218, 177, 148
 itemHead = 2287
 itemChest = 2369
 itemCoat = 2377
-itemMainHand = 2656
-itemSecondHand = 2388
+itemMainHand = 207
 itemHands = 2295
 itemTrousers = 2111
 itemShoes = 771
@@ -87,7 +100,7 @@ itemShoes = 771
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetings, it is a lovely day."
 "Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Grüße, es ist ein schöner Tag."
-english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetings, it is a lovely day."
+english, "Hiho", "Hallo", "Hey", "Greeb", "Hi" -> "Greetings, it is a lovely day."
 "Hiho", "Hallo", "Hey", "Greeb" ->"Grüße, es ist ein schöner Tag."
 "Farewell", "Bye", "Fare well", "See you" -> "Farewell, until we meet again."
 "Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> "Mach's gut bis wir uns wiedersehen."
@@ -95,8 +108,8 @@ english, "Ciao", "Adieu", "Au revoir" -> "Farewell, until we meet again."
 "Ciao", "Adieu", "Au revoir" -> "Mach's gut bis wir uns wiedersehen."
 "How are you", "How feel", "How do you do" -> "I am quite well."
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Mir geht es gut."
-"your name", "who are you", "who art thou" -> "My name is Jeremiah Horanfeld."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Mein Name ist Jeremiah Horanfeld."
+"your name", "who are you", "who art thou" -> "My name is Jeremiah Horanfeld, I am the Queen's own Vermin Monitor."
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Mein Name ist Jeremiah Horanfeld. Ich bin der Rattenfänger der Königin."
 
 -- Catching quest triggers of other factions' members.
 english, town = none, "quest", "mission" -> "I do not have work for you outsider."
@@ -114,21 +127,21 @@ town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Ich habe keine A
 
 .--- fix if quest started and sent to NPC by Jakob
 queststatus(187) > 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah, Jakob sent you, but you have already asked me for something to do."
-queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission", "jakob", "lindron" -> queststatus(703) = 18, "Ah, Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
+queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission", "jakob", "lindorn" -> queststatus(703) = 18, "Ah, Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
 queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> queststatus(703) = 18, "Ah, Jakob sent you, but you have already asked me for something to do."
 queststatus(187) > 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(703) = 18, "Ah, Jakob hat Euch geschickt aber Ihr habt mich bereits nach einer Aufgabe gefragt."
 
 -- 1st quest: Kill five rats, player receives rope
 -- Give out quest 1 and a rope
-queststatus(187) = 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
-queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
-queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
-queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 566), queststatus(187) = 1, queststatus(703) = 18, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
+queststatus(187) = 0, queststatus(703) = 17, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)"), item(2760, 1, 333), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 333), queststatus(187) = 1, queststatus(703) = 18, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "task", "adventure", "order" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)"), item(2760, 1, 333), queststatus(187) = 1, queststatus(703) = 18, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
+queststatus(187) = 0, queststatus(703) = 17, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 333), queststatus(187) = 1, queststatus(703) = 18, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
 
-queststatus(187) = 0, english, town = Cadomyr,"quest", "mission" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)."), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
-queststatus(187) = 0, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 566), queststatus(187) = 1, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
-queststatus(187) = 0, town = Cadomyr, "task", "adventure" -> inform("[New quest] Vermin Monitor I.(Place the rope in your belt or hand and double click it to use it in front of the well)."), item(2760, 1, 566), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
-queststatus(187) = 0, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 566), queststatus(187) = 1, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
+queststatus(187) = 0, english, town = Cadomyr,"quest", "mission" -> inform("[New quest] Vermin Monitor I. (Place the rope in your belt or hand and double click it to use it in front of the well)."), item(2760, 1, 333), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
+queststatus(187) = 0, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 333), queststatus(187) = 1, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
+queststatus(187) = 0, town = Cadomyr, "task", "adventure" -> inform("[New quest] Vermin Monitor I.(Place the rope in your belt or hand and double click it to use it in front of the well)."), item(2760, 1, 333), queststatus(187) = 1, "For the honour and glory of Cadomyr, please kill five rats in the cistern. Take this rope and descend into the well!"
+queststatus(187) = 0, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Schädlingswächter I. (Lege das Seil in deinen Gürtel oder die Hand und doppelklicke darauf um es zu benutzen wenn Du vor dem Schacht stehst)"), item(2760, 1, 333), queststatus(187) = 1, "Töte fünf Ratten in der Zisterne für den Ruhm und die Ehre Cadomyrs. Nimm dieses Seil und begib dich hinab in den Schacht!"
 
 -- Quest 1 solved, reward: 2000cp, +5 rankpoints
 queststatus(187) = 6, english, town = Cadomyr, ".+" -> inform("[Quest solved] You are awarded 20 silver coins."), money + 2000, queststatus(187) = 7, rankpoints + 5, "Very well, you have done good work for this town. There is more to do yet."
@@ -140,7 +153,7 @@ queststatus(187) > 0, queststatus(187) < 6, town = Cadomyr, "quest", "mission" -
 queststatus(187) > 0, queststatus(187) < 6, town = Cadomyr, "task", "adventure" -> "The Queen has ordered that the rat population be controlled, kill five rats."
 queststatus(187) > 0, queststatus(187) < 6, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> "Die Königin hat den Befehl gegeben die Rattenanzahl zu dezimieren. Töte fünf Ratten."
 
--- 2nd quest: Collect 10 rat furs
+-- 2nd quest: Collect ten rat furs
 -- Give out quest 2
 queststatus(187) = 7, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor II"), queststatus(187) = 8, "I need further proof the numbers have went down. Please bring me ten pieces of fur from these rats."
 queststatus(187) = 7, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter II"), queststatus(187) = 8, "Ich benötige Beweise das die Zahl der Ratten gesunken ist. Bringe mir bitte zehn Rattenfelle."
@@ -211,7 +224,7 @@ queststatus(187) > 23, queststatus(187) < 34, town = Cadomyr, "Auftrag", "Aufgab
 -- Quest 6  Kill Ratman Boss
 -- Give out Quest 6
 queststatus(187) = 35, english, town = Cadomyr, "quest", "mission" -> inform("[New quest] Vermin Monitor VI"), queststatus(187) = 36, "Kill the ratman boss in the Cistern, he goes by the Nuzzler. Maybe then the rats will leave!"
-queststatus(187) = \35, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter VI"), queststatus(187) = 36, "Töte den Rattenmenschen in der Zisterne, er ist der Befehlshaber und trägt den Namen 'Schnüffler'. Vielleicht werden die Ratten sich dann zurückziehen!" 
+queststatus(187) = 35, town = Cadomyr, "quest", "mission" -> inform("[Neues Quest] Schädlingswächter VI"), queststatus(187) = 36, "Töte den Rattenmenschen in der Zisterne, er ist der Befehlshaber und trägt den Namen 'Schnüffler'. Vielleicht werden die Ratten sich dann zurückziehen!"
 queststatus(187) = 35, town = Cadomyr, "task", "adventure" -> inform("[New quest] Vermin Monitor VI"), queststatus(187) = 36, "Kill the ratman boss in the Cistern, he goes by the Nuzzler. Maybe then the rats will leave!"
 queststatus(187) = 35, town = Cadomyr, "Auftrag", "Aufgabe", "Abenteuer" -> inform("[Neues Quest] Schädlingswächter VI"), queststatus(187) = 36, "Töte den Rattenmenschen in der Zisterne, er ist der Befehlshaber und trägt den Namen 'Schnüffler'. Vielleicht werden die Ratten sich dann zurückziehen!"
 

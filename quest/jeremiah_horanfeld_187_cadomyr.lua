@@ -107,6 +107,7 @@ Description[GERMAN][33] = "Töte in der Zisterne zehn Ratten, Du musst noch eine 
 Description[ENGLISH][33] = "Kill ten rats in the Cistern, you still have one left."
 Description[GERMAN][34] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][34] = "Return to Jeremiah Horanfeld for your reward."
+
 Description[GERMAN][35] = "Gehe zurück zum Schädlingswächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
 Description[ENGLISH][35] = "Check back with Vermin Monitor Jeremiah Horanfeld, he may have another task for you."
 
@@ -114,6 +115,7 @@ Description[GERMAN][36] = "Töte in der Zisterne den Rattenmenschen"
 Description[ENGLISH][36] = "Kill the Ratman boss in the Cistern."
 Description[GERMAN][37] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][37] = "Return to Jeremiah Horanfeld for your reward."
+
 Description[GERMAN][38] = "Du hast alle Aufgaben von Jeremiah Horanfeld erfüllt."
 Description[ENGLISH][38] = "You have fulfilled all of Jeremiah Horanfeld's tasks."
 
@@ -128,12 +130,9 @@ QuestTarget[3] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[4] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[5] = {position(104, 600, 0), position(125,565,-6)} 
 QuestTarget[6] = {position(104, 600, 0), position(125,565,-6)}
-
 QuestTarget[7] = {position(104, 600, 0)}
-
 QuestTarget[8] = {position(104, 600, 0)}
 QuestTarget[9] = {position(104, 600, 0)}
-
 QuestTarget[10] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[11] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[12] = {position(104, 600, 0), position(125,565,-6)}
@@ -145,12 +144,9 @@ QuestTarget[17] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[18] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[19] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[20] = {position(104, 600, 0), position(125,565,-6)} 
-
 QuestTarget[21] = {position(104, 600, 0)}
-
 QuestTarget[22] = {position(104, 600, 0)}
 QuestTarget[23] = {position(104, 600, 0)}
-
 QuestTarget[24] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[25] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[26] = {position(104, 600, 0), position(125,565,-6)}
@@ -163,7 +159,6 @@ QuestTarget[32] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[33] = {position(104, 600, 0), position(125,565,-6)}
 QuestTarget[34] = {position(104, 600, 0), position(125,565,-6)} 
 QuestTarget[35] = {position(104, 600, 0)}
-
 QuestTarget[36] = {position(104, 600, 0), position(125,565,-6)} 
 QuestTarget[37] = {position(104, 600, 0)}
 QuestTarget[38] = {position(104, 600, 0)}

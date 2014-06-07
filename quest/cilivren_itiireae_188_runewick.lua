@@ -115,6 +115,7 @@ Description[GERMAN][36] = "Töte in der Zisterne den Rattenmenschen"
 Description[ENGLISH][36] = "Kill the Ratman boss in the Cistern."
 Description[GERMAN][37] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
 Description[ENGLISH][37] = "Return to Cilivren Itiireae for your reward."
+
 Description[GERMAN][38] = "Du hast alle Aufgaben von Cilivren Itiireae erfüllt."
 Description[ENGLISH][38] = "You have fulfilled all of Cilivren Itiireae's tasks."
 
@@ -130,12 +131,9 @@ QuestTarget[3] = {position(843, 844, 0), position(832,832,-3)}
 QuestTarget[4] = {position(843, 844, 0), position(832,832,-3)}
 QuestTarget[5] = {position(843, 844, 0), position(832,832,-3)}
 QuestTarget[6] = {position(843, 844, 0), position(832,832,-3)}
-
 QuestTarget[7] = {position(843, 844, 0)}
-
 QuestTarget[8] = {position(843, 844, 0)}
 QuestTarget[9] = {position(843, 844, 0)}
-
 QuestTarget[10] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[11] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[12] = {position(843, 844, 0), position(840,840,-6)}
@@ -147,12 +145,9 @@ QuestTarget[17] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[18] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[19] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[20] = {position(843, 844, 0), position(840,840,-6)}
-
 QuestTarget[21] = {position(843, 844, 0)}
-
 QuestTarget[22] = {position(843, 844, 0)}
 QuestTarget[23] = {position(843, 844, 0)}
-
 QuestTarget[24] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[25] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[26] = {position(843, 844, 0), position(840,840,-6)}
@@ -165,7 +160,6 @@ QuestTarget[32] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[33] = {position(843, 844, 0), position(840,840,-6)}
 QuestTarget[34] = {position(843, 844, 0), position(840,840,-6)} 
 QuestTarget[35] = {position(843, 844, 0)}
-
 QuestTarget[36] = {position(843, 844, 0), position(840,840,-6)} 
 QuestTarget[37] = {position(843, 844, 0)}
 QuestTarget[38] = {position(843, 844, 0)}
