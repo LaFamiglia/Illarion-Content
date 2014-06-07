@@ -110,7 +110,7 @@ Description[ENGLISH][34] = "Return to Jeremiah Horanfeld for you reward."
 Description[GERMAN][35] = "Gehe zurück zum Schädlingswächter Jeremiah Horanfeld, er hat vielleicht noch eine weitere Aufgabe für Dich."
 Description[ENGLISH][35] = "Check back with Vermin Monitor Jeremiah Horanfeld, he may have another task for you."
 
-Description[GERMAN][36] = "Töte in der Zisterne der Rattenmenschen"
+Description[GERMAN][36] = "Töte in der Zisterne den Rattenmenschen"
 Description[ENGLISH][36] = "Kill the Ratman boss in the Cistern."
 Description[GERMAN][37] = "Kehre zu Jeremiah Horanfeld für Deine Belohnung zurück."
 Description[ENGLISH][37] = "Return to Jeremiah Horanfeld for you reward."

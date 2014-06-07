@@ -111,7 +111,7 @@ Description[ENGLISH][34] = "Return to Cilivren Itiireae for you reward."
 Description[GERMAN][35] = "Kehre zurück zur Bereichswächterin Cilivren Itiireae, sie hat möglicherweise noch eine Aufgabe für Dich."
 Description[ENGLISH][35] = "Check back with Field Guardian Cilivren Itiireae, she may have another task for you."
 
-Description[GERMAN][36] = "Töte in der Zisterne der Rattenmenschen"
+Description[GERMAN][36] = "Töte in der Zisterne den Rattenmenschen"
 Description[ENGLISH][36] = "Kill the Ratman boss in the Cistern."
 Description[GERMAN][37] = "Kehre zu Cilivren Itiireae für Deine Belohnung zurück."
 Description[ENGLISH][37] = "Return to Cilivren Itiireae for you reward."
