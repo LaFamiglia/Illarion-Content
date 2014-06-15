@@ -34,8 +34,15 @@ function callEffect(shearingEffect, Animal)
 	if (gatherAmount <= 0) then
 		return false;
 	end
-
-	shearingEffect:addValue("gatherAmount", gatherAmount - 10);
-	shearingEffect.nextCalled = 1800; -- call every 3min
+	
+	if gatherAmount >= 20 then
+		newAmount=0; --Restock wool
+		shearingEffect:addValue("gatherAmount", newAmount);
+		world:makeSound(2, Animal.pos); --Baah!
+	end
+	
+	shearingEffect.nextCalled = 7200; -- call every 12 minutes
+	
 	return true;
+	
 end
