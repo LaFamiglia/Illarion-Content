@@ -59,8 +59,8 @@ function StartGathering(User, SourceAnimal, ltstate)
 
 	if (User:countItemAt("all",2498) == 0) then -- check for items to work on
 		base.common.HighInformNLS( User,
-		"Du brauchst eine leere Flasche um zu melken.",
-		"You need an empty bottle for milking." );
+		"Du brauchst eine große leere Flasche um zu melken.",
+		"You need a large empty bottle for milking." );
 		return;
 	end
 
@@ -75,7 +75,7 @@ function StartGathering(User, SourceAnimal, ltstate)
 	-- check if animal still gives milk
 	local foundEffect, milkingEffect = SourceAnimal.effects:find(401);
     if (not foundEffect) then
-		milkingEffect = LongTimeEffect(401, 3000); -- call every 5min
+		milkingEffect = LongTimeEffect(401, 7200); -- call every 12 minutes
 		milkingEffect:addValue("gatherAmount", 0);
 		SourceAnimal.effects:addEffect(milkingEffect);
 	end
@@ -84,7 +84,7 @@ function StartGathering(User, SourceAnimal, ltstate)
 	-- currently not working, let's go
 	if ( ltstate == Action.none ) then
 
-		if gatherAmount >= 3 then
+		if gatherAmount >= 2 then
 			base.common.HighInformNLS( User,
 			"Dieses Tier wurde rest kürzlich gemolken und gibt momentan keine Milch.",
 			"This animal was milked recently and doesn't give milk right now." );
@@ -114,7 +114,7 @@ function StartGathering(User, SourceAnimal, ltstate)
 		base.common.HighInformNLS(User,
 		"Du kannst nichts mehr halten und der Rest fällt zu Boden.",
 		"You can't carry any more and the rest drops to the ground.");
-	elseif gatherAmount < 3 then  -- character can still carry something and more milk is available
+	elseif gatherAmount < 2 then  -- character can still carry something and more milk is available
 		if User:countItemAt("all",2498) == 0 then -- no empty bottles left
 			return
 		end
