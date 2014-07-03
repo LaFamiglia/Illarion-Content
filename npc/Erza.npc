@@ -87,16 +87,16 @@ itemShoes = 369
 "Help" -> inform("[Game Help] This NPC is Erza. Keywords: Profession, Haircut, Trim, Shave, Dye, Eye.")
 "Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Erza. Süsselwörter: "", "", "", "", "", "".")
 -- Mandatory: General speech
-"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetings!", "Hello, Its a grand day to change your appearance!"
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Mhmm. Get in the chair.", "Hello, Its a grand day to change your appearance!"
 "Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Grüße!", ""
-english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetings!", "Hello, Its a grand day to change your appearance!"
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Mhmm. Get in the chair.", "Hello, Its a grand day to change your appearance!"
 "Hiho", "Hallo", "Hey", "Greeb" -> "Grüße!", ""
-"Farewell", "Bye", "Fare well", "See you" -> "Farewell! Come see me again for your next hair change!"
-"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> ""\
-english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Farewell! Come see me again for your next hair change!"
-"Ciao", "Adieu", "Au revoir", "Farebba" -> ""
-"How are you", "How feel", "How do you do" -> "Me? Oh im fine snip snip here snip snip there!"
-"Wie geht", "Wie fühlst", "Wie ist es ergangen", "Wie Befind" -> ""
+"Farewell", "Bye", "Fare well", "See you" -> "Farewell! Come see me again for your next hair change!", "Good bye. Next!"
+"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> "", ""\
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Farewell! Come see me again for your next hair change!", "Good bye. Next!"
+"Ciao", "Adieu", "Au revoir", "Farebba" -> "", ""
+"How are you", "How feel", "How do you do" -> "Me? Oh im fine snip snip here snip snip there!", "Shave, Haircut? or Dye?"
+"Wie geht", "Wie fühlst", "Wie ist es ergangen", "Wie Befind" -> "", ""
 "your name", "who are you", "who art thou" -> "I am Erza. And you are...?"
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
 
@@ -109,13 +109,13 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Farewell! Come see me again
 "beruf" -> "", ""
 english, "job" -> "I am sharpening my razor for the next customer.", "I'm the barber, care for a trim?"
 "job" -> "", ""
-"tell something" -> "I once was a well known, beautiful Warrior, but I lost an eye. An old gnome made me a new one from glass.", "You're hair is all wrong! let me fix it!"
+"tell something" -> "I once was a well known, beautiful warrior, but I lost an eye. The Archmage made me a new one from glass.".", "You're hair is all wrong! let me fix it!"
 "erzähl was", "erzähl etwas" -> "", ""
 
 -- Optional: More small talk - add at least five triggers, e.g. about the profession of the NPC or his enviroment
 "barber" -> "I'm the barber, care for a trim?"
 "" -> ""
-'"eye" -> "I once was a well known, beautiful Warrior, but I lost an eye. An old gnome made me a new one from glass."
+'"eye" -> "I once was a well known, beautiful warrior, but I lost an eye. The Archmage made me a new one from glass."
 "" -> ""
 
 
@@ -142,18 +142,18 @@ english, "Gobaith", "Gobiath" -> "It's gone! Like Yeasterday!"
 "Gobaith", "Gobiath" -> "Sprecht lauter, ich kann Euch nicht hören!"
 
 -- Optional: Last catch - Think about keywords the player might say and that are not caught until here
-"my name" -> "Nice to meet you %CHARNAME"
-"mein Name" -> ""
-english, "Erza" -> "You asked for me?", "Who asked?"
-"Erza" -> "", ""
+"my name" -> "Nice to meet you %CHARNAME", "Right, right. Well %CHARNAME, just hold still while I fix what ever it is you did to your hair, face. Eh.. youre head area!"
+"mein Name" -> "", ""
+english, "Erza" -> "You asked for me?", "Yes??"
+"Erza" -> "", "Ja?"
 "Yes" -> "Great let me get to work!", "You won't regret your choice!"
 "Ja" -> "", ""
 "No" -> "Oh, thats to bad.", "Hmm, If you think that wise."
 "Nein" -> "", ""
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
-english, chance(20.0), ".*" -> "Did you say something?", "#me looks around", "Time for a trim"
-german, chance(20.0), ".*" -> "Habt Ihr was gesagt?", "#me schaut sich um.", ""
+english, chance(20.0), ".*" -> "Get closer, I can't see you!", "Get in the chair or go away.", "#me spins her scissors on her finger whistling.", "#me runs her razor across a peice of old leather."
+german, chance(20.0), ".*" -> "", "", "", ""
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
@@ -170,3 +170,6 @@ cycletext "#me .", "#me stares at her razor."
 cycletext "#me .", "#me breaths on her mirror and cleans it with her sleeve."
 cycletext ".", "Hair one moment. Gone the next!"
 cycletext ".", "Some Warrior once told me, 'Aim the for the flat-top.' Whatever that means."
+cycletext "", "Time for a shave yes?!"
+cycletext "", "Oh my gods! There's a dead rat on your head!."
+cycletext "#w ", "#w I'll kill the next fellar that.. Oh hello ther care for a shave?"
