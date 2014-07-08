@@ -2225,8 +2225,8 @@ function iniQuests()
 	table.insert(questList[1116],id); --Sewer Rat
 	minimumQueststatus[id]=1;
     maximumQueststatus[id]=6;
-	questLocation[id]=position(832,832,-3);
-    radius[id]=35;
+	alternativequestLocation[id]={840,840,{-3,-6}};
+    radius[id]=50;
 
 	--Quest 96: Save The Field
 	local id=96;
@@ -2244,7 +2244,7 @@ function iniQuests()
 	table.insert(questList[1116],id); --Sewer Rat
 	minimumQueststatus[id]=10;
     maximumQueststatus[id]=20;
-	questLocation[id]=position(840,840,-6);
+	alternativequestLocation[id]={840,840,{-3,-6}};
     radius[id]=50;
 
 	--Quest 97: Save The Field
@@ -2263,7 +2263,7 @@ function iniQuests()
 	table.insert(questList[1116],id); --Sewer Rat
 	minimumQueststatus[id]=24;
     maximumQueststatus[id]=34;
-	questLocation[id]=position(840,840,-6);
+	alternativequestLocation[id]={840,840,{-3,-6}};
     radius[id]=50;
 
 	--Quest 98: Save Da Beer
