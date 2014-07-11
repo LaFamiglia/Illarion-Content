@@ -160,15 +160,14 @@ function InitWegweiser()
     AddWeg({473,248,0},"Narguns Ebene, Hafen, Dunkellochmine, Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Nargun's Plain, Harbour, Dark Hole Mine, Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",2,0);
     AddWeg({485,248,0},"Galmair","Galmair",6,0);
     AddWeg({501,218,0},"Galmair","Galmair",4,0);
-    AddWeg({500,210,0},"Hafen, Dunkellochmine, Nördliche Inseln, Der Sumpf, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Harbour, Dark Hole Mine, Northern Islands, The Swamp, Temple of the Five, Plains of Silence, Northern Woods, Insurmountable Limes, Pauldron Isle",0,0);
-    AddWeg({499,189,0},"Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",2,0);
+    AddWeg({500,210,0},"Hafen, Dunkellochmine, Nördliche Inseln, Der Sumpf, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel, Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick ","Harbour, Dark Hole Mine, Northern Islands, The Swamp, Temple of the Five, Plains of Silence, Northern Woods, Insurmountable Limes, Pauldron Isle, Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",0,0);
+    AddWeg({499,189,0},"Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel, Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle, Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",2,0);
     AddWeg({496,191,0},"Hafen, Dunkellochmine, Nördliche Inseln","Harbour, Dark Hole Mine, Northern Islands",6,0);
     AddWeg({446,138,0},"Hafen, Nördliche Inseln","Harbour, Northern Islands",0,0);
     AddWeg({452,109,0},"Nördliche Inseln","Northern Islands",0,0);
     AddWeg({440,139,0},"Dunkellochmine","Dark Hole Mine",6,0);
     AddWeg({409,148,0},"Dunkellochmine","Dark Hole Mine",6,0);
-    AddWeg({503,213,0},"Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",2,0);
-
+   
 
     --SE/Runewick-map
     AddWeg({528,739,0},"Kapelle der Fünf, Katanbi Wüste, Westliche Katanbi Wüste, Cadomyr","Chapel of the Five, Katanbi Desert, Western Katanbi Desert, Cadomyr",4,0);
@@ -266,11 +265,12 @@ function InitWegweiser()
     AddWeg({873,902,0},"Zwillingsaugeninseln","Twin Eyes Islands",4,0);
     
     --NE/Neutral-map
-    AddWeg({680,311,0},"Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",6,0);
     AddWeg({685,317,0},"Gasthof zur Hanfschlinge","The Hemp Necktie Inn",2,0);
     AddWeg({676,326,0},"Funkelhöhle, Cherass Zitadelle, Schlangenkopfküste, Wichtkanal, Wachwald, Katanbi Wüste, Cadomyr","Glittering Cave, Cherass' Citadel, Snakehead Coast, Wichtkanal, Sentry Forest, Katanbi Desert, Cadomyr",6,0);
-    AddWeg({682,330,0},"Der Todes Sumpf, Igruks Höhle, Elstree Ebene, Elstree Wald, Ostland, Wunderland, Todes Gestank, Frische Sümpfe, Drachenhöhle, Runewick","The Death Marsh, Igruk's Cave, Elstree Plain, Elstree Forest, Eastland, Wonderland, Death's Stench, Dewy Swamps, Dragon's Lair, Runewick",4,0);
-    AddWeg({723,385,0},"Der Todes Sumpf, Spinnen Mund, Gasthof zur Hanfschlinge, Galmair, Norden, Westen","The Death Marsh, Spider's Mouth, The Hemp Necktie Inn, Galmair, North, West",6,0);
+    AddWeg({682,330,0},"Der Todes Sumpf, Igruks Höhle, Elstree Ebene, Elstree Wald, Ostland, Wunderland, Todes Gestank, Frische Sümpfe, Drachenhöhle, Runewick, Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","The Death Marsh, Igruk's Cave, Elstree Plain, Elstree Forest, Eastland, Wonderland, Death's Stench, Dewy Swamps, Dragon's Lair, Runewick, Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",4,0);
+    AddWeg({723,385,0},"Der Todes Sumpf, Spinnen Mund, Gasthof zur Hanfschlinge","The Death Marsh, Spider's Mouth, The Hemp Necktie Inn",6,0);
+	AddWeg({723,380,0},"Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",0,0);
+	AddWeg({749,370,0},"Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",0,0);
     AddWeg({731,391,0},"Elstree Wald, Ostland, Wunderland, Frische Sümpfe, Runewick","Elstree Forest, Eastland, Wonderland, Dewy Swamps, Runewick",2,0);
     AddWeg({730,391,0},"Elstree Ebene, Igruks Höhle, Todes Gestank, Drachenhöhle, Runewick","Elstree Plain, Igruk's Cave, Death's Stench, Dragon's Lair, Runewick",4,0);
     AddWeg({840,383,0},"Ostland, Osthafen, Wunderland, Frische Sümpfe, Runewick","Eastland, Eastport, Wonderland, Dewy Swamps, Runewick",4,0);
@@ -307,6 +307,14 @@ function InitWegweiser()
 
     AddWeg({753,482,0},"Dreifingerspitzen, Todes Gestank, Drachenhöhle, Ameisenhügelbach, Eibental, Runewick","Three Fingertips, Death's Strench, Dragon's Lair, Anthill Brook, Yewdale, Runewick",4,0);
     AddWeg({753,479,0},"Der Todes Sumpf, Spinnen Mund, Gasthof zur Hanfschlinge, Galmair, Norden","The Death Marsh, Spider's Mouth, The Hemp Necktie Inn, Galmair, North",0,0);
+	AddWeg({754,246,0},"Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",4,0);
+	AddWeg({753,246,0},"Narguns Ebene, Galmair, Tempel der Fünf","Nargun's Plain, Galmair, Temple of the Five",6,0);
+	AddWeg({755,246,0},"Schulterplatte Insel","Pauldron Isle",2,0);
+	AddWeg({758,283,0},"Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",4,0);
+	AddWeg({758,279,0},"Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",0,0)
+	AddWeg({755,305,0},"Spinnen Maul, Gasthof zur Hanfschlinge, Cadomyr, Runewick","Spider's Mouth, Hemp Necktie Inn, Cadomyr, Runewick",4,0);
+	AddWeg({755,304,0},"Narguns Ebene, Galmair, Tempel der Fünf, Ebene der Stille, Nördliche Wälder, Unüberwindbarer Limes, Schulterplatte Insel","Nargun's Plain, Galmair, Temple of the Five, Plains of Silence, Northern Woods, The Insurmountable Limes, Pauldron Isle",0,0);
+	
 	
     AddWeg({721,502,0},"Elstree Wald, Wunderland, Ostland","Elstree Forest, Wonderland, Eastland",2,0);
     AddWeg({721,503,0},"Dreifingerspitzen, Todes Gestank, Drachenhöhle, Ameisenhügelbach, Eibental, Runewick","Three Fingertips, Death's Strench, Dragon's Lair, Anthill Brook, Yewdale, Runewick",4,0);
