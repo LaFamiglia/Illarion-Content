@@ -167,7 +167,8 @@ function InitWegweiser()
     AddWeg({452,109,0},"Nördliche Inseln","Northern Islands",0,0);
     AddWeg({440,139,0},"Dunkellochmine","Dark Hole Mine",6,0);
     AddWeg({409,148,0},"Dunkellochmine","Dark Hole Mine",6,0);
-   
+	AddWeg({473,248,0},"Narguns Ebene","Nargun's Plain",2,0);
+	AddWeg({494,196,0},"Narguns Ebene, Galmair","Nargun's Plain, Galmair",4,0);
 
     --SE/Runewick-map
     AddWeg({528,739,0},"Kapelle der Fünf, Katanbi Wüste, Westliche Katanbi Wüste, Cadomyr","Chapel of the Five, Katanbi Desert, Western Katanbi Desert, Cadomyr",4,0);
