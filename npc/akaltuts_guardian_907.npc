@@ -1,0 +1,123 @@
+-- Illarion Server
+-- 
+-- This program is free software: you can redistribute it and/or modify it under
+-- the terms of the GNU Affero General Public License as published by the Free
+-- Software Foundation, either version 3 of the License, or (at your option) any
+-- later version.
+-- 
+-- This program is distributed in the hope that it will be useful, but WITHOUT
+-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+-- FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
+-- details.
+-- 
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+------------------------------------------------------------------------------AC
+-- NPC Name: Akaltuts Guardian 907                                            --
+-- NPC Job:  Guardian                                                         --
+--                                                                            --
+-- NPC Race: Golden Magnus (78)        NPC Position:  462, 840, -9            --
+-- NPC Sex:  male                       NPC Direction: west                   --
+--                                                                            --
+-- Author:   Evie                                                             --
+--                                                     easyNPC Parser v1.23.1 --
+--------------------------------------------------------------------------------
+name = "Akaltuts Guardian 907"
+race = human
+sex = male
+position = 462, 840, -9
+direction = west
+job = "Guardian"
+
+language = common
+language = human
+defaultLanguage = common
+autointroduce = on
+
+author = "Evie"
+
+lookatDE = ""
+lookatUS = ""
+useMsgDE = "Fass mich nicht an!"
+useMsgUS = "Hands off!"
+wrongLangDE = "#me schaut dich verwirrt an."
+wrongLangUS = "#me looks at you confused."
+radius = 0
+hairID = 0
+colorHair = 255, 217, 083
+colorSkin = 255, 217, 083
+itemHead = 2303
+itemChest = 2402
+itemCoat = 2378
+itemMainHand = 2777
+itemSecondHand =2447
+itemHands = 531
+itemTrousers = 2116
+itemShoes = 770
+
+-- QuestID=526
+-- 14: No Quest taken
+-- 15: Quest taken - collect 10 golden goblets for a crown.
+-- 16: Quest 7 solved
+
+-- Help
+"Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
+"Hilfe" -> inform("[Spielhilfe] (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Wächter, Nummer)":"
+
+-- General speech
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Ahh, have you come to test your skills today?"
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Ahh, bist Du heute gekommen um dein Können zu testen?"
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your skills today?"
+"Hiho", "Hallo", "Hey", "Greeb" -> "Seid gegrüßt.", "Ahh, bist Du heute gekommen um dein Können zu testen?"
+"Farewell", "Bye", "Fare well", "See you" -> "Come back, if you dare."
+"Tschüß", "Tschüss", "Wiedersehen" -> "Komm wieder wenn Du dich traust."
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
+"Ciao", "Adieu", "Au revoir", "Farebba" -> "Komm wieder wenn Du dich traust."
+"your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Wächter von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
+
+-- Small talk: The talk here should focus on possible questions. Feel free to add more!
+"profession" -> "My job is a Guardian, I make sure only the worthy move on."
+"beruf" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.""\"
+english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
+"job" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
+
+-- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
+"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number seven."
+"Wächter" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin der sieben Wächter."
+english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
+"Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
+english, "Number" -> "I am Guardian number seven."
+"Nummer" -> "Ich bin der sieben Wächter."
+english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+"Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
+
+-- Quests
+-- Guardian task seven.  Collect 10 golden goblets.
+-- If haven't completed previous Guardianss tasks
+queststatus(526) < 14, english, "quest", "mission", "test" -> "See the Guardian before me."
+queststatus(526) < 14,  "quest", "mission", "Test" -> "Suche den vorigen Wächter."
+queststatus(526) < 14, "task", "adventure", "order" -> "See the Guardian before me."
+queststatus(526) < 14, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Wächter."
+-- Receiving the task of Collecting 10 golden goblets.
+queststatus(526) = 14, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 7"), queststatus(526) = 15, "I am the seventh guardian of Akaltuts, to pass my test you must collect 10 golden goblets."
+queststatus(526) = 14,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 7"), queststatus(526) = 15, "Ich bin der siebte Wächter der Akaltuts. Um meinen Test zu bestehen mußt du 10 goldene Kelchevon den Drows, welche hier herum schweifen sammeln."
+queststatus(526) = 14, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 7"), queststatus(526) = 15, "I am the seventh guardian of Akaltuts, to pass my test you must collect 10 golden goblets."
+queststatus(526) = 14, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 7"), queststatus(526) = 15, "Ich bin der siebte Wächter der Akaltuts. Um meinen Test zu bestehen mußt du 10 goldene Kelchevon den Drows, welche hier herum schweifen sammeln."
+-- If quest received but task not finished
+queststatus(526) = 15, item(224, all) < 10, english,"quest", "mission", "test" . ->"Do you have 10 golden goblets?  If you do not pass this test you can't continue."
+queststatus(526) = 15, item(224, all) < 10, "quest", "mission", "Test" ->"Hast Du 10 goldene Kelche? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
+queststatus(526) = 15, item(224, all) < 10, "task", "adventure", "order" -> "Do you have 10 golden goblets?  If you do not pass this test you can't continue."
+queststatus(526) = 15, item(224, all) < 10,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du 10 goldene Kelche? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
+-- If test is finished
+queststatus(526) = 15, item(224, all) > 9, english, ".+" -> inform("[Quest solved] You are awarded a crown."), item(225, 1, 699), deleteItem(224, 10), queststatus(526) = 16, "You have passed this test and are awarded a crown."
+queststatus(526) = 15, item(224, all) > 9, ".+" -> inform("[Quest gelöst] Du erhältst eine Krone."), item(225, 1, 699), deleteItem(224, 10), queststatus(526) = 16, "Du hast den Test bestanden. Du bekommst eine Krone."
+--If finished with the Guardian
+queststatus(526) > 15, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
+queststatus(526) > 15, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum nächsten Wächter."
+queststatus(526) > 15, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
+queststatus(526) > 15, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" ->"Du hast bestanden. Gehe zum nächsten Wächter."
+
+-- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
+english, ".*" -> "Finish our tasks in order and you will be rewarded."
+german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."

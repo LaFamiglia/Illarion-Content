@@ -30,11 +30,10 @@ cooking = item.base.crafts.Craft:new{
                      fallbackCraft = content.craft.brewing.brewing,
                    };
 
-
 cooking:addTool(2488) -- kettle
 
---------------------------------------------------------------------------------------------
-local catId = cooking:addCategory("Soups", "Suppen") -- Suppenschüssel ( Suppen )
+
+local catId = cooking:addCategory("Soups", "Suppen") -- Suppenschï¿½ssel ( Suppen )
 
 ---------------- CHICKEN SOUP - 1152 ----------------------
 product = cooking:addProduct(catId, 1152, 55, 75, 75, 150)
@@ -77,14 +76,12 @@ product:addIngredient(201, 5) -- Step 3: Onion (201) 5x
 -------------- ONION SOUP - DONE ----------------
 
 ---------------- MUSHROOM SOUP - 2456 ----------------------
-local product = cooking:addProduct(catId, 2456, 7, 27, 21, 42)
+product = cooking:addProduct(catId, 2456, 7, 27, 21, 42)
 product:addIngredient(2935) -- Step 1: Soup Bowl (2935) 1x
 product:addIngredient(52)
 product:addRemnant(51) -- Step 2: Bucket with water (52) 1x
 product:addIngredient(163, 5) -- Step 3: Champignon(163) 5x
 --------------  MUSHROOM SOUP - DONE ----------------
-
-
 
 
 --------------------------------------------------------------------------------------------
@@ -158,7 +155,6 @@ product = cooking:addProduct(catId, 1154, 45, 65, 60, 120)
 product:addIngredient(2952) -- Step 1: Plate(2952) 1x
 product:addIngredient(3051) -- Step 2: Sausage(3051) 1x
 product:addIngredient(1150, 2) -- Step 3: White Egg (50) 2x
-
 -------------- FRIED EGGS - DONE ----------------
 
 ---------------- SALMON DISH - 556 ----------------------
@@ -187,8 +183,3 @@ product = cooking:addProduct(catId, 3051, 0, 20, 10, 20, 2)
 product:addIngredient(307) -- Step 1: Pork(307) 1x
 product:addIngredient(63) -- Step 2: Insides(63) 1x
 -------------- SAUSAGE - DONE ----------------
-
-
-
-
-
