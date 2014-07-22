@@ -32,30 +32,50 @@ Title[ENGLISH] = "Akaltuts Chamber III"
 Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
-Description[GERMAN][1] = "Sammle 1 Drowrüstung und bringe sie zum 9. Wächter"
-Description[ENGLISH][1] = "Collect 1 drow armour for Guardian 9."
+Description[GERMAN][1] = "Sammle ein Drowrüstung und bringe sie zum Neun Wächter"
+Description[ENGLISH][1] = "Collect one drow armour for Guardian Nine."
 Description[GERMAN][2] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][2] = "The next Guardian may have a task for you."
 
-Description[GERMAN][3] = "Töte Drow Führer für den 10. Wächter. Du benötigst noch 2."
-Description[ENGLISH][3] = "Kill drow leader for Guardian 10.  You still need 2."
-Description[GERMAN][4] = "Töte Drow Führer für den 10. Wächter. Du benötigst noch 1."
-Description[ENGLISH][4] = "Kill drow leader for Guardian 10.  You still need 1."
-Description[GERMAN][5] = "Kehre zurück zum 10. Wächter. Du hast seinen Test bestanden."
-Description[ENGLISH][5] = "Report back to Guardian 10, you have finished his test."
+Description[GERMAN][3] = "Töte Drow für den Zehn Wächter. Du benötigst noch zwölf."
+Description[ENGLISH][3] = "Kill drow for Guardian Ten.  You still need twelve."
+Description[GERMAN][4] = "Töte Drow für den Zehn Wächter. Du benötigst noch Elfen."
+Description[ENGLISH][4] = "Kill drow for Guardian Ten.  You still need eleven."
+Description[GERMAN][5] = "Töte Drow für den Zehn Wächter. Du benötigst noch zehn."
+Description[ENGLISH][5] = "Kill drow for Guardian Ten.  You still need ten."
+Description[GERMAN][6] = "Töte Drow für den Zehn Wächter. Du benötigst noch neun."
+Description[ENGLISH][6] = "Kill drow for Guardian Ten.  You still need nine."
+Description[GERMAN][7] = "Töte Drow für den Zehn Wächter. Du benötigst noch acht."
+Description[ENGLISH][7] = "Kill drow for Guardian Ten.  You still need eight."
+Description[GERMAN][8] = "Töte Drow für den Zehn Wächter. Du benötigst noch sieben."
+Description[ENGLISH][8] = "Kill drow for Guardian Ten.  You still need seven."
+Description[GERMAN][9] = "Töte Drow für den Zehn Wächter. Du benötigst noch sech."
+Description[ENGLISH][9] = "Kill drow for Guardian Ten.  You still need six."
+Description[GERMAN][10] = "Töte Drow für den Zehn Wächter. Du benötigst noch fünf."
+Description[ENGLISH][10] = "Kill drow for Guardian Ten.  You still need five."
+Description[GERMAN][11] = "Töte Drow für den Zehn Wächter. Du benötigst noch vier."
+Description[ENGLISH][11] = "Kill drow for Guardian Ten.  You still need four."
+Description[GERMAN][12] = "Töte Drow für den Zehn Wächter. Du benötigst noch drei."
+Description[ENGLISH][12] = "Kill drow for Guardian Ten.  You still need three."
+Description[GERMAN][13] = "Töte Drow für den Zehn Wächter. Du benötigst noch zwei."
+Description[ENGLISH][13] = "Kill drow for Guardian Ten.  You still need two."
+Description[GERMAN][14] = "Töte Drow für den Zehn Wächter. Du benötigst noch ein."
+Description[ENGLISH][14] = "Kill drow for Guardian Ten.  You still need one."
+Description[GERMAN][15] = "Kehre zurück zum Zehn Wächter. Du hast seinen Test bestanden."
+Description[ENGLISH][15] = "Report back to Guardian Ten, you have finished his test."
 
-Description[GERMAN][6] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][6] = "The next Guardian may have a task for you."
+Description[GERMAN][16] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][16] = "The next Guardian may have a task for you."
 
-Description[GERMAN][7] = "Sammle 5 Elbenregenbogenschwerter und bringe sie zum 11. Wächter"
-Description[ENGLISH][7] = "Collect 5 elven rainbow swords for Guardian 11."
-Description[GERMAN][8] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][8] = "The next Guardian may have a task for you."
+Description[GERMAN][17] = "Sammle fünf Elbenregenbogenschwerter und bringe sie zum Elfen Wächter"
+Description[ENGLISH][17] = "Collect five elven rainbow swords for Guardian Eleven."
+Description[GERMAN][18] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][18] = "The next Guardian may have a task for you."
 
-Description[GERMAN][9] = "Sammle 4 Drowhelme und bringe sie zum 12. Wächter"
-Description[ENGLISH][9] = "Collect 4 drow helmets for Guardian 12."
-Description[GERMAN][10] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][10] = "The next Guardian may have a task for you."
+Description[GERMAN][19] = "Sammle vier Drowhelme und bringe sie zum Zwölf Wächter."
+Description[ENGLISH][19] = "Collect four drow helmets for Guardian Twelve."
+Description[GERMAN][20] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][20] = "The next Guardian may have a task for you."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {476, 782, -9}
@@ -69,12 +89,22 @@ QuestTarget[3] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[4] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[5] = {position(427, 783, -9), position(431, 802, -9)}
 QuestTarget[6] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[7] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[8] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[9] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[10] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[11] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[12] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[13] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[14] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[15] = {position(427, 783, -9), position(431, 802, -9)}
+QuestTarget[16] = {position(427, 783, -9), position(431, 802, -9)}
 
-QuestTarget[7] = {position(424, 783, -9)}
-QuestTarget[8] = {position(424, 783, -9)}
+QuestTarget[17] = {position(424, 783, -9)}
+QuestTarget[18] = {position(424, 783, -9)}
 
-QuestTarget[9] = {position(441, 761, -9)}
-QuestTarget[10] = {position(441, 761, -9)}
+QuestTarget[19] = {position(441, 761, -9)}
+QuestTarget[20] = {position(441, 761, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 20
