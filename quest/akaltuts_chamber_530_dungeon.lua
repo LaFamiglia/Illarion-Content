@@ -78,61 +78,17 @@ Description[ENGLISH][21] = "Report back to Guardian 21, you have finished his te
 Description[GERMAN][22] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][22] = "The Next Guardian may have a task for you."
 
-Description[GERMAN][23] = "Töte Drow für den 22. Wächter. Du benötigst noch 25."
-Description[ENGLISH][23] = "Kill drow for Guardian 22.  You still need 25."
-Description[GERMAN][24] = "Töte Drow für den 22. Wächter. Du benötigst noch 24."
-Description[ENGLISH][24] = "Kill drow for Guardian 22.  You still need 24."
-Description[GERMAN][25] = "Töte Drow für den 22. Wächter. Du benötigst noch 23."
-Description[ENGLISH][25] = "Kill drow for Guardian 22.  You still need 23."
-Description[GERMAN][26] = "Töte Drow für den 22. Wächter. Du benötigst noch 22."
-Description[ENGLISH][26] = "Kill drow for Guardian 22.  You still need 22."
-Description[GERMAN][27] = "Töte Drow für den 22. Wächter. Du benötigst noch 21"
-Description[ENGLISH][27] = "Kill drow for Guardian 22.  You still need 21."
-Description[GERMAN][28] = "Töte Drow für den 22. Wächter. Du benötigst noch 20."
-Description[ENGLISH][28] = "Kill drow for Guardian 22.  You still need 20."
-Description[GERMAN][29] = "Töte Drow für den 22. Wächter. Du benötigst noch 19."
-Description[ENGLISH][29] = "Kill drow for Guardian 22.  You still need 19."
-Description[GERMAN][30] = "Töte Drow für den 22. Wächter. Du benötigst noch 18."
-Description[ENGLISH][30] = "Kill drow for Guardian 22. You still need 18."
-Description[GERMAN][31] = "Töte Drow für den 22. Wächter. Du benötigst noch 17."
-Description[ENGLISH][31] = "Kill drow for Guardian 22. You still need 17."
-Description[GERMAN][32] = "Töte Drow für den 22. Wächter. Du benötigst noch 16."
-Description[ENGLISH][32] = "Kill drow for Guardian 22. You still need 16."
-Description[GERMAN][33] = "Töte Drow für den 22. Wächter. Du benötigst noch 15."
-Description[ENGLISH][33] = "Kill drow for Guardian 22. You still need 15."
-Description[GERMAN][34] = "Töte Drow für den 22. Wächter. Du benötigst noch 14."
-Description[ENGLISH][34] = "Kill drow for Guardian 22. You still need 14."
-Description[GERMAN][35] = "Töte Drow für den 22. Wächter. Du benötigst noch 13."
-Description[ENGLISH][35] = "Kill drow for Guardian 22. You still need 13."
-Description[GERMAN][36] = "Töte Drow für den 22. Wächter. Du benötigst noch 12."
-Description[ENGLISH][36] = "Kill drow for Guardian 22.  You still need 12."
-Description[GERMAN][37] = "Töte Drow für den 22. Wächter. Du benötigst noch 11."
-Description[ENGLISH][37] = "Kill drow for Guardian 22.  You still need 11."
-Description[GERMAN][38] = "Töte Drow für den 22. Wächter. Du benötigst noch 10."
-Description[ENGLISH][38] = "Kill drow for Guardian 22. You still need 10."
-Description[GERMAN][39] = "Töte Drow für den 22. Wächter. Du benötigst noch 9."
-Description[ENGLISH][39] = "Kill drow for Guardian 22. You still need 9."
-Description[GERMAN][40] = "Töte Drow für den 22. Wächter. Du benötigst noch 8."
-Description[ENGLISH][40] = "Kill drow for Guardian 22. You still need 8."
-Description[GERMAN][41] = "Töte Drow für den 22. Wächter. Du benötigst noch 7."
-Description[ENGLISH][41] = "Kill drow for Guardian 22. You still need 7."
-Description[GERMAN][42] = "Töte Drow für den 22. Wächter. Du benötigst noch 6."
-Description[ENGLISH][42] = "Kill drow for Guardian 22. You still need 6."
-Description[GERMAN][43] = "Töte Drow für den 22. Wächter. Du benötigst noch 5."
-Description[ENGLISH][43] = "Kill drow for Guardian 22. You still need 5."
-Description[GERMAN][44] = "Töte Drow für den 22. Wächter. Du benötigst noch 4."
-Description[ENGLISH][44] = "Kill drow for Guardian 22. You still need 4."
-Description[GERMAN][45] = "Töte Drow für den 22. Wächter. Du benötigst noch 3."
-Description[ENGLISH][45] = "Kill drow for Guardian 22. You still need 3."
-Description[GERMAN][46] = "Töte Drow für den 22. Wächter. Du benötigst noch 2."
-Description[ENGLISH][46] = "Kill drow for Guardian 22. You still need 2."
-Description[GERMAN][47] = "Töte Drow für den 22. Wächter. Du benötigst noch 1."
-Description[ENGLISH][47] = "Kill drow for Guardian 22. You still need 1."
-Description[GERMAN][48] = "Kehre zurück zum 22. Wächter. Du hast seinen Test bestanden."
-Description[ENGLISH][48] = "Report back to Guardian 22, you have finished his test."
+Description[GERMAN][23] = "Töte Drow Führer für den 22. Wächter. Du benötigst noch drei."
+Description[ENGLISH][23] = "Kill drow leaders for Guardian 22.  You still need three."
+Description[GERMAN][24] = "Töte Drow Führer für den 22. Wächter. Du benötigst noch zwei."
+Description[ENGLISH][24] = "Kill drow leaders for Guardian 22.  You still need two."
+Description[GERMAN][25] = "Töte Drow Führer für den 22. Wächter. Du benötigst noch ein."
+Description[ENGLISH][25] = "Kill drow leaders for Guardian 22.  You still need one."
+Description[GERMAN][26] = "Kehre zurück zum 22. Wächter. Du hast seinen Test bestanden."
+Description[ENGLISH][26] = "Report back to Guardian 22, you have finished his test."
 
-Description[GERMAN][49] = "Der nächste Wächter hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][49] = "The Next Guardian may have a task for you."
+Description[GERMAN][27] = ""
+Description[ENGLISH][27] = "You have passed all the tests of the Guardians."
 
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
@@ -161,38 +117,16 @@ QuestTarget[18] = {position(461, 807, -9), position(479, 794, -9)}
 QuestTarget[19] = {position(461, 807, -9), position(479, 794, -9)}
 QuestTarget[20] = {position(461, 807, -9), position(479, 794, -9)}
 QuestTarget[21] = {position(461, 807, -9), position(479, 794, -9)}
-QuestTarget[22] = {position(461, 807, -9), position(479, 794, -9)}
+QuestTarget[22] = {position(461, 807, -9)}
 
 QuestTarget[23] = {position(464, 807, -9), position(479, 794, -9)}
 QuestTarget[24] = {position(464, 807, -9), position(479, 794, -9)}
 QuestTarget[25] = {position(464, 807, -9), position(479, 794, -9)}
 QuestTarget[26] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[27] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[28] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[29] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[30] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[31] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[32] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[33] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[34] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[35] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[36] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[37] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[38] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[39] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[40] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[41] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[42] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[43] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[44] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[45] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[46] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[47] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[48] = {position(464, 807, -9), position(479, 794, -9)}
-QuestTarget[49] = {position(464, 807, -9), position(479, 794, -9)}
+QuestTarget[27] = {position(464, 807, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 49
+FINAL_QUEST_STATUS = 27
 
 
 function QuestTitle(user)
