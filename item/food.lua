@@ -105,7 +105,8 @@ FoodList:add( 552,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,false,true
 FoodList:add( 553,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,false,true,true,true,true,true}); -- rabbit meat (orc)
 FoodList:add(2934,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,false,true,true,true,true,true}); -- lamb meat (orc)
 FoodList:add(1151,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,false,true,true,true,true,true}); -- chicken meat (orc)
-
+FoodList:add(1209,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,true,false,true,true,true,true}); -- horse mackerel (lizard)
+FoodList:add(1210,	 VALUE_LARGE,	   0,	nil,	nil,	{true,true,true,true,true,false,true,true,true,true}); -- rose fish (lizard)
 -- Simple Food
 FoodList:add( 306,	 VALUE_XLARGE,	   0); -- ham
 FoodList:add( 455,	 VALUE_XLARGE,	   0); -- smoked fish
