@@ -38,8 +38,8 @@ author = "Evie"
 
 lookatDE = "Dies ist Defensor Robur."
 lookatUS = "This is Defensor Robur."
-useMsgDE = "Fass mich nicht an!"
-useMsgUS = "Hands off!"
+useMsgDE = "Wage es nicht einen Defensor von Akultat zu berühren!"
+useMsgUS = "Dare you to touch a Defensor of Akultat!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
@@ -89,7 +89,7 @@ english, "Defensor" -> "My job is a Defensor, I make sure only the worthy move o
 "Defensor" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin Defensor Robur."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"
 "Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
-english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well known for terrorizing this corner. Pass our tests and you can face her."
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
@@ -105,9 +105,9 @@ queststatus(525) = 5,  "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(525) = 5, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 3"), queststatus(525) = 6, "I am Defensor Robur, to pass my test you must kill five drow archers that roam these halls."
 queststatus(525) = 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 3"), queststatus(525) = 6, "Ich bin Defensor Robur, um meinen Test zu bestehen mußt Du fünf Drowschützen töten, welche diese Hallen durchstreifen."
 -- If quest received but task not finished
-queststatus(525) > 5, queststatus(525) < 11, english,"quest", "mission", "test" . -> "Have you killed five drow archers?  If you do not pass this test you can't continue."
+queststatus(525) > 5, queststatus(525) < 11, english,"quest", "mission", "test" . -> "Have you killed five drow archers? If you do not pass this test you can't continue."
 queststatus(525) > 5, queststatus(525) < 11, "quest", "mission", "Test" ->"Hast Du fünf Drowschützen getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
-queststatus(525) > 5, queststatus(525) < 11, "task", "adventure", "order" -> "Have you killed five drow archers?  If you do not pass this test you can't continue."
+queststatus(525) > 5, queststatus(525) < 11, "task", "adventure", "order" -> "Have you killed five drow archers? If you do not pass this test you can't continue."
 queststatus(525) > 5, queststatus(525) < 11,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du fünf Drowschützen getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(525) = 11, english, ".+" -> inform("[Quest solved] You are awarded an elven shortbow."), item(2685, 1, 699), queststatus(525) = 12, "You have passed this test and are awarded an elven shortbow."

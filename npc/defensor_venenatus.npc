@@ -17,7 +17,7 @@
 -- NPC Job:  Defensor                                                         --
 --                                                                            --
 -- NPC Race: Golden Magnus (78)        NPC Position:  440, 760, -9            --
--- NPC Sex:  male                       NPC Direction: west                   --
+-- NPC Sex:  male                       NPC Direction: southwest                   --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
@@ -26,7 +26,7 @@ name = "Defensor Venenatus"
 race = human
 sex = male
 position = 440, 760, -9
-direction = west
+direction = southwest
 job = "Defensor"
 
 language = common
@@ -38,8 +38,8 @@ author = "Evie"
 
 lookatDE = "Dies ist Defensor Venenatus."
 lookatUS = "This is Defensor Venenatus."
-useMsgDE = "Fass mich nicht an!"
-useMsgUS = "Hands off!"
+useMsgDE = "Wage es nicht einen Defensor von Akultat zu ber¸hren!"
+useMsgUS = "Dare you to touch a Defensor of Akultat!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
@@ -89,7 +89,7 @@ english, "Defensor" -> "My job is a Defensor, I make sure only the worthy move o
 "Defensor" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die W¸rdigen weiterkommen.", "Ich bin Defensor Venenatus."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"
 "Drow" -> "Die Drow sind gef‰hrliche K‰mpfer, kannst Du dich mit Ihnen messen?"
-english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well known for terrorizing this corner. Pass our tests and you can face her."
 "Akaltut" -> "Akaltut ist eine Spinnenkˆnigin. Sie und ihre Zucht sind f¸r das Terrorisieren dieser Gegend gut bekannt."
 
 
@@ -106,18 +106,18 @@ queststatus(527) = 18, "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(527) = 18, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 12"), queststatus(527) = 19, "I am Defensor Venenatus, to pass my test you must collect four drow helms."
 queststatus(527) = 18, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 12"), queststatus(527) = 19, "Ich bin Defensor Venanatus,um meinen Test zu bestehen muﬂt du vier Drowhelme von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
-queststatus(527) = 19, item(2303, all) < 4, english,"quest", "mission", "test" . ->"Do you have four drow helms?  If you do not pass this test you can't continue."
+queststatus(527) = 19, item(2303, all) < 4, english,"quest", "mission", "test" . ->"Do you have four drow helms? If you do not pass this test you can't continue."
 queststatus(527) = 19, item(2303, all) < 4, "quest", "mission", "Test" ->"Hast Du vier Drowhelme? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
-queststatus(527) = 19, item(2303, all) < 4, "task", "adventure", "order" -> "Do you have four drow helms?  If you do not pass this test you can't continue."
+queststatus(527) = 19, item(2303, all) < 4, "task", "adventure", "order" -> "Do you have four drow helms? If you do not pass this test you can't continue."
 queststatus(527) = 19, item(2303, all) < 4,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du vier Drowhelme? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(527) = 19, item(2303, all) > 3, english, ".+" -> inform("[Quest solved] You are awarded 200 silver coins."), money + 20000, deleteItem(2303, 4), queststatus(527) = 20, "You have passed this test and are awarded 200 silver coins."
 queststatus(527) = 19, item(2303, all) > 3, ".+" -> inform("[Quest gelˆst] Du erh‰ltst 200 Silberst¸cke."), money + 20000, deleteItem(2303, 4), queststatus(527) = 20, "Du hast den Test bestanden. Du bekommst 200 Silberst¸cke."
 --If finished with the Guardian
-queststatus(527) = 20, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(527) = 20, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum n‰chsten W‰chter."
-queststatus(527) = 20, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(527) = 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum n‰chsten W‰chter."
+queststatus(527) = 20, english, "quest", "mission", "test" -> "You have passed, please see Defensor Torrens."
+queststatus(527) = 20, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Torrens."
+queststatus(527) = 20, "task", "adventure", "order" -> "You have passed, please see Defensor Torrens."
+queststatus(527) = 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Torrens."
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.

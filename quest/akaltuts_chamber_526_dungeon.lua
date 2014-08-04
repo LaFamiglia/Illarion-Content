@@ -64,7 +64,7 @@ Description[GERMAN][14] = "Der Defensor Confirmo hat vielleicht eine Aufgabe fü
 Description[ENGLISH][14] = "The Defensor Confirmo may have a task for you."
 
 Description[GERMAN][15] = ""
-Description[ENGLISH][15] = "Find the copy of 'The Reign of Akaltut' in the Library and read it for Defensor Confirmo."
+Description[ENGLISH][15] = "Find the copy of 'The Reign of Akaltut' in the library and read it for Defensor Confirmo."
 Description[GERMAN][16] = ""
 Description[ENGLISH][16] = "Return to Defensor Confirmo for your reward."
 Description[GERMAN][17] = "Der Defensor Prohibeo hat vielleicht eine Aufgabe für dich."

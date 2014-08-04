@@ -38,8 +38,8 @@ author = "Evie"
 
 lookatDE = ""
 lookatUS = ""
-useMsgDE = "Fass mich nicht an!"
-useMsgUS = "Hands off!"
+useMsgDE = "Wage es nicht einen Defensor von Akultat zu ber¸hren!"
+useMsgUS = "Dare you to touch a Defensor of Akultat!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
@@ -89,7 +89,7 @@ english, "Drow" -> "The drow are dangerous fighters, are you a match for their s
 "Drow" -> "Die Drow sind gef‰hrliche K‰mpfer, kannst Du dich mit Ihnen messen?"
 english, "Number" -> "I am Guardian number seventeen."
 "Nummer" -> "Ich bin der 17 W‰chter."
-english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well known for terrorizing this corner. Pass our tests and you can face her."
 "Akaltut" -> "Akaltut ist eine Spinnenkˆnigin. Sie und ihre Zucht sind f¸r das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
@@ -105,9 +105,9 @@ queststatus(529) = 0,  "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(529) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 17"), queststatus(529) = 1, "I am the 17th guardian of Akaltuts, to pass my test you must collect 2 drow blades."
 queststatus(529) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 17"), queststatus(529) = 1, "Ich bin der 17 W‰chter der Akaltuts. Um meinen Test zu bestehen muﬂt du 2 Drowschwerter von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
-queststatus(529) = 1, item(2777, all) < 2, english,"quest", "mission", "test" . ->"Do you have 2 drow blades?  If you do not pass this test you can't continue."
+queststatus(529) = 1, item(2777, all) < 2, english,"quest", "mission", "test" . ->"Do you have 2 drow blades? If you do not pass this test you can't continue."
 queststatus(529) = 1, item(2777, all) < 2, "quest", "mission", "Test" ->"Hast Du 2 Drowschwerter? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
-queststatus(529) = 1, item(2777, all) < 2, "task", "adventure", "order" -> "Do you have 2 drow blades?  If you do not pass this test you can't continue."
+queststatus(529) = 1, item(2777, all) < 2, "task", "adventure", "order" -> "Do you have 2 drow blades? If you do not pass this test you can't continue."
 queststatus(529) = 1, item(2777, all) < 2,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du 2 Drowschwerter? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
 queststatus(529) = 1, item(2777, all) > 1, english, ".+" -> inform("[Quest solved] You are awarded a drow sword."), item(3035, 1, 866), deleteItem(2777, 2), queststatus(529) = 2, "You have passed this test and are awarded a drow sword."
