@@ -105,7 +105,7 @@ queststatus(528) = 12, "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(528) = 12, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 14"), queststatus(528) = 13, "I am Defensor Delinificus, to pass my test you must kill ten skeletons around the undead lake."
 queststatus(528) = 12, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 14"), queststatus(528) = 13, "Ich bin Defensor Delinificus, um meinen Test zu bestehen mußt Du zehn Skelette töten, welche diese Hallen durchstreifen."
 -- If quest received but task not finished
-queststatus(528) > 12, queststatus(528) < 23, english,"quest", "mission", "test" . -> "Have you killed the ten skeletons? If you do not pass this test you can't continue."
+queststatus(528) > 12, queststatus(528) < 23, english,"quest", "mission", "test" -> "Have you killed the ten skeletons? If you do not pass this test you can't continue."
 queststatus(528) > 12, queststatus(528) < 23, "quest", "mission", "Test" ->"Hast Du zehn Skelette getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(528) > 12, queststatus(528) < 23, "task", "adventure", "order" -> "Have you killed the ten skeletons? If you do not pass this test you can't continue."
 queststatus(528) > 12, queststatus(528) < 23,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du zehn Skelette getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."

@@ -13,8 +13,8 @@
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
--- NPC Name: Akaltuts Guardian 915                                            --
--- NPC Job:  Guardian                                                         --
+-- NPC Name: Defensor Fervor                                                  --
+-- NPC Job:  Defensor                                                         --
 --                                                                            --
 -- NPC Race: Golden Magnus (78)        NPC Position:  491, 825, -9            --
 -- NPC Sex:  male                       NPC Direction: west                   --
@@ -22,12 +22,12 @@
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
-name = "Akaltuts Guardian 915"
+name = "Defensor Fervor"
 race = human
 sex = male
 position = 491, 825, -9
 direction = west
-job = "Guardian"
+job = "Defensor"
 
 language = common
 language = human
@@ -36,10 +36,10 @@ autointroduce = on
 
 author = "Evie"
 
-lookatDE = ""
-lookatUS = ""
-useMsgDE = "Fass mich nicht an!"
-useMsgUS = "Hands off!"
+lookatDE = "Dies ist Defensor Fervor."
+lookatUS = "This is Defensor Fervor."
+useMsgDE = "Wage es nicht einen Defensor von Akultat zu berühren!"
+useMsgUS = "Dare you to touch a Defensor of Akultat!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
@@ -56,13 +56,13 @@ itemTrousers = 2116
 itemShoes = 770
 
 -- QuestID=528
--- 34: No Quest taken
--- 35: Quest taken - collect 20 white cloth, reward black cultist robe
--- 36: Quest 15 solved
+-- 24: No Quest taken
+-- 25: Quest taken - Name the mountain range you are in, reward black cultist robe
+-- 26: Quest 15 solved
 
 -- Help
-"Help" -> inform("[Game Help] (This npc is a Guardian, ask for a test. Keywords: quest, Akaltut, drow, Guardian, number")
-"Hilfe" -> inform("[Spielhilfe] (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Wächter, Nummer)":"
+"Help" -> inform("[Game Help] (This npc is a Defensor, ask for a test. Keywords: quest, Akaltut, drow, Defensor, name")
+"Hilfe" -> inform("[Spielhilfe] (Dieser NPC ist ein Wächter, frage Ihn nach dem Test. Stichworte: Aufgabe, Akaltut, Drow, Defensor, Name")
 
 -- General speech
 "Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Ahh, have you come to test your skills today?"
@@ -73,51 +73,57 @@ english, "Hiho", "Hallo", "Hey", "Greeb" -> "Ahh, have you come to test your ski
 "Tschüß", "Tschüss", "Wiedersehen" -> "Komm wieder wenn Du dich traust."
 english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Come back, if you dare."
 "Ciao", "Adieu", "Au revoir", "Farebba" -> "Komm wieder wenn Du dich traust."
-"your name", "who are you", "who art thou" -> "I am a Guardian of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Wächter von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
+"who are you", "who art thou" -> "I am a Defensor of Akaltut's Lair, pass my test to prove you are an ally and I will open the way for you."
+"dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich bin ein Defensor von Akaltut´s Versteck. Bestehe meinen Test um zu zeigen das Du ein Verbündeter bist & ich werde Dir den Weg öffnen."
+english, "your name", "name" -> "I am Defensor Fervor."
+"ihr name", "Name" -> "Ich bin Defensor Fervor."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
-"profession" -> "My job is a Guardian, I make sure only the worthy move on."
-"beruf" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen.""\"
-english, "job" -> "My job is a Guardian, I make sure only the worthy move on."
-"job" -> "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
+"profession" -> "My job is a Defensor, I make sure only the worthy move on."
+"beruf" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die Würdigen weiterkommen."
+english, "job" -> "My job is a Defensor, I make sure only the worthy move on."
+"job" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die Würdigen weiterkommen."
 
 -- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
-"Guardian" -> "My job is a Guardian, I make sure only the worthy move on.", "I am Guardian number fifteen."
-"Wächter" -> "Ich bin der 15. Wächter.", "Meine Aufgabe ist die eines Wächters, ich stelle sicher das nur die Würdigen weiterkommen."
-english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?."
+english, "Defensor" -> "My job is a Defensor, I make sure only the worthy move on.", "I am Defensor Fervor."
+"Defensor" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin Defensor Fervor."
+english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"
 "Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
-english, "Number" -> "I am Guardian number fifteen."
-"Nummer" -> "Ich bin der 15 Wächter."
-english, "Akaltut" -> "Akaltut is a spiderqueen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
--- Guardian task fifteen.  Collect 20 white cloth.
--- If haven't completed previous Guardianss tasks
-queststatus(528) < 34, english, "quest", "mission", "test" -> "See the Guardian before me."
-queststatus(528) < 34,  "quest", "mission", "Test" -> "Suche den vorigen Wächter."
-queststatus(528) < 34, "task", "adventure", "order" -> "See the Guardian before me."
-queststatus(528) < 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Wächter."
--- Receiving the task of Collecting 20 white cloth.
-queststatus(528) = 34, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the 15th guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34,  "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "Ich bin der 15. Wächter der Akaltuts. Um meinen Test zu bestehen mußt du  20 weiße Stoffballen von den Drows, welche hier herum schweifen sammeln."
-queststatus(528) = 34, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "I am the 15th guardian of Akaltuts, to pass my test you must collect 20 white cloth."
-queststatus(528) = 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 35, "Ich bin der 15. Wächter der Akaltuts. Um meinen Test zu bestehen mußt du  20 weiße Stoffballen von den Drows, welche hier herum schweifen sammeln."
+-- Defensor task fifteen.  Name the Mountain Range.
+-- If haven't completed previous Defensors tasks
+queststatus(528) < 24, english, "quest", "mission", "test" -> "See the Defensors before me."
+queststatus(528) < 24, "quest", "mission", "Test" -> "Suche den vorigen Defensors."
+queststatus(528) < 24, "task", "adventure", "order" -> "See the Defensors before me."
+queststatus(528) < 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensors."
+-- Receiving the task of naming the Mountain range.
+queststatus(528) = 24, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor, to pass my test you must tell me the name of this mountain range we are in."
+queststatus(528) = 24, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, ""
+queststatus(528) = 24, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor, to pass my test you must tell me the name of this mountain range we are in."
+queststatus(528) = 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, ""
 -- If quest received but task not finished
-queststatus(528) = 35, item(178, all) < 20, english,"quest", "mission", "test" . ->"Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20, "quest", "mission", "Test" ->"Hast Du  20 weiße Stoffballen? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
-queststatus(528) = 35, item(178, all) < 20, "task", "adventure", "order" -> "Do you have 20 white cloth?  If you do not pass this test you can't continue."
-queststatus(528) = 35, item(178, all) < 20,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du  20 weiße Stoffballen? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
+queststatus(528) = 25, english,"quest", "mission", "test" ->"What is the name of this mountain range?  If you do not pass this test you can't continue."
+queststatus(528) = 25, "quest", "mission", "Test" ->""
+queststatus(528) = 25, "task", "adventure", "order" -> "What is the name of this mountain range?  If you do not pass this test you can't continue."
+queststatus(528) = 25, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(528) = 35, item(178, all) > 19, english, ".+" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, "You have passed this test and are awarded a black cultist robe."
-queststatus(528) = 35, item(178, all) > 19, ".+" -> inform("[Quest gelöst] Du erhältst eine Schwarzkultrobe zuerkannt."), item(2378, 1, 699), deleteItem(178, 20), queststatus(528) = 36, "Du hast den Test bestanden. Du bekommst eine Schwarzkultrobe zuerkannt."
---If finished with the Guardian
-queststatus(528) > 35, english, "quest", "mission", "test" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum nächsten Wächter."
-queststatus(528) > 35, "task", "adventure", "order" -> "You have passed, please see the next Guardian."
-queststatus(528) > 35, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum nächsten Wächter."
+queststatus(528) = 25, english, "Border" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), queststatus(528) = 26, "You have passed this test and are awarded a black cultist robe."
+queststatus(528) = 25, "Grenzberge", "Grenz" -> inform("[Quest gelöst] Du erhältst eine Schwarzkultrobe zuerkannt."), item(2378, 1, 699), queststatus(528) = 26, "Du hast den Test bestanden. Du bekommst eine Schwarzkultrobe zuerkannt."
+--If finished with the Defensor
+queststatus(528) = 26, english, "quest", "mission", "test" -> "You have passed, please see Defensor Transmutatio."
+queststatus(528) = 26, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Transmutatio."
+queststatus(528) = 26, "task", "adventure", "order" -> "You have passed, please see Defensor Transmutatio."
+queststatus(528) = 26, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Transmutatio."
 
--- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
-english, ".*" -> "Finish our tasks in order and you will be rewarded."
-german, ".*" -> "Beende unsere Aufgaben und Du wirst eine Belohnung erhalten."
+------------------------------------------------------------------------------AC
+-- Cycle Texts - Messages spoken automatically in random intervals.
+-- Every NPC should contain at least 10 of those messages.
+-- Emotes are possible also starting with "#me ....".
+
+cycletext "Du bist in Akaltut´s Versteck eingedrungen in das sich nur wenige trauen.", "You have invaded Akaltut's Lair where few dare go."
+cycletext "Die die sterben werden Teil der Knochenhaufen.", "Those who die become part of the Pile of Bones."
+cycletext "#me start dich mit kaltem hartem Blick an. 'Bist Du würdig?'", "#me stares at you with cold, hard eyes 'Are you worthy?'"
+

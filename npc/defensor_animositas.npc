@@ -93,13 +93,13 @@ english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well kno
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
--- Guardian task one.  Name the first adventurer to die.
+-- Defensor task one.  Name the first adventurer to die.
 queststatus(525) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, "I am Defensor Animositas. To pass my test you must tell me the name of the first that died in a band of adventurers that passed this way some time ago."
 queststatus(525) = 0, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, ""
 queststatus(525) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, "I am Defensor Animositas. To pass my test you must tell me the name of the first that died in a band of adventurers that passed this way some time ago."
 queststatus(525) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 1"), queststatus(525) = 1, ""
 -- Quest received but not finished
-queststatus(525) = 1, english,"quest", "mission", "test" . -> "What is the name of the first adventurer to die? You must know this information to pass my test."
+queststatus(525) = 1, english,"quest", "mission", "test" -> "What is the name of the first adventurer to die? You must know this information to pass my test."
 queststatus(525) = 1, "quest", "mission", "Test" -> ""
 queststatus(525) = 1, "task", "adventure", "order" -> "What is the name of the first adventurer to die? You must know this information to pass my test."."
 queststatus(525) = 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""

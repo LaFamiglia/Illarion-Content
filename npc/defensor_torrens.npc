@@ -105,7 +105,7 @@ queststatus(527) = 20, queststatus(528) = 0, "quest", "mission", "Test" -> infor
 queststatus(527) = 20, queststatus(528) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "I am Defensor Torrens, to pass my test you must kill ten zombies around the undead lake."
 queststatus(527) = 20, queststatus(528) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "Ich bin Defensor Torrens, um meinen Test zu bestehen mußt Du zehn zombies töten, welche diese Hallen durchstreifen."
 -- If quest received but task not finished
-queststatus(528) > 0, queststatus(528) < 11, english,"quest", "mission", "test" . -> "Have you killed the ten zombies? If you do not pass this test you can't continue."
+queststatus(528) > 0, queststatus(528) < 11, english,"quest", "mission", "test" -> "Have you killed the ten zombies? If you do not pass this test you can't continue."
 queststatus(528) > 0, queststatus(528) < 11, "quest", "mission", "Test" ->"Hast Du zehn zombies getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(528) > 0, queststatus(528) < 11, "task", "adventure", "order" -> "Have you killed the ten zombies? If you do not pass this test you can't continue."
 queststatus(528) > 0, queststatus(528) < 11,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du zehn zombies getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."

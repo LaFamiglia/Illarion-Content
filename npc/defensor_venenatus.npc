@@ -106,7 +106,7 @@ queststatus(527) = 18, "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(527) = 18, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 12"), queststatus(527) = 19, "I am Defensor Venenatus, to pass my test you must collect four drow helms."
 queststatus(527) = 18, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 12"), queststatus(527) = 19, "Ich bin Defensor Venanatus,um meinen Test zu bestehen muﬂt du vier Drowhelme von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
-queststatus(527) = 19, item(2303, all) < 4, english,"quest", "mission", "test" . ->"Do you have four drow helms? If you do not pass this test you can't continue."
+queststatus(527) = 19, item(2303, all) < 4, english,"quest", "mission", "test" ->"Do you have four drow helms? If you do not pass this test you can't continue."
 queststatus(527) = 19, item(2303, all) < 4, "quest", "mission", "Test" ->"Hast Du vier Drowhelme? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(527) = 19, item(2303, all) < 4, "task", "adventure", "order" -> "Do you have four drow helms? If you do not pass this test you can't continue."
 queststatus(527) = 19, item(2303, all) < 4,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du vier Drowhelme? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."

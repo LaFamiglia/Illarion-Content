@@ -105,7 +105,7 @@ queststatus(525) = 12, "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(525) = 12, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 4"), queststatus(525) = 13, "I am Defensor Impetus, to pass my test you must kill eight drow that roam these halls."
 queststatus(525) = 12, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 4"), queststatus(525) = 13, "Ich bin Defensor Impetus,  um meinen Test zu bestehen mußt Du acht Drow töten, welche diese Hallen durchstreifen."
 -- If quest received but task not finished
-queststatus(525) > 12, queststatus(525) < 21, english,"quest", "mission", "test" . -> "Have you killed eight drow? If you do not pass this test you can't continue."
+queststatus(525) > 12, queststatus(525) < 21, english,"quest", "mission", "test" -> "Have you killed eight drow? If you do not pass this test you can't continue."
 queststatus(525) > 12, queststatus(525) < 21, "quest", "mission", "Test" ->"Hast Du acht Drow getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(525) > 12, queststatus(525) < 21, "task", "adventure", "order" -> "Have you killed eight drow? If you do not pass this test you can't continue."
 queststatus(525) > 12, queststatus(525) < 21,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du acht Drow getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."

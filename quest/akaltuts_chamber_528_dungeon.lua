@@ -50,7 +50,7 @@ Description[GERMAN][8] = "Töte Zombies für den Defensor Torrens. Du benötigst
 Description[ENGLISH][8] = "Kill zombies for Defensor Torrens.  You still need drei."
 Description[GERMAN][9] = "Töte Zombies für den Defensor Torrens. Du benötigst noch zwei."
 Description[ENGLISH][9] = "Kill zombies for Defensor Torrens.  You still need two."
-Description[GERMAN][10] = "Töte Zombies für den Defensor Torrens. Du benötigst noch eine."
+Description[GERMAN][10] = "Töte Zombies für den Defensor Torrens. Du benötigst noch ein."
 Description[ENGLISH][10] = "Kill zombies for Defensor Torrens.  You still need one."
 Description[GERMAN][11] = "Kehre zurück zum Defensor Torrens. Du hast seinen Test bestanden."
 Description[ENGLISH][11] = "Report back to Defensor Torrens, you have finished his test."
@@ -76,7 +76,7 @@ Description[GERMAN][20] = "Töte Skelette für den Defensor Delinificus. Du ben�
 Description[ENGLISH][20] = "Kill skeletons for Defensor Delinificus.  You still need three."
 Description[GERMAN][21] = "Töte Skelette für den Defensor Delinificus. Du benötigst noch zwei."
 Description[ENGLISH][21] = "Kill skeletons for Defensor Delinificus.  You still need two."
-Description[GERMAN][22] = "Töte Skelette für den Defensor Delinificus. Du benötigst noch eine."
+Description[GERMAN][22] = "Töte Skelette für den Defensor Delinificus. Du benötigst noch ein."
 Description[ENGLISH][22] = "Kill skeletons for Defensor Delinificus.  You still need one."
 Description[GERMAN][23] = "Kehre zurück zum Defensor Delinificus. Du hast seinen Test bestanden."
 Description[ENGLISH][23] = "Report back to Defensor Delinificus, you have finished his test."
@@ -95,6 +95,9 @@ Description[GERMAN][28] = ""
 Description[ENGLISH][28] = "Return to Defensor Transmutatio for your reward."
 Description[GERMAN][29] = "Der Defensor Animus hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][29] = "The Defensor Animus may have a task for you."
+
+Description[GERMAN][30] = ""
+Description[ENGLISH][30] = "You have finished part four of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {516, 803, -9}
@@ -135,7 +138,7 @@ QuestTarget[28] = {position(491, 820, -9), position(868, 336, 0)}
 QuestTarget[28] = {position(491, 820, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 29
+FINAL_QUEST_STATUS = 30
 
 
 function QuestTitle(user)

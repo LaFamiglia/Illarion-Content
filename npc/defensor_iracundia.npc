@@ -105,7 +105,7 @@ queststatus(525) = 2,  "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(525) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, "I am Defensor Iracundia, to pass my test you must find the altar room and read the pell by the altar."
 queststatus(525) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 2"), queststatus(525) = 3, ""
 -- If quest received but task not finished
-queststatus(525) = 3, english,"quest", "mission", "test" . ->"You must find the altar room and read the pell. If you do not pass this test you can't continue."
+queststatus(525) = 3, english,"quest", "mission", "test" ->"You must find the altar room and read the pell. If you do not pass this test you can't continue."
 queststatus(525) = 3, "quest", "mission", "Test" ->""
 queststatus(525) = 3, "task", "adventure", "order" -> "You must find the altar room and read the pell. If you do not pass this test you can't continue."
 queststatus(525) = 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""

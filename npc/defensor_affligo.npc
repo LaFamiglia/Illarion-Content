@@ -105,7 +105,7 @@ queststatus(526) = 29, queststatus(527) = 0,  "quest", "mission", "Test" -> info
 queststatus(526) = 29, queststatus(527) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 9"), queststatus(526) = 30, queststatus(527) = 1, "I am Defensor Affligo, to pass my test you must collect one drow armour."
 queststatus(526) = 29, queststatus(527) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 9"), queststatus(526) = 30, queststatus(527) = 1, "Ich bin Defensor Affligo, um meinen Test zu bestehen mußt du ein Drowrüstung von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
-queststatus(527) = 1, item(2402, all) < 1, english,"quest", "mission", "test" . ->"Do you have a drow armour? If you do not pass this test you can't continue."
+queststatus(527) = 1, item(2402, all) < 1, english,"quest", "mission", "test" ->"Do you have a drow armour? If you do not pass this test you can't continue."
 queststatus(527) = 1, item(2402, all) < 1, "quest", "mission", "Test" ->"Hast Du ein Drowrüstung? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 queststatus(527) = 1, item(2402, all) < 1, "task", "adventure", "order" -> "Do you have a drow armour? If you do not pass this test you can't continue."
 queststatus(527) = 1, item(2402, all) < 1,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du ein Drowrüstung? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
