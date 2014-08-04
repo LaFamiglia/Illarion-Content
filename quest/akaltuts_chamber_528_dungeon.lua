@@ -46,8 +46,8 @@ Description[GERMAN][6] = "Töte Zombies für den Defensor Torrens. Du benötigst
 Description[ENGLISH][6] = "Kill zombies for Defensor Torrens.  You still need five."
 Description[GERMAN][7] = "Töte Zombies für den Defensor Torrens. Du benötigst noch vier."
 Description[ENGLISH][7] = "Kill zombies for Defensor Torrens.  You still need four."
-Description[GERMAN][8] = "Töte Zombies für den Defensor Torrens. Du benötigst noch three."
-Description[ENGLISH][8] = "Kill zombies for Defensor Torrens.  You still need drei."
+Description[GERMAN][8] = "Töte Zombies für den Defensor Torrens. Du benötigst noch drei."
+Description[ENGLISH][8] = "Kill zombies for Defensor Torrens.  You still need three."
 Description[GERMAN][9] = "Töte Zombies für den Defensor Torrens. Du benötigst noch zwei."
 Description[ENGLISH][9] = "Kill zombies for Defensor Torrens.  You still need two."
 Description[GERMAN][10] = "Töte Zombies für den Defensor Torrens. Du benötigst noch ein."
@@ -135,7 +135,7 @@ QuestTarget[26] = {position(491, 825, -9)}
 
 QuestTarget[27] = {position(491, 820, -9), position(868, 336, 0)}
 QuestTarget[28] = {position(491, 820, -9), position(868, 336, 0)}
-QuestTarget[28] = {position(491, 820, -9)}
+QuestTarget[29] = {position(491, 820, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 30

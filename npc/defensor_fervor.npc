@@ -89,7 +89,7 @@ english, "Defensor" -> "My job is a Defensor, I make sure only the worthy move o
 "Defensor" -> "Meine Aufgabe ist die eines Defensor, ich stelle sicher das nur die Würdigen weiterkommen.", "Ich bin Defensor Fervor."
 english, "Drow" -> "The drow are dangerous fighters, are you a match for their skill?"
 "Drow" -> "Die Drow sind gefährliche Kämpfer, kannst Du dich mit Ihnen messen?"
-english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well know for terrorizing this corner.  Pass our tests and you can face her."
+english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well known for terrorizing this corner. Pass our tests and you can face her."
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
@@ -105,9 +105,9 @@ queststatus(528) = 24, "quest", "mission", "Test" -> inform("[New quest] Akaltut
 queststatus(528) = 24, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor, to pass my test you must tell me the name of this mountain range we are in."
 queststatus(528) = 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, ""
 -- If quest received but task not finished
-queststatus(528) = 25, english,"quest", "mission", "test" ->"What is the name of this mountain range?  If you do not pass this test you can't continue."
+queststatus(528) = 25, english,"quest", "mission", "test" ->"What is the name of this mountain range? If you do not pass this test you can't continue."
 queststatus(528) = 25, "quest", "mission", "Test" ->""
-queststatus(528) = 25, "task", "adventure", "order" -> "What is the name of this mountain range?  If you do not pass this test you can't continue."
+queststatus(528) = 25, "task", "adventure", "order" -> "What is the name of this mountain range? If you do not pass this test you can't continue."
 queststatus(528) = 25, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
 queststatus(528) = 25, english, "Border" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), queststatus(528) = 26, "You have passed this test and are awarded a black cultist robe."

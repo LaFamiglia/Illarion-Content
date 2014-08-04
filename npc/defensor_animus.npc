@@ -113,10 +113,10 @@ queststatus(529) = 1, item(2777, all) < 2,"Auftrag", "Aufgabe", "Abenteuer", "Be
 queststatus(529) = 1, item(2777, all) > 1, english, ".+" -> inform("[Quest solved] You are awarded a pure air."), item(2551, 1, 999), deleteItem(2777, 2), queststatus(529) = 2, "You have passed this test and are awarded a pure air."
 queststatus(529) = 1, item(2777, all) > 1, ".+" -> inform("[Quest gelöst] Du erhältst ein reine Luft."), item(2551, 1, 999), deleteItem(2777, 2), queststatus(529) = 2, "Du hast den Test bestanden. Du bekommst ein reine Luft."
 --If finished with the Defensor
-queststatus(529) = 2, english, "quest", "mission", "test" -> "You have passed, please see Defensor Diluo."
-queststatus(529) = 2, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Diluo."
-queststatus(529) = 2, "task", "adventure", "order" -> "You have passed, please see Defensor Diluo."
-queststatus(529) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Diluo."
+queststatus(529) = 2, english, "quest", "mission", "test" -> "You have passed, please see Defensor Infirmo."
+queststatus(529) = 2, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Infirmo."
+queststatus(529) = 2, "task", "adventure", "order" -> "You have passed, please see Defensor Infirmo."
+queststatus(529) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Infirmo."
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
