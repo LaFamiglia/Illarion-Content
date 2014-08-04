@@ -34,18 +34,18 @@ Description[GERMAN] = {}
 Description[ENGLISH] = {}
 Description[GERMAN][1] = "Sammle zwei Drowschwerter und bringe sie zum Defensor Animus."
 Description[ENGLISH][1] = "Collect two drow blades for Defensor Animus."
-Description[GERMAN][2] = "Der Defensor Diluo hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][2] = "The Defensor Diluo may have a task for you."
+Description[GERMAN][2] = "Der Defensor Infirmo hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][2] = "The Defensor Infirmo may have a task for you."
 
 Description[GERMAN][3] = ""
-Description[ENGLISH][3] = "Find the lose Hellhound and return it to the animal pit for Defensor Diluo."
+Description[ENGLISH][3] = "Find the lose Hellhound and return it to the animal pit for Defensor Infirmo."
 Description[GERMAN][4] = "."
-Description[ENGLISH][4] = "Return to Defensor Diluo for your reward."
-Description[GERMAN][5] = "Der Defensor Infimo hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][5] = "The Defensor Infimo may have a task for you."
+Description[ENGLISH][4] = "Return to Defensor Infirmo for your reward."
+Description[GERMAN][5] = "Der Defensor Diluo hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][5] = "The Defensor Diluo may have a task for you."
 
-Description[GERMAN][6] = "Sammle eine Himmelsschild und bringe sie zum Defensor Infimo."
-Description[ENGLISH][6] = "Collect one sky shield for Defensor Infimo."
+Description[GERMAN][6] = "Sammle eine Himmelsschild und bringe sie zum Defensor Diluo."
+Description[ENGLISH][6] = "Collect one sky shield for Defensor Diluo."
 Description[GERMAN][7] = "Der Defensor Transfodio hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][7] = "The Defensor Transfodio may have a task for you."
 
