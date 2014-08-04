@@ -27,7 +27,7 @@ race = human
 sex = male
 position = 482, 835, -9
 direction = west
-job = "Guardian"
+job = "Defensor"
 
 language = common
 language = human
@@ -107,10 +107,10 @@ queststatus(525) = 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 queststatus(525) = 1, english, "theresa" -> inform("[Quest solved] You are awarded fifty silver coins."), money + 5000, queststatus(525) = 2, "Yes, the mage was the first to go. You have passed this test and are awarded 50 silver coins."
 queststatus(525) = 1, "theresa" -> inform("[Quest gelöst] Du erhältst fünfzig Silberstücke."), money + 5000, queststatus(525) = 2, "Du hast den Test bestanden. Du bekommst 50 Silberstücke."
 -- If finished with the guardian
-queststatus(525) > 1, english, "quest", "mission" -> "You have passed, please see Defensor Iracundia."
-queststatus(525) > 1, "quest", "mission" -> "Du hast bestanden. Gehe zum Defensor Iracundia."
-queststatus(525) > 1, "task", "adventure", "order" -> "You have passed, please see Defensor Iracundia."
-queststatus(525) > 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Iracundia."
+queststatus(525) = 2, english, "quest", "mission" -> "You have passed, please see Defensor Iracundia."
+queststatus(525) = 2, "quest", "mission" -> "Du hast bestanden. Gehe zum Defensor Iracundia."
+queststatus(525) = 2, "task", "adventure", "order" -> "You have passed, please see Defensor Iracundia."
+queststatus(525) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Iracundia."
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
 queststatus(525) < 1, english, ".*" -> "Finish our tests in order and you will be rewarded."
 queststatus(525) < 1, german, ".*" -> "Beende unsere test und Du wirst eine Belohnung erhalten."

@@ -77,6 +77,9 @@ Description[ENGLISH][19] = "Collect four drow helmets for Defensor Venenatus."
 Description[GERMAN][20] = "Der Defensor Torrens hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][20] = "The Defensor Torrens may have a task for you."
 
+Description[GERMAN][21] = ""
+Description[ENGLISH][21] = "You have finished part three of the testing."
+
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {476, 782, -9}
 
@@ -107,7 +110,7 @@ QuestTarget[19] = {position(441, 761, -9)}
 QuestTarget[20] = {position(441, 761, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 20
+FINAL_QUEST_STATUS = 21
 
 
 function QuestTitle(user)

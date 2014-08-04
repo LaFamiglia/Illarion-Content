@@ -82,6 +82,9 @@ Description[ENGLISH][21] = "Report back to Defensor Impetus, you have finished h
 Description[GERMAN][22] = "Der Defensor Sancio hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][22] = "The Defensor Sancio may have a task for you."
 
+Description[GERMAN][23] = ""
+Description[ENGLISH][23] = "You have finished part one of the testing."
+
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {482, 835, -9}
@@ -116,7 +119,7 @@ QuestTarget[22] = {position(433, 856, -9), position(451, 860, -9)}
 
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 22
+FINAL_QUEST_STATUS = 23
 
 
 function QuestTitle(user)

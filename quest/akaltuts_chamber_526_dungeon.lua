@@ -87,7 +87,7 @@ Description[ENGLISH][24] = "Kill drow warrior for Defensor Prohibeo. You still n
 Description[GERMAN][25] = "Töte zehn Drow Krieger für den Defensor Prohibeo. Du benötigst noch drei."
 Description[ENGLISH][25] = "Kill drow warrior for Defensor Prohibeo. You still need three."
 Description[GERMAN][26] = "Töte zehn Drow Krieger für den Defensor Prohibeo. Du benötigst noch zwei."
-Description[ENGLISH][26] = "Kill drow warrior for Defensor Prohibeo You still need twp."
+Description[ENGLISH][26] = "Kill drow warrior for Defensor Prohibeo You still need two."
 Description[GERMAN][27] = "Töte zehn Drow Krieger für den Defensor Prohibeo. Du benötigst noch ein."
 Description[ENGLISH][27] = "Kill drow warrior for Defensor Prohibeo. You still need one."
 Description[GERMAN][28] = "Kehre zurück zum Defensor Prohibeo. Du hast seinen Test bestanden."
@@ -95,6 +95,9 @@ Description[ENGLISH][28] = "Report back to Defensor Prohibeo, you have finished 
 
 Description[GERMAN][29] = "Der Defensor Affligo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][29] = "The Defensor Affligo may have a task for you."
+
+Description[GERMAN][30] = ""
+Description[ENGLISH][30] = "You have finished part two of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {438, 856, -9}
@@ -135,7 +138,7 @@ QuestTarget[28] = {position(462, 847, -9), position(464, 842, -9)}
 QuestTarget[29] = {position(462, 847, -9), position(464, 842, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 29
+FINAL_QUEST_STATUS = 30
 
 
 function QuestTitle(user)
