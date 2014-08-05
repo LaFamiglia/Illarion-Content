@@ -57,7 +57,7 @@ itemShoes = 770
 
 -- QuestID=529
 --  2: No Quest taken
---  3: Quest taken - Kill fifteen drow, reward 20000cp
+--  3: Quest taken - Return loose Hellhound, reward 20000cp
 -- 5: Quest 18 solved
 
 -- Help
@@ -100,9 +100,9 @@ queststatus(529) < 2,  "quest", "mission", "Test" -> "Suche den vorigen Defensor
 queststatus(529) < 2, "task", "adventure", "order" -> "See the Defensor before me."
 queststatus(529) < 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensor."
 -- Receiving the task of returning a loose Hellhound
-queststatus(529) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose wandering these halls to its pit."
+queststatus(529) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
 queststatus(529) = 2, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, ""
-queststatus(529) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose wandering these halls to its pit."
+queststatus(529) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
 queststatus(529) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, ""
 -- If quest received but task not finished
 queststatus(529) = 3, english,"quest", "mission", "test" -> "Have you returned the Hellhound? If you do not pass this test you can't continue."

@@ -100,9 +100,9 @@ queststatus(529) < 5, "quest", "mission", "Test" -> "Suche den vorigen Defensor.
 queststatus(529) < 5, "task", "adventure", "order" -> "See the Defensor before me."
 queststatus(529) < 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensor."
 -- Receiving the task of Collecting sky shield.
-queststatus(529) = 5, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "I am Defensor Diluo, to pass my test you must collect a sky shield."
+queststatus(529) = 5, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "I am Defensor Diluo, to pass my test you must collect a shield of the sky."
 queststatus(529) = 5, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "Ich bin Defensor Diluo, um meinen Test zu bestehen muﬂt du ein Himmelsschild von den Drows, welche hier herum schweifen sammeln."
-queststatus(529) = 5, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "I am Defensor Diluo, to pass my test you must collect a sky shield."
+queststatus(529) = 5, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "I am Defensor Diluo, to pass my test you must collect a shield of the sky."
 queststatus(529) = 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 19"), queststatus(529) = 6, "Ich bin Defensor Diluo, um meinen Test zu bestehen muﬂt du ein Himmelsschild von den Drows, welche hier herum schweifen sammeln."
 -- If quest received but task not finished
 queststatus(529) = 6, item(2284, all) < 1, english,"quest", "mission", "test" . ->"Do you have a sky shield? If you do not pass this test you can't continue."
@@ -110,7 +110,7 @@ queststatus(529) = 6, item(2284, all) < 1, "quest", "mission", "Test" -> "Hast D
 queststatus(529) = 6, item(2284, all) < 1, "task", "adventure", "order" -> "Do you have a sky shield? If you do not pass this test you can't continue."
 queststatus(529) = 6, item(2284, all) < 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du ein Himmelsschild? Wenn Du diesen Test nicht bestehst kannst Du nicht weitergehen."
 -- If test is finished
-queststatus(529) = 6, item(2284, all) > 0, english, ".+" -> inform("[Quest solved] You are awarded a drow armor."), item(2402, 1, 866), deleteItem(2284, 1), queststatus(529) = 7, "You have passed this test and are awarded a drow armor."
+queststatus(529) = 6, item(2284, all) > 0, english, ".+" -> inform("[Quest solved] You are awarded a drow armour."), item(2402, 1, 866), deleteItem(2284, 1), queststatus(529) = 7, "You have passed this test and are awarded a drow armour."
 queststatus(529) = 6, item(2284, all) > 0, ".+" -> inform("[Quest gelˆst] Du erh‰ltst ein Drowr¸stung."), item(2402, 1, 866), deleteItem(2284, 1), queststatus(529) = 7, "Du hast den Test bestanden. Du bekommst ein Drowr¸stung."
 --If finished with the Guardian
 queststatus(529) = 7, english, "quest", "mission", "test" -> "You have passed, please see Defensor Transfodio."
