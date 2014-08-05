@@ -91,6 +91,9 @@ Description[ENGLISH][27] = "Report back to Defensor Transfodio, you have finishe
 Description[GERMAN][28] = "Der Defensor Volnus hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][28] = "The Defensor Volnus may have a task for you."
 
+Description[GERMAN][29] = ""
+Description[ENGLISH][29] = "You have finished part five of the testing."
+
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {423, 815, -9}
 
@@ -128,8 +131,10 @@ QuestTarget[26] = {position(442, 800, -9), position(430, 805, -9)}
 QuestTarget[27] = {position(442, 800, -9), position(430, 805, -9)}
 QuestTarget[28] = {position(442, 800, -9)}
 
+QuestTarget[29] = {position(442, 800, -9)}
+
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 28
+FINAL_QUEST_STATUS = 29
 
 
 function QuestTitle(user)
