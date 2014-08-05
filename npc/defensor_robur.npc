@@ -93,8 +93,8 @@ english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well kno
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
--- Guardian task three.  Kill five drow archers.
--- If haven't completed previous Guardianss tasks
+-- Defensor task three.  Kill five drow archers.
+-- If haven't completed previous Defensors tasks
 queststatus(525) < 5, english, "quest", "mission", "test" -> "See the Defensors before me."
 queststatus(525) < 5,  "quest", "mission", "Test" -> "Suche den vorigen Defensors."
 queststatus(525) < 5, "task", "adventure", "order" -> "See the Defensors before me."
@@ -112,7 +112,7 @@ queststatus(525) > 5, queststatus(525) < 11,"Auftrag", "Aufgabe", "Abenteuer", "
 -- If test is finished
 queststatus(525) = 11, english, ".+" -> inform("[Quest solved] You are awarded an elven shortbow."), item(2685, 1, 699), queststatus(525) = 12, "You have passed this test and are awarded an elven shortbow."
 queststatus(525) = 11, ".+" -> inform("[Quest gelöst] Du erhältst ein Elbenkurzbogen."), item(2685, 1, 699), queststatus(525) = 12, "Du hast den Test bestanden. Du bekommst ein Elbenkurzbogen."
---If finished with the Guardian
+--If finished with the Defensor
 queststatus(525) = 12, english, "quest", "mission", "test" -> "You have passed, please see Defensor Impetus."
 queststatus(525) = 12, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Impetus."
 queststatus(525) = 12, "task", "adventure", "order" -> "You have passed, please see Defensor Impetus."

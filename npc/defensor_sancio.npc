@@ -93,8 +93,8 @@ english, "Akaltut" -> "Akaltut is a spider queen. She and her breed are well kno
 "Akaltut" -> "Akaltut ist eine Spinnenkönigin. Sie und ihre Zucht sind für das Terrorisieren dieser Gegend gut bekannt."
 
 -- Quests
--- Guardian task five.  Collect 20 goblets.
--- If haven't completed previous Guardianss tasks
+-- Defensor task five.  Collect 20 goblets.
+-- If haven't completed previous Defensors tasks
 queststatus(525) < 22, english, "quest", "mission", "test" -> "See the Defensors before me."
 queststatus(525) < 22, "quest", "mission", "Test" -> "Suche den vorigen Defensors."
 queststatus(525) < 22, "task", "adventure", "order" -> "See the Defnesors before me."
@@ -112,7 +112,7 @@ queststatus(526) = 1, item(1858, all) < 20, "Auftrag", "Aufgabe", "Abenteuer", "
 -- If test is finished
 queststatus(526) = 1, item(1858, all) > 19, english, ".+" -> inform("[Quest solved] You are awarded five venison dishes."), item(554, 5, 999), deleteItem(1858, 20), queststatus(526) = 2, "You have passed this test and are awarded five venison dishes."
 queststatus(526) = 1, item(1858, all) > 19, ".+" -> inform("[Quest gelöst] Du erhältst fünf Rehrücken Gerichte."), item(554, 5, 999), deleteItem(1858, 20), queststatus(526) = 2, "Du hast den Test bestanden. Du bekommst fünf Rehrücken Gerichte."
---If finished with the Guardian
+--If finished with the Defensor
 queststatus(526) = 2, english, "quest", "mission", "test" -> "You have passed, please see Defensor Mando."
 queststatus(526) = 2, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Mando."
 queststatus(526) = 2, "task", "adventure", "order" -> "You have passed, please see Defensor Mando."

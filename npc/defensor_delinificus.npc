@@ -112,7 +112,7 @@ queststatus(528) > 12, queststatus(528) < 23,"Auftrag", "Aufgabe", "Abenteuer", 
 -- If test is finished
 queststatus(528) = 23, english, ".+" -> inform("[Quest solved] You are awarded 150 silver coins."), money + 15000, queststatus(528) = 24, "You have passed this test and are awarded 150 silver coins."
 queststatus(528) = 23, ".+" -> inform("[Quest gelöst] Du erhältst 150 Silberstücke."), money + 15000, queststatus(528) = 24, "Du hast den Test bestanden. Du bekommst 150 Silberstücke."
---If finished with the Guardian
+--If finished with the Defensor
 queststatus(528) = 24, english, "quest", "mission", "test" -> "You have passed, please see Defensor Fervor."
 queststatus(528) = 24, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Fervor."
 queststatus(528) = 24, "task", "adventure", "order" -> "You have passed, please see Defensor Fervor."

@@ -110,8 +110,8 @@ queststatus(530) > 22, queststatus(530) < 26, "quest", "mission", "Test" -> ""
 queststatus(530) > 22, queststatus(530) < 26, "task", "adventure", "order" -> "Have you killed the 25 drow? If you do not pass this test you can't continue."
 queststatus(530) > 22, queststatus(530) < 26,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 -- If test is finished
-queststatus(530) = 26, english, ".+" -> inform("[Quest solved] You are awarded a drow bow."), item(2739, 1, 866), queststatus(530) = 27, "You have passed this test and all of our other tests. For your perseverance you are awarded a drow bow."
-queststatus(530) = 26, ".+" -> inform("[Quest gelöst] Du erhältst ein Drowbogen."), item(2739, 1, 866), queststatus(530) = 27,""
+queststatus(530) = 26, english, ".+" -> inform("[Quest solved] You are awarded a drow bow."), item(2739, 1, 866,"descriptionEn" = "Spiderwebs are etched along the front of the bow, with the symbol of Akaltut embedded deeply into the riser. All carvings sporadically cast a strange glow from something.", "descriptionDe" = "","rareness" = "3"), queststatus(530) = 27, "You have passed this test and all of our other tests. For your perseverance you are awarded a drow bow."
+queststatus(530) = 26, ".+" -> inform("[Quest gelöst] Du erhältst ein Drowbogen."), item(2739, 1, 866,"descriptionEn" = "Spiderwebs are etched along the front of the bow, with the symbol of Akaltut embedded deeply into the riser. All carvings sporadically cast a strange glow from something.", "descriptionDe" = "","rareness" = "3"), queststatus(530) = 27,""
 --If finished with the Defensors
 queststatus(530) = 27, english, "quest", "mission", "test" -> "You have passed all of the Defensor's tests. In time, you may face Akaltut."
 queststatus(530) = 27, "quest", "mission", "Test" -> "Du hast alle Tests der Defensor's bestanden. Zur rechten Zeit wirst Du Akaltut gegenüberstehen."
