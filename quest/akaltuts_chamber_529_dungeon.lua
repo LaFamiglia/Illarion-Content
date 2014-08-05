@@ -45,7 +45,7 @@ Description[GERMAN][5] = "Der Defensor Diluo hat vielleicht eine Aufgabe für di
 Description[ENGLISH][5] = "The Defensor Diluo may have a task for you."
 
 Description[GERMAN][6] = "Sammle eine Himmelsschild und bringe sie zum Defensor Diluo."
-Description[ENGLISH][6] = "Collect one sky shield for Defensor Diluo."
+Description[ENGLISH][6] = "Collect one shield of the sky for Defensor Diluo."
 Description[GERMAN][7] = "Der Defensor Transfodio hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][7] = "The Defensor Transfodio may have a task for you."
 
@@ -84,15 +84,15 @@ Description[ENGLISH][23] = "Kill drow for Defensor Transfodio. You still need 3.
 Description[GERMAN][24] = "Töte Drow für den Defensor Transfodio. Du benötigst noch 2."
 Description[ENGLISH][24] = "Kill drow for Defensor Transfodio. You still need 2."
 Description[GERMAN][25] = "Töte Drow für den Defensor Transfodio. Du benötigst noch 1."
-Description[ENGLISH][26] = "Kill drow for Defensor Transfodio. You still need 1."
-Description[GERMAN][27] = "Kehre zurück zum Defensor Transfodio. Du hast seinen Test bestanden."
-Description[ENGLISH][27] = "Report back to Defensor Transfodio, you have finished his test."
+Description[ENGLISH][25] = "Kill drow for Defensor Transfodio. You still need 1."
+Description[GERMAN][26] = "Kehre zurück zum Defensor Transfodio. Du hast seinen Test bestanden."
+Description[ENGLISH][26] = "Report back to Defensor Transfodio, you have finished his test."
 
-Description[GERMAN][28] = "Der Defensor Volnus hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][28] = "The Defensor Volnus may have a task for you."
+Description[GERMAN][27] = "Der Defensor Volnus hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][27] = "The Defensor Volnus may have a task for you."
 
-Description[GERMAN][29] = ""
-Description[ENGLISH][29] = "You have finished part five of the testing."
+Description[GERMAN][28] = ""
+Description[ENGLISH][28] = "You have finished part five of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {423, 815, -9}
@@ -131,10 +131,9 @@ QuestTarget[26] = {position(442, 800, -9), position(430, 805, -9)}
 QuestTarget[27] = {position(442, 800, -9), position(430, 805, -9)}
 QuestTarget[28] = {position(442, 800, -9)}
 
-QuestTarget[29] = {position(442, 800, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
-FINAL_QUEST_STATUS = 29
+FINAL_QUEST_STATUS = 28
 
 
 function QuestTitle(user)
