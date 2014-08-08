@@ -56,17 +56,17 @@ end
 
 function onSpawn
 
-	if (MonID == 1131) then Monster:getSkinColor = {128,128,128} -- Rabbit Red,Green,Blue
+	if (MonID == 1131) then Monster:getSkinColor = {75,75,75} -- Rabbit Red,Green,Blue
 	end
-	if (MonID == 1132) then Monster:getSkinColor = {105,70,20} -- JackRabbit Red,Green,Blue
+	if (MonID == 1132) then Monster:getSkinColor = {128,128,128} -- Doe Red,Green,Blue
 	end
-	if (MonID == 1133) then Monster:getSkinColor = {255,255,255} -- LongHairRabbit Red,Green,Blue
+	if (MonID == 1133) then Monster:getSkinColor = {80,55,20} -- ForestRabbit Red,Green,Blue
 	end
-	if (MonID == 1134) then Monster:getSkinColor = {75,75,75} -- LongEaredRabbit Red,Green,Blue
+	if (MonID == 1134) then Monster:getSkinColor = {105,70,20} -- ForestDoe Red,Green,Blue
 	end
-	if (MonID == 1135) then Monster:getSkinColor = {210,150,50} -- TanRabbit Red,Green,Blue
+	if (MonID == 1135) then Monster:getSkinColor = {210,150,50} -- DesertRabbit Red,Green,Blue
 	end
-	if (MonID == 1136) then Monster:getSkinColor = {240,210,170} -- DesertRabbit Red,Green,Blue
+	if (MonID == 1136) then Monster:getSkinColor = {240,210,170} -- DesertDoe Red,Green,Blue
 	end
  end
 
@@ -149,27 +149,27 @@ function onDeath(Monster)
         monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
         monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
 
-    elseif (MonID == 1132) then --Jack Rabbit, lvl1
+    elseif (MonID == 1132) then --Doe, lvl1
 
         monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
         monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
 		
-    elseif (MonID == 1133) then --Long Hair Rabbit, lvl1
+    elseif (MonID == 1133) then --Forest Rabbit, lvl1
 
         monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
         monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
 
-    elseif (MonID == 1134) then --Long Eared Rabbit, lvl1
-
-        monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
-        monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
-		
-	elseif (MonID == 1135) then --Tan Rabbit, lvl1
+    elseif (MonID == 1134) then --Forest Doe, lvl1
 
         monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
         monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
 		
-    elseif (MonID == 1136) then --Desert Rabbit, lvl1
+	elseif (MonID == 1135) then --Desert Rabbit, lvl1
+
+        monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
+        monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
+		
+    elseif (MonID == 1136) then --Desert Doe, lvl1
 
         monster.base.drop.AddDropItem(63,1,50,333,0,1); --entrails
         monster.base.drop.AddDropItem(553,1,50,333,0,1); --rabbit meat
