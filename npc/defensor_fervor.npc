@@ -100,15 +100,15 @@ queststatus(528) < 24, "quest", "mission", "Test" -> "Suche den vorigen Defensor
 queststatus(528) < 24, "task", "adventure", "order" -> "See the Defensors before me."
 queststatus(528) < 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensors."
 -- Receiving the task of naming the Mountain range.
-queststatus(528) = 24, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor, to pass my test you must tell me the name of this mountain range we are in."
-queststatus(528) = 24, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, ""
-queststatus(528) = 24, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor, to pass my test you must tell me the name of this mountain range we are in."
-queststatus(528) = 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, ""
+queststatus(528) = 24, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor. To pass my test you must tell me the name of this mountain range we are in."
+queststatus(528) = 24, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "Ich bin Defensor Fervor. Um meine Prüfung zu bestehen, nenne mir den Namen des Gebirges in dem wir und befinden."
+queststatus(528) = 24, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "I am Defensor Fervor. To pass my test you must tell me the name of this mountain range we are in."
+queststatus(528) = 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 15"), queststatus(528) = 25, "Ich bin Defensor Fervor. Um meine Prüfung zu bestehen, nenne mir den Namen des Gebirges in dem wir und befinden."
 -- If quest received but task not finished
 queststatus(528) = 25, english,"quest", "mission", "test" ->"What is the name of this mountain range? If you do not pass this test you can't continue."
-queststatus(528) = 25, "quest", "mission", "Test" ->""
+queststatus(528) = 25, "quest", "mission", "Test" ->"Wie lautet der Name dieses Gebirges? Wenn du diese Prüfung nicht bestehst, kommst du nicht weiter."
 queststatus(528) = 25, "task", "adventure", "order" -> "What is the name of this mountain range? If you do not pass this test you can't continue."
-queststatus(528) = 25, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(528) = 25, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Wie lautet der Name dieses Gebirges? Wenn du diese Prüfung nicht bestehst, kommst du nicht weiter."
 -- If test is finished
 queststatus(528) = 25, english, "Border" -> inform("[Quest solved] You are awarded a black cultist robe."), item(2378, 1, 699), queststatus(528) = 26, "You have passed this test and are awarded a black cultist robe."
 queststatus(528) = 25, "Grenzberge", "Grenz" -> inform("[Quest gelöst] Du erhältst eine Schwarzkultrobe zuerkannt."), item(2378, 1, 699), queststatus(528) = 26, "Du hast den Test bestanden. Du bekommst eine Schwarzkultrobe zuerkannt."
@@ -126,4 +126,3 @@ queststatus(528) = 26, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast b
 cycletext "Du bist in Akaltut´s Versteck eingedrungen in das sich nur wenige trauen.", "You have invaded Akaltut's Lair where few dare go."
 cycletext "Die die sterben werden Teil der Knochenhaufen.", "Those who die become part of the Pile of Bones."
 cycletext "#me start dich mit kaltem hartem Blick an. 'Bist Du würdig?'", "#me stares at you with cold, hard eyes 'Are you worthy?'"
-

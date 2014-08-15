@@ -100,15 +100,15 @@ queststatus(529) < 2,  "quest", "mission", "Test" -> "Suche den vorigen Defensor
 queststatus(529) < 2, "task", "adventure", "order" -> "See the Defensor before me."
 queststatus(529) < 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensor."
 -- Receiving the task of returning a loose Hellhound
-queststatus(529) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
-queststatus(529) = 2, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, ""
-queststatus(529) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo, to pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
-queststatus(529) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, ""
+queststatus(529) = 2, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo. To pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
+queststatus(529) = 2, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "Ich bin Defensor Infirmo. Um meine Prüfung zu bestehen, bringe den entlaufenen Höllenhund, der irgendwo in diesen Hallen herumstreunt, zurück zu seiner Grube."
+queststatus(529) = 2, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "I am Defensor Infirmo. To pass my test you must return a Hellhound that is loose, wandering these halls, to its pit."
+queststatus(529) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 18"), queststatus(529) = 3, "Ich bin Defensor Infirmo. Um meine Prüfung zu bestehen, bringe den entlaufenen Höllenhund, der irgendwo in diesen Hallen herumstreunt, zurück zu seiner Grube."
 -- If quest received but task not finished
 queststatus(529) = 3, english,"quest", "mission", "test" -> "Have you returned the Hellhound? If you do not pass this test you can't continue."
-queststatus(529) = 3, "quest", "mission", "Test" -> ""
+queststatus(529) = 3, "quest", "mission", "Test" -> "Hast du den entlaufenen Höllenhund zurückgebracht? Wenn du diese Prüfung nicht bestehst, kommst du nicht weiter."
 queststatus(529) = 3, "task", "adventure", "order" -> "Have you returned the Hellhound? If you do not pass this test you can't continue."
-queststatus(529) = 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+queststatus(529) = 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast du den entlaufenen Höllenhund zurückgebracht? Wenn du diese Prüfung nicht bestehst, kommst du nicht weiter."
 -- If test is finished
 queststatus(529) = 4, english, ".+" -> inform("[Quest solved] You are awarded 200 silver coins."), money + 20000, queststatus(529) = 5, "You have passed this test and are awarded 200 silver coins."
 queststatus(529) = 4, ".+" -> inform("[Quest gelöst] Du erhältst 200 Silberstücke."), money + 20000, queststatus(529) = 5,"Du hast den Test bestanden. Du bekommst 200 Silberstücke."
@@ -117,4 +117,3 @@ queststatus(529) = 5, english, "quest", "mission", "test" -> "You have passed, p
 queststatus(529) = 5, "quest", "mission", "Test" -> "Du hast bestanden. Gehe zum Defensor Diluo."
 queststatus(529) = 5, "task", "adventure", "order" -> "You have passed, please see Defensor Diluo."
 queststatus(529) = 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du hast bestanden. Gehe zum Defensor Diluo."
-

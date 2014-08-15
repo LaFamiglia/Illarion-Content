@@ -24,8 +24,8 @@ ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 Title = {}
-Title[GERMAN] = ""
-Title[ENGLISH] = "Akaltuts Chamber II"
+Title[GERMAN] = "Die Kammer von Akultut II"
+Title[ENGLISH] = "Akaltut's Chamber II"
 
 -- Insert an extensive description of each status here, in both languages
 -- Make sure that the player knows exactly where to go and what to do
@@ -63,9 +63,9 @@ Description[ENGLISH][13] = "Report back to Defensor Mando, you have finished his
 Description[GERMAN][14] = "Der Defensor Confirmo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][14] = "The Defensor Confirmo may have a task for you."
 
-Description[GERMAN][15] = ""
+Description[GERMAN][15] = "Finde 'Die Herrschaft Akaltuts' in der Bibliothek und lies es für Defensor Confirmo."
 Description[ENGLISH][15] = "Find the copy of 'The Reign of Akaltut' in the library and read it for Defensor Confirmo."
-Description[GERMAN][16] = ""
+Description[GERMAN][16] = "Kehre zu Defensor Confirmo zurück um deine Belohnung zu erhalten."
 Description[ENGLISH][16] = "Return to Defensor Confirmo for your reward."
 Description[GERMAN][17] = "Der Defensor Prohibeo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][17] = "The Defensor Prohibeo may have a task for you."
@@ -96,46 +96,11 @@ Description[ENGLISH][28] = "Report back to Defensor Prohibeo, you have finished 
 Description[GERMAN][29] = "Der Defensor Affligo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][29] = "The Defensor Affligo may have a task for you."
 
-Description[GERMAN][30] = ""
+Description[GERMAN][30] = "Du hast den zweite Teil der Prüfung bestanden."
 Description[ENGLISH][30] = "You have finished part two of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {438, 856, -9}
-
--- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
-QuestTarget = {}
-QuestTarget[1] = {position(438, 856, -9)}
-QuestTarget[2] = {position(438, 856, -9)}
-
-QuestTarget[3] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[4] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[5] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[6] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[7] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[8] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[9] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[10] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[11] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[12] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[13] = {position(466, 843, -9), position(464, 842, -9)}
-QuestTarget[14] = {position(466, 843, -9), position(464, 842, -9)}
-
-QuestTarget[15] = {position(462, 840, -9)}
-QuestTarget[16] = {position(462, 840, -9)}
-QuestTarget[17] = {position(462, 840, -9)}
-
-QuestTarget[18] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[19] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[20] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[21] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[22] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[23] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[24] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[25] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[26] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[27] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[28] = {position(462, 847, -9), position(464, 842, -9)}
-QuestTarget[29] = {position(462, 847, -9), position(464, 842, -9)}
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 30

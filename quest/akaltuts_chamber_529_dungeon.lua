@@ -24,8 +24,8 @@ ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 Title = {}
-Title[GERMAN] = ""
-Title[ENGLISH] = "Akaltuts Chamber V"
+Title[GERMAN] = "Die Kammer von Akultut V"
+Title[ENGLISH] = "Akaltut's Chamber V"
 
 -- Insert an extensive description of each status here, in both languages
 -- Make sure that the player knows exactly where to go and what to do
@@ -37,9 +37,9 @@ Description[ENGLISH][1] = "Collect two drow blades for Defensor Animus."
 Description[GERMAN][2] = "Der Defensor Infirmo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][2] = "The Defensor Infirmo may have a task for you."
 
-Description[GERMAN][3] = ""
-Description[ENGLISH][3] = "Find the lose Hellhound and return it to the animal pit for Defensor Infirmo."
-Description[GERMAN][4] = "."
+Description[GERMAN][3] = "Finde den entlaufenen Höllenhund für Defensor Infirmo und bringe ihn zur Grube zurück."
+Description[ENGLISH][3] = "Find the loose Hellhound and return it to the animal pit for Defensor Infirmo."
+Description[GERMAN][4] = "Kehre zu Defensor Infimo zurück um deine Belohnung zu erhalten."
 Description[ENGLISH][4] = "Return to Defensor Infirmo for your reward."
 Description[GERMAN][5] = "Der Defensor Diluo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][5] = "The Defensor Diluo may have a task for you."
@@ -91,46 +91,11 @@ Description[ENGLISH][26] = "Report back to Defensor Transfodio, you have finishe
 Description[GERMAN][27] = "Der Defensor Volnus hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][27] = "The Defensor Volnus may have a task for you."
 
-Description[GERMAN][28] = ""
+Description[GERMAN][28] = "You have passed the fifth part of the examination."
 Description[ENGLISH][28] = "You have finished part five of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {423, 815, -9}
-
--- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
-QuestTarget = {}
-QuestTarget[1] = {position(423, 815, -9)}
-QuestTarget[2] = {position(423, 815, -9)}
-
-QuestTarget[3] = {position(428, 815, -9)}
-QuestTarget[4] = {position(428, 815, -9)}
-QuestTarget[5] = {position(428, 815, -9)}
-
-QuestTarget[6] = {position(442, 795, -9)}
-QuestTarget[7] =  {position(442, 795, -9)}
-
-QuestTarget[8] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[9] =  {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[10] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[11] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[12] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[13] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[14] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[15] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[16] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[17] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[18] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[19] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[20] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[21] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[22] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[23] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[24] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[25] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[26] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[27] = {position(442, 800, -9), position(430, 805, -9)}
-QuestTarget[28] = {position(442, 800, -9)}
-
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 28

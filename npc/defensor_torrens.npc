@@ -100,15 +100,15 @@ queststatus(527) < 20, "quest", "mission", "Test" -> "Suche den vorigen Defensor
 queststatus(527) < 20, "task", "adventure", "order" -> "See the Defensor before me."
 queststatus(527) < 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Suche den vorigen Defensor."
 -- Receiving the task of Killing ten zombies
-queststatus(527) = 20, queststatus(528) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "I am Defensor Torrens, to pass my test you must kill ten zombies around the undead lake."
-queststatus(527) = 20, queststatus(528) = 0, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "Ich bin Defensor Torrens, um meinen Test zu bestehen mußt Du zehn zombies töten, welche diese Hallen durchstreifen."
-queststatus(527) = 20, queststatus(528) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "I am Defensor Torrens, to pass my test you must kill ten zombies around the undead lake."
-queststatus(527) = 20, queststatus(528) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "Ich bin Defensor Torrens, um meinen Test zu bestehen mußt Du zehn zombies töten, welche diese Hallen durchstreifen."
+queststatus(527) = 20, queststatus(528) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "I am Defensor Torrens. To pass my test you must kill ten zombies around the undead lake."
+queststatus(527) = 20, queststatus(528) = 0, "quest", "mission", "Test" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "Ich bin Defensor Torrens. Um meine Prüfung zu bestehen, töte zehn Zombies am See der Untoten."
+queststatus(527) = 20, queststatus(528) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "I am Defensor Torrens. To pass my test you must kill ten zombies around the undead lake."
+queststatus(527) = 20, queststatus(528) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[New quest] Akaltut's Chamber 13"), queststatus(527) = 21, queststatus(528) = 1, "Ich bin Defensor Torrens. Um meine Prüfung zu bestehen, töte zehn Zombies am See der Untoten."
 -- If quest received but task not finished
 queststatus(528) > 0, queststatus(528) < 11, english,"quest", "mission", "test" -> "Have you killed the ten zombies? If you do not pass this test you can't continue."
-queststatus(528) > 0, queststatus(528) < 11, "quest", "mission", "Test" ->"Hast Du zehn zombies getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
+queststatus(528) > 0, queststatus(528) < 11, "quest", "mission", "Test" ->"Um meine Prüfung zu bestehen, töte zehn Zombies am See der Untoten."
 queststatus(528) > 0, queststatus(528) < 11, "task", "adventure", "order" -> "Have you killed the ten zombies? If you do not pass this test you can't continue."
-queststatus(528) > 0, queststatus(528) < 11,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Hast Du zehn zombies getötet? Wenn Du den Test nicht bestehst kannst Du nicht weitergehen."
+queststatus(528) > 0, queststatus(528) < 11,"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Um meine Prüfung zu bestehen, töte zehn Zombies am See der Untoten."
 -- If test is finished
 queststatus(528) = 11, english, ".+" -> inform("[Quest solved] You are awarded 150 coins."), money + 15000, queststatus(528) = 12, "You have passed this test and are awarded 150 silver coins."
 queststatus(528) = 11, ".+" -> inform("[Quest gelöst] Du erhältst 150 Silberstücke."), money + 15000, queststatus(528) = 12, "Du hast den Test bestanden. Du bekommst 150 Silberstücke."
