@@ -115,7 +115,7 @@ function onDeath(Monster)
 	-- 1151 Woodland Fairy
 	-- 1152 Swamp Fairy
 	-- 1153 Mystical Fairy
-	-- 1154 Elemental Fairy
+	-- 1154 Prankster Fairy
 	-- 1155 Trickster Fairy
 	
     if (MonID==1151 or MonID==1152 or MonID==1153 or MonID==1154 or MonID== 1155) then --fairy
