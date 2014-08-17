@@ -12,7 +12,7 @@ PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
 details.
 
 You should have received a copy of the GNU Affero General Public License along
-with this program.  If not, see <http://www.gnu.org/licenses/>. 
+with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 require("item.base.crafts")
 
@@ -32,10 +32,10 @@ smithing:addTool(172); -- anvil
 smithing:addActiveTool(172, 13); -- anvil with glowing metal
 
 
-catId = smithing:addCategory("Tools", "Werkzeuge")
+local catId = smithing:addCategory("Tools", "Werkzeuge")
 
 --Razor
-product = smithing:addProduct(catId, 2746, 24, 44, 33, 66)
+local product = smithing:addProduct(catId, 2746, 24, 44, 33, 66)
 product:addIngredient(2535, 2) -- Iron Ingot: 2x1
 product:addIngredient(2570) -- Sickle Handle: 1x1
 
@@ -200,7 +200,7 @@ product = smithing:addProduct(catId, 324, 7, 27, 40, 81, 1);
 product:addIngredient(2535,2); -- Iron Ingot
 
 
-catId = smithing:addCategory("Armour", "Rï¿½stungen")
+catId = smithing:addCategory("Armour", "Rüstungen")
 
 -- nightplate
 product = smithing:addProduct(catId, 2363, 99, 100, 178, 357, 1);
@@ -402,7 +402,6 @@ product:addIngredient(2550, 3); -- Copper Ingot
 -- steel greaves
 product = smithing:addProduct(catId, 2172, 44, 64, 96, 192, 1);
 product:addIngredient(2535, 5); -- Iron Ingot
-
 product:addIngredient(2550, 2); -- Copper Ingot
 product:addIngredient(2547, 2); -- Leather
 
@@ -614,7 +613,7 @@ product:addIngredient(447); -- Ruby Powder
 product:addIngredient(2553); -- Pure Fire
 product:addIngredient(2571); -- Merinium Ingot
 
--- Malachï¿½n dagger
+-- Malachín dagger
 product = smithing:addProduct(catId, 91, 90, 100, 165, 330, 1);
 product:addIngredient(2530); -- Dagger Handle
 product:addIngredient(2535, 5); -- Iron Ingot
@@ -808,6 +807,7 @@ product:addIngredient(2535,2); -- Iron Ingot
 product = smithing:addProduct(catId, 1046, 0, 20, 30, 60, 1);
 product:addIngredient(2572); -- Staff Handle
 product:addIngredient(2535,2); -- Iron Ingot
+
 
 catId = smithing:addCategory("Throwing weapons", "Wurfwaffen")
 

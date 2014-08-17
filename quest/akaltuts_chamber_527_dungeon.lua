@@ -24,7 +24,7 @@ ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 Title = {}
-Title[GERMAN] = "Die Kammer von Akultut III"
+Title[GERMAN] = "Die Kammer von Akaltut III"
 Title[ENGLISH] = "Akaltut's Chamber III"
 
 -- Insert an extensive description of each status here, in both languages
@@ -32,52 +32,52 @@ Title[ENGLISH] = "Akaltut's Chamber III"
 Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
-Description[GERMAN][1] = "Sammle ein DrowrÃ¼stung und bringe sie zum Defensor Affligo."
+Description[GERMAN][1] = "Sammle ein Drowrüstung und bringe sie zum Defensor Affligo."
 Description[ENGLISH][1] = "Collect one drow armour for Defensor Affligo."
-Description[GERMAN][2] = "Der Defensor Profligo hat vielleicht eine Aufgabe fÃ¼r dich."
+Description[GERMAN][2] = "Der Defensor Profligo hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][2] = "The Defensor Profligo may have a task for you."
 
-Description[GERMAN][3] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch zwÃ¶lf."
+Description[GERMAN][3] = "Töte Drow für den Defensor Profligo. Du benötigst noch zwölf."
 Description[ENGLISH][3] = "Kill drow for Defensor Profligo.  You still need twelve."
-Description[GERMAN][4] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch Elfen."
+Description[GERMAN][4] = "Töte Drow für den Defensor Profligo. Du benötigst noch Elfen."
 Description[ENGLISH][4] = "Kill drow for Defensor Profligo.  You still need eleven."
-Description[GERMAN][5] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch zehn."
+Description[GERMAN][5] = "Töte Drow für den Defensor Profligo. Du benötigst noch zehn."
 Description[ENGLISH][5] = "Kill drow for Defensor Profligo.  You still need ten."
-Description[GERMAN][6] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch neun."
+Description[GERMAN][6] = "Töte Drow für den Defensor Profligo. Du benötigst noch neun."
 Description[ENGLISH][6] = "Kill drow for Defensor Profligo.  You still need nine."
-Description[GERMAN][7] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch acht."
+Description[GERMAN][7] = "Töte Drow für den Defensor Profligo. Du benötigst noch acht."
 Description[ENGLISH][7] = "Kill drow for Defensor Profligo.  You still need eight."
-Description[GERMAN][8] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch sieben."
+Description[GERMAN][8] = "Töte Drow für den Defensor Profligo. Du benötigst noch sieben."
 Description[ENGLISH][8] = "Kill drow for Defensor Profligo.  You still need seven."
-Description[GERMAN][9] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch sech."
+Description[GERMAN][9] = "Töte Drow für den Defensor Profligo. Du benötigst noch sechs."
 Description[ENGLISH][9] = "Kill drow for Defensor Profligo.  You still need six."
-Description[GERMAN][10] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch fÃ¼nf."
+Description[GERMAN][10] = "Töte Drow für den Defensor Profligo. Du benötigst noch fünf."
 Description[ENGLISH][10] = "Kill drow for Defensor Profligo.  You still need five."
-Description[GERMAN][11] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch vier."
+Description[GERMAN][11] = "Töte Drow für den Defensor Profligo. Du benötigst noch vier."
 Description[ENGLISH][11] = "Kill drow for Defensor Profligo.  You still need four."
-Description[GERMAN][12] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch drei."
+Description[GERMAN][12] = "Töte Drow für den Defensor Profligo. Du benötigst noch drei."
 Description[ENGLISH][12] = "Kill drow for Defensor Profligo.  You still need three."
-Description[GERMAN][13] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch zwei."
+Description[GERMAN][13] = "Töte Drow für den Defensor Profligo. Du benötigst noch zwei."
 Description[ENGLISH][13] = "Kill drow for Defensor Profligo.  You still need two."
-Description[GERMAN][14] = "TÃ¶te Drow fÃ¼r den Defensor Profligo. Du benÃ¶tigst noch ein."
+Description[GERMAN][14] = "Töte Drow für den Defensor Profligo. Du benötigst noch einen."
 Description[ENGLISH][14] = "Kill drow for Defensor Profligo.  You still need one."
-Description[GERMAN][15] = "Kehre zurÃ¼ck zum Defensor Profligo. Du hast seinen Test bestanden."
+Description[GERMAN][15] = "Kehre zurück zum Defensor Profligo. Du hast seinen Test bestanden."
 Description[ENGLISH][15] = "Report back to Defensor Profligo, you have finished his test."
 
-Description[GERMAN][16] = "Der Defensor Depello hat vielleicht eine Aufgabe fÃ¼r dich."
+Description[GERMAN][16] = "Der Defensor Depello hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][16] = "The Defensor Depello may have a task for you."
 
-Description[GERMAN][17] = "Sammle fÃ¼nf Elbenregenbogenschwerter und bringe sie zum Defensor Depello."
+Description[GERMAN][17] = "Sammle fünf Elbenregenbogenschwerter und bringe sie zum Defensor Depello."
 Description[ENGLISH][17] = "Collect five elven rainbow swords for Defensor Depello."
-Description[GERMAN][18] = "Der Defensor Venenatus hat vielleicht eine Aufgabe fÃ¼r dich."
+Description[GERMAN][18] = "Der Defensor Venenatus hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][18] = "The Defensor Venenatus may have a task for you."
 
 Description[GERMAN][19] = "Sammle vier Drowhelme und bringe sie zum Defensor Venenatus."
 Description[ENGLISH][19] = "Collect four drow helmets for Defensor Venenatus."
-Description[GERMAN][20] = "Der Defensor Torrens hat vielleicht eine Aufgabe fÃ¼r dich."
+Description[GERMAN][20] = "Der Defensor Torrens hat vielleicht eine Aufgabe für dich."
 Description[ENGLISH][20] = "The Defensor Torrens may have a task for you."
 
-Description[GERMAN][21] = "Du hast den dritteTeil der PrÃ¼fung bestanden."
+Description[GERMAN][21] = "Du hast den dritten Teil der Prüfung bestanden."
 Description[ENGLISH][21] = "You have finished part three of the testing."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)

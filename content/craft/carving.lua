@@ -31,11 +31,12 @@ carving = item.base.crafts.Craft:new{
 carving:addTool(724) -- workbench
 carving:addTool(725) -- workbench
 
+--------------------------------------------------------------------------------------------
 
-catId = carving:addCategory("Tools", "Werkzeuge") -- Tools and stuff
+local catId = carving:addCategory("Tools", "Werkzeuge") -- Tools and stuff
 
 --Fishing rod
-product = carving:addProduct(catId, 72, 28, 48, 24, 48)
+local product = carving:addProduct(catId, 72, 28, 48, 24, 48)
 product:addIngredient(56) -- Bough: 1x1
 product:addIngredient(50) -- Thread: 1x1
 
@@ -287,7 +288,6 @@ product:addIngredient(2786); -- Branch
 product = carving:addProduct(catId, 2664, 0, 20, 30, 60, 1);
 product:addIngredient(56); -- Bough
 
-
 catId = carving:addCategory("Ammunition", "Munition") --ammunition and throwing stuff
 
 --Wind Arrows
@@ -313,8 +313,7 @@ product:addIngredient(56) -- Bough: 1x1
 product = carving:addProduct(catId, 64, 10, 30, 7, 14, 10)
 product:addIngredient(56) -- Bough: 1x1
 
-
-catId = carving:addCategory("Wands", "Zauberstï¿½be") --Wands
+catId = carving:addCategory("Wands", "Zauberstäbe") --Wands
 
 --Wand of air
 product = carving:addProduct(catId, 2785, 90, 100, 324, 648)

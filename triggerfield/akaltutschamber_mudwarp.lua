@@ -15,14 +15,13 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 -- Mudslide triggerfield in Akaltutschamber
--- by Evie based on merungs Noobia triggerfield
 
--- INSERT INTO triggerfields VALUES (481,812,-9,'triggerfield.akaltutschambermudwarp');
--- INSERT INTO triggerfields VALUES (482,812,-9,'triggerfield.akaltutschambermudwarp');
+-- INSERT INTO triggerfields VALUES (481,812,-9,'triggerfield.akaltutschamber_mudwarp');
+-- INSERT INTO triggerfields VALUES (482,812,-9,'triggerfield.akaltutschamber_mudwarp');
 
 require("base.common")
 
-module("triggerfield.akaltutschambermudwarp", package.seeall)
+module("triggerfield.akaltutschamber_mudwarp", package.seeall)
 
 function MoveToField(Character)
 

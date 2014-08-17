@@ -14,9 +14,8 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
--- UPDATE common SET com_script='item.id_2937_skeleton' WHERE com_itemid = 2937;
---Quest 112: The Ghost Oak, NPC Madoquar
---Quest 522: Gorgophone's Nest
+-- UPDATE items SET com_script='item.id_519_tombstone' WHERE com_itemid = 519;
+--Quest 531: Akultut's chambers
 
 require("base.common")
 require("base.lookat")
@@ -30,10 +29,10 @@ function UseItem(User, SourceItem, ltstate)
 		local queststatuslist = {};
 		queststatuslist = base.common.Split_number(queststatus, 6); -- reading the digits of the queststatus as table
 		if queststatuslist[1] == 0 then -- gem, only triggered once by each char
-			base.common.InformNLS(User, ".", "You discover a shiny gem with the corpse.");
-			local notCreated = User:createItem(198, 1, 999, "gemLevel" = "1"); -- create the item
+			base.common.InformNLS(User, "Du entdeckst einen glitzernden Edelstein bei der Leiche.", "You discover a shiny gem with the corpse.");
+			local notCreated = User:createItem(198, 1, 333, {["gemLevel"] = 1}); -- create the item
 			if ( notCreated > 0 ) then -- too many items -> character can't carry anymore
-				world:createItemFromId(198, notCreated, User.pos, true, 999, "gemLevel" = "1");
+				world:createItemFromId(198, notCreated, User.pos, true, 333, {["gemLevel"] = 1});
 				base.common.HighInformNLS(User,
 					"Du kannst nichts mehr tragen.",
 					"You can't carry any more.");

@@ -12,7 +12,7 @@ PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
 details.
 
 You should have received a copy of the GNU Affero General Public License along
-with this program.  If not, see <http://www.gnu.org/licenses/>. 
+with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 require("item.base.crafts")
 
@@ -27,15 +27,15 @@ goldsmithing = item.base.crafts.Craft:new{
                       sfx = 17,
                       sfxDuration = 15,
                     };
-                    
+
 goldsmithing:addTool(172) -- anvil
 goldsmithing:addActiveTool(172, 13) -- anvil with glowing metal
 
-
+--------------------------------------------------------------------------------------------
 local catId = goldsmithing:addCategory("Miscellaneous", "Verschiedenes") -- Random Stuff
 
 --Cutlery
-product = goldsmithing:addProduct(catId, 2647, 40, 60, 69, 138)
+local product = goldsmithing:addProduct(catId, 2647, 40, 60, 69, 138)
 product:addIngredient(104, 3) -- Silver Ingot: 3x1
 
 --Plate
@@ -149,7 +149,7 @@ product:addIngredient(236, 3) -- Gold Ingot: 2x1
 product:addIngredient(285) -- Diamond: 1x1
 product:addIngredient(2551) -- Pure Air: 1x1
 product:addIngredient(2553) -- Pure Fire: 1x1
-product:addIngredient(2554) -- Pure Water: 1x1 
+product:addIngredient(2554) -- Pure Water: 1x1
 product:addIngredient(2571) -- Merinium Ingot
 
 --Diamond Ring
@@ -202,7 +202,7 @@ product:addIngredient(236) -- Gold Ingot: 1x1
 
 catId = goldsmithing:addCategory("Weapons", "Waffen")
 
--- merinium-plated longsword  
+-- merinium-plated longsword
 product = goldsmithing:addProduct(catId, 123, 99, 100, 178, 357, 1);
 product:addIngredient(2584); -- Sword Handle
 product:addIngredient(2535, 6); -- Iron Ingot
@@ -216,13 +216,13 @@ product:addIngredient(446); -- Sapphire
 -- merinium-plated battle axe
 product = goldsmithing:addProduct(catId, 296, 94, 100, 171, 342, 1);
 product:addIngredient(2525); -- Axe Handle
-product:addIngredient(2535, 5); -- Iron Ingot 
+product:addIngredient(2535, 5); -- Iron Ingot
 product:addIngredient(2571); -- Merinium Ingot
 product:addIngredient(2554); -- Pure Water
 product:addIngredient(452); -- Diamond Powder
 product:addIngredient(104); -- Silver Ingot
 
--- merinium-plated dagger     
+-- merinium-plated dagger
 product = goldsmithing:addProduct(catId, 444, 91, 100, 166, 333, 1);
 product:addIngredient(2530); -- Dagger Handle
 product:addIngredient(2535, 3); -- Iron Ingot
@@ -231,7 +231,8 @@ product:addIngredient(451); -- Topaz Powder
 product:addIngredient(2552); -- Pure Earth
 product:addIngredient(104); -- Silver Ingot
 
--- gilded longsword           
+
+-- gilded longsword
 product = goldsmithing:addProduct(catId, 84, 84, 100, 156, 312, 1);
 product:addIngredient(2584); -- Sword Handle
 product:addIngredient(2535, 6); -- Iron Ingot
@@ -239,19 +240,19 @@ product:addIngredient(236, 4); -- Gold Ingot
 product:addIngredient(446); -- Sapphire Powder
 product:addIngredient(45); -- Emerald
 
--- gilded dagger              
+-- gilded dagger
 product = goldsmithing:addProduct(catId, 297, 74, 94, 141, 282, 1);
 product:addIngredient(2530); -- Dagger Handle
 product:addIngredient(2535, 3); -- Iron Ingot
 product:addIngredient(236, 4); -- Gold Ingot
 
--- gilded battle axe          
+-- gilded battle axe
 product = goldsmithing:addProduct(catId, 124, 68, 88, 132, 264, 1);
 product:addIngredient(2525); -- Axe Handle
-product:addIngredient(2535, 5); -- Iron Ingot 
+product:addIngredient(2535, 5); -- Iron Ingot
 product:addIngredient(236, 3); -- Gold Ingot
 
--- silvered longsword         
+-- silvered longsword
 product = goldsmithing:addProduct(catId, 98, 66, 86, 129, 258, 1);
 product:addIngredient(2584); -- Sword Handle
 product:addIngredient(2535, 6); -- Iron Ingot
@@ -263,22 +264,22 @@ product:addIngredient(2530); -- Dagger Handle
 product:addIngredient(2535, 3); -- Iron Ingot
 product:addIngredient(104, 5); -- Silver Ingot
 
--- silvered battle axe        
+-- silvered battle axe
 product = goldsmithing:addProduct(catId, 229, 55, 75, 112, 225, 1);
 product:addIngredient(2525); -- Axe Handle
-product:addIngredient(2535, 5); -- Iron Ingot 
+product:addIngredient(2535, 5); -- Iron Ingot
 product:addIngredient(104, 4); -- Silver Ingot
 
--- coppered longsword         
+-- coppered longsword
 product = goldsmithing:addProduct(catId, 85, 50, 70, 105, 210, 1);
 product:addIngredient(2584); -- Sword Handle
 product:addIngredient(2535, 6); -- Iron Ingot
 product:addIngredient(2550, 6); -- Copper
 
--- coppered battle axe        
+-- coppered battle axe
 product = goldsmithing:addProduct(catId, 192, 45, 65, 97, 195, 1);
 product:addIngredient(2525); -- Axe Handle
-product:addIngredient(2535, 5); -- Iron Ingot 
+product:addIngredient(2535, 5); -- Iron Ingot
 product:addIngredient(2550, 5); -- Copper Ingot
 
 --coppered dagger
@@ -287,8 +288,7 @@ product:addIngredient(2530); -- Dagger Handle
 product:addIngredient(2535, 3); -- Iron Ingot
 product:addIngredient(2550, 4); -- Copper Ingot
 
-
-catId = goldsmithing:addCategory("Armorpieces", "Rï¿½stungsteile")
+catId = goldsmithing:addCategory("Armorpieces", "Rüstungsteile")
 
 -- ornate Leatherboots
 product = goldsmithing:addProduct(catId, 1054, 50, 70, 48, 96, 1);

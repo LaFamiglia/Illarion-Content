@@ -12,7 +12,7 @@ PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
 details.
 
 You should have received a copy of the GNU Affero General Public License along
-with this program.  If not, see <http://www.gnu.org/licenses/>. 
+with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 require("item.base.crafts")
 
@@ -27,15 +27,15 @@ carpentry = item.base.crafts.Craft:new{
               sfx = 14,
               sfxDuration = 17,
             }
-            
+
 carpentry:addTool(724) -- workbench
 carpentry:addTool(725) -- workbench
 
-
+--------------------------------------------------------------------------------------------
 local catId = carpentry:addCategory("Tools", "Werkzeuge") -- Tools and Other Items
 
 --Peel
-product = carpentry:addProduct(catId, 121, 21, 41, 20, 40)
+local product = carpentry:addProduct(catId, 121, 21, 41, 20, 40)
 product:addIngredient(2716, 2) -- Apple Wooden Boards: 2x1
 
 --Bucket
@@ -84,7 +84,7 @@ product = carpentry:addProduct(catId, 2935, 0, 20, 5, 10)
 product:addIngredient(2716) -- Apple Wooden Boards: 1x1
 
 
-catId = carpentry:addCategory("Bows", "Bï¿½gen") --bows
+catId = carpentry:addCategory("Bows", "Bögen") --bows
 
 --Crossbow
 product = carpentry:addProduct(catId, 70, 99, 100, 250, 500)
@@ -106,7 +106,7 @@ product:addIngredient(448, 2); -- Emerald Powder
 product:addIngredient(284); -- Sapphire
 product:addIngredient(2551) -- Pure Air: 1x1
 
--- elven shortbow             
+-- elven shortbow
 product = carpentry:addProduct(catId, 2685, 80, 100, 150, 300, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(545, 2); -- Cherry Wood Boards
@@ -117,40 +117,40 @@ product:addIngredient(448, 2); -- Emerald Powder
 product:addIngredient(284); -- Sapphire
 product:addIngredient(197); -- Amethyst
 
--- ebony wood bow             
+-- ebony wood bow
 product = carpentry:addProduct(catId, 2780, 70, 90, 135, 270, 1);
 product:addIngredient(546, 4); -- Naldor Wood Board
 product:addIngredient(545, 3); -- Cherry Wood Boards
 product:addIngredient(50, 3); -- Thread
 product:addIngredient(45, 2); -- Emerald
 
--- long bow                   
+-- long bow
 product = carpentry:addProduct(catId, 2708, 68, 88, 132, 264, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(2716, 3); -- Deciduous Wood Boards
 product:addIngredient(50, 4); -- Thread
 product:addIngredient(283, 1); -- Blackstone
 
--- fire hunter's bow          
+-- fire hunter's bow
 product = carpentry:addProduct(catId, 2727, 58, 78, 117, 234, 1);
 product:addIngredient(2543, 4); -- Conifer Wooden Boards
 product:addIngredient(545, 1); -- Cherry Wood Boards
 product:addIngredient(50, 2); -- Thread
 product:addIngredient(447); -- Ruby Powder
 
--- hunting bow                
+-- hunting bow
 product = carpentry:addProduct(catId, 2714, 40, 60, 90, 180, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(2716, 2); -- Deciduous Wood Boards
 product:addIngredient(50, 2); -- Thread
 
--- serinjah-rider's bow       
+-- serinjah-rider's bow
 product = carpentry:addProduct(catId, 2646, 30, 50, 75, 150, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(545, 1); -- Cherry Wood Boards
 product:addIngredient(50, 2); -- Thread
 
--- short bow                  
+-- short bow
 product = carpentry:addProduct(catId, 65, 10, 30, 45, 90, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(50, 2); -- Thread
@@ -197,6 +197,7 @@ product:addIngredient(2553) -- Pure fire
 product:addIngredient(46, 3) -- Ruby: 3x1
 product:addIngredient(2571,2) -- Merinium Ingot 2x1
 
+
 --Cloud Shield
 product = carpentry:addProduct(catId, 2439, 99, 100, 480, 960)
 product:addIngredient(2543, 6) -- Conifer Wooden Boards: 6x1
@@ -205,7 +206,7 @@ product:addIngredient(2554) -- Pure Water: 1x1
 product:addIngredient(285, 5) -- Diamond: 5x1
 product:addIngredient(2571,2) -- Merinium Ingot 2x1
 
--- shield of the sky          
+-- shield of the sky
 product = carpentry:addProduct(catId, 2284, 96, 100, 174, 348, 1);
 product:addIngredient(2543, 6); -- Conifer Wooden Boards
 product:addIngredient(2716, 3); -- Deciduous Wood Boards
@@ -215,7 +216,7 @@ product:addIngredient(2571, 2); -- Merinium Ingot
 product:addIngredient(45); -- Pure Air
 product:addIngredient(104); -- Emerald
 
--- ornate tower shield        
+-- ornate tower shield
 product = carpentry:addProduct(catId, 916, 94, 100, 171, 342, 1);
 product:addIngredient(2543, 6); -- Conifer Wooden Boards
 product:addIngredient(2716, 4); -- Deciduous Wood Boards
@@ -224,7 +225,7 @@ product:addIngredient(2535, 2); -- Iron Ingot
 product:addIngredient(2571); -- Merinium Ingot
 product:addIngredient(2552); -- Pure earth
 
--- steel tower shield         
+-- steel tower shield
 product = carpentry:addProduct(catId, 96, 91, 100, 166, 333, 1);
 product:addIngredient(2543, 6); -- Conifer Wooden Boards
 product:addIngredient(545, 4); -- Cherry Wood Boards
@@ -233,7 +234,7 @@ product:addIngredient(2535, 2); -- Iron Ingot
 product:addIngredient(2571); -- Merinium Ingot
 product:addIngredient(2554); -- Pure Water
 
--- heraldic shield            
+-- heraldic shield
 product = carpentry:addProduct(catId, 95, 87, 100, 160, 321, 1);
 product:addIngredient(2543, 3); -- Conifer Wooden Boards
 product:addIngredient(545, 3); -- Cherry Wood Boards
@@ -251,66 +252,66 @@ product:addIngredient(2547, 2); -- Leather
 product:addIngredient(2535, 2); -- Iron Ingot
 product:addIngredient(198); -- Topaz
 
--- red steel shield           
+-- red steel shield
 product = carpentry:addProduct(catId, 2388, 76, 96, 144, 288, 1);
 product:addIngredient(2543, 4); -- Conifer Wooden Boards
 product:addIngredient(2716, 2); -- Deciduous Wood Boards
 product:addIngredient(2547, 2); -- Leather
 product:addIngredient(2535, 2); -- Iron Ingot
 
--- round metal shield         
+-- round metal shield
 product = carpentry:addProduct(catId, 186, 62, 82, 123, 246, 1);
 product:addIngredient(2543, 3); -- Conifer Wooden Boards
 product:addIngredient(545, 2); -- Cherry Wood Boards
 product:addIngredient(2547, 2); -- Leather
 product:addIngredient(2535, 1); -- Iron Ingot
 
--- knight shield              
+-- knight shield
 product = carpentry:addProduct(catId, 20, 54, 74, 111, 222, 1);
 product:addIngredient(2543, 5); -- Conifer Wooden Boards
 product:addIngredient(2716, 2); -- Deciduous Wood Boards
 product:addIngredient(2547, 1); -- Leather
 product:addIngredient(2535, 1); -- Iron Ingot
 
--- metal shield               
+-- metal shield
 product = carpentry:addProduct(catId, 19, 45, 65, 97, 195, 1);
 product:addIngredient(2543, 4); -- Conifer Wooden Boards
 product:addIngredient(2716, 1); -- Deciduous Wood Boards
 product:addIngredient(2547, 1); -- Leather
 product:addIngredient(2535, 2); -- Iron Ingot
 
--- cursed shield              
+-- cursed shield
 product = carpentry:addProduct(catId, 917, 35, 55, 82, 165, 1);
 product:addIngredient(2543, 4); -- Conifer Wooden Boards
 product:addIngredient(2547, 1); -- Leather
 product:addIngredient(2535, 1); -- Iron Ingot
 
--- light shield               
+-- light shield
 product = carpentry:addProduct(catId, 18, 20, 40, 60, 120, 1);
 product:addIngredient(2543, 3); -- Conifer Wood Boards
 product:addIngredient(2547, 1); -- Leather
 product:addIngredient(2535, 1); -- Iron
 
--- wooden shield              
+-- wooden shield
 product = carpentry:addProduct(catId, 17, 15, 35, 52, 105, 1);
 product:addIngredient(2543, 3); -- Conifer Wooden Boards
 product:addIngredient(545, 1); -- Cherry Wood Boards
 product:addIngredient(2547, 1); -- Leather
 
--- small wooden shield        
+-- small wooden shield
 product = carpentry:addProduct(catId, 2445, 0, 20, 30, 60, 1);
 product:addIngredient(2543, 3); -- Conifer Wooden Boards
 
 
 catId = carpentry:addCategory("Greaves", "Beinschienen")
 
--- hardwood greaves              
+-- hardwood greaves
 product = carpentry:addProduct(catId, 2193, 36, 56, 84, 168, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(545, 3); -- Cherry Wood Boards
 product:addIngredient(176, 2); -- Grey Cloth
 
--- short hardwood greaves        
+-- short hardwood greaves
 product = carpentry:addProduct(catId, 2194, 16, 36, 54, 108, 1);
 product:addIngredient(546, 3); -- Naldor Wood Boards
 product:addIngredient(176, 1); -- Grey Cloth
