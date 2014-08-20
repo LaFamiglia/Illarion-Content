@@ -116,7 +116,7 @@ function causeDamage(User, Item, DamagedArea, DamagedAttrib, ShieldAttribs, gfxi
             end
             -- Teile durch die Menge der angegebenen Attribute um den Mittelwert zu erhalten
             -- 0 - 20
-            AttribEffect = AttribEffect / table.getn( ShieldAttribs );
+            AttribEffect = AttribEffect / #ShieldAttribs;
 
             -- Schützender Einfluss der Attribute besteht sich aus dem Quadrat des Mittelwertes * 2
             -- 0 - 800
@@ -166,7 +166,7 @@ function damageItemDura( Item, targetArea, gfxid, sfxid, modifier, ItemType )
 
     local qual = Item.quality;
     if (qual > 999) then
-        qual = math.mod( qual, 1000 );
+        qual = math.fmod( qual, 1000 );
     end
 
     for i, posi in pairs(targetArea) do
@@ -181,7 +181,7 @@ function damageItemDura( Item, targetArea, gfxid, sfxid, modifier, ItemType )
                 elseif ItemType == "weapon" then
                     found, thisWeapon = world:getWeaponStruct( slotItem.id );
                 elseif ItemType == "wood" then
-                    found = checkWoody( slotItem.id, 0, table.getn( ListeObjHolz ) );
+                    found = checkWoody( slotItem.id, 0, #ListeObjHolz );
                 else
                     found = true;
                 end
@@ -220,7 +220,7 @@ function damageItemQual( Item, targetArea, gfxid, sfxid, modifier, ItemType )
 
     local qual = Item.quality;
     if (qual > 999) then
-        qual = math.mod( qual, 1000 );
+        qual = math.fmod( qual, 1000 );
     end
 
     for i, posi in pairs(targetArea) do
@@ -235,7 +235,7 @@ function damageItemQual( Item, targetArea, gfxid, sfxid, modifier, ItemType )
                 elseif ItemType == "weapon" then
                     found, thisWeapon = world:getWeaponStruct( slotItem.id );
                 elseif ItemType == "wood" then
-                    found = checkWoody( slotItem.id, 0, table.getn( ListeObjHolz ) );
+                    found = checkWoody( slotItem.id, 0, #ListeObjHolz );
                 else
                     found = true;
                 end
