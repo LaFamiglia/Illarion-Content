@@ -20,16 +20,20 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 require("base.licence")
 require("content.gatheringcraft.leatherproducing")
 require("item.general.metal")
+require ("base.common.Inform")
 
 module("item.id_2746_razorblade", package.seeall)
 
 LookAtItem = item.general.metal.LookAtItem
 
 function getStretcher(User)
-
+	
 	local targetItem = base.common.GetFrontItem(User);
+	local emptyStretcher = (User, ".", "You must stand next to a stretcher that contains a hide to use the razor blade.");
 	if (targetItem ~= nil and targetItem.id == 2052) then
 		return targetItem;
+	elseif (targetItem ~= nil and targetItem.id == 468) then
+		return local emptyStretcher;
 	end
 
 	local Radius = 1;
