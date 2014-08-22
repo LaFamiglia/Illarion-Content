@@ -952,7 +952,7 @@ end
 -- @return true in case the attack is fine
 function CheckAttackOK(CharStruct)
 --CharStruct.Char:talk(Character.say,"check 1 ok");
-    if (CharStruct["AttackKind"] == nil) then -- finding the attack type failed ******************************
+    if CharStruct["AttackKind"] == nil or CharStruct["Skillname"] == nil then -- finding the attack type or skill failed
         return false;
     end;
 --    CharStruct.Char:talk(Character.say,"check 2 ok");
@@ -1991,15 +1991,33 @@ end
 --- Show the attacking animation for the attacking character.
 -- @param Attacker The table that stores the attacker data
 function ShowAttackGFX(Attacker)
-    if (Attacker.AttackKind == 0) then -- wrestling
-        Attacker.Char:performAnimation(5);
-    elseif (Attacker.AttackKind == 4) then -- distance
-        Attacker.Char:performAnimation(7);
-    elseif (Attacker.UsedHands == 2) then -- 2 hands attack
-        Attacker.Char:performAnimation(6);
-    else -- 1 hand attack
-        Attacker.Char:performAnimation(5);
-    end;
+	local race = Attacker.Char:getRace()
+	if race >= 0 and race <= 6 then -- Player races + drows have proper animations
+		if (Attacker.AttackKind == 0) then -- wrestling
+			Attacker.Char:performAnimation(5);
+		elseif (Attacker.AttackKind == 4) then -- distance
+			Attacker.Char:performAnimation(7);
+		elseif (Attacker.UsedHands == 2) then -- 2 hands attack
+			Attacker.Char:performAnimation(6);
+		else -- 1 hand attack
+			Attacker.Char:performAnimation(5);
+		end;
+	
+	else -- The rest will use the old gfx
+		local gfxId = 22
+		if (Attacker.AttackKind == 0) then --wrestling
+            gfxId = 22
+        elseif (Attacker.AttackKind == 1) then --slashing
+            gfxId = 17
+        elseif (Attacker.AttackKind == 2) then --concussion
+            gfxId = 19
+        elseif (Attacker.AttackKind == 3) then --puncture
+            gfxId = 20
+        elseif (Attacker.AttackKind == 4) then --distance
+            gfxId = 15
+        end
+		world:gfx(gfxId,Attacker.Char.pos)
+	end
 end;
 
 --- Show the effects of a successful attack. This Drops some blood in case
