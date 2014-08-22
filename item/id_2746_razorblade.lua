@@ -47,6 +47,28 @@ function getStretcher(User)
 	return nil;
 end
 
+function getEmptyStretcher(User)
+	
+	local targetItem = base.common.GetFrontItem(User);
+	if (targetItem ~= nil and targetItem.id == 468) then
+		return targetItem;
+	end
+
+	local Radius = 1;
+	for x=-Radius,Radius do
+		for y=-Radius,Radius do
+			local targetPos = position(User.pos.x + x, User.pos.y + y, User.pos.z);
+			if (world:isItemOnField(targetPos)) then
+				local targetItem = world:getItemOnField(targetPos);
+				if (targetItem ~= nil and targetItem.id == 468) then
+					return targetItem;
+				end
+			end
+		end
+	end
+	return nil;
+end
+
 function UseItem(User, SourceItem, ltstate)
 	if base.licence.licence(User) then --checks if user is citizen or has a licence
 		return -- avoids crafting if user is neither citizen nor has a licence
@@ -56,6 +78,8 @@ function UseItem(User, SourceItem, ltstate)
 	if stretcherItem then
 		content.gatheringcraft.leatherproducing.StartGathering(User, stretcherItem, ltstate);
 		return
+	elseif getEmptyStretcher(User)
+	User:inform("Häute sind auf einem Rahmen mit einer Träger gegerbt.","Hides are tanned on a frame with a backing.");
 	end
 
 	base.common.InformNLS(User,
