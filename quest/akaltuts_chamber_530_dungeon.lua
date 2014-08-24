@@ -17,7 +17,7 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (530, 'quest.Akaltuts_Chamber_530_dungeon');
 
 require("base.common")
-module("quest.Akaltuts_Chamber_530_dungeon", package.seeall)
+module("quest.akaltuts_chamber_530_dungeon", package.seeall)
 
 GERMAN = Player.german
 ENGLISH = Player.english
@@ -93,6 +93,9 @@ Description[ENGLISH][27] = "You have passed all the tests of the Defensors."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 Start = {461, 807, -9}
+
+-- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
+QuestTarget = {}
 
 -- Insert the quest status which is reached at the end of the quest
 FINAL_QUEST_STATUS = 27
