@@ -38,15 +38,15 @@ end
 
 findPlayersForGems={}
 graveSourceItemPos={position(958,238,0),position(968,226,0),position(970,219,0)}
-typoOfGem={197,284,45}
+typoOfGem={3519,3522,3523}
 gemColourDE1={"Lilla","Blau","Grün"}
 gemColourDE2={"Amethysten","Saphire","Smaragde"}
 gemColourEN1={"purple","blue","green"}
 gemColourEN2={"Amethysts","Sapphires","Emeralds"}
 gemsAlreadyFound={}
-gemsAlreadyFound[1]={197,242,481,526}
-gemsAlreadyFound[2]={284,329,481,526}
-gemsAlreadyFound[3]={45,242,329,526}
+gemsAlreadyFound[1]={3519,242,481,526}
+gemsAlreadyFound[2]={3522,329,481,526}
+gemsAlreadyFound[3]={3523,242,329,526}
 
 function UseItem(User, SourceItem)
 

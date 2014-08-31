@@ -201,8 +201,8 @@ darkColumnEvilrockFlame={467,467,467,467,467,467}
 CheckLightOnColumnIsThere={}
 enabledAttendantsForPuzzle={}
 
-
-gemsRequired={197,284,45,197,284,45}
+--[[gemsRequired={197,284,45,197,284,45}]]-- removed and replaced with new magical gem item numbers below
+gemsRequired={3519,3522,3523,3519,3522,3523}
 
 
 function UseDarkColumns(User, SourceItem, ltstate)
@@ -214,7 +214,7 @@ function UseDarkColumns(User, SourceItem, ltstate)
 	local AmountDarkColumnEvilrock = #darkColumnEvilrock
   	for i = 1,AmountDarkColumnEvilrock do
 		if (SourceItem.pos == darkColumnEvilrock[i]) and User:countItemAt("all", gemsRequired[i], {["gemLevel"]="1"}) >= 1 then
---			local howmuchisit = User:countItemAt("all", 284)
+--			local howmuchisit = User:countItemAt("all", 3522)
 
 			local foundSource
 	-- check for dark column

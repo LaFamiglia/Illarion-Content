@@ -30,9 +30,9 @@ function UseItem(User, SourceItem, ltstate)
 		queststatuslist = base.common.Split_number(queststatus, 6); -- reading the digits of the queststatus as table
 		if queststatuslist[1] == 0 then -- gem, only triggered once by each char
 			base.common.InformNLS(User, "Du entdeckst einen glitzernden Edelstein bei der Leiche.", "You discover a shiny gem with the corpse.");
-			local notCreated = User:createItem(198, 1, 333, {["gemLevel"] = 1}); -- create the item
+			local notCreated = User:createItem(3525, 1, 333, {["gemLevel"] = 1}); -- create the item
 			if ( notCreated > 0 ) then -- too many items -> character can't carry anymore
-				world:createItemFromId(198, notCreated, User.pos, true, 333, {["gemLevel"] = 1});
+				world:createItemFromId(3525, notCreated, User.pos, true, 333, {["gemLevel"] = 1});
 				base.common.HighInformNLS(User,
 					"Du kannst nichts mehr tragen.",
 					"You can't carry any more.");

@@ -37,22 +37,22 @@ AMETHYST = 6
 TOPAZ    = 7
 
 gemItem = {}
-gemItem[DIAMOND] = 285
-gemItem[EMERALD] = 45
-gemItem[RUBY] = 46
-gemItem[OBSIDIAN] = 283
-gemItem[SAPPHIRE] = 284
-gemItem[AMETHYST] = 197
-gemItem[TOPAZ] = 198
+gemItem[DIAMOND] = 3520
+gemItem[EMERALD] = 3523
+gemItem[RUBY] = 3521
+gemItem[OBSIDIAN] = 3524
+gemItem[SAPPHIRE] = 3522
+gemItem[AMETHYST] = 3519
+gemItem[TOPAZ] = 3525
 
 gemId = {}
-gemId[285] = DIAMOND
-gemId[45] = EMERALD
-gemId[46] = RUBY
-gemId[283] = OBSIDIAN
-gemId[284] = SAPPHIRE
-gemId[197] = AMETHYST
-gemId[198] = TOPAZ
+gemId[3520] = DIAMOND
+gemId[3523] = EMERALD
+gemId[3521] = RUBY
+gemId[3524] = OBSIDIAN
+gemId[3522] = SAPPHIRE
+gemId[3519] = AMETHYST
+gemId[3525] = TOPAZ
 
 gemDataKey = {}
 gemDataKey[DIAMOND] = "magicalDiamond"
