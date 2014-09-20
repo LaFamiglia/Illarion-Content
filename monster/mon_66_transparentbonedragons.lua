@@ -118,7 +118,7 @@ function onDeath(Monster)
         local done=drop.AddDropItem(451,1,20,(100*math.random(7,8)+math.random(77,88)),0,1); --topaz powder
         if not done then done=drop.AddDropItem(448,1,10,(100*math.random(7,8)+math.random(77,88)),0,1); end --emerald powder
         if not done then done=drop.AddDropItem(738,1,1,(100*math.random(7,8)+math.random(77,88)),0,1); end --dragon egg
-        if not done then done=drop.AddDropItem(505,1,1,(100*math.random(7,8)+math.random(77,88)),nil,1); end --treasure map
+        if not done then done=drop.AddDropItem(505,1,1,899,treasure.createMapData(),1); end --treasure map
         if not done then done=drop.AddDropItem(446,1,1,(100*math.random(7,8)+math.random(77,88)),0,1); end --sapphire powder
 
         --Category 2: Special loot
