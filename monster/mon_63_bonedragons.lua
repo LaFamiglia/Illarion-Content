@@ -23,6 +23,7 @@ local quests = require("monster.base.quests")
 local messages = require("base.messages")
 local kills = require("monster.base.kills")
 local arena = require("base.arena")
+local treasure = require("base.treasure")
 module("monster.mon_63_bonedragons", package.seeall)
 
 function ini(Monster)
