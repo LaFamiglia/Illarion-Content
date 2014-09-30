@@ -153,8 +153,8 @@ english, "Severus", "Rabon" -> "Oh, do you need something?", "That is me.", "Hel
 "Severus", "Rabon" -> "Oh, braucht ihr etwas?", "Das bin ich.", "Hallo. Ich bin Severus Rabon. Ich bin euch gerne behilflich, wenn ihr etwas benötigt."
 
 -- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
-english, chance(05.0), ".*" -> "This discussion is not relevant to me.", "Maybe talk about something like adventures or missions. People respond well to those words.", "I have no intention of buying your chicken."
-german, chance(05.0), ".*" -> "Irgendwie interessiert mich das nicht.", "Redet doch über Aufgaben oder Abenteuer. Die Leute reden gerne über sowas.", "Ich kaufe keine Hühner."
+english, chance(5.0), ".*" -> "This discussion is not relevant to me.", "Maybe talk about something like adventures or missions. People respond well to those words.", "I have no intention of buying your chicken."
+german, chance(5.0), ".*" -> "Irgendwie interessiert mich das nicht.", "Redet doch über Aufgaben oder Abenteuer. Die Leute reden gerne über sowas.", "Ich kaufe keine Hühner."
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.

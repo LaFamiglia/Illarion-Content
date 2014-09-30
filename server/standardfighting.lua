@@ -1447,16 +1447,9 @@ function CheckCriticals(Attacker, Defender, Globals)
 
 	local chance=1;
 	local weapontype = 8;
+
 	if Attacker.IsWeapon then
 		weapontype = Attacker.Weapon.WeaponType;
-		--Special: Backstab
-		if weapontype == 3 then
-			if (Defender.Char:getFaceTo() == Attacker.Char:getFaceTo()) then
-				chance=10;
-			else
-				chance=0;
-			end;
-		end;
 	end;
 
 	if not common.Chance(chance, 100) then
@@ -1488,8 +1481,8 @@ function Specials(Attacker, Defender, Globals)
                     "#me attacks with such force that it cannot be blocked.");
         elseif(Globals.criticalHit==3) then -- 1HP
             common.TalkNLS(Attacker.Char, Character.say,
-                    "#me führt eine schmerzhafte Attacke gegen den Rücken aus.",
-                    "#me delivers a painful back attack.");
+                    "#me führt eine schmerzhafte Attacke aus.",
+                    "#me delivers a painful attack.");
         elseif(Globals.criticalHit==4) then -- 2HS
             common.TalkNLS(Attacker.Char, Character.say,
                     "#me führt einen gewaltigen Hieb aus und schlägt "..seinihr.."en Gegner zurück.",
@@ -1500,7 +1493,7 @@ function Specials(Attacker, Defender, Globals)
                     "#me attacks with great force, stunning "..hisher.." foe.");
         elseif(Globals.criticalHit==6) then -- 2HP
             common.TalkNLS(Attacker.Char, Character.say,
-                    "#me stößt vor und landert einen durchbohrenden Treffer.",
+                    "#me stößt vor und landet einen durchbohrenden Treffer.",
                     "#me thrusts out, delivering a powerful, piercing attack.");
         elseif(Globals.criticalHit==7) then -- Dist
             common.TalkNLS(Attacker.Char, Character.say,
