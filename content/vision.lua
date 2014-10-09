@@ -14,8 +14,8 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
-require("base.common")
-require("triggerfield.evilrock")
+local common = require("base.common")
+local evilrock = require("triggerfield.evilrock")
 
 module("content.vision", package.seeall)
 
@@ -139,7 +139,7 @@ VisionTextDE[6][1]="Zwei Männer erscheinen und sind dabei, die Kammer zu reinige
 VisionTextDE[6][2]="'Es scheint nicht so. Andererseits, es hat einen Grund warum sie die Vertrauten genannten werden', erwidert der andere Mann.";
 VisionTextDE[6][3]="'Lass uns annehmen, er hat ihnen vertraut, dann bleibt immer noch die Frage offen, ob sie überhaupt in der Lage waren, sie zu verwenden?, fährt der erstere fort zu fragen.";
 VisionTextDE[6][4]="Der andere Mann zuckt mit den Schultern: 'Ich hoffe es für ihn. Ich hoffe es für uns! Stell dir seinen Ärger vor, falls einer verloren geht.' Er lacht. 'Wie dem auch sei, du scheinst dich nicht zu fürchten, oder?'";
-VisionTextDE[6][5]="Der erstere Mann schüttelt den Kopf: 'Nein, bin ich nicht. Ich versteh nur nicht den Plan. Ich meine... Es gibt sieben von ihnen. Es soll hier sein, falls es stimmt. Wir... Er hat drei. Somit sind drei übrig und niemand weiß irgendetwas über sie. Was ist, wenn jemand nur auf einen /Fehler/ von ihm wartet. Nichts würde leichter sein, als einen nach dem anderen sich zu schnappen, jetzt, wo er sie getrennt hat. Verstehst du?'";
+VisionTextDE[6][5]="Der erstere Mann schüttelt den Kopf: 'Nein, bin ich nicht. Ich versteh nur nicht den Plan. Ich meine... Es gibt sieben von ihnen. Wir... Er hat vier. Somit sind drei übrig und niemand weiß irgendetwas über sie. Was ist, wenn jemand nur auf einen /Fehler/ von ihm wartet. Nichts würde leichter sein, als einen nach dem anderen sich zu schnappen, jetzt, wo er sie getrennt hat. Verstehst du?'";
 VisionTextDE[6][6]="'Was zerbrichst du dir da den Kopf darüber?, zischt der andere zurück. 'Die anderen sind wahrscheinlich genauso verteilt und warum sollten wir Zeit verschwenden, anstelle uns zu nehmen, was wir so schnell wie möglich besitzen können? Wer soll uns stoppen? Wir haben Albar geschlagen, wir haben Salkamar geschlagen und wir sind dabei Lor-Angur zu schlagen. Nur einer von Narguns Tricks kann uns dabei behindern, aber nicht mehr stoppen!'.";
 VisionTextDE[6][7]="'Vielleicht hast du recht', antwortet der erstere während er mit dem Reinigen weiter macht.";
 VisionTextDE[6][8]="'Vielleicht? Ha! Ich habe immer recht!' Sein Lachen schallt durch die Kammer und beide Schatten verschwinden wieder.";
@@ -148,7 +148,7 @@ VisionTextEN[6][1]="The shades of two men appear, who clean the chamber. One of 
 VisionTextEN[6][2]="'It does not seem so. On the other hand, there is a reason why they are called the Trusted Ones', the other man replies.";
 VisionTextEN[6][3]="'Let's assume he can trust them, there is still the question left, are they even able to handle them?', the former continues to ask questions.";
 VisionTextEN[6][4]="The other man shrugs: 'I hope so, for his sake. I hope for us! Imagine his anger if one of them gets lost.' He laughs. 'However, it seems you are scared, are you?'";
-VisionTextEN[6][5]="The former man shakes his head: 'No, I am not. I just do not understand his move. I mean... There are seven of them. One should be here if that is true. We... He has three. So, there are three left and no one knows anything about them. What if someone is just waiting for such a /mistake/ by him? Nothing would be easier then to pick up one after the other, now, he has separated them. Do you understand?'";
+VisionTextEN[6][5]="The former man shakes his head: 'No, I am not. I just do not understand his move. I mean... There are seven of them. We... He has four. So, there are three left and no one knows anything about them. What if someone is just waiting for such a /mistake/ by him? Nothing would be easier then to pick up one after the other, now, he has separated them. Do you understand?'";
 VisionTextEN[6][6]="'Why do you worry about that?', the other one hisses back. 'The others are likely separated as well and why should we waste time instead of taking what we can possess as quickly as possible? Who should stop us? We beat Albar, we beat Salkamar and we are about to beat Lor-Angur. Only one of Nargun's tricks might hinder us, but it cannot stop us anymore!'";
 VisionTextEN[6][7]="'Probably, you are right', the former one replies as he continues cleaning.";
 VisionTextEN[6][8]="'Probably? Ha! I am always right!' His laughter rings through the chamber and both shades fade away.";
@@ -162,9 +162,9 @@ function vision(char,TypeStory)
 	attendants[char.name] = world:getPlayersInRangeOf(position(940,200,0), 90)
 	if attendants[char.name] ~= nil then
 			for k,player in ipairs(attendants[char.name]) do
-				if (content.areas.PointInArea(player.pos,triggerfield.evilrock.EvilRockAreaNames[TypeStory])) then
+				if (content.areas.PointInArea(player.pos,evilrock.EvilRockAreaNames[TypeStory])) then
 --					player:inform(""..VisionTextDE[TypeStory][LineStory],""..VisionTextEN[TypeStory][LineStory])
-					base.common.InformNLS(player,VisionTextDE[TypeStory][LineStory],VisionTextEN[TypeStory][LineStory])
+					common.InformNLS(player,VisionTextDE[TypeStory][LineStory],VisionTextEN[TypeStory][LineStory])
 --debug("ThereOn0: "..player.name)
 				else
 --debug("NotThereOn0: "..player.name)
@@ -178,9 +178,9 @@ function vision(char,TypeStory)
 	attendants2[char.name] = world:getPlayersInRangeOf(position(940,200,-6), 90)
 	if attendants2[char.name] ~= nil then
 			for k,player in ipairs(attendants2[char.name]) do
-				if (content.areas.PointInArea(player.pos,triggerfield.evilrock.EvilRockAreaNames[TypeStory])) then
+				if (content.areas.PointInArea(player.pos,evilrock.EvilRockAreaNames[TypeStory])) then
 --					player:inform(""..VisionTextDE[TypeStory][LineStory],""..VisionTextEN[TypeStory][LineStory])
-					base.common.InformNLS(player,VisionTextDE[TypeStory][LineStory],VisionTextEN[TypeStory][LineStory])
+					common.InformNLS(player,VisionTextDE[TypeStory][LineStory],VisionTextEN[TypeStory][LineStory])
 --debug("ThereOn-6: "..player.name)
 				else
 --debug("NotThereOn-6: "..player.name)
@@ -201,8 +201,8 @@ darkColumnEvilrockFlame={467,467,467,467,467,467}
 CheckLightOnColumnIsThere={}
 enabledAttendantsForPuzzle={}
 
-
-gemsRequired={197,284,45,197,284,45}
+--[[gemsRequired={197,284,45,197,284,45}]]-- removed and replaced with new magical gem item numbers below
+gemsRequired={3519,3522,3523,3519,3522,3523}
 
 
 function UseDarkColumns(User, SourceItem, ltstate)
@@ -214,13 +214,13 @@ function UseDarkColumns(User, SourceItem, ltstate)
 	local AmountDarkColumnEvilrock = #darkColumnEvilrock
   	for i = 1,AmountDarkColumnEvilrock do
 		if (SourceItem.pos == darkColumnEvilrock[i]) and User:countItemAt("all", gemsRequired[i], {["gemLevel"]="1"}) >= 1 then
---			local howmuchisit = User:countItemAt("all", 284)
+--			local howmuchisit = User:countItemAt("all", 3522)
 
 			local foundSource
 	-- check for dark column
 			TargetItem = darkColumnEvilrock[i];
 			if (TargetItem ~= nil) then
-				base.common.TurnTo( User, darkColumnEvilrock[i] ); -- turn if necessary
+				common.TurnTo( User, darkColumnEvilrock[i] ); -- turn if necessary
 				foundSource=true
 			end
 
@@ -255,11 +255,11 @@ function UseDarkColumns(User, SourceItem, ltstate)
 
 			BlackColumnQuestProgressA(User)
 		elseif (SourceItem.pos == darkColumnEvilrock[i]) and (User:countItemAt("all", gemsRequired[i]) >= 1) then
-			base.common.InformNLS(User,"Der Edelstein lässt sich einsetzen, aber er scheint nicht der Richtige zu sein. Vielleicht versuchst du einen Anderen.","Your gem seems to fit but for some reason it does not seem to be the right one.")
-		elseif (SourceItem.pos == darkColumnEvilrock[i]) and (User:countItemAt("all", 283) >= 1 or User:countItemAt("all", 46) >= 1 or User:countItemAt("all", 198) >= 1) then
-			base.common.InformNLS(User,"Diese Art von Edelstein scheint nicht zu passen. Vielleicht versuchst du eine andere Art.","This kind of gem does not seem to fit. You might want to try a different one.")
+			common.InformNLS(User,"Der Edelstein lässt sich einsetzen, aber er scheint nicht der Richtige zu sein. Vielleicht versuchst du einen Anderen.","Your gem seems to fit but for some reason it does not seem to be the right one.")
+		elseif (SourceItem.pos == darkColumnEvilrock[i]) and (User:countItemAt("all", 285) >= 1 or User:countItemAt("all", 283) >= 1 or User:countItemAt("all", 46) >= 1 or User:countItemAt("all", 198) >= 1) then
+			common.InformNLS(User,"Diese Art von Edelstein scheint nicht zu passen. Vielleicht versuchst du eine andere Art.","This kind of gem does not seem to fit. You might want to try a different one.")
 		elseif (SourceItem.pos == darkColumnEvilrock[i]) then
-			base.common.InformNLS(User,"Keiner deiner Gegenstände scheint zu passen.","None of your items seem to fit.")
+			common.InformNLS(User,"Keiner deiner Gegenstände scheint zu passen.","None of your items seem to fit.")
 		end
 	end
 end
@@ -268,9 +268,9 @@ end
 function BlackColumnQuestProgressA(User)
 	enabledAttendantsForPuzzle[User.name] = world:getPlayersInRangeOf(position(969,172,0), 10)
 	for m,player in ipairs(enabledAttendantsForPuzzle[User.name]) do
-		if (content.areas.PointInArea(player.pos,triggerfield.evilrock.EvilRockAreaNames[2])) then
+		if (content.areas.PointInArea(player.pos,evilrock.EvilRockAreaNames[2])) then
 			player:setQuestProgress(667,1)
-			base.common.InformNLS(player,"Eine Stimme sagt: 'Flammen, die Welt steht in Flammen!' Anschließend ist ein Summen zu hören und selektierbare Runen erscheinen an den schwarzen Säulen.","A voice says: 'Fire, the world is on fire!' A hum can be heard afterwards and selectable runes appear on the black columns.")
+			common.InformNLS(player,"Eine Stimme sagt: 'Flammen, die Welt steht in Flammen!' Anschließend ist ein Summen zu hören und selektierbare Runen erscheinen an den schwarzen Säulen.","A voice says: 'Fire, the world is on fire!' A hum can be heard afterwards and selectable runes appear on the black columns.")
 		else
 		end
 	end
@@ -280,11 +280,11 @@ end
 function BlackColumnQuestProgressB(User,QuestStatusBlackColumn)
 	enabledAttendantsForPuzzle[User.name] = world:getPlayersInRangeOf(position(969,172,0), 10)
 	for m,player in ipairs(enabledAttendantsForPuzzle[User.name]) do
-		if (content.areas.PointInArea(player.pos,triggerfield.evilrock.EvilRockAreaNames[2])) then
+		if (content.areas.PointInArea(player.pos,evilrock.EvilRockAreaNames[2])) then
 			if QuestStatusBlackColumn == 16 then
-				base.common.InformNLS(player,"Eine Stimme ruft: 'Flammen, die Welt steht in Flammen!'. Das Summen verstärkt sich anschließend.", "A voice shouts: 'Fire, the world is on fire!' The hum intensifies afterwards.")
+				common.InformNLS(player,"Eine Stimme ruft: 'Flammen, die Welt steht in Flammen!'. Das Summen verstärkt sich anschließend.", "A voice shouts: 'Fire, the world is on fire!' The hum intensifies afterwards.")
 			else
-				base.common.InformNLS(player,"Das Summen verstärkt sich als du den magischen Edelstein einsetzt.", "The hum intensifies as you put in the magical gem.")
+				common.InformNLS(player,"Das Summen verstärkt sich als du den magischen Edelstein einsetzt.", "The hum intensifies as you put in the magical gem.")
 			end
 			player:setQuestProgress(667,QuestStatusBlackColumn+1)
 		else
@@ -299,9 +299,9 @@ end
 function BlackColumnQuestProgressC(User,QuestStatusBlackColumn)
 	enabledAttendantsForPuzzle[User.name] = world:getPlayersInRangeOf(position(969,172,0), 10)
 	for m,player in ipairs(enabledAttendantsForPuzzle[User.name]) do
-		if (content.areas.PointInArea(player.pos,triggerfield.evilrock.EvilRockAreaNames[2])) then
+		if (content.areas.PointInArea(player.pos,evilrock.EvilRockAreaNames[2])) then
 			player:setQuestProgress(667,0)
-			base.common.InformNLS(player,"Das Summen bricht ab, die Lichter erlöschen und die Runen an den schwarzen Säulen verschwinden.", "The hum breaks up, lights go out and the runes disappear on the black column.")
+			common.InformNLS(player,"Das Summen bricht ab, die Lichter erlöschen und die Runen an den schwarzen Säulen verschwinden.", "The hum breaks up, lights go out and the runes disappear on the black column.")
 			world:makeSound(27,player.pos)
 			local AmountDarkColumnEvilrock = #darkColumnEvilrock
 			for i=1,AmountDarkColumnEvilrock do
@@ -327,7 +327,7 @@ function UseDarkColumnsPuzzle(User, SourceItem, ltstate)
 	-- check for dark column
 			TargetItem = darkColumnEvilrock[i];
 			if (TargetItem ~= nil) then
-				base.common.TurnTo( User, darkColumnEvilrock[i] ); -- turn if necessary
+				common.TurnTo( User, darkColumnEvilrock[i] ); -- turn if necessary
 				foundSource=true
 			end
 
@@ -497,7 +497,7 @@ function beamMeDown(User, SourceItem)
 		if content.areas.PointInArea(player.pos,"evilrock6") then
 			player:warp(position(973,173,-6))
 			player:setQuestProgress(667,0)
-			base.common.InformNLS(player,"Das Summen bricht ab und ein Lichtermantel umschließt dich, der dich an einen anderen Ort zieht.", "The hum breaks up and a coat of light encloses you and pulls you to a different place.")
+			common.InformNLS(player,"Das Summen bricht ab und ein Lichtermantel umschließt dich, der dich an einen anderen Ort zieht.", "The hum breaks up and a coat of light encloses you and pulls you to a different place.")
 			world:makeSound(13,player.pos)
 			world:gfx(37,player.pos)
 		end

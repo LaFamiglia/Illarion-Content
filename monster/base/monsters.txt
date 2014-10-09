@@ -1,0 +1,35 @@
+262
+
+37 playable species
+10 beholders
+6  bears
+8  beetles
+25 dogs/all
+7  dragons
+10  drow
+18 farm animals
+10 golems
+15 hellhounds
+9  imps
+25 mummies/zombies
+14 rats/ratman
+5  raptor
+27 skeletons
+13 slimes
+11 spiders
+12 trolls
+5  wasps
+267 total
+
+
+Test:
+Friendly Human-6
+Friendly Dwarf-16
+Friendly Halfling-26
+Friendly Elf-36
+Friendly Elf-46
+Friendly Lizard-56
+Peaceful Wolf-396
+Worker Mummy-106
+Friendly Skeleton-116
+Friendly Forest Troll-96

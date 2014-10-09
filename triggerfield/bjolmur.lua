@@ -18,7 +18,7 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- INSERT INTO triggerfields VALUES (451,544,1,'triggerfield.bjolmur');
 
 
-require("base.common")
+local common = require("base.common")
 module("triggerfield.bjolmur", package.seeall)
 
 
@@ -31,7 +31,7 @@ function MoveToField(char)
 		if PlayerIsNaked(char) == true then
 			PayGemsToMeetHer(char)
 		elseif char.pos == position(451,543,0) then
-			base.common.InformNLS(char,"Du hörst etwas flüstern: 'Du hast zu viel an.'","You hear a whisper: 'You wear too much still.'")
+			common.InformNLS(char,"Du hörst etwas flüstern: 'Du hast zu viel an.'","You hear a whisper: 'You wear too much still.'")
 		end
 	end
 end
@@ -41,7 +41,7 @@ end
 gemDE={"Je einen latenten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas.","Je einen bedingten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas.","Je einen leichten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas."}
 gemEN={"One latent magical emerald, ruby, obsidian, sapphire, amethyst and topaz.","One limited magical emerald, ruby, obsidian, sapphire, amethyst and topaz.","One slight magical emerald, ruby, obsidian, sapphire, amethyst and topaz."}
 
-gemItem={45,46,283,284,197,198}
+gemItem={3523,3521,3524,3522,3519,3525}
 
 
 
