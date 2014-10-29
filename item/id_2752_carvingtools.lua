@@ -19,10 +19,12 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local carving = require("content.craft.carving")
 local wood = require("item.general.wood")
 
-module("item.id_2752_carvingtools", package.seeall)
+local M = {}
 
-LookAtItem = wood.LookAtItem
+M.LookAtItem = wood.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     carving.carving:showDialog(User, SourceItem)
 end
+
+return M

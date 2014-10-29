@@ -17,11 +17,11 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- GM tool to delete items, to teleport and to conduct character changes
 
 -- UPDATE common SET com_script='gm.items.id_99_lockpicks' WHERE com_itemid=99;
-
+local lookat = require("base.lookat")
 local common = require("base.common")
 local factions = require("base.factions")
 
-module("gm.items.id_99_lockpicks", package.seeall)
+local M = {}
 
 itemPos = {"Head","Neck","Breast","Hands","Left Tool","Right Tool",
 	"Left Finger","Right Finger","Legs","Feet","Coat","Belt 1",
@@ -95,7 +95,7 @@ skillNames = {
 	Character.wrestling
 }
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
 
 	--if injured, heal!
 	if User:increaseAttrib("hitpoints",0) < 10000 or User:increaseAttrib("mana",0) < 10000 then
@@ -430,10 +430,10 @@ function godMode(User, SourceItem, ltstate)
 	User:requestSelectionDialog(sdPlayer);
 end
 
-function LookAtItem(User, Item)
-	base.lookat.SetSpecialDescription(Item, "Verwende die Dietriche zum aufrufen der Funktionen.", "Use the lockpicks to pick a function.");
-	base.lookat.SetSpecialName(Item, "Dietriche", "Lockpicks");
-	return base.lookat.GenerateLookAt(User, Item, base.lookat.METAL)
+function M.LookAtItem(User, Item)
+	lookat.SetSpecialDescription(Item, "Verwende die Dietriche zum aufrufen der Funktionen.", "Use the lockpicks to pick a function.");
+	lookat.SetSpecialName(Item, "Dietriche", "Lockpicks");
+	return lookat.GenerateLookAt(User, Item, lookat.METAL)
 end
 
 function String2Number(str)
@@ -446,3 +446,6 @@ function String2Number(str)
 	end
 	return 0, false;
 end
+
+return M
+

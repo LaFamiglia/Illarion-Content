@@ -24,11 +24,12 @@ author: Lillian
 
 local common = require("base.common")
 local arena = require("base.arena")
+local ranklist = require("base.ranklist")
 
 
-module("lte.arena_timer", package.seeall)
+local M = {}
 
-function addEffect(arenaEffect, User)
+function M.addEffect(arenaEffect, User)
 
     local found
     local arenaId
@@ -47,7 +48,7 @@ function addEffect(arenaEffect, User)
     end
 end
 
-function callEffect(arenaEffect, User)
+function M.callEffect(arenaEffect, User)
     if (User:increaseAttrib("hitpoints",0) == 0) then
         common.InformNLS( User,
         "Ihr habt den Kampf verloren. Ihr bekommt keine Punkte.",
@@ -78,7 +79,7 @@ function callEffect(arenaEffect, User)
         local town = arena.arenaInformation[arenaId].town;
         local arenaListName = "ArenaList"..town;
         local points = User:getQuestProgress(quest);
-        base.ranklist.setRanklist(User, arenaListName, points);
+        ranklist.setRanklist(User, arenaListName, points);
 
 
         if arena.arenaInformation[arenaId].newPlayerPos ~= nil then
@@ -97,11 +98,14 @@ function callEffect(arenaEffect, User)
     return true;
 end
 
-function removeEffect(arenaEffect, User)
+function M.removeEffect(arenaEffect, User)
     arena.killMonster( User );
     return false;
 end
 
-function loadEffect(arenaEffect, User)
+function M.loadEffect(arenaEffect, User)
     return false;
 end
+
+return M
+

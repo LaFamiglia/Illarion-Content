@@ -14,7 +14,7 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
-
+local lookat = require("base.lookat")
 local common = require("base.common")
 local character = require("base.character")
 local alchemy = require("alchemy.base.alchemy")
@@ -22,14 +22,14 @@ local base = require("monster.base.base")
 local potionToTeacher = require("triggerfield.potionToTeacher")
 local treasure = require("base.treasure")
 
-module("alchemy.teaching.transformation_dog", package.seeall)
+local M = {}
 
 -- This script handles the teaching of the dog transformation potion.
 
 
 DOG_STATUS = false
 
-function LookAtGrave(User,Item)
+function M.LookAtGrave(User,Item)
 	local graveInscription = common.GetNLS(User, "~Hier ruht Tavalion. Weiser Druide und größter Freund der Tiere.~", "~Here rests Tavalion. A wise druid and the greatest friend of the dogs.~")
 	
 	if not alchemy.CheckIfAlchemist(User) then
@@ -42,14 +42,14 @@ function LookAtGrave(User,Item)
 		end
 	end
 	
-	local lookat = base.lookat.GenerateLookAt(User, Item, base.lookat.NONE)
+	local lookat = lookat.GenerateLookAt(User, Item, lookat.NONE)
 	lookat.description = graveInscription
 	return lookat
 end
 
 LAST_TIME = 0
 
-function UseGrave(User, SourceItem)
+function M.UseGrave(User, SourceItem)
 	
 	if alchemy.CheckIfAlchemist(User) then
 		if DOG_STATUS ~= false or User:getQuestProgress(862) ~= 0 or world:getTime("unix") - LAST_TIME < 120 then 
@@ -65,7 +65,7 @@ function UseGrave(User, SourceItem)
 
 end
 
-function UseSealedScroll(User, SourceItem)
+function M.UseSealedScroll(User, SourceItem)
 	
 	if not alchemy.CheckIfAlchemist(User) or tonumber(SourceItem:getData("learnerId")) ~= User.id then
 		User:inform("Es gelingt dir nicht, das Siegel zu brechen.","You seem unable to break the seal.")
@@ -185,7 +185,7 @@ function ApperanceOfDog(User)
 
 end
 
-function dropDonfblade(dog)
+function M.dropDonfblade(dog)
 
 	dog:talk(Character.say, "#me legt ein großes Donfblatt vor dem Grab ab. Kurz bellt er, bevor er wieder davon geht.",
 	"#me drops a big donf blade infront of the grave. He woofs shortly before he walks back.")
@@ -210,24 +210,24 @@ function dropDonfblade(dog)
 	-- Dog is killed by the death lte.
 end
 
-function LookAtDonfbladeMap(User, Item)
+function M.LookAtDonfbladeMap(User, Item)
 
 	local dir = treasure.getDirection( User, Item )
 	local distance = treasure.getDistance (User, Item )
 	
 	if not dir then
-		base.lookat.SetSpecialDescription(Item,
+		lookat.SetSpecialDescription(Item,
 		"Das Donfblatt scheint so etwas eine Karte zu sein. Eine Pfotenabdruck markiert eine Stelle, die sich scheinbar ganz in deiner Nähe befindet.",
 		"The donblade seems to be some kind of a map. A paw print shows a mark that is somewhere very close to you.")
 	else
-		base.lookat.SetSpecialDescription(Item,
+		lookat.SetSpecialDescription(Item,
 		"Das Donfblatt scheint so etwas eine Karte zu sein. Eine Pfotenabdruck markiert eine Stelle, die sich von dir aus gesehen "..distance.." im "..dir.." befindet.",
 		"The donblade seems to be some kind of a map. A paw print shows a mark that is probably located somewhere "..distance.." in the "..dir.." of your current position.")
 	end
-	return base.lookat.GenerateLookAt(User, Item, base.lookat.NONE)
+	return lookat.GenerateLookAt(User, Item, lookat.NONE)
 end
 
-function DigForTeachingScroll(User)
+function M.DigForTeachingScroll(User)
 
 	local donfblades = User:getItemList(140)
 	local donfblade = false
@@ -270,3 +270,5 @@ function DigForTeachingScroll(User)
 		return true
 	end
 end
+
+return M

@@ -26,13 +26,11 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local genus = require("content.genus")
 local common = require("base.common")
 local factions = require("base.factions")
-local custom = require("content.lookat.custom")
-local uniquechardescription = require("content.uniquechardescription")
 local altars = require("item.altars")
 
-module("server.playerlookat", package.seeall)
+local M = {}
 
-function lookAtPlayer( SourceCharacter, TargetCharacter, mode)
+function M.lookAtPlayer( SourceCharacter, TargetCharacter, mode)
 	debug(SourceCharacter.name .. " is looking at " .. TargetCharacter.name);
   uniquechardescription.InitPlayerDesc();
     -- here we go the lookat
@@ -593,3 +591,5 @@ function createDevotionInform(SourceCharacter, TargetCharacter)
 
 	common.InformNLS(SourceCharacter, gText, eText);
 end
+
+return M

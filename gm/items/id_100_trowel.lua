@@ -15,11 +15,11 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 -- UPDATE common SET com_script='gm.items.id_100_trowel' WHERE com_itemid = 100;
-
+local lookat = require("base.lookat")
 local common = require("base.common")
-module("gm.items.id_100_trowel", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem)
+function M.UseItem(User, SourceItem)
 	local TargetItem = common.GetTargetItem(User, SourceItem);
 	if not TargetItem then
 		TargetItem = common.GetFrontItem(User);
@@ -50,8 +50,11 @@ function UseItem(User, SourceItem)
 	User:logAdmin("creates static item " .. world:getItemName(itemId, Player.english) .. "(" .. itemId .. ") at " .. tostring(target))
 end
 
-function LookAtItem(User, Item)
-	base.lookat.SetSpecialDescription(Item, "Verwende die Kelle zum aufrufen der Funktionen (create items).", "Use the trowel to pick a function (create items).");
-	base.lookat.SetSpecialName(Item, "Kelle", "Trowel");
-	return base.lookat.GenerateLookAt(User, Item, base.lookat.METAL)
+function M.LookAtItem(User, Item)
+	lookat.SetSpecialDescription(Item, "Verwende die Kelle zum aufrufen der Funktionen (create items).", "Use the trowel to pick a function (create items).");
+	lookat.SetSpecialName(Item, "Kelle", "Trowel");
+	return lookat.GenerateLookAt(User, Item, lookat.METAL)
 end
+
+return M
+

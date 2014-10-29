@@ -15,7 +15,6 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local gems = require("base.gems")
-local unique = require("content.lookat.unique")
 local common = require("base.common")
 local lookat = require("base.lookat")
 local factions = require("base.factions")
@@ -26,7 +25,7 @@ local vision = require("content.vision")
 
 -- UPDATE items SET itm_script='item.gems' WHERE itm_id IN (45, 46, 197, 198, 283, 284, 285);
 
-module("item.gems", package.seeall)
+local M = {}
 
 DIAMOND  = 1
 EMERALD  = 2
@@ -134,7 +133,7 @@ function getMagicGemData(level)
     return {gemLevel = level}
 end
 
-function LookAtItem(user, item)
+function M.LookAtItem(user, item)
     local lookAt = lookat.GenerateLookAt(user, item)
 
     local data = {}
@@ -145,7 +144,7 @@ function LookAtItem(user, item)
     return lookAt
 end
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     if SourceItem:getData(levelDataKey) == "" then
 	    analysis.AnalysisMain(User,SourceItem)
 		return
@@ -384,3 +383,6 @@ end
 function itemHasGems(item)
     return gems.getGemBonus(item) > 0
 end
+
+return M
+

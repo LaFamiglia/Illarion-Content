@@ -20,17 +20,17 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 local alchemy = require("alchemy.base.alchemy")
 local areas = require("content.areas")
-local rentrooms = require("content.rentrooms")
 local lever = require("item.lever")
 
-module("server.reload", package.seeall)
+local M = {}
 
-function onReload()
+function M.onReload()
 
     alchemy.InitAlchemy();
     areas.Init();
-    rentrooms.initRooms()
     lever.init();
  
     return true;
 end
+
+return M

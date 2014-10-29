@@ -14,9 +14,10 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
+local lookat = require("base.lookat")
 local common = require("base.common")
 local id_266_bookshelf = require("item.id_266_bookshelf")
-module("item.books", package.seeall)
+local M = {}
 
 -- UPDATE items SET itm_script='item.books' WHERE itm_id = 2622;
 
@@ -40,7 +41,7 @@ function InitBook()
 	end]]
 end
 
-function UseItem(User, SourceItem)
+function M.UseItem(User, SourceItem)
 	InitBook();
     -- alchemy book; DO NOT CHANGE! STARTER PACK RELEVANT!
 	if SourceItem.id == 2622 then
@@ -67,14 +68,16 @@ function UseItem(User, SourceItem)
 	end]]
 end
 
-function LookAtItem(User,Item)
+function M.LookAtItem(User,Item)
     if Item:getData("bookId")~="" then
 		local bookId =tonumber( Item:getData("bookId"))
 		if bookId ~= nil then
 			if id_266_bookshelf.books[bookId] ~= nil then
-				base.lookat.SetSpecialName(Item,id_266_bookshelf.books[bookId].german,id_266_bookshelf.books[bookId].english)
+				lookat.SetSpecialName(Item,id_266_bookshelf.books[bookId].german,id_266_bookshelf.books[bookId].english)
 			end
 		end
 	end
-	return base.lookat.GenerateLookAt(User, Item, 0)
+	return lookat.GenerateLookAt(User, Item, 0)
 end   
+return M
+

@@ -22,7 +22,8 @@ local common = require("base.common")
 local factions = require("base.factions")
 local deathaftertime = require("lte.deathaftertime")
 local longterm_cooldown = require("lte.longterm_cooldown")
-module("triggerfield.galmair_bridges2_660", package.seeall)
+local character = require("base.character")
+local M = {}
 
 
 
@@ -45,7 +46,7 @@ module("triggerfield.galmair_bridges2_660", package.seeall)
     monster[16]={201,202,203,204}; --demon skeleton 205 
 
 
-function MoveToField(char)
+function M.MoveToField(char)
 	if char:getType() ~= Character.player then --Monsters will be ingored
 		return
 	end
@@ -105,7 +106,7 @@ function MoveToField(char)
 end
 
 
-function MoveFromField(char)
+function M.MoveFromField(char)
 	if shutup ~= 0 then --stop spam
 		return
 	end
@@ -119,13 +120,13 @@ function MoveFromField(char)
 	if char:getType() ~= Character.player then --monster start moving
 		for i,player in ipairs(hero) do
 			if factions.getMembership(player) == 3 then --check if galmairians are there
-				base.character.DeathAfterTime(char,math.random(5,10),0,1,true) --kill trigger monster
+				character.DeathAfterTime(char,math.random(5,10),0,1,true) --kill trigger monster
 				player:inform("Bevor du auch noch reagieren kannst, schießen Pfeile an dir vorbei und töten deine Widersacher. Du blickst in die Richtung von wo die Pfeile kamen und siehst die Wachen auf der Stadtmauer von Galmair dir mit ihren Armbrüsten zuwinken. Gut, dass du dem Don deine Steuern zahlst und er dich beschützt!", "Even before you are able to react, arrows shoot around you and take down your enemies. You look to the direction the arrows originated from and see guards on the town wall of Galmair waving to you with their crossbows. Good, you have paid your taxes to the Don and he protects you!")	--praise the don message for the player
 				shutup = 1 --stop spam in the future
 				player:setQuestProgress(660,math.random(300,600)) --lte set for all players around
 				local monsters = world:getMonstersInRangeOf(player.pos, 35); --get all monster in player range 
 				for i,mon in ipairs(monsters) do
-					base.character.DeathAfterTime(mon,math.random(5,10),0,33,true) --kill all monsters
+					character.DeathAfterTime(mon,math.random(5,10),0,33,true) --kill all monsters
 				end
 				return
 			
@@ -144,3 +145,6 @@ function MoveFromField(char)
 		return
 	end
 end
+
+return M
+

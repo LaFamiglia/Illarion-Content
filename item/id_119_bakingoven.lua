@@ -16,8 +16,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local baking = require("content.craft.baking")
 
-module("item.id_119_bakingoven", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     baking.baking:showDialog(User, SourceItem)
 end
+
+return M

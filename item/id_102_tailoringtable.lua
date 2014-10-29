@@ -18,8 +18,11 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 local tailoring = require("content.craft.tailoring")
 
-module("item.id_102_tailoringtable", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     tailoring.tailoring:showDialog(User, SourceItem)
 end
+
+return M
+

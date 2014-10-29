@@ -17,9 +17,9 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local smithing = require("content.craft.smithing")
 local goldsmithing = require("content.craft.goldsmithing")
 
-module("item.id_172_anvil", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
 	if smithing.smithing:isHandToolEquipped(User) then
 		smithing.smithing:showDialog(User, SourceItem);
 	elseif goldsmithing.goldsmithing:isHandToolEquipped(User) then
@@ -30,3 +30,5 @@ function UseItem(User, SourceItem, ltstate)
             "To work here you have to hold a tool in your hand: Hammer or finesmithing hammer")
 	end
 end
+
+return M

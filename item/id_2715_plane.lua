@@ -19,10 +19,13 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local carpentry = require("content.craft.carpentry")
 local wood = require("item.general.wood")
 
-module("item.id_2715_plane", package.seeall)
+local M = {}
 
-LookAtItem = wood.LookAtItem
+M.LookAtItem = wood.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     carpentry.carpentry:showDialog(User, SourceItem)
 end
+
+return M
+

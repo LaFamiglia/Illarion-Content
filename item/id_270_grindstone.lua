@@ -16,8 +16,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local gemcutting = require("content.craft.gemcutting")
 
-module("item.id_270_grindstone", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     gemcutting.gemcutting:showDialog(User, SourceItem)
 end
+
+return M

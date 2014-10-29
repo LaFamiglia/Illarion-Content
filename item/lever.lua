@@ -14,6 +14,7 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
+local lookat = require("base.lookat")
 local common = require("base.common")
 local lever = require("base.lever")
 local deleteitem = require("handler.deleteitem")
@@ -36,11 +37,11 @@ local eraseplayeritem = require("handler.eraseplayeritem")
 local createplayeritem = require("handler.createplayeritem")
 local evilrock = require("triggerfield.evilrock")
 
-module("item.lever", package.seeall)
+local M = {}
 
 -- UPDATE items SET itm_script='item.lever' WHERE itm_id IN (434, 435, 436, 437, 438, 439);
 
-function init()
+function M.init()
     leverList={};
 
 	-------------THIS LEVERS ARE FOR THE VBU, PLEASE DON'T REMOVE---------------
@@ -303,9 +304,9 @@ function generateKey(posX,posY,posZ)
     return posX*1024*1024+posY*1024+posZ;
 end
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     if (initi==nil) then
-        myLevers=init();
+        myLevers=M.init();
         initi=1;
     end
 	key=SourceItem.pos.x*1024*1024+SourceItem.pos.y*1024+SourceItem.pos.z;
@@ -314,13 +315,13 @@ function UseItem(User, SourceItem, ltstate)
     end
 end
 
-function LookAtItem(User, Item)
+function M.LookAtItem(User, Item)
     if (initi==nil) then
-        myLevers=init();
+        myLevers=M.init();
         initi=1;
     end
     --User:inform(questA:getLeverHint(Item.pos)); --since everything from questA is deactivated, lets deactivate this aswell
-	return base.lookat.GenerateLookAt(User, Item, base.lookat.NONE)
+	return lookat.GenerateLookAt(User, Item, lookat.NONE)
 end
 
 function AddToLevers(myLever)
@@ -337,3 +338,6 @@ function AddToLevers(myLever)
         return -1;                                      -- no item there
     end
 end
+
+return M
+

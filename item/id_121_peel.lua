@@ -19,14 +19,13 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local baking = require("content.craft.baking")
 local wood = require("item.general.wood")
 
-module("item.id_121_peel", package.seeall)
+local M = {}
 
-LookAtItem = wood.LookAtItem
+M.LookAtItem = wood.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     baking.baking:showDialog(User, SourceItem)
 end
 
-function LookAtItem(User, Item)
-    return base.lookat.GetItemDescription(User, Item, base.lookat.WOOD)
-end
+return M
+

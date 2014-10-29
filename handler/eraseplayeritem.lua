@@ -16,15 +16,17 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local class = require("base.class")
 
-module("handler.eraseplayeritem", package.seeall)
+local M = {}
 
-erasePlayerItem = class.class(function(eraplitem, ply, ID, amnt)
+M.erasePlayerItem = class(function(eraplitem, ply, ID, amnt)
     eraplitem.player=ply;
     eraplitem.itemId=ID;
     eraplitem.amount=amnt;
 end);
 
-function erasePlayerItem:execute()
+function M.erasePlayerItem:execute()
     person=self.player
     person:eraseItem(self.itemId, self.amount);
 end
+
+return M

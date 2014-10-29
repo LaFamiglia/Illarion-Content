@@ -56,10 +56,12 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- INSERT INTO triggerfields VALUES (964,174,-6,'triggerfield.evilrock');
 
 -- INSERT INTO triggerfields VALUES (970,171,2,'triggerfield.evilrock');
-
+local lookat = require("base.lookat")
 local common = require("base.common")
 local class = require("base.class")
-module("triggerfield.evilrock", package.seeall)
+local character = require("base.character")
+local areas = require("content.areas")
+local M = {}
 
 
 triggerFlameFire={position(990,252,0),position(989,253,0),position(988,252,0),position(987,253,0),position(986,252,0),position(985,253,0)}
@@ -77,7 +79,7 @@ attendants2={}
 advantureslist={}
 
 
-function MoveToField(char)
+function M.MoveToField(char)
     if char:getType() ~= Character.player then --Monsters will be ingored
         return
     end
@@ -93,7 +95,7 @@ function MoveToField(char)
     for i = 1,AmountFlameFire do    
         if char.pos == triggerFlameFire[i] then
             if char:getQuestProgress(683) == 0 and find == false then
-                base.character.CreateAfterTime (char,100,120,359,nil,1,1,988,998,225,235,0,0,600,600,1,1,nil,4,1,3,nil,nil,1)
+                character.CreateAfterTime (char,100,120,359,nil,1,1,988,998,225,235,0,0,600,600,1,1,nil,4,1,3,nil,nil,1)
                 local adventurers = world:getPlayersInRangeOf(char.pos, 15) 
                             advantureslist[char.name] = adventurers                
                 for i,player in ipairs(advantureslist[char.name]) do
@@ -110,7 +112,7 @@ function MoveToField(char)
     for i = 1,AmountFlameIce do    
         if char.pos == triggerFlameIce[i] then
             if char:getQuestProgress(683) == 0 and find == false then
-                base.character.CreateAfterTime (char,100,120,360,nil,1,1,988,998,225,235,0,0,600,600,1,1,nil,5,1,3,nil,nil,1) 
+                character.CreateAfterTime (char,100,120,360,nil,1,1,988,998,225,235,0,0,600,600,1,1,nil,5,1,3,nil,nil,1) 
                 local adventurers = world:getPlayersInRangeOf(char.pos, 15) 
                             advantureslist[char.name] = adventurers                
                 for i,player in ipairs(advantureslist[char.name]) do
@@ -124,7 +126,7 @@ function MoveToField(char)
     for i = 1,AmountFlamePoison do    
         if char.pos == triggerFlamePoison[i] then
             if char:getQuestProgress(683) == 0 and find == false then
-                base.character.CreateAfterTime (char,100,120,372,nil,1,1,986,998,211,223,0,0,600,600,1,1,nil,13,1,3,nil,nil,1) 
+                character.CreateAfterTime (char,100,120,372,nil,1,1,986,998,211,223,0,0,600,600,1,1,nil,13,1,3,nil,nil,1) 
                 local adventurers = world:getPlayersInRangeOf(char.pos, 15) 
                             advantureslist[char.name] = adventurers                
                 for i,player in ipairs(advantureslist[char.name]) do
@@ -150,7 +152,7 @@ function MoveToField(char)
                 world:createItemFromId(51, 1, position(997,199,2), true, 333, nil)
                 local CreateBucket = world:getItemOnField(position(997,199,2))                
                 CreateBucket.wear=255
-                base.lookat.SetSpecialDescription(CreateBucket,"Wie viel Wasser wohl in diesen Eimer passt?","How much water might fit into this bucket?")
+                lookat.SetSpecialDescription(CreateBucket,"Wie viel Wasser wohl in diesen Eimer passt?","How much water might fit into this bucket?")
                 world:changeItem(CreateBucket)
             end
         end
@@ -382,7 +384,7 @@ function StoneChamberQuestProgress(char)
 end
 
 
-function MoveFromField(char)
+function M.MoveFromField(char)
    if char:getType() ~= Character.player then
     return
    else
@@ -442,19 +444,18 @@ function RemoveEntranceTrap(char)
 end
 
 
-
-executePortalLeverRiddle = class.class(function(leverriddle, posi)
+M.executePortalLeverRiddle = class(function(leverriddle, posi)
     leverriddle.pos=posi
 end)
 
 
-function executePortalLeverRiddle:execute()
+function M.executePortalLeverRiddle:execute()
     char=self.player
     PortalLeverRiddle(char)
 end
 
 
-function PortalLeverRiddle(char)
+function M.PortalLeverRiddle(char)
     world:makeSound(22,position(970,171,2))
     if CheckPortalLeverRiddle1(char) == true or CheckPortalLeverRiddle2(char) == true or CheckPortalLeverRiddle3(char) == true or CheckPortalLeverRiddle4(char) == true then
         world:gfx(32,position(970,171,2))
@@ -505,4 +506,7 @@ function CheckPortalLeverRiddle4(char)
         return false
     end
 end
+
+
+return M
 

@@ -20,13 +20,12 @@ local common = require("base.common")
 local factions = require("base.factions")
 local money = require("base.money")
 local townTreasure = require("base.townTreasure")
-local dailymessage = require("content.dailymessage")
 local gems = require("item.gems")
 local factionLeader = require("scheduled.factionLeader")
 
 -- called after every player login
 
-module("server.login", package.seeall);
+local M = {}
 
 -- Load messages of the day
 --German
@@ -197,7 +196,7 @@ messageE[79]="[Hint] CTRL toggles walking/running.";
 
 -- messages of the day - END
 
-function onLogin(player)
+function M.onLogin( player )
 
 	welcomeNewPlayer(player)
 
@@ -686,3 +685,5 @@ function exchangeFactionLeader( playerName )
 		end
 	end
 end
+
+return M

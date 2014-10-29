@@ -15,15 +15,14 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
 local class = require("base.class")
+local M = {}
 
-module("handler.deleteitem", package.seeall)
-
-deleteItem = class.class(function(delitem, posi, delID)
+M.deleteItem = class(function(delitem, posi, delID)
     delitem.pos=posi;
     delitem.deleteItemId=delID;
 end);
 
-function deleteItem:execute()
+function M.deleteItem:execute()
     if (world:isItemOnField(self.pos)==true) then
         item=world:getItemOnField(self.pos);
         if (item.id==self.deleteItemId or self.deleteItemId==0) then
@@ -36,3 +35,5 @@ function deleteItem:execute()
         return -1;
     end
 end
+
+return M

@@ -24,7 +24,8 @@ local messages = require("base.messages")
 local kills = require("monster.base.kills")
 local arena = require("base.arena")
 local treasure = require("base.treasure")
-module("monster.mon_67_greenbonedragons", package.seeall)
+
+local M = {}
 
 function ini(Monster)
 
@@ -38,8 +39,7 @@ msgs:addMessage("#me knurrt.", "#me growls.");
 
 end
 
-function enemyNear(Monster,Enemy)
-
+function M.enemyNear(Monster,Enemy)
     if init==nil then
         ini(Monster);
     end
@@ -51,7 +51,7 @@ function enemyNear(Monster,Enemy)
     return FireBreath(Monster,Enemy, 372)
 end
 
-function enemyOnSight(Monster,Enemy)
+function M.enemyOnSight(Monster,Enemy)
 
 	local MonID=Monster:getMonsterType();
     if init==nil then
@@ -72,7 +72,7 @@ function enemyOnSight(Monster,Enemy)
     end
 end
 
-function onAttacked(Monster,Enemy)
+function M.onAttacked(Monster,Enemy)
 
     if init==nil then
         ini(Monster);
@@ -81,7 +81,7 @@ function onAttacked(Monster,Enemy)
     killer[Monster.id]=Enemy.id; --Keeps track who attacked the monster last
 end
 
-function onCasted(Monster,Enemy)
+function M.onCasted(Monster,Enemy)
 
     if init==nil then
         ini(Monster);
@@ -90,7 +90,7 @@ function onCasted(Monster,Enemy)
     killer[Monster.id]=Enemy.id; --Keeps track who attacked the monster last
 end
 
-function onDeath(Monster)
+function M.onDeath(Monster)
 
     if arena.isArenaMonster(Monster) then
         return
@@ -144,3 +144,6 @@ function onDeath(Monster)
     end
     drop.Dropping(Monster);
 end
+
+return M
+

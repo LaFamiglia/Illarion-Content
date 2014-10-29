@@ -19,10 +19,13 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local gemcutting = require("content.craft.gemcutting")
 local metal = require("item.general.metal")
 
-module("item.id_2140_tong", package.seeall)
+local M = {}
 
-LookAtItem = metal.LookAtItem
+M.LookAtItem = metal.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     gemcutting.gemcutting:showDialog(User, SourceItem)
 end
+
+return M
+

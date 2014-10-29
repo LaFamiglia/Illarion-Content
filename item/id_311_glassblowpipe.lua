@@ -19,10 +19,12 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local glassblowing = require("content.craft.glassblowing")
 local jewel = require("item.general.jewel")
 
-module("item.id_311_glassblowpipe", package.seeall)
+local M = {}
 
-LookAtItem = jewel.LookAtItem
+M.LookAtItem = jewel.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     glassblowing.glassblowing:showDialog(User, SourceItem)
 end
+
+return M

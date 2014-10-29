@@ -21,12 +21,12 @@ local licence = require("base.licence")
 local leatherproducing = require("content.gatheringcraft.leatherproducing")
 local metal = require("item.general.metal")
 
-module("item.id_2746_razorblade", package.seeall)
+local M = {}
 
-LookAtItem = metal.LookAtItem
+M.LookAtItem = metal.LookAtItem
 
 function getStretcher(User)
-	
+
 	local targetItem = base.common.GetFrontItem(User);
 	if (targetItem ~= nil and targetItem.id == 2052) then
 		return targetItem;
@@ -47,29 +47,7 @@ function getStretcher(User)
 	return nil;
 end
 
-function getEmptyStretcher(User)
-	
-	local targetItem = base.common.GetFrontItem(User);
-	if (targetItem ~= nil and targetItem.id == 468) then
-		return targetItem;
-	end
-
-	local Radius = 1;
-	for x=-Radius,Radius do
-		for y=-Radius,Radius do
-			local targetPos = position(User.pos.x + x, User.pos.y + y, User.pos.z);
-			if (world:isItemOnField(targetPos)) then
-				local targetItem = world:getItemOnField(targetPos);
-				if (targetItem ~= nil and targetItem.id == 468) then
-					return targetItem;
-				end
-			end
-		end
-	end
-	return nil;
-end
-
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
 	if licence.licence(User) then --checks if user is citizen or has a licence
 		return -- avoids crafting if user is neither citizen nor has a licence
 	end
@@ -78,11 +56,12 @@ function UseItem(User, SourceItem, ltstate)
 	if stretcherItem then
 		leatherproducing.StartGathering(User, stretcherItem, ltstate);
 		return
-	elseif getEmptyStretcher(User)
-	User:inform("Häute sind auf einem Rahmen mit einer Träger gegerbt.","Hides are tanned on a frame with a backing.");
 	end
 
 	base.common.InformNLS(User,
 		"Du musst neben einem Spannrahmen stehen um die Rasierklinge zu benutzen.",
 		"You must stand next to a stretcher to use the razor blade.");
 end
+
+return M
+

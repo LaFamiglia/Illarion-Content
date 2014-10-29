@@ -19,10 +19,13 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local smithing = require("content.craft.smithing")
 local metal = require("item.general.metal")
 
-module("item.id_23_smithinghammer", package.seeall)
+local M = {}
 
-LookAtItem = metal.LookAtItem
+M.LookAtItem = metal.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     smithing.smithing:showDialog(User, SourceItem)
 end
+
+return M
+

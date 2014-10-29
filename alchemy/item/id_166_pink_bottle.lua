@@ -18,9 +18,8 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 local common = require("base.common")
 local alchemy = require("alchemy.base.alchemy")
-local character = require("base.character")
-
-module("alchemy.item.id_166_pink_bottle", package.seeall)
+local lookat = require("base.lookat")
+local M = {}
 
 -- UPDATE common SET com_script='alchemy.item.id_166_pink_bottle' WHERE com_itemid = 166;
 
@@ -162,7 +161,7 @@ function GenerateEffectMessage(User,dataZList)
 	common.InformNLS(User,effectMessageDE,effectMessageEN);
 end
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     -- repair potion in case it's broken
 	alchemy.repairPotion(SourceItem)
 	-- repair end
@@ -187,6 +186,8 @@ function UseItem(User, SourceItem, ltstate)
 	end  
 end
 
-function LookAtItem(User,Item)
-    return base.lookat.GenerateLookAt(User, Item, 0)
+function M.LookAtItem(User,Item)
+    return lookat.GenerateLookAt(User, Item, 0)
 end   
+return M
+

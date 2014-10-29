@@ -19,13 +19,12 @@ local common = require("base.common")
 -- UPDATE items SET itm_script='item.skull' WHERE itm_id = 2038;
 -- UPDATE items SET itm_script='item.skull' WHERE itm_id = 2039;
 
-module("item.skull", package.seeall)
+local M = {}
 
 
+function M.UseItem(User, SourceItem)
 advantureslist={}
 
-
-function UseItem(User, SourceItem)
     -- Evilrock skulls
     local skullSourceItemPos = {position(989, 247, 0), position(990, 241, 0), position(997, 226, 0)}
     local typoOfFlame={359, 360, 372}
@@ -286,3 +285,6 @@ function SpawnSpider(User, skullItem)
                 "Wrong choice traveler! Something hops out of the skull and attacks you.")
 
 end
+
+return M
+

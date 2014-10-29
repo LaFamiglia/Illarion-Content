@@ -18,8 +18,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 local cooking = require("content.craft.cooking")
 
-module("item.id_3581_kettlewithfire", package.seeall)
+local M = {}
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     cooking.cooking:showDialog(User, SourceItem)
 end
+
+return M

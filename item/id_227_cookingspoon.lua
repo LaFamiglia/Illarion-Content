@@ -19,10 +19,13 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local cooking = require("content.craft.cooking")
 local wood = require("item.general.wood")
 
-module("item.id_227_cookingspoon", package.seeall)
+local M = {}
 
-LookAtItem = wood.LookAtItem
+M.LookAtItem = wood.LookAtItem
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     cooking.cooking:showDialog(User, SourceItem)
 end
+
+return M
+

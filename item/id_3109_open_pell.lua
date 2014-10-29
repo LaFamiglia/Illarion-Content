@@ -16,10 +16,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local common = require("base.common")
 local alchemy = require("alchemy.base.alchemy")
+local lookat = require("base.lookat")
 
 
-
-module("item.id_3109_open_pell",package.seeall)
+local M = {}
 
 -- script currently only used to teach alchemy recipes
 
@@ -342,7 +342,7 @@ function RecipeInform( User, SourceItem)
 	User:requestSelectionDialog(dialog)
 end
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
 
 	if SourceItem:getData("teachDogTransformationPotion") == "true" then
 		dogScroll(User, SourceItem)
@@ -422,7 +422,7 @@ function TellRecipe(User, effectId)
 
 end
 
-function LookAtItem(User, Item)
+function M.LookAtItem(User, Item)
     local town = getTown(Item)
 	if town then
 		local lookAt = ItemLookAt()
@@ -430,6 +430,9 @@ function LookAtItem(User, Item)
 		lookAt.description = common.GetNLS(User, "Alchemierezepte", "Alchemy recipes")
 		return lookAt
 	else
-		return base.lookat.GenerateLookAt(User, Item, base.lookat.NONE)
+		return lookat.GenerateLookAt(User, Item, lookat.NONE)
 	end
 end
+
+return M
+

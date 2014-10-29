@@ -18,21 +18,21 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- Envi
 local common = require("base.common")
 local transformation_dog = require("alchemy.teaching.transformation_dog")
-
-module("item.grave", package.seeall)
+local lookat = require("base.lookat")
+local M = {}
 
 -- UPDATE items SET itm_script='item.grave' WHERE itm_id IN (337, 519, 520, 521);
 
 
 graveItemNumbers={337,519,520,521}
 
-function LookAtItem(User, Item)
+function M.LookAtItem(User, Item)
 
 	if Item:getData("teachDogTransformationPotion") == "true" then
 		return transformation_dog.LookAtGrave(User,Item)
 	end
 
-    return base.lookat.GenerateLookAt(User, Item, base.lookat.NONE)
+    return lookat.GenerateLookAt(User, Item, lookat.NONE)
 end
 
 
@@ -48,7 +48,7 @@ gemsAlreadyFound[1]={3519,242,481,526}
 gemsAlreadyFound[2]={3522,329,481,526}
 gemsAlreadyFound[3]={3523,242,329,526}
 
-function UseItem(User, SourceItem)
+function M.UseItem(User, SourceItem)
 
 	if SourceItem:getData("teachDogTransformationPotion") == "true" then
 		transformation_dog.UseGrave(User, SourceItem)
@@ -111,3 +111,6 @@ function UseItem(User, SourceItem)
 		end
 	end
 end
+
+return M
+

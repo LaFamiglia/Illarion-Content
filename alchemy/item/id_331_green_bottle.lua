@@ -23,16 +23,15 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 -- include base.common for additional functions
 local common = require("base.common")
-local character = require("base.character")
 local id_165_blue_bottle = require("alchemy.item.id_165_blue_bottle")
 local alchemy = require("alchemy.base.alchemy")
-
-module("alchemy.item.id_331_green_bottle", package.seeall)
+local lookat = require("base.lookat")
+local M = {}
 
 -- UPDATE common SET com_script='alchemy.item.id_331_green_bottle' WHERE com_itemid = 331;
 
 
-function UseItem(User, SourceItem, ltstate)
+function M.UseItem(User, SourceItem, ltstate)
     
 	if SourceItem:getData("filledWith") ~= "stock" then -- no stock, something else
 	    return
@@ -114,6 +113,8 @@ function FillStockIn(User,SourceItem, cauldron)
 	end
 end
 
-function LookAtItem(User,Item)
-    return base.lookat.GenerateLookAt(User, Item, 0)
+function M.LookAtItem(User,Item)
+    return lookat.GenerateLookAt(User, Item, 0)
 end 
+return M
+
