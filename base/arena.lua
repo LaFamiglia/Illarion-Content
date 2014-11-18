@@ -29,6 +29,7 @@ author: Lillian
 ]]
 local money = require("base.money")
 local ranklist = require("base.ranklist")
+local common = require("base.common")
 
 local M = {}
 
@@ -43,7 +44,7 @@ Level 7: Monsters for really, really good fighters 'heroes' award 13 points
 Level 8: Monsters for group fights award 18 points
 Level 9: Unbelieavable strong monsters for 'groups' award 21 points
 ]]
-monsterIDsByLevel = {
+M.monsterIDsByLevel = {
 	{monsters = {991, 271, 1051, 582, 1071}, points = 1, price=4000},
 	{monsters = {101, 196, 273, 602, 881}, points = 2, price= 7800},
 	{monsters = {311, 394, 551, 882, 1011}, points = 3, price=11000},
@@ -93,31 +94,31 @@ function M.requestMonster(User, NPC)
 	if User:getPlayerLanguage() == 0 then
 		sdMonster = SelectionDialog("Monsterstärke", "Wählt wie stark das Monster sein soll, gegen das Ihr kämpfen möchtet:", cbChooseLevel);
 		sdMonster:setCloseOnMove();
-		for i=1, #(monsterIDsByLevel) do
-			priceInCP = monsterIDsByLevel[i].price;
+		for i=1, #(M.monsterIDsByLevel) do
+			priceInCP = M.monsterIDsByLevel[i].price;
 			germanMoney, englishMoney = money.MoneyToString(priceInCP);
-			sdMonster:addOption(61,"Stärke "..i.." Monster ("..monsterIDsByLevel[i].points.." Punkte)\n Preis:"..germanMoney);
+			sdMonster:addOption(61,"Stärke "..i.." Monster ("..M.monsterIDsByLevel[i].points.." Punkte)\n Preis:"..germanMoney);
 		end
 	else
 		sdMonster = SelectionDialog("Monster strength", "Please choose how strong the monster you wish to fight against should be:", cbChooseLevel);
 		sdMonster:setCloseOnMove();
-		for i=1, #(monsterIDsByLevel) do
-			priceInCP = monsterIDsByLevel[i].price;
+		for i=1, #(M.monsterIDsByLevel) do
+			priceInCP = M.monsterIDsByLevel[i].price;
 			germanMoney, englishMoney = money.MoneyToString(priceInCP);
-			sdMonster:addOption(61,"Level "..i.." Monster ("..monsterIDsByLevel[i].points.." points)\n Price:"..englishMoney);
+			sdMonster:addOption(61,"Level "..i.." Monster ("..M.monsterIDsByLevel[i].points.." points)\n Price:"..englishMoney);
 		end
 	end
 	User:requestSelectionDialog(sdMonster);
 end
 
 function payforMonster(User, MonsterLevel, NPC)
-	local priceInCP = monsterIDsByLevel[MonsterLevel].price;
+	local priceInCP = M.monsterIDsByLevel[MonsterLevel].price;
 	local germanMoney, englishMoney = money.MoneyToString(priceInCP);
 
 	if not money.CharHasMoney(User,priceInCP) then --not enough money!
 		gText="Ihr habt nicht genug Geld dabei! Ihr benötigt"..germanMoney..".";
 		eText="You don't have enough money with you! You'll need"..englishMoney..".";
-		outText=base.common.GetNLS(User,gText,eText);
+		outText=common.GetNLS(User,gText,eText);
         NPC:talk(Character.say, outText);
 		return false;
 	end
@@ -191,8 +192,8 @@ function M.killMonster(User)
 end
 
 function getRandomMonster(level)
-	local randomNumber = math.random(1, #monsterIDsByLevel[level].monsters);
-	return monsterIDsByLevel[level].monsters[randomNumber];
+	local randomNumber = math.random(1, #M.monsterIDsByLevel[level].monsters);
+	return M.monsterIDsByLevel[level].monsters[randomNumber];
 end
 
 function M.getArena(User, NPC)
@@ -221,7 +222,7 @@ function M.getArenastats(User, NPC)
 
 	gText="Ihr habt bereits "..points.." gesammelt. Weiter so!";
 	eText="You have already earnt "..points.." points. Keep it up!";
-	outText=base.common.GetNLS(User,gText,eText);
+	outText=common.GetNLS(User,gText,eText);
     NPC:talk(Character.say, outText);
 end
 
@@ -292,8 +293,8 @@ function M.getReward(User, quest)
 end
 
 function rewardDialog(User, points)
-	local title = base.common.GetNLS(User,"Arena Belohnung","Arena reward")
-	local text = base.common.GetNLS(User,"Du hast "..points.." Punkte gesammelt, daher kannst du dir nun eine Belohnung aussuchen.", "You earned "..points.." points, therefore you can pick a reward.")
+	local title = common.GetNLS(User,"Arena Belohnung","Arena reward")
+	local text = common.GetNLS(User,"Du hast "..points.." Punkte gesammelt, daher kannst du dir nun eine Belohnung aussuchen.", "You earned "..points.." points, therefore you can pick a reward.")
 
 	local callback = function(dialog)
 		local success = dialog:getSuccess()

@@ -85,7 +85,7 @@ function StartGathering(User, SourceItem, ltstate)
 		return
 	end
 
-	local areaId = content.gatheringcraft.mining.GetAreaId(User.pos);
+	local areaId = GetAreaId(User.pos);
 	local productId = GetResource(areaId, SourceItem.id);
 
 	User:learn( mining.LeadSkill, mining.SavedWorkTime[User.id], mining.LearnLimit);
@@ -391,7 +391,7 @@ Radius 15
 
     InitDone = true;
 end
-
+local Area = nil
 function AddArea(AreaID,Center,Rad)
     if (Area == nil) then
         Area = { };

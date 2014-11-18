@@ -20,6 +20,7 @@ local townManagement = require("base.townManagement")
 local factions = require("base.factions")
 local vision = require("content.vision")
 local lookat = require("base.lookat")
+local money = require("base.money")
 -- UPDATE items SET itm_script='item.bookrests' WHERE itm_id = 3104;
 -- UPDATE items SET itm_script='item.bookrests' WHERE itm_id = 3105;
 -- UPDATE items SET itm_script='item.bookrests' WHERE itm_id = 3106;
@@ -27,6 +28,15 @@ local lookat = require("base.lookat")
 -- UPDATE items SET itm_script='item.bookrests' WHERE itm_id = 3108;
 
 local M = {}
+
+local FerryLookAt
+local TMLookAt
+local StaticTeleporterLookAt
+local SalaveshLookAt
+local AkaltutLookAt
+local usingHomeTeleporter
+local NecktieHomeTravel
+local StaticTeleporter
 
 function M.LookAtItem(User,Item)
 
@@ -162,15 +172,15 @@ function M.UseItem(User, SourceItem)
 	if (SourceItem.pos == position(975,173,0)) then
 		local controlpannel = world:getPlayersInRangeOf(position(969,173,0), 8)
 		if User:getQuestProgress(667) >= 25 then
-			local AmountDarkColumnEvilrock = #content.vision.darkColumnEvilrock
+			local AmountDarkColumnEvilrock = #vision.darkColumnEvilrock
 			for i=1,AmountDarkColumnEvilrock do
-				local DarkColumnEvilrockLightErase = world:getItemOnField(content.vision.darkColumnEvilrock[i])
+				local DarkColumnEvilrockLightErase = world:getItemOnField(vision.darkColumnEvilrock[i])
 				if DarkColumnEvilrockLightErase.id == 467 then
 					world:erase(DarkColumnEvilrockLightErase,DarkColumnEvilrockLightErase.number)
-					world:gfx(45,content.vision.darkColumnEvilrockLight[i])
+					world:gfx(45,vision.darkColumnEvilrockLight[i])
 				end
 			end
-			content.vision.beamMeDown(User, SourceItem)
+			vision.beamMeDown(User, SourceItem)
 			return
 		else
 			for i,player in ipairs(controlpannel) do
@@ -244,7 +254,7 @@ function StaticTeleporter(User, SourceItem)
 			local selected = dialog:getSelectedIndex()+1
 			local userFaction = factions.getMembershipByName(User)
 			-- Check wether the char has enough money or travels from necktie to hometown or vice versa
-			if (base.money.CharHasMoney(User,500) or NecktieHomeTravel(User,names,targetPos,selected)) then
+			if (money.CharHasMoney(User,500) or NecktieHomeTravel(User,names,targetPos,selected)) then
 
 				if User:distanceMetricToPosition(targetPos[selected]) < 5 then
 					User:inform("Ihr befindet euch bereits in " ..names[selected]..".", "You are already in "..names[selected]..".")
@@ -252,7 +262,7 @@ function StaticTeleporter(User, SourceItem)
 
 					User:inform("Ihr habt euch dazu entschlossen nach " ..names[selected].. " zu Reisen.", "You have chosen to travel to " ..names[selected]..".")
 					if not NecktieHomeTravel(User,names,targetPos,selected) then
-						base.money.TakeMoneyFromChar(User,500)
+						money.TakeMoneyFromChar(User,500)
 					end
 					world:gfx(46,User.pos)
 					world:makeSound(13,User.pos);

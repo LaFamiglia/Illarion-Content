@@ -27,47 +27,47 @@ local vision = require("content.vision")
 
 local M = {}
 
-DIAMOND  = 1
-EMERALD  = 2
-RUBY     = 3
-OBSIDIAN = 4
-SAPPHIRE = 5
-AMETHYST = 6
-TOPAZ    = 7
+M.DIAMOND  = 1
+M.EMERALD  = 2
+M.RUBY     = 3
+M.OBSIDIAN = 4
+M.SAPPHIRE = 5
+M.AMETHYST = 6
+M.TOPAZ    = 7
 
-gemItem = {}
-gemItem[DIAMOND] = 3520
-gemItem[EMERALD] = 3523
-gemItem[RUBY] = 3521
-gemItem[OBSIDIAN] = 3524
-gemItem[SAPPHIRE] = 3522
-gemItem[AMETHYST] = 3519
-gemItem[TOPAZ] = 3525
+local gemItem = {}
+gemItem[M.DIAMOND] = 285
+gemItem[M.EMERALD] = 45
+gemItem[M.RUBY] = 46
+gemItem[M.OBSIDIAN] = 283
+gemItem[M.SAPPHIRE] = 284
+gemItem[M.AMETHYST] = 197
+gemItem[M.TOPAZ] = 198
 
-gemId = {}
-gemId[3520] = DIAMOND
-gemId[3523] = EMERALD
-gemId[3521] = RUBY
-gemId[3524] = OBSIDIAN
-gemId[3522] = SAPPHIRE
-gemId[3519] = AMETHYST
-gemId[3525] = TOPAZ
+local gemId = {}
+gemId[285] = M.DIAMOND
+gemId[45] = M.EMERALD
+gemId[46] = M.RUBY
+gemId[283] = M.OBSIDIAN
+gemId[284] = M.SAPPHIRE
+gemId[197] = M.AMETHYST
+gemId[198] = M.TOPAZ
 
-gemDataKey = {}
-gemDataKey[DIAMOND] = "magicalDiamond"
-gemDataKey[EMERALD] = "magicalEmerald"
-gemDataKey[RUBY] = "magicalRuby"
-gemDataKey[OBSIDIAN] = "magicalObsidian"
-gemDataKey[SAPPHIRE] = "magicalSapphire"
-gemDataKey[AMETHYST] = "magicalAmethyst"
-gemDataKey[TOPAZ] = "magicalTopaz"
+local gemDataKey = {}
+gemDataKey[M.DIAMOND] = "magicalDiamond"
+gemDataKey[M.EMERALD] = "magicalEmerald"
+gemDataKey[M.RUBY] = "magicalRuby"
+gemDataKey[M.OBSIDIAN] = "magicalObsidian"
+gemDataKey[M.SAPPHIRE] = "magicalSapphire"
+gemDataKey[M.AMETHYST] = "magicalAmethyst"
+gemDataKey[M.TOPAZ] = "magicalTopaz"
 
-levelDataKey = "gemLevel"
+local levelDataKey = "gemLevel"
 
-gemPrefixDE = {"Latent", "Bedingt", "Leicht", "M‰ﬂig", "Durchschnittlich", "Bemerkenswert", "Stark", "Sehr stark", "Unglaublich", "Einzigartig"}
-gemPrefixEN = {"Latent", "Limited", "Slight", "Moderate", "Average", "Notable", "Strong", "Very Strong", "Unbelievable", "Unique"}
+M.gemPrefixDE = {"Latent", "Bedingt", "Leicht", "M‰ﬂig", "Durchschnittlich", "Bemerkenswert", "Stark", "Sehr stark", "Unglaublich", "Einzigartig"}
+M.gemPrefixEN = {"Latent", "Limited", "Slight", "Moderate", "Average", "Notable", "Strong", "Very Strong", "Unbelievable", "Unique"}
 
-gemLevelRareness = {}
+local gemLevelRareness = {}
 gemLevelRareness[1] = ItemLookAt.uncommonItem
 gemLevelRareness[2] = ItemLookAt.uncommonItem
 gemLevelRareness[3] = ItemLookAt.uncommonItem
@@ -84,9 +84,9 @@ function lookAtFilter(user, lookAt, data)
 
     if gemLevel then
         if user:getPlayerLanguage() == 0 then
-            lookAt.name = gemPrefixDE[gemLevel] .. " magischer " .. lookAt.name
+            lookAt.name = M.gemPrefixDE[gemLevel] .. " magischer " .. lookAt.name
         else
-            lookAt.name = gemPrefixEN[gemLevel] .. " Magical " .. lookAt.name
+            lookAt.name = M.gemPrefixEN[gemLevel] .. " Magical " .. lookAt.name
         end
 
         lookAt.rareness = gemLevelRareness[gemLevel]
@@ -104,12 +104,12 @@ gemCraft = crafts.Craft:new{
 }
 
 local categoryId = {}
-categoryId[EMERALD] = gemCraft:addCategory("Emerald", "Smaragd")
-categoryId[RUBY] = gemCraft:addCategory("Ruby", "Rubin")
-categoryId[OBSIDIAN] = gemCraft:addCategory("Obsidian", "Obsidian")
-categoryId[SAPPHIRE] = gemCraft:addCategory("Sapphire", "Saphir")
-categoryId[AMETHYST] = gemCraft:addCategory("Amethyst", "Amethyst")
-categoryId[TOPAZ] = gemCraft:addCategory("Topaz", "Topas")
+categoryId[M.EMERALD] = gemCraft:addCategory("Emerald", "Smaragd")
+categoryId[M.RUBY] = gemCraft:addCategory("Ruby", "Rubin")
+categoryId[M.OBSIDIAN] = gemCraft:addCategory("Obsidian", "Obsidian")
+categoryId[M.SAPPHIRE] = gemCraft:addCategory("Sapphire", "Saphir")
+categoryId[M.AMETHYST] = gemCraft:addCategory("Amethyst", "Amethyst")
+categoryId[M.TOPAZ] = gemCraft:addCategory("Topaz", "Topas")
 
 local gem, level, product
 for gem=1,7 do
@@ -123,12 +123,12 @@ for gem=1,7 do
     end
 end
 
-function getMagicGemId(gem, level)
+function M.getMagicGemId(gem, level)
     local level = level or 1
     return gemItem[gem]
 end
 
-function getMagicGemData(level)
+function M.getMagicGemData(level)
     local level = level or 1
     return {gemLevel = level}
 end
@@ -218,7 +218,7 @@ function handleSocketing(user, gem)
     user:requestSelectionDialog(dialog)
 end
 
-slots = {}
+local slots = {}
 table.insert(slots, Character.left_tool)
 table.insert(slots, Character.right_tool)
 table.insert(slots, Character.belt_pos_1)
@@ -287,7 +287,7 @@ function isUnsocketable(itemId)
     return world:getWeaponStruct(itemId);
 end
 
-function magicSmith(npc, player)
+function M.magicSmith(npc, player)
     local callback = function(dialog)
         success = dialog:getSuccess()
 

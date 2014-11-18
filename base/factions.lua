@@ -110,8 +110,8 @@ function InitFactionLists()
 	NoneRankList ={};
 	NoneRankList[0] = {gRank = "Geächteter", eRank = "Outcast"};
 
-	townRanks = {CadomyrRankListMale, RunewickRankListMale, GalmairRankListMale, CadomyrRankListFemale, RunewickRankListFemale, GalmairRankListFemale}
-	townRanks[0] = NoneRankList;
+	M.townRanks = {CadomyrRankListMale, RunewickRankListMale, GalmairRankListMale, CadomyrRankListFemale, RunewickRankListFemale, GalmairRankListFemale}
+	M.townRanks[0] = NoneRankList;
 end
 
 --[[
@@ -145,7 +145,7 @@ if not InitFaction then
 	InitFactionLists();
 	InitFaction = true;
     citizenRank = 1;
-	highestRank = 7;
+	M.highestRank = 7;
 	specialRanks = {8,9,10};
     leaderRank = 11;
 
@@ -179,7 +179,7 @@ function M.getTownNameByID(TownID)
   return "";
 end
 
-function getTownIdByName(name)
+function M.getTownIdByName(name)
 	for i=1, #(TownList) do
 		if (TownList[i].townName == name) then
 			return TownList[i].townID
@@ -228,35 +228,35 @@ end
 ]]
 function M.getRank(player, bothFlag)
 	local Faction = M.getFaction(player);
-	if (townRanks[Faction.tid] == nil) then
+	if (M.townRanks[Faction.tid] == nil) then
 		return "[ERROR: no ranks for " .. Faction.tid .. "]";
 	end
-	if (townRanks[Faction.tid][Faction.rankTown] == nil) then
+	if (M.townRanks[Faction.tid][Faction.rankTown] == nil) then
 		return "[ERROR: no rank " .. Faction.rankTown .. " in town " .. Faction.tid .. "]";
 	end
 
 	if (player:increaseAttrib("sex",0) == 0) then --male Ranks
 		if not bothFlag then
 			if player:getPlayerLanguage() == 0 then
-				return townRanks[Faction.tid][Faction.rankTown].gRank;
+				return M.townRanks[Faction.tid][Faction.rankTown].gRank;
 			else
-				return townRanks[Faction.tid][Faction.rankTown].eRank;
+				return M.townRanks[Faction.tid][Faction.rankTown].eRank;
 			end
 		else
-			local gerRank = townRanks[Faction.tid][Faction.rankTown].gRank;
-			local enRank = townRanks[Faction.tid][Faction.rankTown].eRank
+			local gerRank = M.townRanks[Faction.tid][Faction.rankTown].gRank;
+			local enRank = M.townRanks[Faction.tid][Faction.rankTown].eRank
 			return gerRank, enRank;
 		end
 	else
 		if not bothFlag then
 			if player:getPlayerLanguage() == 0 then
-				return townRanks[tonumber(Faction.tid)+3][Faction.rankTown].gRank;
+				return M.townRanks[tonumber(Faction.tid)+3][Faction.rankTown].gRank;
 			else
-				return townRanks[tonumber(Faction.tid)+3][Faction.rankTown].eRank;
+				return M.townRanks[tonumber(Faction.tid)+3][Faction.rankTown].eRank;
 			end
 		else
-			local gerRank = townRanks[Faction.tid+3][Faction.rankTown].gRank;
-			local enRank = townRanks[Faction.tid+3][Faction.rankTown].eRank;
+			local gerRank = M.townRanks[Faction.tid+3][Faction.rankTown].gRank;
+			local enRank = M.townRanks[Faction.tid+3][Faction.rankTown].eRank;
 			return gerRank, enRank;
 		end
 	end
@@ -288,7 +288,7 @@ end
 	
 	@return - name of the rank
 ]]
-function getRankName(player, ranknumber)
+function M.getRankName(player, ranknumber)
 	local Faction = M.getFaction(player);
 	
 	if ranknumber > leaderRank then
@@ -297,15 +297,15 @@ function getRankName(player, ranknumber)
 	
 	if (player:increaseAttrib("sex",0) == 0) then --male Ranks
 		if player:getPlayerLanguage() == 0 then
-			return townRanks[Faction.tid][ranknumber].gRank;
+			return M.townRanks[Faction.tid][ranknumber].gRank;
 		else
-			return townRanks[Faction.tid][ranknumber].eRank;
+			return M.townRanks[Faction.tid][ranknumber].eRank;
 		end
 	else
 		if player:getPlayerLanguage() == 0 then
-			return townRanks[tonumber(Faction.tid)+3][ranknumber].gRank;
+			return M.townRanks[tonumber(Faction.tid)+3][ranknumber].gRank;
 		else
-			return townRanks[tonumber(Faction.tid)+3][ranknumber].eRank;
+			return M.townRanks[tonumber(Faction.tid)+3][ranknumber].eRank;
 		end
 	end
 end
@@ -366,7 +366,7 @@ end
     @param Faction - the Array which includes the values to be changed
 
 ]]
-function setFaction(originator,Faction)
+function M.setFaction(originator,Faction)
 	-------------write changes------------
 	originator:setQuestProgress(199,tonumber(Faction.tid));
 	originator:setQuestProgress(201,tonumber(Faction.towncnt));
@@ -380,13 +380,13 @@ end
 	
 	@return - special rank was set (true|false)
 ]]
-function setSpecialRank(player, rank) 
+function M.setSpecialRank(player, rank) 
 	local Faction = M.getFaction(player);
 	local rankpoints = Faction.rankpoints;
 	local inform;
 	
-	if (rank > highestRank and rank < leaderRank) or rank == 0  then
-		if rankpoints >= (highestRank-1)*100 then
+	if (rank > M.highestRank and rank < leaderRank) or rank == 0  then
+		if rankpoints >= (M.highestRank-1)*100 then
 			player:setQuestProgress(200, tonumber(rank));
 			if rank == 0 then
 				inform = common.GetNLS(player,"Ihr wurdet degradiert und habt nun keinen spziellen Rang mehr.","You have been demoted and have no special rank anymore.")
@@ -409,7 +409,7 @@ end
 ]]
 function checkForRankChange(rankpoints,rank)
 	local newRank = math.floor(rankpoints/100)+1
-	if newRank > rank and newRank <= highestRank then
+	if newRank > rank and newRank <= M.highestRank then
 		return newRank;
 	elseif newRank < rank and newRank >= citizenRank then
 		return newRank;
@@ -435,12 +435,12 @@ function M.setRankpoints(originator, rankpoints)
 
 	if rankpoints < 0 then
 		rankpoints = 0;
-	elseif rankpoints > ((highestRank-1)*100)+99 then
-		rankpoints = ((highestRank-1)*100)+99;
+	elseif rankpoints > ((M.highestRank-1)*100)+99 then
+		rankpoints = ((M.highestRank-1)*100)+99;
 	end
 
 	-- determine if player got a new rank
-	if rank <= highestRank then
+	if rank <= M.highestRank then
 		Faction.rankTown = checkForRankChange(rankpoints,rank);	
 	end
 
@@ -450,11 +450,11 @@ function M.setRankpoints(originator, rankpoints)
 		Faction.rankTown = leaderRank;
 	end
 	
-	if rankpoints < base.factions.M.getRankpoints(originator) then
+	if rankpoints < M.getRankpoints(originator) then
 		playerText = {"sinkt.","decline"};
 		informPlayerAboutRankpointchange(originator, playerText);
 		if getSpecialRank(originator) ~= 0 then
-			setSpecialRank(originator, 0);
+			M.setSpecialRank(originator, 0);
 		end
 	else
 		playerText = {"steigt.","advance"};
@@ -482,9 +482,9 @@ function informPlayerAboutRankchange(player, factionValues, rankHigher)
 	local townName = M.getTownNameByID(factionValues.tid)
 	
 	if (player:increaseAttrib("sex",0) == 0) then --male Ranks
-		rankName = townRanks[factionValues.tid][factionValues.rankTown]
+		rankName = M.townRanks[factionValues.tid][factionValues.rankTown]
 	else --female Ranks
-		rankName = townRanks[tonumber(factionValues.tid)+3][factionValues.rankTown]
+		rankName = M.townRanks[tonumber(factionValues.tid)+3][factionValues.rankTown]
 	end
 	
 	-- Inform about rankchange
@@ -521,11 +521,11 @@ end
     @param fv -- the List with the Factionvalues of the Char
     @param theRank(number) -- the rank the char shall get in the town
 ]]
-function makeCharMemberOfTown(originator,thisNPC,fv,theRank,theTown)
+function M.makeCharMemberOfTown(originator,thisNPC,fv,theRank,theTown)
 	if theRank==leaderRank then --make char to leader of this town
 		fv.tid = theTown; --make him member of this town
 		fv.rankTown = leaderRank; --give him the leader rank
-		fv = setFaction(originator,fv);
+		fv = M.setFaction(originator,fv);
 		return;
 	elseif theRank == 0 or theTown == 0 then --becoming an outlaw
 		leaveFaction(originator, fv, thisNPC)
@@ -553,7 +553,7 @@ function makeCharMemberOfTown(originator,thisNPC,fv,theRank,theTown)
 		fv.rankTown = theRank -- set the rank of the town
 
 		if (fv.towncnt<99) then fv.towncnt = fv.towncnt+1; end; -- raise the town counter
-		setFaction(originator,fv); --write fv in Questprogress
+		M.setFaction(originator,fv); --write fv in Questprogress
 		money.TakeMoneyFromChar(originator,amountToPay); --take money
 	end
 	return;
@@ -570,7 +570,7 @@ function leaveFaction(originator, Faction, thisNPC)
 	Faction.rankTown = 0;
 	Faction.tid = 0;
 
-	setFaction(originator,Faction); --write fv in Questprogress
+	M.setFaction(originator,Faction); --write fv in Questprogress
 
 	gText="Ihr gehört nun keinem Reich mehr an. Das bedeutet das Ihr frei, aber auf Euch selbst gestellt seid. Viel Glück.";
 	eText="You're now not belonging to any realm. This means you're free but also on your own. Good luck.";
@@ -597,7 +597,7 @@ M.RELATION_ACCEPTED = 4;		-- This is a special relationship that only applies to
 -- @param player the player
 -- @param townFaction the faction of the town
 -- @return int the relationship constant for the relationship between the town faction and the player
-function getPlayerRelation(player, townFaction)
+function M.getPlayerRelation(player, townFaction)
 	if player:isAdmin() then
 		return M.RELATION_FRIENDLY;
 	end

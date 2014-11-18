@@ -27,11 +27,11 @@ local alchemy = require("alchemy.base.alchemy")
 local herbs = require("alchemy.base.herbs")
 local baking = require("content.craft.baking")
 local cooking = require("content.craft.cooking")
--- local diet = require("lte.diet") -- circular reference
+local diet = require("lte.diet")
 local specialeggs = require("content.specialeggs")
 
 -- buff types, they have exactly two attributes
-BUFFS = {
+local BUFFS = {
   {"constitution", "strength"},
   {"agility", "dexterity"},
   {"perception", "intelligence"}
@@ -63,6 +63,7 @@ if parameter is nil the default values are chosen.
 the racial tables have the following struct (in order of the race numbers):
 { human, dwarf, halfling, elf, orc, lizardman, gnome, fairy, goblin, *all others* }
 ]]
+local FoodList
 FoodList = { add = function (self,id,Value,Leftover,BuffType,RacialFactor,UnEatable,Poison)
 				self[id] = {};
 				self[id].value = Value or VALUE_XLARGE;
@@ -153,6 +154,7 @@ FoodList:add( 162,	 VALUE_SMALL,	   0,	nil,	nil,	nil,	 600); -- birth mushroom
 FoodList:add( 158,	 VALUE_SMALL,	   0,	nil,	nil,	nil,	 400); -- bulbsponge mushroom
 FoodList:add( 159,	 VALUE_MEDIUM,	   0,	nil,	nil,	nil,	1000); -- toadstool
 
+local Init
 function M.UseItem(User, SourceItem, ltstate)
 	if (Init == nil) then
     Init = 1;

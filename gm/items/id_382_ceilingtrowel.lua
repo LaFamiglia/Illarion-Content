@@ -432,7 +432,6 @@ function factionHandling(User, SourceItem)
 					return;
 				end
 				local FirstLicence = factionIds[dialog:getSelectedIndex()+1];
-				local licence = base.licence;
 				local licenceStrings = {};
 				licenceStrings[licence.PERMISSION_NONE] = "Permission for static tools is restricted";
 				licenceStrings[licence.PERMISSION_ACTIVE] = "Permission for static tools is granted";
@@ -861,7 +860,7 @@ function specialEggs(User)
 		local input = dialog:getInput();
 		if (string.find(input,"(%d+)") ~= nil) then
 			local a, b, amount = string.find(input,"(%d+)")
-			content.specialeggs.createSpecialEgg(User, tonumber(amount))
+			specialeggs.createSpecialEgg(User, tonumber(amount))
 		end
 	end
 	User:requestInputDialog(InputDialog("Egg creation", "How many special eggs to you want to create? (Notice: Eggs will have a normal wear of 3. Increase manually if needed." ,false, 255, cbInputDialog))

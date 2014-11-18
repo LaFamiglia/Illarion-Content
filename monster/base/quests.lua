@@ -16,6 +16,8 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 --Generic 'Kill X monsters' quests by Estralis Seborian
 
+local common = require("base.common")
+
 local M = {}
 
 --TEMPLATE TO ADD A QUEST TO function iniQuests()
@@ -40,20 +42,21 @@ local M = {}
 --Quest 3: To accept quest 3, set queststatus to 20 with the NPC. Use queststatus 20->21 to count 1 monster. If the quest is finished, set queststatus to 22 with the NPC.
 
 function M.iniQuests()
-
+end
+    
     --Initilisation
 
-    statusId={};
-    germanTitle={};
-    englishTitle={};
-    NPCName={};
-    germanRace={};
-    englishRace={};
-    questList={};
-    minimumQueststatus={};
-    maximumQueststatus={};
-    questLocation={};
-    radius={};
+    local statusId={};
+    local germanTitle={};
+    local englishTitle={};
+    local NPCName={};
+    local germanRace={};
+    local englishRace={};
+    local questList={};
+    local minimumQueststatus={};
+    local maximumQueststatus={};
+    local questLocation={};
+    local radius={};
 
     questList[1]={}; --Human
     questList[2]={}; --Human Warrior
@@ -2606,7 +2609,7 @@ function M.iniQuests()
     maximumQueststatus[id]=26;
 	questLocation[id]=position(470, 802, -9);
     radius[id]=100;
-end
+
 
 
 function M.checkQuest(User,Monster)
@@ -2627,11 +2630,11 @@ function M.checkQuest(User,Monster)
 
                 if ((queststatus+1) == (maximumQueststatus[quest])) then --quest finished
 
-                    base.common.InformNLS(User,"[Queststatus] "..germanTitle[quest]..": Du hast "..(queststatus+1-minimumQueststatus[quest]).." von "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..germanRace[quest].." besiegt. Kehre zu "..NPCName[quest].." zurück, um deine Belohnung zu erhalten." ,"[Quest status] "..englishTitle[quest]..": You have slain "..(queststatus+1-minimumQueststatus[quest]).." of "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..englishRace[quest]..". Return to "..NPCName[quest].." to claim your reward.");
+                    common.InformNLS(User,"[Queststatus] "..germanTitle[quest]..": Du hast "..(queststatus+1-minimumQueststatus[quest]).." von "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..germanRace[quest].." besiegt. Kehre zu "..NPCName[quest].." zurück, um deine Belohnung zu erhalten." ,"[Quest status] "..englishTitle[quest]..": You have slain "..(queststatus+1-minimumQueststatus[quest]).." of "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..englishRace[quest]..". Return to "..NPCName[quest].." to claim your reward.");
 
                 else --quest not finished
 
-                    base.common.InformNLS(User,"[Queststatus] "..germanTitle[quest]..": Du hast "..(queststatus+1-minimumQueststatus[quest]).." von "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..germanRace[quest].." besiegt." ,"[Quest status] "..englishTitle[quest]..": You have slain "..(queststatus+1-minimumQueststatus[quest]).." of "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..englishRace[quest]..".");
+                    common.InformNLS(User,"[Queststatus] "..germanTitle[quest]..": Du hast "..(queststatus+1-minimumQueststatus[quest]).." von "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..germanRace[quest].." besiegt." ,"[Quest status] "..englishTitle[quest]..": You have slain "..(queststatus+1-minimumQueststatus[quest]).." of "..(maximumQueststatus[quest]-minimumQueststatus[quest]).." "..englishRace[quest]..".");
 
                 end
             end
