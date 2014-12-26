@@ -168,33 +168,42 @@ function M.TurnTo(User, Location)
     end;
 end;
 
+function M.GetDirectionVector(dir)
+    if dir == Character.dir_up then
+        return 0, 0, 1
+    elseif dir == Character.dir_down then
+        return 0, 0, -1
+    elseif dir == Character.north then
+        return 0, -1, 0
+    elseif dir == Character.northeast then
+        return 1, -1, 0
+    elseif dir == Character.east then
+        return 1, 0, 0
+    elseif dir == Character.southeast then
+        return 1, 1, 0
+    elseif dir == Character.south then
+        return 0, 1, 0
+    elseif dir == Character.southwest then
+        return -1, 1, 0
+    elseif dir == Character.west then
+        return -1, 0, 0
+    elseif dir == Character.northwest then
+        return -1, -1, 0
+    else
+        error("Unexpected value for parameter \"dir\"")
+    end
+end
+
 --- Get the position right in front of a character in looking direction
 -- @param User The character the front position is wanted
 -- @return The position in front of the character
 function M.GetFrontPosition(User, distance, dir)
-    local direct = dir or User:getFaceTo();
-    local d = distance or 1;
+    local direct = dir or User:getFaceTo()
+    local d = distance or 1
+    local vX, vY = M.GetDirectionVector(direct)
 
-    if (direct == Character.north) then
-        return position(User.pos.x, User.pos.y - d, User.pos.z);
-    elseif (direct == Character.northeast) then
-        return position(User.pos.x + d, User.pos.y - d, User.pos.z);
-    elseif (direct == Character.east) then
-        return position(User.pos.x + d, User.pos.y, User.pos.z);
-    elseif (direct == Character.southeast) then
-        return position(User.pos.x + d, User.pos.y + d, User.pos.z);
-    elseif (direct == Character.south) then
-        return position(User.pos.x, User.pos.y + d, User.pos.z);
-    elseif (direct == Character.southwest) then
-        return position(User.pos.x - d, User.pos.y + d, User.pos.z);
-    elseif (direct == Character.west) then
-        return position(User.pos.x - d, User.pos.y, User.pos.z);
-    elseif (direct == Character.northwest) then
-        return position(User.pos.x - d, User.pos.y - d, User.pos.z);
-    end;
-
-    return User.pos;
-end;
+    return position(User.pos.x + vX * d, User.pos.y + vY * d, User.pos.z)
+end
 
 --- Get the item that is in front of the character in case there is one
 -- @param User The character whos front area is searched
@@ -424,17 +433,17 @@ function M.GetBonusFromTool(toolItem)
     local dataValue=0; --toolItem.data;
 		-- TODO get correct bonus
     if ((dataValue > 9) and (dataValue < 100)) then
-        str1 = math.fmod(dataValue, 10) + 1;
+        local str1 = math.fmod(dataValue, 10) + 1;
         dataValue = dataValue - str1 + 1;
-        stone1 = math.floor(dataValue / 10);
+        local stone1 = math.floor(dataValue / 10);
         return stone1, str1, 0, 0;
     elseif ((dataValue > 1009) and (dataValue < 10000)) then
-        str1 = math.fmod(dataValue, 10) + 1;
+        local str1 = math.fmod(dataValue, 10) + 1;
         dataValue = dataValue - str1 + 1;
-        stone1 = math.fmod(dataValue, 100) / 10;
+        local stone1 = math.fmod(dataValue, 100) / 10;
         dataValue = dataValue - stone1 * 10;
-        str2 = math.fmod(dataValue, 1000) / 100 + 1;
-        stone2 = math.floor(dataValue / 1000);
+        local str2 = math.fmod(dataValue, 1000) / 100 + 1;
+        local stone2 = math.floor(dataValue / 1000);
         return stone1, str1, stone2, str2;
     end;
     return 0, 0, 0, 0;
@@ -952,6 +961,7 @@ function M.IsCharacterParalysed(Character)
     return nil;
 end;
 
+local circleCache = {}
 --[[
     CreateCircle
     Calculates a circle based on a center position and a radius. It triggers a Event function
@@ -962,16 +972,13 @@ end;
 ]]
 function M.CreateCircle(CenterPos, Radius, Event)
     if not Event then
-        return;
-    end;
-    if not storedCircle then
-        storedCircle = {};
-    end;
-    if not storedCircle[Radius] then
+        return
+    end
+    if not circleCache[Radius] then
         local irad = math.ceil(Radius);
         local dim = 2*(irad+1);
         local map = {} ;
-        storedCircle[Radius] = {};
+        circleCache[Radius] = {};
 
         for x = -irad - 1, irad do
             map[x] = {};
@@ -984,13 +991,13 @@ function M.CreateCircle(CenterPos, Radius, Event)
             for y = -irad, irad do
                 if not (map[x][y] and map[x-1][y] and map[x][y-1] and map[x-1][y-1])
                    and (map[x][y] or map[x-1][y] or map[x][y-1] or map[x-1][y-1]) then
-                    table.insert(storedCircle[Radius], position(x, y, 0));
+                    table.insert(circleCache[Radius], position(x, y, 0));
                 end;
             end;
         end;
     end;
     local go_on;
-    for _, posi in pairs(storedCircle[Radius]) do
+    for _, posi in pairs(circleCache[Radius]) do
         go_on = Event(position(CenterPos.x + posi.x, CenterPos.y + posi.y, CenterPos.z));
         if (go_on == false and go_on ~= nil) then
             return true;
@@ -1488,7 +1495,8 @@ end
 -- @param id The ID of the monster in question
 -- @return true if monster is docile
 function M.IsMonsterDocile( id )
-	local docileList = {6,16,26,36,46,56,86,107,116,136,191,201,226,236,291,292,293,294,295,296,361,371,381,391,401};
+	local docileList = {6,16,26,36,46,56,86,107,116,136,191,201,226,236,291,292,293,294,295,296,361,371,372,373,391,
+        401};
 	for i,v in pairs(docileList) do
 		if id == v then
 			return true;
@@ -1858,6 +1866,90 @@ function M.IsOnNoobia(Pos)
     return true;
   end
   return false;
+end
+
+--- Convert a RGB color to a HSV color.
+-- @param red the red color component in a range from 0 to 255
+-- @param green the green color component in a range from 0 to 255
+-- @param blue the blue color component in a range from 0 to 255
+-- @return hue, saturation, value color components. Hue in a range from 0° to 360°. Saturation and value in a range
+--         from 0 to 1
+function M.RGBtoHSV(red, green, blue)
+    local max = math.max(red, green, blue)
+    local min = math.min(red, green, blue)
+    if max > 255 or min < 0 then
+        error("The color values are rgb to hsv conversation are out of bounds.")
+    end
+
+    local delta = max - min
+    local hue
+    if delta == 0 then
+        hue = 0
+    elseif max == red and green >= blue then
+        hue = 60 * (green - blue) / delta
+    elseif max == red and green < blue then
+        hue = 60 * (green - blue) / delta + 360
+    elseif max == green then
+        hue = 60 * (blue - red) / delta + 120
+    elseif max == blue then
+        hue = 60 * (red - green) / delta + 240
+    end
+
+    local saturation
+    if max == 0 then
+        saturation = 0
+    else
+        saturation = 1 - min/max
+    end
+
+    return hue, saturation, max / 255
+end
+
+--- Convert a HSV color value to a RGB color value.
+-- @param hue The hue value in degrees. Values larger then 360° are wrapped until they fit the range from 0° to 360°
+-- @param saturation The saturation value in a range from 0 to 1
+-- @param value The color value in a range from 0 to 1
+-- @return red, green, blue color value in a range from 0 to 255 as integer value
+function M.HSVtoRGB(hue, saturation, value)
+    local realHue = hue % 360
+    if saturation < 0 or saturation > 1 then
+        error("Saturation is out of bounds: " + saturation)
+    end
+    if value < 0 or value > 1 then
+        error("Saturation is out of bounds: " + value)
+    end
+
+    local c = saturation * value
+    local x = c * (1 - math.abs(((realHue / 60) % 2) - 1))
+    local m = value - c
+    local red = 0
+    local green = 0
+    local blue = 0
+    if realHue >= 0 and realHue < 60 then
+        red = c
+        green = x
+    elseif realHue >= 60 and realHue < 120 then
+        red = x
+        green = c
+    elseif realHue >= 120 and realHue < 180 then
+        green = c
+        blue = x
+    elseif realHue >= 180 and realHue < 240 then
+        green = x
+        blue = c
+    elseif realHue >= 240 and realHue < 300 then
+        red = x
+        blue = c
+    elseif realHue >= 300 and realHue < 360 then
+        red = c
+        blue = x
+    end
+
+    local function fixValue(v)
+        return math.floor((v + m) * 255 + 0.5)
+    end
+
+    return fixValue(red), fixValue(green), fixValue(blue)
 end
 
 return M

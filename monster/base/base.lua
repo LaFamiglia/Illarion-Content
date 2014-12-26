@@ -14,76 +14,274 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
-
+local common = require("base.common")
+local quests = require("monster.base.quests")
+local arena = require("base.arena")
 
 local M = {}
 
--- Checks if a monster archer is in range to its target.
--- Return true if the monster is an archer AND in range. Otherwise false.
-function M.isMonsterArcherInRange(archer, target)
+local noDropList = {}
+local killers = {}
 
-	return false;
-
+local function _isNumber(value)
+    return type(value) == "number"
 end
 
-
--- Checks if a monster is within 6 fields to its target. Also slows monster down
--- Return false if monster should go ahead and aggro the target.
-function M.isMonsterInRange(monster, target)
-
-	return false;
+local function _isTable(value)
+    return type(value) == "table"
 end
 
-M.noDropList = {}
+local function _isRange(value)
+    if not _isTable(value) then
+        return false
+    end
+
+    if _isNumber(value.min) and _isNumber(value.max) then
+        return true
+    elseif _isNumber(value[1]) and _isNumber(value[2]) then
+        return true
+    else
+        return false
+    end
+end
+
+local function _getValueFromRange(value)
+    if not _isRange(value) then
+        error("This function requires a range.")
+    end
+
+    local min = value.min or value[1]
+    local max = value.max or value[2]
+
+    if min > max then
+        error("The minimal value of the range is larger then the maximal value.")
+    end
+
+    return Random.uniform() * (max - min) + min
+end
+
+local function performRandomTalk(monster, msgs)
+    local langSkill = monster:getSkill(Character.commonLanguage)
+    if langSkill < 100 then
+        monster:increaseSkill(Character.commonLanguage, 100 - langSkill)
+    end
+
+    local germanMessage, englishMessage = msgs:getRandomMessage() --choses a random message
+    common.TalkNLS(monster, Character.say, germanMessage, englishMessage ) --does the talking in both languages
+end
+
+local function performRegeneration(monster)
+    if (Random.uniform() < 0.3) and (monster:increaseAttrib("hitpoints", 0) < 10000) then
+        local con = monster:increaseAttrib("constitution", 0)
+        local healAmount = 2 * con
+        monster:increaseAttrib("hitpoints", healAmount)
+    end
+end
+
+local function reportAttack(monster, enemy)
+    killers[monster.id] = enemy
+end
+
+local function cleanupMonster(monster)
+    killers[monster.id] = nil
+    noDropList[monster.id] = nil
+end
+
+local function reportMonsterDeath(monster)
+    local killer = killers[monster.id]
+    if killer ~= nil then
+        if isValidChar(killer) then
+            quests.checkQuest(killer, monster)
+        end
+    end
+end
+
+local function performDrop(monster)
+    if not noDropList[monster.id] then
+        -- TODO: Implement drop function
+    end
+end
+
+function M.generateCallbacks(msgs)
+    local t = {}
+
+    function t.enemyNear(monster, _)
+        if Random.uniform() < 3e-4 then --once each 5 minutes (3e-4) in average a message is spoken (is called very often)
+            performRandomTalk(monster, msgs)
+        end
+        return false
+    end
+
+    function t.enemyOnSight(monster, _)
+        performRegeneration(monster)
+        if Random.uniform() < 3e-3 then --once each 5 minutes (3e-3) in average a message is spoken
+            performRandomTalk(monster, msgs)
+        end
+        return false
+    end
+
+    t.onAttacked = reportAttack
+    t.onCasted = reportAttack
+
+    function t.onDeath(monster)
+        if not arena.isArenaMonster(monster) then
+            performDrop(monster)
+            reportMonsterDeath(monster)
+        end
+        cleanupMonster(monster)
+    end
+
+    return t
+end
+
 -- Saves a monster as one that should not drop
-function M.setNoDrop(theMonster)
-
-	M.noDropList[theMonster.id] = true
-
+function M.setNoDrop(monster)
+    noDropList[monster.id] = true
 end
 
--- Check if the the monster is in the noDropList
--- set keepInList to true in case it should stay in the list (e.g. if it hasn't died yet)
-function M.checkNoDrop(theMonster, keepInList)
-	
-	if M.noDropList[theMonster.id] then
-		if not keepInList then
-			M.noDropList[theMonster.id] = nil
-		end
-		return true
-	end
-	return false
+M.SKIN_COLOR = 0
+M.HAIR_COLOR = 1
+
+function M.white()
+    return {255, 255, 255}
 end
 
-M.unattackableList = {}
-function M.setUnattackability(theMonster,messageGerman, messageEnglish)
-	
-	M.unattackableList[theMonster.id] = {}
-	M.unattackableList[theMonster.id]["messageGerman"] = messageGerman
-	M.unattackableList[theMonster.id]["messageEnglish"] = messageEnglish
+local reportedTransparencyIssue = false
 
-end
+function M.setColor(params)
+    if not _isTable(params) then
+        error("The parameter for the setColor function are not set.")
+    end
 
-function M.checkUnattackability(theMonster, attacker)
-	
-	if M.unattackableList[theMonster.id] then
-		if attacker and M.unattackableList[theMonster.id]["messageGerman"] and M.unattackableList[theMonster.id]["messageEnglish"] then
-			local currentTime = world:getTime("unix")
-			if (not M.unattackableList[theMonster.id][attacker.id]) or currentTime - M.unattackableList[theMonster.id][attacker.id] > 9 then
-				attacker:inform(M.unattackableList[theMonster.id]["messageGerman"],M.unattackableList[theMonster.id]["messageEnglish"])
-				M.unattackableList[theMonster.id][attacker.id] = currentTime
-			end
-		end
-		return true
-	end
-	return false
-end
+    if params.monster == nil or not isValidChar(params.monster) then
+        error("The referenced monster is not set or not valid.")
+    end
 
--- That function should awalys be called when an unattackable monster dies, in order to clean up the list
-function M.removeUnattackability(theMonster)
+    if not _isNumber(params.target) then
+        error("The required target value is not set.")
+    end
 
-	M.unattackableList[theMonster.id] = nil
+    local colorTarget = tonumber(params.target)
 
+    if colorTarget ~= M.SKIN_COLOR and colorTarget ~= M.HAIR_COLOR then
+        error("The required target is not set to a valid target.")
+    end
+
+    local red, green, blue, alpha
+    if params.hue ~= nil and params.saturation ~= nil and params.value ~= nil then
+        -- HSV Mode
+        local hue, saturation, value
+        if _isRange(params.hue) then
+            hue = _getValueFromRange(params.hue)
+        elseif _isNumber(params.hue) then
+            hue = tonumber(params.hue)
+        else
+            error("Hue parameter contains a unexpected value.")
+        end
+
+        if _isRange(params.saturation) then
+            saturation = _getValueFromRange(params.saturation)
+        elseif _isNumber(params.saturation) then
+            saturation = tonumber(params.saturation)
+        else
+            error("Saturation parameter contains a unexpected value.")
+        end
+
+        if _isRange(params.value) then
+            value = _getValueFromRange(params.value)
+        elseif _isNumber(params.value) then
+            value = tonumber(params.value)
+        else
+            error("Value parameter contains a unexpected value.")
+        end
+
+        red, green, blue = common.HSVtoRGB(hue, saturation, value)
+    elseif params.red ~= nil and params.green ~= nil and params.blue ~= nil then
+        if _isRange(params.red) then
+            red = _getValueFromRange(params.red)
+        elseif _isNumber(params.red) then
+            red = tonumber(params.red)
+        else
+            error("Red parameter contains a unexpected value.")
+        end
+
+        if _isRange(params.green) then
+            green = _getValueFromRange(params.green)
+        elseif _isNumber(params.green) then
+            green = tonumber(params.green)
+        else
+            error("Green parameter contains a unexpected value.")
+        end
+
+        if _isRange(params.blue) then
+            blue = _getValueFromRange(params.blue)
+        elseif _isNumber(params.blue) then
+            blue = tonumber(params.blue)
+        else
+            error("Blue parameter contains a unexpected value.")
+        end
+    elseif _isTable(params.color) then
+        if _isNumber(params.color[1]) then
+            red = tonumber(params.color[1])
+        else
+            error("Color parameter is not a valid color.")
+        end
+
+        if _isNumber(params.color[2]) then
+            green = tonumber(params.color[2])
+        else
+            error("Color parameter is not a valid color.")
+        end
+
+        if _isNumber(params.color[3]) then
+            blue = tonumber(params.color[3])
+        else
+            error("Color parameter is not a valid color.")
+        end
+    else
+        error("No color was set.")
+    end
+
+    if params.alpha ~= nil then
+        if _isRange(params.alpha) then
+            alpha = _getValueFromRange(params.alpha)
+        elseif _isNumber(params.alpha) then
+            alpha = tonumber(params.alpha)
+        else
+            error("Alpha parameter contains a unexpected value.")
+        end
+    else
+        alpha = 255
+    end
+
+    red = math.floor(red + 0.5)
+    green = math.floor(green + 0.5)
+    blue = math.floor(blue + 0.5)
+    alpha = math.floor(alpha + 0.5)
+
+    if colorTarget == M.SKIN_COLOR then
+        if alpha == 255 then
+            params.monster:setSkinColor(red, green, blue)
+        else
+            if not reportedTransparencyIssue then
+                reportedTransparencyIssue = true
+                debug("Setting the alpha value of the color is not yet supported. Once the server support works, fix this")
+            end
+
+            params.monster:setSkinColor(red, green, blue) -- ,alpha
+        end
+    else
+        if alpha == 255 then
+            params.monster:setHairColor(red, green, blue)
+        else
+            if not reportedTransparencyIssue then
+                reportedTransparencyIssue = true
+                debug("Setting the alpha value of the color is not yet supported. Once the server support works, fix this")
+            end
+
+            params.monster:setHairColor(red, green, blue) -- ,alpha
+        end
+    end
 end
 
 return M
