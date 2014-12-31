@@ -16,6 +16,8 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local common = require("base.common")
 local quests = require("monster.base.quests")
+local hooks = require("monster.base.hooks")
+local treasure = require("base.treasure")
 local arena = require("base.arena")
 
 local M = {}
@@ -85,20 +87,68 @@ end
 local function cleanupMonster(monster)
     killers[monster.id] = nil
     noDropList[monster.id] = nil
+    hooks.cleanHooks(monster)
 end
 
 local function reportMonsterDeath(monster)
     local killer = killers[monster.id]
-    if killer ~= nil then
-        if isValidChar(killer) then
-            quests.checkQuest(killer, monster)
+    if killer ~= nil and (not isValidChar(killer) or not killer:isInRange(monster, 12)) then
+        killer = nil
+    end
+
+    if killer ~= nil and not arena.isArenaMonster(monster) then
+        quests.checkQuest(killer, monster)
+    end
+    hooks.executeOnDeath(monster, killer)
+end
+
+local function copyMergeTables(table1, table2)
+    local dataCopy = {}
+    for key, value in pairs(table1) do
+        dataCopy[key] = value
+    end
+    for key, value in pairs(table2) do
+        dataCopy[key] = value
+    end
+    return dataCopy
+end
+
+local function dropLootItem(monster, lootItemData)
+    local amount = Random.uniform(lootItemData.minAmount, lootItemData.maxAmount)
+    local quality = Random.uniform(lootItemData.minQuality, lootItemData.maxQuality)
+    local durability = Random.uniform(lootItemData.minDurability, lootItemData.maxDurability)
+
+    local data = lootItemData.data
+    if lootItemData.itemId == 505 then
+        -- It's a treasure map! Populate it with a valid location.
+        local mapData = treasure.createMapData()
+        if _isTable(mapData) then
+            data = copyMergeTables(data, mapData)
+        end
+    end
+
+    world:createItemFromId(lootItemData.itemId, amount, monster.pos, true, quality * 100 + durability, data)
+end
+
+local function dropLootCategory(monster, lootData)
+    local randomTry = Random.uniform()
+    for _, itemInfo in pairs(lootData) do
+        if itemInfo.probability >= randomTry then
+            dropLootItem(monster, itemInfo)
+            return
+        else
+            randomTry = randomTry - itemInfo.probability
         end
     end
 end
 
 local function performDrop(monster)
-    if not noDropList[monster.id] then
-        -- TODO: Implement drop function
+    if not arena.isArenaMonster(monster) and not noDropList[monster.id] then
+        local loot = monster:getLoot()
+
+        for _, category in pairs(loot) do
+            dropLootCategory(monster, category)
+        end
     end
 end
 
@@ -124,10 +174,8 @@ function M.generateCallbacks(msgs)
     t.onCasted = reportAttack
 
     function t.onDeath(monster)
-        if not arena.isArenaMonster(monster) then
-            performDrop(monster)
-            reportMonsterDeath(monster)
-        end
+        performDrop(monster)
+        reportMonsterDeath(monster)
         cleanupMonster(monster)
     end
 
