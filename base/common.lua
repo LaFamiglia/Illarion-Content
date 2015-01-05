@@ -333,21 +333,59 @@ function M.GetInArea(User, Pos1, Pos2)
     return true;
 end
 
---- Needed, but could need some rework
-function M.getFreePos(CenterPos, Rad)
+--- Get all free positions at and around a center location. The search is performed with a square mask. So the search
+--  area is actually a rectangle with the with a side length of searchRadius + 1
+-- @param centerPosition the center of the search
+-- @param searchRadius the radius of the search
+-- @param allowPassableItems this has to be set to true in case tiles that contain items that are passable are valid.
+--                           in case this is set to false. tiles that do contain items are in general invalid
+--                           (optional, defaults to false)
+-- @param shuffle randomize the order the tiles are returned in (optional, defaults to false)
+-- @return a function that can be used as iterator that gives all the free locations one by one
+function M.GetFreePositions(centerPosition, searchRadius, allowPassableItems, shuffle)
+    local xCoords = {}
+    local yCoords = {}
+    for i = -searchRadius, searchRadius do
+        table.insert(xCoords, centerPosition.x + i)
+        table.insert(yCoords, centerPosition.x + i)
+    end
+    if shuffle then
+        M.Shuffle(xCoords)
+        M.Shuffle(yCoords)
+    end
 
-	for count = 0, 50 do
-		local targetPos = position(CenterPos.x + math.random(-Rad, Rad), CenterPos.y + math.random(-Rad, Rad), CenterPos.z)
-		if world:getField(targetPos) ~= nil then
-			if not world:isItemOnField(targetPos) and not world:isCharacterOnField(targetPos) then
-				local tileID = world:getField(targetPos):tile()
-				if tileID ~= 0 and tileID ~= 5 and tileID ~= 6 and tileID ~=42 and tileID ~= 43 and tileID ~= 34 then --no inpassable tiles
-					return targetPos
-				end
-			end
-		end
-	end
-	return CenterPos
+    local sideLength = searchRadius * 2 + 1
+    local currentIndex = 0
+    local lastIndex = sideLength * sideLength - 1
+    local floor = math.floor
+    return function()
+        while currentIndex < lastIndex do
+            local xIndex = floor(currentIndex / sideLength) + 1
+            local yIndex = (currentIndex % sideLength) + 1
+            local targetPos = position(xCoords[xIndex], yCoords[yIndex], centerPosition.z)
+
+            currentIndex = currentIndex + 1
+
+            local field = world:getField(targetPos)
+            if field ~= nil then
+                if field:isPassable() and not world:isCharacterOnField(targetPos) then
+                    if allowPassableItems or not world:isItemOnField(targetPos) then
+                        return targetPos
+                    end
+                end
+            end
+        end
+        return nil
+    end
+end
+
+-- Get one random free location
+function M.getFreePos(CenterPos, Rad)
+    local pos = M.GetFreePositions(CenterPos, Rad, false, true)()
+    if pos == nil then
+        return CenterPos
+    end
+    return pos
 end
 
 --- Check if a ItemStruct is valid for a special character
@@ -1062,11 +1100,13 @@ function M.CreateTangentLine(CenterPos, TargetPos, ArmLength, Event)
     local second_go_on = true;
     for i=1, ArmLength do
         if first_go_on then
-            first_go_on = Event(position(Round(TargetPos.x + i * xoffset), M.Round(TargetPos.y + i * yoffset), TargetPos.z));
+            first_go_on = Event(position(M.Round(TargetPos.x + i * xoffset),
+                M.Round(TargetPos.y + i * yoffset), TargetPos.z));
             first_go_on = (first_go_on ~= nil and first_go_on or true);
         end;
         if second_go_on then
-            second_go_on = Event(position(Round(TargetPos.x - i * xoffset), M.Round(TargetPos.y - i * yoffset), TargetPos.z));
+            second_go_on = Event(position(M.Round(TargetPos.x - i * xoffset),
+                M.Round(TargetPos.y - i * yoffset), TargetPos.z));
             second_go_on = ( second_go_on ~= nil and second_go_on or true );
         end;
         if not first_go_on and not second_go_on then
@@ -1175,27 +1215,6 @@ function M.GetPhi(StartPos, TargetPos)
     end;
     return phi;
 end
-
---[[
-    PositionToData
-    Encodes a position into a value that would fit into the data value of a item
-    Use DataToPosition to get the PositionStruct again
-    @param PositionStruct - The position that should be encoded
-    @return table - Table containing x,y,z positions
-]]
-function M.PositionToData(posi)
-    return {["MapPosX"]=posi.x,["MapPosY"]=posi.y,["MapPosZ"]=posi.z}
-end;
-
---[[
-    DataToPosition
-    Converts a value encoded with PositionToData back to the PositionStruct
-    @param posList - List containig x,y,z
-    @return PositionStruct - The PositionStruct that was encoded in the list
-]]
-function M.DataToPosition(posList)
-    return position(tonumber(posList[1]),tonumber(posList[2]),tonumber(posList[3]))
-end;
 
 --[[
     ChangeAttribute
@@ -1692,21 +1711,18 @@ end
     @return The shuffled list
 ]]
 function M.Shuffle(List)
-	local temp = 0
-	local j = 0;
-	local minIndex = 1;
-	local maxIndex = #List;
+	local j = 0
+	local minIndex = 1
+	local maxIndex = #List
 	if (List[0] ~= nil) then -- check if zero index is used
-		minIndex = 0;
-		maxIndex = maxIndex - 1;
+		minIndex = 0
+		maxIndex = maxIndex - 1
 	end
 	for i = maxIndex, minIndex+1, -1 do -- shuffle all elements
-		j = math.random(minIndex, i);
-		temp = List[i];
-		List[i] = List[j];
-		List[j] = temp;
+		j = Random.uniform(minIndex, i)
+        List[i], List[j] = List[j], List[i]
 	end
-	return List;
+	return List
 end
 
 --[[

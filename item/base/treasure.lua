@@ -133,7 +133,7 @@ local function getTextForDirection(direction)
     elseif direction == Character.dir_east then
         return "Osten", "east"
     elseif direction == Character.dir_southeast then
-        return c"Südosten", "southeast"
+        return "Südosten", "southeast"
     elseif direction == Character.dir_south then
         return "Süden", "south"
     elseif direction == Character.dir_southwest then
@@ -151,10 +151,10 @@ local function getTreasureMapForLocation(player, requiredItemId, requiredLocatio
     local items = player:getItemList(requiredItemId)
     for _, treasureMap in pairs(items) do
         local x = tonumber(treasureMap:getData("MapPosX"))
-        local y = tonumber(treasureMap:getData("MapPosX"))
-        local z = tonumber(treasureMap:getData("MapPosX"))
+        local y = tonumber(treasureMap:getData("MapPosY"))
+        local z = tonumber(treasureMap:getData("MapPosZ"))
         if x ~= nil and y ~= nil and z ~= nil then
-            local mapPosition = common.DataToPosition({x, y, z})
+            local mapPosition = position(x, y, z)
             if mapPosition == requiredLocation then
                 return treasureMap
             end
@@ -187,8 +187,7 @@ local function removeMonsterFromList(monsterId)
     end
 end
 
-local function spawnMonster(treasurePosition, level)
-    local spawnPosition = common.getFreePos(treasurePosition, 5);
+local function spawnMonster(spawnPosition, level)
     while true do
         local monsterId = getRandomMonsterId(level)
         if monsterId == -1 then
@@ -216,13 +215,23 @@ local function killMonsters(monsterList)
 end
 
 local function spawnMonsters(treasurePosition, treasureLevel)
+    local spawnPositions = common.GetFreePositions(treasurePosition, 5, true, true)
     local createdMonsters = {}
-    table.insert(createdMonsters, spawnMonster(treasurePosition, treasureLevel))
-    table.insert(createdMonsters, spawnMonster(treasurePosition, treasureLevel))
-    table.insert(createdMonsters, spawnMonster(treasurePosition, math.max(1, treasureLevel - 1)))
-    table.insert(createdMonsters, spawnMonster(treasurePosition, math.max(1, treasureLevel - 1)))
-    table.insert(createdMonsters, spawnMonster(treasurePosition, math.max(1, treasureLevel - 2)))
-    table.insert(createdMonsters, spawnMonster(treasurePosition, math.max(1, treasureLevel - 2)))
+
+    local function nextFreePos()
+        local pos = spawnPositions()
+        if pos == nil then
+            return treasurePosition
+        end
+        return pos
+    end
+
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), treasureLevel))
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), treasureLevel))
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), math.max(1, treasureLevel - 1)))
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), math.max(1, treasureLevel - 1)))
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), math.max(1, treasureLevel - 2)))
+    table.insert(createdMonsters, spawnMonster(nextFreePos(), math.max(1, treasureLevel - 2)))
 
     -- check if the creation of any monster failed
     for _, monster in pairs(createdMonsters) do
@@ -283,13 +292,24 @@ local function dropTreasureItem(treasureLocation, level)
     end
 end
 
+local function informAboutError(user)
+    user:inform(
+        "[OOC] Das Script für die Schatzsuche hat einen Fehler festgestellt und die Ausführung abgebrochen. " ..
+                "Der Schatz kann aktuell nicht behoben werden. " ..
+                "Das Technische Team wurde von dem Problem in Kenntnis gesetzt.",
+        "[OOC] The script for the treasure hunt detected an internal error and canceled the execution. " ..
+                "The treasure can't be found right now. " ..
+                "The development team was informed about the problem."
+    )
+end
+
 function M.createMapData()
     local location = findPosition();
     if location == nil then
         return nil;
     end
 
-    return common.PositionToData(location)
+    return {MapPosX = location.x, MapPosY = location.y, MapPosZ = location.z}
 end
 
 function M.createMap(player, mapLevel)
@@ -321,7 +341,7 @@ function M.dropTreasureItems(treasureLocation, level)
     table.insert(itemSpawnResults, dropTreasureItem(treasureLocation, level + 2))
     table.insert(itemSpawnResults, dropTreasureItem(treasureLocation, level + 2))
 
-    money.GiveMoneyToPosition(content.getMoneyInTreasure(level))
+    money.GiveMoneyToPosition(treasureLocation, content.getMoneyInTreasure(level))
 
     -- check if all items got spawned.
     for _, flag in pairs(itemSpawnResults) do
@@ -337,8 +357,14 @@ function M.getTreasureLevel(item)
 end
 
 function M.getTargetInformation(player, mapItem)
-    local dataValues = {mapItem:getData("MapPosX"), mapItem:getData("MapPosY"), mapItem:getData("MapPosZ")}
-    local mapTarget = common.DataToPosition(dataValues)
+    local mapTargetX = tonumber(mapItem:getData("MapPosX"))
+    local mapTargetY = tonumber(mapItem:getData("MapPosY"))
+    local mapTargetZ = tonumber(mapItem:getData("MapPosZ"))
+    if mapTargetX == nil or mapTargetY == nil or mapTargetZ == nil then
+        return false
+    end
+
+    local mapTarget = position(mapTargetX, mapTargetY, mapTargetZ)
     local usedTarget = getModifiedPosition(player, mapTarget)
 
     if not usedTarget then
@@ -419,6 +445,8 @@ function M.performDiggingForTreasure(treasureHunter, diggingLocation, additional
         return true
     end
 
+    treasureFoundLocations[locationKey] = nil
+
     local msgFoundTreasureDe, msgFoundTreasureEn
     local msgGuardiansBeatenDe, msgGuardiansBeatenEn
     if _isTable(additionalParams) then
@@ -451,16 +479,15 @@ function M.performDiggingForTreasure(treasureHunter, diggingLocation, additional
 
     local monsterList = spawnMonsters(diggingLocation, treasureLevel)
     if monsterList == nil then
-        treasureHunter:inform(
-            "[OOC] Das Script für die Schatzsuche hat einen Fehler festgestellt und die Ausführung abgebrochen. " ..
-            "Der Schatz kann aktuell nicht behoben werden. " ..
-            "Das Technische Team wurde von dem Problem in Kenntnis gesetzt.",
-            "[OOC] The script for the treasure hunt detected an internal error and canceled the execution. " ..
-            "The treasure can't be found right now. " ..
-            "The development team was informed about the problem."
-        )
-        treasureFoundLocations[locationKey] = nil
+        informAboutError(treasureHunter)
         error("Treasure system malfunction. Spawning the monsters failed.")
+    end
+
+    -- Remove the treasure map
+    if not world:erase(treasureMap, 1) then
+        informAboutError(treasureHunter)
+        killMonsters(monsterList)
+        error("Treasure system malfunction. Removing the treasure map failed..")
     end
 
     local remainingMonsters = #monsterList

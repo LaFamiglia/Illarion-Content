@@ -23,31 +23,44 @@ local M = {}
 -- The list of functions and their counters that are scheduled to be executed
 local executionQueue = {}
 
--- The list of functions that were not yet added to the queue.
-local newExecutions = {}
+local firstExecution = true
+local firstExecutionTime = 0
 
 function M.registerFunction(delay, callFunction)
-    table.insert(newExecutions, {counter = delay, exec = callFunction})
+    if firstExecution then
+        debug("Scheduled functions script was not yet executed!!")
+    end
+    table.insert(executionQueue, {counter = delay, exec = callFunction})
+    if firstExecution then
+        debug("?????????? function scheduled with delay: " .. delay)
+    else
+        debug(firstExecutionTime .. " function scheduled with delay: " .. delay)
+    end
 end
 
 function M.onExecute()
-    -- First process the new functions
-    while (#newExecutions > 0) do
-        local data = table.remove(newExecutions)
-        if data.counter == 0 then
-            data.exec()
-        else
-            table.insert(executionQueue, data)
-        end
+    if firstExecution then
+        debug("Scheduled functions script are executed for the first time now!")
+        firstExecutionTime = world:getTime("unix")
+        firstExecution = false
     end
+    if (#executionQueue > 0) then
+        debug(firstExecutionTime .. " There are functions scheduled")
+        local currentQueue = executionQueue
+        executionQueue = {}
 
-    -- Now process the actual queue.
-    for index, data in pairs(executionQueue) do
-        data.counter = data.counter - 1
-        if data.counter == 0 then
-            data.exec()
-            executionQueue[index] = nil
+        for _, data in pairs(currentQueue) do
+            data.counter = data.counter - 1
+            if data.counter <= 0 then
+                debug(firstExecutionTime .. " Executing function")
+                data.exec()
+            else
+                table.insert(executionQueue, data)
+                debug(firstExecutionTime .. " Resheduling function. Remaining delay: " .. data.counter)
+            end
         end
+    else
+        debug(firstExecutionTime .. " There are NO functions scheduled")
     end
 end
 

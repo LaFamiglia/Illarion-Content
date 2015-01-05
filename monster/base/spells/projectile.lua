@@ -201,7 +201,7 @@ return function(params)
     local function fireProjectileAt(monster, enemy)
         local blockList = world:LoS(monster.pos, enemy.pos)
         local obstructionIndex, obstruction = next(blockList)
-        while (obstruction.TYPE == "CHARACTER") and (obstruction.OBJECT.id == monster.id) do
+        while obstruction ~= nil and (obstruction.TYPE == "CHARACTER") and (obstruction.OBJECT.id == monster.id) do
             obstructionIndex, obstruction = next(blockList, obstructionIndex)
         end
         local targetPos = obstruction and obstruction.OBJECT.pos or enemy.pos
@@ -210,14 +210,14 @@ return function(params)
             if world:isCharacterOnField(currentPos) then
                 local victim = world:getCharacterOnField(currentPos)
                 local spellResistence = base.getSpellResistence(victim)
-                local damage = math.random(damageRange[1], damageRange[2]) * spellResistence
+                local damage = Random.uniform(damageRange[1], damageRange[2]) * spellResistence
 
                 base.dealMagicDamage(victim, damage)
                 if gfxId > 0 then world:gfx(gfxId, currentPos) end
                 if sfxId > 0 then world:makeSound(sfxId, currentPos) end
                 if itemId > 0 then
-                    local qual = math.random(itemQualityRange[1], itemQualityRange[2]) * 100 +
-                            math.random(itemDurabilityRange[1], itemDurabilityRange[2])
+                    local qual = Random.uniform(itemQualityRange[1], itemQualityRange[2]) * 100 +
+                            Random.uniform(itemDurabilityRange[1], itemDurabilityRange[2])
                     world:createItemFromId(itemId, 1, targetPos, true, qual, nil);
                 end
 
@@ -227,8 +227,8 @@ return function(params)
                 if gfxId > 0 then world:gfx(gfxId, currentPos) end
                 if sfxId > 0 then world:makeSound(sfxId, currentPos) end
                 if itemId > 0 then
-                    local qual = math.random(itemQualityRange[1], itemQualityRange[2]) * 100 +
-                            math.random(itemDurabilityRange[1], itemDurabilityRange[2])
+                    local qual = Random.uniform(itemQualityRange[1], itemQualityRange[2]) * 100 +
+                            Random.uniform(itemDurabilityRange[1], itemDurabilityRange[2])
                     world:createItemFromId(itemId, 1, targetPos, true, qual, nil);
                 end
                 return false
