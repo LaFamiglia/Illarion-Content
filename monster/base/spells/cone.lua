@@ -26,6 +26,21 @@ local function _isTable(value)
     return type(value) == "table"
 end
 
+local function isCarryingShieldInSlot(char, slot)
+    local item = char:getItemAt(slot)
+    if item ~= nil then
+        local weaponFound, weapon = world:getWeaponStruct(item.id)
+        if weaponFound then
+            return weapon.WeaponType == 14
+        end
+    end
+    return false
+end
+
+local function isCarryingShield(char)
+    return isCarryingShieldInSlot(char, Character.right_tool) or isCarryingShieldInSlot(char, Character.left_tool)
+end
+
 return function(params)
     local self = {}
     local damageRange = {1000, 2000}
@@ -37,7 +52,7 @@ return function(params)
     local itemId = 0
     local itemQualityRange = {2, 5}
     local itemDurabilityRange = {11, 88}
-    local itemProbability = 0.3
+    local itemProbability = 0.08
     local usedMovepoints = 20
 
     if _isTable(params) then
@@ -202,10 +217,12 @@ return function(params)
 
     local function attackField(pos)
         if gfxId > 0 then world:gfx(gfxId, pos) end
-        if itemId > 0 and Random.uniform() < itemProbability then
+        if itemId > 0 and not common.isItemIdInFieldStack(itemId, pos) and Random.uniform() < itemProbability then
             local qual = Random.uniform(itemQualityRange[1], itemQualityRange[2]) * 100 +
                     Random.uniform(itemDurabilityRange[1], itemDurabilityRange[2])
-            world:createItemFromId(itemId, 1, pos, true, qual, nil);
+            local item = world:createItemFromId(itemId, 1, pos, true, qual, nil)
+            item.wear = 2
+            world:changeItem(item)
         end
 
         if world:isCharacterOnField(pos) then
@@ -217,10 +234,17 @@ return function(params)
         end
     end
 
+    function self.getAttackRange()
+        return attackRange
+    end
+
     function self.cast(monster, enemy)
         if Random.uniform() <= probability then
             --So the cone is always a isosceles triangle. We take the attack range as the height of the triangle.
             --Best was to calculate it, is use calculate half of the triangle as right triangle and mirror it.
+
+            --Turn to the target
+            common.TurnTo(monster, enemy.pos)
 
             local angleInRad = math.rad(angularAperture / 2)
             local oppositeLeg = math.tan(angleInRad) * attackRange;
@@ -255,14 +279,24 @@ return function(params)
                            return false
                        end
                        coneFields[pos] = true
-                       -- The cone is blocked by a character on the field
+
                        if world:isCharacterOnField(pos) then
-                           return false
+                           -- There is a character on this field.
+                           local blockingChar = world:getCharacterOnField(pos)
+                           if common.IsLookingAt(blockingChar, originPos) then
+                               -- Character has to look to the direction of the cone to block it.
+                               if isCarryingShield(blockingChar) then
+                                   return false
+                               end
+                           end
                        end
 
                        -- The cone is blocked by tiles that became not passable due to items place on them
-                       if not field:isPassable() and world:isItemOnField(pos) then
-                           return false
+                       if world:isItemOnField(pos) then
+                           local fieldItem = world:getItemOnField(pos)
+                           if fieldItem:isLarge() then
+                               return false
+                           end
                        end
                        return true
                    end)

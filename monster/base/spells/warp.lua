@@ -14,6 +14,8 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
+local common = require("base.common")
+
 local function _isNumber(value)
     return type(value) == "number"
 end
@@ -92,6 +94,10 @@ return function(params)
         end
     end
 
+    function self.getAttackRange()
+        return 0
+    end
+
     function self.cast(monster, enemy)
         if Random.uniform() <= probability then
             local warpRange = (Random.uniform() * (range - minRange)) + minRange
@@ -99,10 +105,15 @@ return function(params)
             local x = math.floor(math.sin(direction) * warpRange + 0.5)
             local y = math.floor(math.cos(direction) * warpRange + 0.5)
 
+            local originalPosition = position(monster.pos.x, monster.pos.y, monster.pos.z)
             if gfxId > 0 then world:gfx(gfxId, monster.pos) end
             monster:warp(position(enemy.pos.x + x, enemy.pos.y + y, enemy.pos.z))
             if gfxId > 0 then world:gfx(gfxId, monster.pos) end
             if sfxId > 0 then world:makeSound(sfxId, monster.pos) end
+
+            -- Turn the monster to the location of origin so it still engages the enemies
+            common.TurnTo(monster, originalPosition)
+
             monster.movepoints = monster.movepoints - usedMovepoints
 
             return true

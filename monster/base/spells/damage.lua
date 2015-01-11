@@ -15,6 +15,7 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local base = require("monster.base.spells.base")
+local common = require("base.common")
 local standardfighting = require("server.standardfighting")
 
 local function _isNumber(value)
@@ -194,18 +195,48 @@ return function(params)
         base.dealMagicDamage(enemy, damage)
         if gfxId > 0 then world:gfx(gfxId, enemy.pos) end
         if sfxId > 0 then world:makeSound(sfxId, enemy.pos) end
-        if itemId > 0 then
+        if itemId > 0 and not common.isItemIdInFieldStack(itemId, enemy.pos) then
             local qual = Random.uniform(itemQualityRange[1], itemQualityRange[2]) * 100 +
                     Random.uniform(itemDurabilityRange[1], itemDurabilityRange[2])
-            world:createItemFromId(itemId, 1, enemy.pos, true, qual, nil);
+            local item = world:createItemFromId(itemId, 1, enemy.pos, true, qual, nil)
+            item.wear = 2
+            world:changeItem(item)
         end
+    end
+
+    local function isValidTarget(monster, target)
+        if monster.id == target.id then
+            return false
+        end
+        if monster:isInRange(target, attackRange) and base.isValidTarget(target) then
+            local blockList = world:LoS(monster.pos, target.pos)
+            local obstructionIndex, obstruction
+            if blockList ~= nil then
+                obstructionIndex, obstruction = next(blockList)
+                while obstruction ~= nil and (obstruction.TYPE == "CHARACTER" or
+                        (obstruction.TYPE == "ITEM" and not obstruction.OBJECT:isLarge())) do
+                    obstructionIndex, obstruction = next(blockList, obstructionIndex)
+                end
+            end
+            return obstruction == nil
+        end
+        return false
+    end
+
+    function self.getAttackRange()
+        return attackRange
     end
 
     function self.cast(monster, enemy)
         if Random.uniform() <= probability then
             local castedAtLeastOnce = false
             local remainingAttacks = targets
-            if monster:isInRange(enemy, attackRange) and not enemy:isAdmin() then
+            local firstAttackDone = false
+            if isValidTarget(monster, enemy) then
+                if not firstAttackDone then
+                    common.TurnTo(monster, enemy.pos)
+                    firstAttackDone = true
+                end
                 castSpellAt(enemy)
                 remainingAttacks = remainingAttacks - 1
                 castedAtLeastOnce = true
@@ -217,7 +248,7 @@ return function(params)
                 local targets = world:getPlayersInRangeOf(monster.pos, attackRange)
                 local possibleTargets = {}
                 for _, target in pairs(targets) do
-                    if target.id ~= enemy.id then
+                    if isValidTarget(monster, target) then
                         table.insert(possibleTargets, target)
                     end
                 end
@@ -229,6 +260,10 @@ return function(params)
                     if selectedTargetIndex == 0 then return castedAtLeastOnce end
 
                     local selectedTarget = table.remove(possibleTargets, selectedTargetIndex)
+                    if not firstAttackDone then
+                        common.TurnTo(monster, selectedTarget.pos)
+                        firstAttackDone = true
+                    end
                     castSpellAt(selectedTarget)
                     remainingAttacks = remainingAttacks - 1
                     castedAtLeastOnce = true
