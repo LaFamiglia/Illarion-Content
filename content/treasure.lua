@@ -109,7 +109,7 @@ guardianMonsters[2] = {
     606, 1032, 1041, 1052
 } --Level 2
 guardianMonsters[3] = {
-    21, 24, 102, 111, 112, 115, 152, 171, 311, 391, 394, 403, 404, 516, 551, 571, 594, 603, 611, 612, 752, 753, 763,
+    21, 24, 102, 111, 112, 115, 152, 171, 391, 394, 403, 404, 516, 551, 571, 594, 603, 611, 612, 752, 753, 763,
     536, 871, 882, 892, 574, 575, 578, 951, 952, 954, 981, 984, 605, 1033, 1042, 1053
 } --Level 3
 guardianMonsters[4] = {
@@ -117,15 +117,15 @@ guardianMonsters[4] = {
     761, 764, 791, 535, 539, 872, 883, 893, 901, 576, 1043
 } --Level 4
 guardianMonsters[5] = {
-    1, 3, 4, 11, 13, 15, 31, 33, 34, 35, 41, 44, 45, 51, 53, 54, 92, 93, 94, 142, 191, 192, 321, 402, 514, 511, 522,
-    523, 531, 532, 614, 108, 741, 751, 782, 783, 784, 792, 801, 537, 540, 851, 861, 873, 902
+    1, 3, 4, 11, 13, 15, 31, 33, 34, 35, 41, 44, 45, 51, 53, 54, 92, 93, 94, 142, 191, 192, 402, 514, 511, 522,
+    523, 531, 532, 614, 108, 741, 751, 782, 783, 784, 792, 793, 537, 540, 851, 861, 873, 902
 } --Level 5
 guardianMonsters[6] = {
-    2, 12, 32, 42, 52, 61, 62, 63, 64, 65, 95, 121, 122, 143, 193, 201, 202, 221, 231, 331, 513, 524, 525, 533, 541,
-    561, 109, 742, 744, 802, 811, 578, 852, 862, 903
+    2, 12, 32, 42, 52, 61, 62, 63, 64, 65, 95, 121, 122, 143, 193, 201, 202, 221, 231, 513, 524, 525, 533, 541,
+    561, 109, 742, 744, 578, 852, 862, 903
 } --Level 6
 guardianMonsters[7] = {
-    123, 124, 131, 195, 203, 204, 232, 261, 341, 534, 542, 543, 562, 633, 635, 636, 110, 743, 796, 853, 863
+    123, 124, 131, 195, 203, 204, 232, 261, 534, 542, 543, 562, 633, 635, 636, 110, 743, 796, 853, 863
 } --Level 7
 guardianMonsters[8] = {125, 132, 205, 262, 631, 634, 637, 564} --Level 8
 guardianMonsters[9] = {302, 632, 563} --Level 9
@@ -169,8 +169,8 @@ treasureContents[2] = {
     {236, 5}, 2571, {2588, 10}, --{2696, 10}, {2537, 10},
     -- Usables: parchment, soup bowl, plate, candles, small empty bottle, empty bottle, large empty bottle,
     {2745, 10}, {2935, 10}, {2952, 10}, {43, 10}, {1317, 10}, {164, 10}, {2498, 10},
-    -- Misc: amulet, iron goblet, golden goblet, mug with lid, wodden sword, plate, copper goblet, goblet, glass mug, plate, glass, clay mug, clay cup, wooden cup, wine glass,
-    222, 223, 224, 310, 445, 1001, 1840, 1858, 1908, 2031, 2055, 2183, 2184, 2185, 2457,
+    -- Misc: amulet, iron goblet, golden goblet, clay mug, wodden sword, plate, copper goblet, goblet, glass mug, plate, glass, clay mug, clay cup, wooden cup, wine glass,
+    222, 223, 224, 2183, 445, 1001, 1840, 1858, 1908, 2031, 2055, 2183, 2184, 2185, 2457,
     -- Handles: axehandle, large ornated handle, dagger handle, hammer handle, large handle, mace handle, morning star handle, saw handle, scythe handle, shovel handle, sickle handle, staff handle, long staff handle, sword handle, big sword handle, (small handle, )
     {2525, 10}, {2527, 10}, {2530, 10}, {2541, 10}, {2544, 10}, {2548, 10}, {2549, 10}, {2561, 10}, {2566, 10}, {2567, 10}, {2570, 10}, {2572, 10}, {2573, 10}, {2584, 10}, {2585, 10} --, 2528,
 }

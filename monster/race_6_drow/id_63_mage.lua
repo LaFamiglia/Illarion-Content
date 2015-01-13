@@ -16,11 +16,12 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 --ID 63, Drow Mage, Level: 6, Armourtype: cloth, Weapontype: concussion
 
-local monstermagic = require("monster.base.monstermagic")
 local drows = require("monster.race_6_drow.base")
+local mageBehaviour = require("monster.base.behaviour.mage")
+local monstermagic = require("monster.base.monstermagic")
 
 local magic = monstermagic()
-magic.addWarping{probability = 0.03, usage = magic.ONLY_NEAR_ENEMY}
+magic.addWarping{probability = 0.15, usage = magic.ONLY_NEAR_ENEMY}
 
 magic.addFireball{probability = 0.05, damage = {from = 2000, to = 3000}}
 magic.addFireball{probability = 0.03, damage = {from =  700, to = 1500}, targetCount = 3}
@@ -28,4 +29,5 @@ magic.addFireball{probability = 0.03, damage = {from =  700, to = 1500}, targetC
 magic.addFirefield{probability = 0.05, quality = {from = 3, to = 5}, durability = {from = 0, to = 99}}
 
 local M = drows.generateCallbacks()
-return magic.addCallbacks(M)
+M = magic.addCallbacks(M)
+return mageBehaviour.addCallbacks(magic, M)

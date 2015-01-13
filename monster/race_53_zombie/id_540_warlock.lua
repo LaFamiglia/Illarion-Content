@@ -17,8 +17,10 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 --ID 540, Undead Warlock, Level: 5, Armourtype: light, Weapontype: concussion
 
 local base = require("monster.base.base")
+local mageBehaviour = require("monster.base.behaviour.mage")
 local monstermagic = require("monster.base.monstermagic")
 local zombies = require("monster.race_53_zombie.base")
+
 local M = zombies.generateCallbacks()
 
 local orgOnSpawn = M.onSpawn
@@ -31,7 +33,7 @@ function M.onSpawn(monster)
 end
 
 local magic = monstermagic()
-magic.addWarping{probability = 0.03, usage = magic.ONLY_NEAR_ENEMY}
+magic.addWarping{probability = 0.15, usage = magic.ONLY_NEAR_ENEMY}
 
 magic.addSummon{probability = 0.0249, monsters = {611, 1031}} -- slimes and red slimes
 magic.addSummon{probability = 0.0050, monsters = {614, 1033}} -- more slimes, same color but stronger
@@ -39,4 +41,5 @@ magic.addSummon{probability = 0.0001, monsters = {540}} -- rare summon. Another 
 
 magic.addVioletFlame{probability = 0.02, damage = {from = 800, to = 1600}}
 
-return magic.addCallbacks(M)
+M = magic.addCallbacks(M)
+return mageBehaviour.addCallbacks(magic, M)
