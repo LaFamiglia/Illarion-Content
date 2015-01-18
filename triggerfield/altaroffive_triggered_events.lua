@@ -110,69 +110,59 @@ function M.MoveToField(User)
 		
 	        common.InformNLS(User, messageG[2], messageE[2]) --sending a message
 			
-			world:createItemFromId(359,1,position(551,143,0),true,599,nil); --a flame
-			world:createItemFromId(359,1,position(552,143,0),true,599,nil); --a flame
-			world:createItemFromId(359,1,position(549,145,0),true,599,nil); --a flame
-			world:createItemFromId(359,1,position(557,147,0),true,599,nil); --a flame
-			world:createItemFromId(359,1,position(547,147,0),true,599,nil); --a flame
-			
-			
-			world:deleteItemFromId(359,1,position(551,143,0),true,599,nil); --a flame
-			world:deleteItemFromId(359,1,position(552,143,0),true,599,nil); --a flame
-			world:deleteItemFromId(359,1,position(549,145,0),true,599,nil); --a flame
-			world:deleteItemFromId(359,1,position(557,147,0),true,599,nil); --a flame
-			world:deleteItemFromId(359,1,position(547,147,0),true,599,nil); --a flame
+			world:gfx(38,position(551,143,0)); --a flame
+			world:gfx(38,position(552,143,0)); --a flame
+			world:gfx(38,position(549,145,0)); --a flame
+			world:gfx(38,position(557,147,0)); --a flame
+			world:gfx(38,position(547,147,0)); --a flame			
+			world:makesound(5,position(551,143,0)); --a flame
+			world:makesound(5,position(552,143,0)); --a flame
+			world:makesound(5,position(549,145,0)); --a flame
+			world:makesound(5,position(557,147,0)); --a flame
+			world:makesound(5,position(547,147,0)); --a flame
 		end
 			
 		elseif theWaypoint>= 9 and theWaypoint <= 12 then -- trigger wind
 		
 	        common.InformNLS(User, messageG[3], messageE[3]) --sending a message
 			
-			world:createItemFromId(373,1,position(556,135,0),true,599,nil); --a wind
-			world:createItemFromId(373,1,position(566,133,0),true,599,nil); --a wind
-			world:createItemFromId(373,1,position(560,133,0),true,599,nil); --a wind
-			world:createItemFromId(373,1,position(556,131,0),true,599,nil); --a wind
-			world:createItemFromId(373,1,position(563,125,0),true,599,nil); --a wind
-			
-			world:deleteItemFromId(373,1,position(556,135,0),true,599,nil); --a wind
-			world:deleteItemFromId(373,1,position(566,133,0),true,599,nil); --a wind
-			world:deleteItemFromId(373,1,position(560,133,0),true,599,nil); --a wind
-			world:deleteItemFromId(373,1,position(556,131,0),true,599,nil); --a wind
-			world:deleteItemFromId(373,1,position(563,125,0),true,599,nil); --a wind
+			world:gfx(7,position(556,135,0)); --a wind
+			world:gfx(7,position(566,133,0)); --a wind
+			world:gfx(7,position(560,133,0)); --a wind
+			world:gfx(7,position(556,131,0)); --a wind
+			world:gfx(7,position(563,125,0)); --a wind
+			world:makesound(27,position(556,135,0)); --a wind
+			world:makesound(27,position(566,133,0)); --a wind
+			world:makesound(27,position(560,133,0)); --a wind
+			world:makesound(27,position(556,131,0)); --a wind
+			world:makesound(27,position(563,125,0)); --a wind
 		end	
          
 		elseif theWaypoint>= 13 and theWaypoint <= 16 then - trigger water
 		
 	        common.InformNLS(User, messageG[4], messageE[4]) --sending a message
 			
-			world:gfx(11,1,position(549,138,0),true,599,nil); --a water
-			world:gfx(11,1,position(543,139,0),true,599,nil); --a water
-			world:gfx(11,1,position(540,136,0),true,599,nil); --a water
-			world:gfx(11,1,position(547,133,0),true,599,nil); --a water
-			world:gfx(11,1,position(538,129,0),true,599,nil); --a water
-			world:makesound(9,1,position(549,138,0),true,599,nil); --a water
-			world:makesound(9,1,position(543,139,0),true,599,nil); --a water
-			world:makesound(9,1,position(540,136,0),true,599,nil); --a water
-			world:makesound(9,1,position(547,133,0),true,599,nil); --a water
-			world:makesound(9,1,position(538,129,0),true,599,nil); --a water
+			world:gfx(11,position(549,138,0)); --a water
+			world:gfx(11,position(543,139,0)); --a water
+			world:gfx(11,position(540,136,0)); --a water
+			world:gfx(11,position(547,133,0)); --a water
+			world:gfx(11,position(538,129,0)); --a water
+			world:makesound(9,position(549,138,0)); --a water
+			world:makesound(9,position(543,139,0)); --a water
+			world:makesound(9,position(540,136,0)); --a water
+			world:makesound(9,position(547,133,0)); --a water
+			world:makesound(9,position(538,129,0)); --a water
 		end
 		
 		elseif theWaypoint>= 17 and theWaypoint <= 20 then - trigger light
 		
 	        common.InformNLS(User, messageG[5], messageE[5]) --sending a message
-			
-			world:createItemFromId(467,1,position(556,141,0),true,599,nil); --a light
-			world:createItemFromId(467,1,position(559,145,0),true,599,nil); --a light
-			world:createItemFromId(467,1,position(566,139,0),true,599,nil); --a light
-			world:createItemFromId(467,1,position(556,138,0),true,599,nil); --a light
-			world:createItemFromId(467,1,position(562,139,0),true,599,nil); --a light
-			
-			
-			world:deleteItemFromId(467,1,position(556,141,0),true,599,nil); --a light
-			world:deleteItemFromId(467,1,position(559,145,0),true,599,nil); --a light
-			world:deleteItemFromId(467,1,position(566,139,0),true,599,nil); --a light
-			world:deleteItemFromId(467,1,position(556,138,0),true,599,nil); --a light
-			world:deleteItemFromId(467,1,position(562,139,0),true,599,nil); --a light
+			 
+			world:gfx(53,position(556,141,0)); --a light
+			world:gfx(53,position(559,145,0)); --a light
+			world:gfx(53,position(566,139,0)); --a light
+			world:gfx(53,position(556,138,0)); --a light
+			world:gfx(53,position(562,139,0)); --a light
 		end
        
 	   elseif theWaypoint>= 21 and theWaypoint <= 24 then - trigger crops
@@ -183,26 +173,20 @@ function M.MoveToField(User)
 			world:createItemFromId(537,1,position(551,123,0),true,599,nil); --a onion
 			world:createItemFromId(289,1,position(551,122,0),true,599,nil); --a cabbage
 			world:createItemFromId(540,1,position(552,122,0),true,599,nil); --a tomato
-
-			
-			world:deleteItemFromId(2492,1,position(552,123,0),true,599,nil); --a carrot
-			world:deleteItemFromId(537,1,position(551,123,0),true,599,nil); --a onion
-			world:deleteItemFromId(289,1,position(551,122,0),true,599,nil); --a cabbage
-			world:deleteItemFromId(540,1,position(552,122,0),true,599,nil); --a tomato
 		end
 		
 		elseif theWaypoint>= 25 and theWaypoint <= 28 then - trigger water
 		
 	        common.InformNLS(User, messageG[7], messageE[7]) --sending a message
 			
-			world:gfx(11,1,position(537,117,0),true,599,nil); --a water			
-			world:gfx(11,1,position(538,118,0),true,599,nil); --a water
-			world:gfx(11,1,position(537,118,0),true,599,nil); --a water
-			world:gfx(11,1,position(537,116,0),true,599,nil); --a water
-			world:makesound(9,1,position(537,117,0),true,599,nil); --a water			
-			world:makesound(9,1,position(538,118,0),true,599,nil); --a water
-			world:makesound(9,1,position(537,118,0),true,599,nil); --a water
-			world:makesound(9,1,position(537,116,0),true,599,nil); --a water
+			world:gfx(11,position(537,117,0)); --a water			
+			world:gfx(11,position(538,118,0)); --a water
+			world:gfx(11,position(537,118,0)); --a water
+			world:gfx(11,position(537,116,0)); --a water
+			world:makesound(9,position(537,117,0)); --a water			
+			world:makesound(9,position(538,118,0)); --a water
+			world:makesound(9,position(537,118,0)); --a water
+			world:makesound(9,position(537,116,0)); --a water
 		end --all events handled
 
     end --triggerfield
