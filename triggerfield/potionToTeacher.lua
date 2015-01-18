@@ -109,7 +109,7 @@ function M.PutItemOnField(Item,User)
 		else
 			myNPC:talk(Character.say, "Ah! Sehr gut, sehr gut! Nun denn, Ihr habt es Euch verdient. Schaut genau her.", "Ah! Very good, very good! Well, you've earned your pay. Look closely.")
 			world:erase(Item,1)
-			myNPC:talk(Character.say, "#me beginnt sorgsam und langsam die einzelnen Zutaten vorzubereiten und dann zu verarbeiten, darauf Acht gebend, dass keine Unbefugten es sehen können. \"So geht das richtig."\"", "#me starts to prepare the ingredients carefully and slowly and then to process them, while making sure that no unauthorized eyes have a look at it. \"So this goes properly."\"")
+			myNPC:talk(Character.say, "#me beginnt sorgsam und langsam die einzelnen Zutaten vorzubereiten und dann zu verarbeiten, darauf Acht gebend, dass keine Unbefugten es sehen können. \"So geht das richtig.\"", "#me starts to prepare the ingredients carefully and slowly and then to process them, while making sure that no unauthorized eyes have a look at it. \"So this goes properly.\"")
 			User:setQuestProgress(ListEffectId[myListPos]+1000,1)
 			TellRecipe(User,ListEffectId[myListPos])
 		end	

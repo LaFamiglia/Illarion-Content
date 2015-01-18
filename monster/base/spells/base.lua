@@ -22,7 +22,9 @@ local M = {}
 
 function M.dealMagicDamage(target, damange)
     if damange < 1 then return end
-    if character.IsPlayer(target) and character.WouldDie(target, damange) then
+    -- Check for damage + 1 to avoid the case that a regular hit lowers the hitpoints down to 1 and directly sends a
+    -- character to the brink of death.
+    if character.IsPlayer(target) and character.WouldDie(target, damange + 1) then
         if character.AtBrinkOfDeath(target) then
             if target:isAdmin() then
                 chr_reg.stallRegeneration(target, 0)
@@ -62,6 +64,17 @@ function M.getSpellResistence(char)
     local maxResistence = willpower * 2;
 
     return common.Limit(Random.uniform(minResistence, maxResistence) / 80.0, 0, 1);
+end
+
+-- Check if the line of sight is free from large objects that obstruct the view
+function M.isLineOfSightFree(startPos, targetPos)
+    local blockList = world:LoS(startPos, targetPos)
+    for _, obstruction in pairs(blockList) do
+        if obstruction.TYPE == "ITEM" then
+            return false
+        end
+    end
+    return true
 end
 
 return M

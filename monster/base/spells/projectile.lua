@@ -212,8 +212,10 @@ return function(params)
                 end
             end
 
-            if world:isItemOnField(currentPos) then
-                local possibleObstruction = world:getItemOnField(currentPos)
+            local field = world:getField(currentPos)
+            local itemCount = field:countItems()
+            for i = 0, itemCount - 1 do
+                local possibleObstruction = field:getStackItem(i)
                 if possibleObstruction:isLarge() then
                     hitPosition = currentPos
                     hitCharacter = nil
@@ -233,7 +235,7 @@ return function(params)
 
         if gfxId > 0 then world:gfx(gfxId, hitPosition) end
         if sfxId > 0 then world:makeSound(sfxId, hitPosition) end
-        if itemId > 0 then
+        if itemId > 0 and not common.isItemIdInFieldStack(itemId, enemy.pos) then
             local qual = Random.uniform(itemQualityRange[1], itemQualityRange[2]) * 100 +
                     Random.uniform(itemDurabilityRange[1], itemDurabilityRange[2])
             local item = world:createItemFromId(itemId, 1, hitPosition, true, qual, nil)
@@ -246,12 +248,17 @@ return function(params)
         return attackRange
     end
 
+    local function isValidTarget(monster, enemy)
+        return monster.id ~= enemy.id and monster:isInRange(enemy, attackRange) and
+                base.isValidTarget(enemy) and base.isLineOfSightFree(monster.pos, enemy.pos)
+    end
+
     function self.cast(monster, enemy)
         if Random.uniform() <= probability then
             local castedAtLeastOnce = false
             local remainingAttacks = targets
             local firstAttackDone = false
-            if monster:isInRange(enemy, attackRange) and base.isValidTarget(enemy) then
+            if isValidTarget(monster, enemy) then
                 if not firstAttackDone then
                     common.TurnTo(monster, enemy.pos)
                     firstAttackDone = true
@@ -267,7 +274,7 @@ return function(params)
                 local targets = world:getPlayersInRangeOf(monster.pos, attackRange)
                 local possibleTargets = {}
                 for _, target in pairs(targets) do
-                    if target.id ~= enemy.id and base.isValidTarget(target) then
+                    if isValidTarget(monster, target) then
                         table.insert(possibleTargets, target)
                     end
                 end
