@@ -77,7 +77,7 @@ function M.MoveToField(User)
         return
     end
 
-    if math.random(1, 4) == 1 then --only player characters trigger the triggerfield at a chance of 20%
+    if Random.uniform(1, 4) == 1 then --only player characters trigger the triggerfield at a chance of 20%
 
         local theWaypoint
         for i = 1, #waypoint do
@@ -120,7 +120,6 @@ function M.MoveToField(User)
 			world:makesound(5,position(549,145,0)); --a flame
 			world:makesound(5,position(557,147,0)); --a flame
 			world:makesound(5,position(547,147,0)); --a flame
-		end
 			
 		elseif theWaypoint>= 9 and theWaypoint <= 12 then -- trigger wind
 		
@@ -136,7 +135,6 @@ function M.MoveToField(User)
 			world:makesound(27,position(560,133,0)); --a wind
 			world:makesound(27,position(556,131,0)); --a wind
 			world:makesound(27,position(563,125,0)); --a wind
-		end	
          
 		elseif theWaypoint>= 13 and theWaypoint <= 16 then - trigger water
 		
@@ -152,7 +150,6 @@ function M.MoveToField(User)
 			world:makesound(9,position(540,136,0)); --a water
 			world:makesound(9,position(547,133,0)); --a water
 			world:makesound(9,position(538,129,0)); --a water
-		end
 		
 		elseif theWaypoint>= 17 and theWaypoint <= 20 then - trigger light
 		
@@ -163,7 +160,6 @@ function M.MoveToField(User)
 			world:gfx(53,position(566,139,0)); --a light
 			world:gfx(53,position(556,138,0)); --a light
 			world:gfx(53,position(562,139,0)); --a light
-		end
        
 	   elseif theWaypoint>= 21 and theWaypoint <= 24 then - trigger crops
 		
@@ -173,7 +169,6 @@ function M.MoveToField(User)
 			world:createItemFromId(537,1,position(551,123,0),true,599,nil); --a onion
 			world:createItemFromId(289,1,position(551,122,0),true,599,nil); --a cabbage
 			world:createItemFromId(540,1,position(552,122,0),true,599,nil); --a tomato
-		end
 		
 		elseif theWaypoint>= 25 and theWaypoint <= 28 then - trigger water
 		
