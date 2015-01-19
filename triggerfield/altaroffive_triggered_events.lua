@@ -87,20 +87,6 @@ function M.MoveToField(User)
             end
         end
 
-        -- skip if already tripped in the last 5 minutes
-        if (world:isItemOnField(User.pos) == true) then
-            local trip = world:getItemOnField(User.pos)
-            local serverTime = world:getTime("unix")
-            local trippingTime = trip:getData("tripping_time")
-
-            if (trippingTime ~= "" and ((tonumber(trippingTime) + 300) > serverTime)) then
-                return
-            end
-            -- safe tripping time
-            trip:setData("tripping_time", serverTime)
-            world:changeItem(trip)
-        end
-
         if theWaypoint >= 1 and theWaypoint <=  4 then -- simple inform
 
             common.InformNLS(User, messageG[1], messageE[1]) --sending a message
@@ -154,7 +140,7 @@ function M.MoveToField(User)
 		elseif theWaypoint>= 17 and theWaypoint <= 20 then - trigger light
 		
 	        common.InformNLS(User, messageG[5], messageE[5]) --sending a message
-			 
+
 			world:gfx(53,position(556,141,0)); --a light
 			world:gfx(53,position(559,145,0)); --a light
 			world:gfx(53,position(566,139,0)); --a light
