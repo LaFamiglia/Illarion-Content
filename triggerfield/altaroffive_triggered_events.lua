@@ -16,7 +16,33 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
 -- INSERT INTO triggerfields VALUES (550, 161, 0,'triggerfield.altaroffive_triggered_events');
-
+-- INSERT INTO triggerfields VALUES (549, 161, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (525, 129, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (525, 128, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (554, 148, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (553, 144, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (549, 143, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (550, 142, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (557, 133, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (557, 136, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (561, 135, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (561, 131, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (538, 127, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (538, 128, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (547, 140, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (544, 124, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (556, 139, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (555, 142, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (562, 143, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (559, 139, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 120, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 119, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 118, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 117, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 120, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 119, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 118, 0,'triggerfield.altaroffive_triggered_events');
+-- INSERT INTO triggerfields VALUES (545, 117, 0,'triggerfield.altaroffive_triggered_events');
 
 local common = require("base.common")
 
@@ -66,12 +92,12 @@ messageG[7] = ""
 
 local messageE = {} --English informs
 messageE[1] = "All around can be seen others, who have come to pray and make offerings to the Five."
-messageE[2] = "As you walk through Brágon's domain, flames shoot up around you. You have been blessed."
+messageE[2] = "As you walk through Brï¿½gon's domain, flames shoot up around you. You have been blessed."
 messageE[3] = "As you walk through Findari's domain, wind buffets you from all sides. You have been blessed."
-messageE[4] = "As you walk through Tanora's domain, rain pours down from above and water spurts up from the ground around you. You have been blessed."
+messageE[4] = "As you walk through Tanora's domain, rain pours down from aboveï¿½and water spurts up from the ground around you. You have been blessed."
 messageE[5] = "As you walk through Eldan's domain, spirits rise from the ground around you. You have been blessed."
 messageE[6] = "As you walk through Ushara's doman, vegetables sprout from the ground around you. You have been blessed."
-messageE[7] = "As you gaze at the tree, which stands in the water, you notice that the drops in the water are falling off the tree."
+messageE[7] = "As you gaze at the tree, which stands in the water,ï¿½you notice that the dropsï¿½hitting the water are falling off the tree."
 
 function M.MoveToField(User)
 
