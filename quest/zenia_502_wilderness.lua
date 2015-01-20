@@ -35,7 +35,7 @@ local Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
 Description[GERMAN][1] = ""
-Description[ENGLISH][1] = "Show the rope to the Mother by praying (using) the alter, to show your devotion and willingness to help her servant Zenia."
+Description[ENGLISH][1] = "Show the rope to the Mother by praying (using) the altar, to show your devotion and willingness to help her servant Zenia."
 Description[GERMAN][2] = "Kehre zu Zenia zurück, du hast ihre Aufgabe erledigt."
 Description[ENGLISH][2] = "Return to Zenia, you have finished her task."
 

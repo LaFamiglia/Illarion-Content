@@ -13,23 +13,23 @@
 -- You should have received a copy of the GNU Affero General Public License
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
--- NPC Name: Zenia                                                       none --
--- NPC Job: teacher							                            --
+-- NPC Name: Ssalva                                                      none --
+-- NPC Job: Templar							                            --
 --                                                                            --
--- NPC Race: lizardman                  NPC Position:  760, 339, -9           --
--- NPC Sex:  female                       NPC Direction: north                --
+-- NPC Race: lizardman                  NPC Position:  567, 230, 0            --
+-- NPC Sex:  female                       NPC Direction: southwest            --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 
-name = "Zenia"
+name = "Ssalva"
 race = lizardman
 sex = female
-position = 760, 339, -9
-direction = north
+position = 567, 230, 0
+direction = southwest
 affiliation = "None"
-job = "teacher"
+job = "Templar"
 
 language = common
 language = lizard
@@ -38,58 +38,62 @@ autointroduce = on
 
 author = "Evie"
 
-lookatDE = "Dieser NPC ist Zenia"
-lookatUS = "This is NPC Zenia."
+lookatDE = "Dieser NPC ist Ssalva"
+lookatUS = "This is NPC Ssalva."
 useMsgDE = "Fass mich nicht an!"
 useMsgUS = "Hands off!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
-hairID = 3
+hairID = 6
 beardID = 0
-colorHair = 40, 65, 20
-colorSkin = 155, 220, 100
-itemHead = 356
-itemChest = 816
-itemCoat = 196
-itemMainHand = 0
+colorHair = 120, 50, 250
+colorSkin = 150, 150, 250
+itemHead = 0
+itemChest = 181
+itemCoat = 2418
+itemMainHand = 2784
 itemSecondHand = 0
 itemHands = 48
-itemTrousers = 367
+itemTrousers = 461
 itemShoes = 53
 
 -- Help
-"Help" -> inform("[Game Help] This is NPC Zenia.  Keywords are: quest, task, Tanora, Zelphia, water, and prayer.")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Zenia. Schlüsselwörter: Quest, Aufgabe, Tanora, Zelphia, Wasser, Gebet.")
+"Help" -> inform("[Game Help] This is NPC Ssalva.  Keywords are: quest, task, Tanora, Zelphia, mother, rogue, extremist, Lake of Life, water, and prayer.")
+"Hilfe" -> inform("")
 
 -- General speech
-"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetinzss of zze Mozzer to you. Blesssed are we zziss day.", "Blessingsss of the Mother upon you, greetingsss."
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Grüssse der Mutter für dich. Gessegnet sseien wir diesse Tage."
-english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetinzss of zze Mozzer to you. Blesssed are we zziss day.", "Blessingsss of the Mother upon you, greetingsss."
-"Hiho", "Hallo", "Hey", "Greeb" -> "Grüssse der Mutter für dich. Gessegnet sseien wir diesse Tage."
-"Farewell", "Bye", "Fare well", "See you" -> "Clear waterss on your travelss."
-"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> "Klaress Wassser auf deinen Reissen."
-english, "Ciao", "Adieu", "Au revoir" -> "Clear waterss on your travelss."
-"Ciao", "Adieu", "Au revoir" -> "Klaress Wassser auf deinen Reissen."
-"How are you", "How feel", "How do you do" -> "Zenia iz good. Zze Mozzer providess all sshe needss, including help to keep her ssleeping nesst in good ssturdy condition."
-"Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Zzenia geht ess gut. Mutter gibt ihr alless wass ssie braucht, auch die Hilfe um ihr Schlafnesst in guten Zzustand zzu halten."
-"your name", "who are you", "who art thou" -> "Sshe is Zenia, sservant of zze Mozzer."
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ssie ist Zzenia, Dienerin der Mutter."
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Blesssingss and greetingss of zze Mozzer."
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetinzss of zze Mozzer to you. Blesssed are we zziss day.", "Blesssingss and greetingss of zze Mozzer."
+"Hiho", "Hallo", "Hey", "Greeb" -> ""
+"Farewell", "Bye", "Fare well", "See you" -> "Sswim sstrong. May zze Mozzer guide you back."
+"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> ""
+english, "Ciao", "Adieu", "Au revoir" -> "Sswim sstrong. May zze Mozzer guide you back."
+"Ciao", "Adieu", "Au revoir" -> ""
+"How are you", "How feel", "How do you do" -> "Ssalva iss fine and doing zze work of zze Mozzer."
+"Wie geht", "Wie fühlst", "Wie ist es ergangen" -> ""
+"your name", "who are you", "who art thou" -> "Sshe iss Ssalva, zze true sservant of zze Mozzer."
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> ""
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
-"water" -> "Zze water iz life giving, iz all. *She smiles and bows her head, obviously deep in thought*"
-"Wasser" -> "Dass Wassser isst Leben sspendend, ist alles. 'Sie lächelt und neigt ihren Kopf, offenbar tief in Gedanken versunken.'"
-"prayer", "worship" -> "Pray to zze Mozzer and sshe will help you on your way."
-"Gebet", "Andacht" -> "Ich binss Edelsteinsschleifer, Sssteinmetzzs und Zzsiegelmacher, wollen du michssz helfen?"
-english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full life, wizz many hatchlingss, and lead me here to zziss wonderful place in my old age. "
-"Tanora", "Zelphia" -> "Mutter hat Zzenia geholfen ein gutess Leben zu führen, mit vielen Jungen. Und ssie führte mich in meinen alten Tagen zu diessen wunderbaren Platz."
+"water" -> "Water iss zze life of uss all, zze gift of zze mother."
+"Wasser" -> ""
+"prayer", "worship" -> "Zze zzealotss have many prayerss in zze name of zze Mozzzer.  Many of zzem are not proper prayerss."
+"Gebet", "Andacht" -> ""
+english, "Tanora", "Zelphia", "Mother", "Mozzer" -> "Zze Mozzer is everyzzing. Zze extremisstss do foul zzingss in her name."
+"Tanora", "Zelphia", "Mozzer", "Mutter" -> ""
+"Lake of Life" -> "Ssalva does ssee zzat zziss iss a large underground lake, which zze Mozzer hass given sspecial life for it glowss brightly. Ssalva greatly wisshess to one day sswim in zziss lake."
+"See des Lebens" -> ""
+english, "Zzarn'K'Ska of Zelphia", "rogue", "extremist" -> "Zziss group of zealotss are villifying zze Mozzer's name."
+"Zzarn'K'Ska von Zelphia", "Einzelgänger", "Extremist" -> ""
 
 -- Quests
---Show the rope you are given at the altar (use altar)
-queststatus(502) = 0, english, "quest", "mission" -> inform("[New quest] Praise Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
-queststatus(502) = 0, "quest", "mission" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
-queststatus(502) = 0, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
-queststatus(502) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
+--Find the entrance to the Lake of Life Dungeon
+queststatus(501) = 0, english, "quest", "mission" -> inform("[New quest] Zzarn'K'Ska of Zelphia I"), queststatus(501) = 1, "SKsss. Near here iss zze Underground Lake of Life. It iss an area zzat hass been taken over by radical religiouss zealotss of ze Mozzer.  Find a way to zzeir sstronghold. We musst errradicate zzem."
+queststatus(501) = 0, "quest", "mission" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia I"), queststatus(501) = 1, ""
+queststatus(501) = 0, "task", "adventure", "order" -> inform("[New quest] Zzarn'K'Ska of Zelphia I"), queststatus(501) = 1, "Ksss. Near here iss zze Underground Lake of Life. It iss an area zzat hass been taken over by radical religiouss zealotss of ze Mozzer.  Find a way to zzeir sstronghold. We musst errradicate zzem."
+queststatus(501) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia I"), queststatus(501) = 1, ""
 --if not done
 queststatus(502) = 1, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
 queststatus(502) = 1, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten bete zzur Mutter."
@@ -131,7 +135,7 @@ queststatus(502) = 6, item(26, all) < 20, "Auftrag", "Aufgabe", "Abenteuer", "Be
 queststatus(502) = 6, item(26, all) >19, english, ".+" -> deleteItem(26, 10), queststatus(502) = 7, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
 queststatus(502) = 6, item(26, all) >19, ".+" -> deleteItem(26, 10), queststatus(502) = 7, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
 
---Recieve fourth quest 
+--Recieve fourth quest
 --finally the raft
 queststatus(502) = 7, english, "quest", "mission"-> inform("[New quest] Praise Zelphia IV"), item(73, 10), queststatus(502) = 8, "Good, zeiss mud is perfect for my bed nesst. You may keep half zee mud. You will need fish for your offering to zze Mozzer, so I will give you ten finish for your work. Now take your offering and materials to the altar, kneel, and pray to zze Mother for help to reach zze portal to eze south. (Place all materials on the altar.)"
 queststatus(502) = 7, "quest", "mission"-> inform("[Neue Quest] Preisen Zelphia IV"), item(73, 10), queststatus(502) = 8, "Gut, diesser Lehm isst perfekt für Zzeniass Schlafnesst. Du kannsst die Hälfte dess Lehmss behalten. Du wirsst Fisch für die Opfergabe an Mutter brauchen. Zzenia gibt dir zzehn Stück dafür. Nimm die Opfergabe und dass Material und bringe es zzum Altar, knie nieder und bete zzur Mutter, damit ssie dir hilft dass Portal, dasss in den Ssüden führt, zzu erreichen."
@@ -146,7 +150,7 @@ queststatus(502) = 8, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn 
 --if you return to Zenia's nest
 queststatus(502) = 9, english, "quest", "mission"-> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."
 queststatus(502) = 9, "quest", "mission"-> inform("[Neue Quest] Preisen Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
-queststatus(502) = 9, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."				
+queststatus(502) = 9, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."
 queststatus(502) = 9, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
 
 ------------------------------------------------------------------------------AC
