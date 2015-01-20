@@ -84,6 +84,10 @@ english, "Ciao", "Adieu", "Au revoir" -> "Clear waterss on your travelss."
 english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full life, wizz many hatchlingss, and lead me here to zziss wonderful place in my old age. "
 "Tanora", "Zelphia" -> "Mutter hat Zzenia geholfen ein gutess Leben zu führen, mit vielen Jungen. Und ssie führte mich in meinen alten Tagen zu diessen wunderbaren Platz."
 
+--------------------------------------------------Quest from Ssalva-------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Quests
 --Show the rope you are given at the altar (use altar)
 queststatus(502) = 0, english, "quest", "mission" -> inform("[New quest] Praise Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."

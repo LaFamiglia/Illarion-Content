@@ -140,16 +140,49 @@ queststatus(501) = 8, "quest", "mission"-> inform("[Neue Quest] Zzarn'K'Ska von 
 queststatus(501) = 8, "task", "adventure", "order" ->  inform("[New quest] Zzarn'K'Ska of Zelphia IV"), queststatus(501) = 9, ""
 queststatus(501) = 8, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia IV"), queststatus(501) = 9, ""
 --if not done
-queststatus(502) = 8, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwise, takez ze ssupplies for ze raft to ze altar and pray to ze Mozzer."
-queststatus(502) = 8, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten nimm die Materialien für dass Flosss mit zzum Altar und bete zzur Mutter."
-queststatus(502) = 8, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwise, takez ze ssupplies for ze raft to ze altar and pray to ze Mozzer."
-queststatus(502) = 8, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten nimm die Materialien für dass Flosss mit zzum Altar und bete zzur Mutter."
---if done then moved to small island
---if you return to Zenia's nest
-queststatus(502) = 9, english, "quest", "mission"-> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."
-queststatus(502) = 9, "quest", "mission"-> inform("[Neue Quest] Preisen Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
-queststatus(502) = 9, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."
-queststatus(502) = 9, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
+queststatus(501) = 9, english, "quest", "mission" -> "Ksss. Zze musst honour zee Mozzer before we can proceed.  Provide her wizz zze water blosssom offering."
+queststatus(501) = 9, "quest", "mission" -> ""
+queststatus(501) = 9, "task", "adventure", "order" -> "Ksss. Zze musst honour zee Mozzer before we can proceed.  Provide her wizz zze water blosssom offering."
+queststatus(501) = 9, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+--if done
+queststatus(501) = 10, english, ".+" -> inform("[Quest solved] You are awarded five custard pies."), item(1153, 5), queststatus(501) = 11, "Zze Mozzer will look over uss becausse of your gift.  We may now continue in confidence."
+queststatus(501) = 10, ".+" -> inform("[Quest gelöst] Du erhältst fünf Eiercremetorte."), item(1153, 5), queststatus(501) = 11, ""
+
+--Recieve fifth quest
+--Take items to Zenia in Lake of Life, 1-custard pie, 2 fish soup, 20 eggs, and five of each fish type
+queststatus(501) = 11, english, "quest", "mission"-> inform("[New quest] Zzarn'K'Ska of Zelphia V"), queststatus(501) = 12, "Pleasse go ssee a dear friend of mine. Zenia will give you ssome information I require in exchange for ssome itemss sshe hass been craving. Pleasse bring Zenia one cusstard pie, two fissh soupss, 20 eggss, and five of each type of fish. You can find Zenia ssomewhere hiding on an island in the Lake of Life."
+queststatus(501) = 11, "quest", "mission"-> inform("[Neue Quest] Zzarn'K'Ska von Zelphia V"), queststatus(501) = 11, "Bitte ssuch einen guten Freund von mir auf. Zzenia wird dir einige Informationen geben, die ich benötige, im Tausch gegen einigen Dingen, die ssie verlangt. Bitte bringe Zzenia eine Eiercremetorte, zzwei Fischssuppen, 20 Eier und fünf Fische jeder Art. Du kannsst Zzenia irgendwo auf einer Inssel im Ssee des Lebenss finden, wo ssie ssiche versteckt."
+queststatus(501) = 11, "task", "adventure", "order" -> inform("[New quest] Zzarn'K'Ska of Zelphia V"), queststatus(501) = 12, "Pleasse go ssee a dear friend of mine. Zenia will give you ssome information I require in exchange for ssome itemss sshe hass been craving. Pleasse bring Zenia one cusstard pie, two fissh soupss, 20 eggss, and five of each type of fish. You can find Zenia ssomewhere hiding on an island in the Lake of Life."
+queststatus(501) = 11, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia V"), queststatus(501) = 12, "Bitte ssuch einen guten Freund von mir auf. Zzenia wird dir einige Informationen geben, die ich benötige, im Tausch gegen einigen Dingen, die ssie verlangt. Bitte bringe Zzenia eine Eiercremetorte, zzwei Fischssuppen, 20 Eier und fünf Fische jeder Art. Du kannsst Zzenia irgendwo auf einer Inssel im Ssee des Lebenss finden, wo ssie ssiche versteckt."
+--if not done
+queststatus(501) = 12, english, "quest", "mission" -> "Takess zzese gifts to Zenia and get informations from her."
+queststatus(501) = 12, "quest", "mission" -> "Nimm diesse Geschenk für Zzenia und bekomme die Informationen von ihr."
+queststatus(501) = 12, "task", "adventure", "order" -> "Takess zzese gifts to Zenia and get informations from her."
+queststatus(501) = 12, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Nimm diesse Geschenk für Zzenia und bekomme die Informationen von ihr."
+--if done
+queststatus(501) = 13, english, ".+" -> inform("[Quest solved] You are awarded a red steel shield."), item(2388, 1, 799), queststatus(501) = 14, "Ksss.  Zat iss mosst interessting newss. If you can helpss me more, we will erradicate zzem."
+queststatus(501) = 13, ".+" -> inform("[Quest gelöst] Du erhältst ein roter Stahlschild."), item(2388, 1, 799), queststatus(501) = 14, "Zsss. Dass ssind ssehr interesssante Neuigkeiten. Wenn du mir weiterhin helfen kannsst, können wir ssie ausslöschen."
+
+--Receive sixth quest
+--Kill 15 lizards in Lake of Life
+queststatus(501) = 14, english, "quest", "mission"-> inform("[New quest] Zzarn'K'Ska of Zelphia VI"), queststatus(501) = 15, "Sssss. We musst get rid of zzesse Lake of Life renegadess. Pleasse kill 15 for Ssalva. Clear waterss Ssalva doess wissh for you in your endeavour."
+queststatus(501) = 14, "quest", "mission"-> inform("[Neue Quest] Zzarn'K'Ska von Zelphia VI"), queststatus(501) = 15, ""
+queststatus(501) = 14, "task", "adventure", "order" -> inform("[New quest] Zzarn'K'Ska of Zelphia VI"), queststatus(501) = 15, "Sssss. We musst get rid of zzesse Lake of Life renegadess. Pleasse kill 15 for Ssalva. Clear waterss Ssalva doess wissh for you in your endeavour."
+queststatus(501) = 14, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia VI"), queststatus(501) = 15, ""
+--if not done
+queststatus(501) > 14, queststatus(501) < 30, english, "quest", "mission" -> "Ksss!!! Kill 15 Renegadess for Ssalva.  Zziss musst be done!"
+queststatus(501) > 14, queststatus(501) < 30, "quest", "mission" -> ""
+queststatus(501) > 14, queststatus(501) < 30, "task", "adventure", "order" -> "Ksss!!! Kill 15 Renegadess for Ssalva.  Zziss musst be done!"
+queststatus(501) > 14, queststatus(501) < 30, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+--if done
+queststatus(501) = 30, english, ".+" -> inform("[Quest solved] You are awarded one hundred fifty silver coins."), money + 15000, queststatus(501) = 31, "Yesss, yesss very good. One more ssstep sshould do it."
+queststatus(501) = 30,  ".+"-> inform("[Quest gelöst] Du erhältst einhundertfünfzig Silberstücke."), money + 15000, queststatus(501) = 31, ""
+
+--Receive seventh quest
+--Kill Lizard Templar warrior
+
+
+
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
