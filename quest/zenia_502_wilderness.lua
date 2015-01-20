@@ -26,7 +26,7 @@ local ENGLISH = Player.english
 
 -- Insert the quest title here, in both languages
 local Title = {}
-Title[GERMAN] = ""
+Title[GERMAN] = "Preisen Zelphia"
 Title[ENGLISH] = "Praise Zelphia"
 
 -- Insert an extensive description of each status here, in both languages

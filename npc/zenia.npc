@@ -14,88 +14,96 @@
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------------AC
 -- NPC Name: Zenia                                                       none --
--- NPC Job:                                 --
+-- NPC Job: teacher							                            --
 --                                                                            --
--- NPC Race: lizardman                  NPC Position:  387, 278, 0            --
--- NPC Sex:  male                       NPC Direction: west                   --
+-- NPC Race: lizardman                  NPC Position:  760, 339, -9           --
+-- NPC Sex:  female                       NPC Direction: north                --
 --                                                                            --
--- Author:   Zot                                                              --
+-- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
 --------------------------------------------------------------------------------
 
-name = "Seleseth"
+name = "Zenia"
 race = lizardman
-sex = male
-position = 387, 278, 0
-direction = west
-affiliation = "Galmair"
-job = "Brick maker, mason and gem grinder"
+sex = female
+position = 760, 339, -9
+direction = north
+affiliation = "None"
+job = "teacher"
 
 language = common
 language = lizard
 defaultLanguage = common
 autointroduce = on
 
-author = "Zot"
+author = "Evie"
 
-lookatDE = ""
-lookatUS = ""
+lookatDE = "Dieser NPC ist Zenia"
+lookatUS = "This is NPC Zenia."
 useMsgDE = "Fass mich nicht an!"
 useMsgUS = "Hands off!"
 wrongLangDE = "#me schaut dich verwirrt an."
 wrongLangUS = "#me looks at you confused."
 radius = 0
-hairID = 6
+hairID = 3
 beardID = 0
-colorHair = 241, 245, 63
-colorSkin = 58, 137, 61
-itemHead = 0
-itemChest = 696
-itemCoat = 194
+colorHair = 40, 65, 20
+colorSkin = 155, 220, 100
+itemHead = 356
+itemChest = 816
+itemCoat = 196
 itemMainHand = 0
 itemSecondHand = 0
-itemHands = 0
-itemTrousers = 824
-itemShoes = 0
+itemHands = 48
+itemTrousers = 367
+itemShoes = 53
 
 -- Help
-"Help" -> inform("[Game Help] This NPC is Seleseth the gem grinder, mason and brick maker. Keywords: quest")
-"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Seleseth der Edelsteinschleifer, Steinmetz und Ziegelmacher. Schlüsselwörter: Quest")
+"Help" -> inform("[Game Help] This is NPC Zenia.  Keywords are: quest, task, Tanora, Zelphia, water, and prayer.")
+"Hilfe" -> inform("[Spielhilfe] Dieser NPC ist Zenia. Schlüsselwörter: Quest, Aufgabe, Tanora, Zelphia, Wasser, Gebet.")
 
 -- General speech
-"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetingsss to you.", "Yess, greetingsss.", "Blessingsss of the Mother upon you, greetingsss"
-"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Grüßsse dir.", "Ja, Grüße.", "Grüße."
-english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetingsss to you.", "Yess, greetingss.", "Greetsss."
-"Hiho", "Hallo", "Hey", "Greeb" -> "Grüßsse dir.", "Ja, Grüßsse.", "Grüßsse."
-"Farewell", "Bye", "Fare well", "See you" -> "May the rainsss be heavy and frequent.", "May the sssea-Mother watch your path.", "Farewell, zsss."
-"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> "Mögenss Regen häufig und ssstark sssein.", "Mögenss die Meermutter dein Pfad leitenss.", "Abschied, zsss."
-english, "Ciao", "Adieu", "Au revoir" -> "Goodbye", "Farewell", "#me nods slowly, 'Goodbye'."
-"Ciao", "Adieu", "Au revoir" -> "Gut wiedersehensss.", "Abschied.", "#me nickt langsam: 'Auf Wiedersehensss'."
-"How are you", "How feel", "How do you do" -> "Ssseleseth isss fine, yesss."
-"Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Ssseleseth issst gut, ja.."
-"your name", "who are you", "who art thou" -> "I be Ssseleseth, would you like to do a job for me?"
-"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ich sindss Ssseleseth, machenss du Aufgabe für michse?"
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good evening", "Good night" -> "Greetinzss of zze Mozzer to you. Blesssed are we zziss day.", "Blessingsss of the Mother upon you, greetingsss."
+"Grüß", "Gruß", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> "Grüssse der Mutter für dich. Gessegnet sseien wir diesse Tage."
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Greetinzss of zze Mozzer to you. Blesssed are we zziss day.", "Blessingsss of the Mother upon you, greetingsss."
+"Hiho", "Hallo", "Hey", "Greeb" -> "Grüssse der Mutter für dich. Gessegnet sseien wir diesse Tage."
+"Farewell", "Bye", "Fare well", "See you" -> "Clear waterss on your travelss."
+"Tschüß", "Tschüss", "Wiedersehen", "Gehab wohl" -> "Klaress Wassser auf deinen Reissen."
+english, "Ciao", "Adieu", "Au revoir" -> "Clear waterss on your travelss."
+"Ciao", "Adieu", "Au revoir" -> "Klaress Wassser auf deinen Reissen."
+"How are you", "How feel", "How do you do" -> "Zenia iz good. Zze Mozzer providess all sshe needss, including help to keep her ssleeping nesst in good ssturdy condition."
+"Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Zzenia geht ess gut. Mutter gibt ihr alless wass ssie braucht, auch die Hilfe um ihr Schlafnesst in guten Zzustand zzu halten."
+"your name", "who are you", "who art thou" -> "Sshe is Zenia, sservant of zze Mozzer."
+"ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt" -> "Ssie ist Zzenia, Dienerin der Mutter."
 
 -- Small talk: The talk here should focus on possible questions. Feel free to add more!
-"profession" -> "I'm a gem grinder, massson and bricksss maker, do you wantssz to help Ssseleseth?"
-"beruf" -> "Ich binss Edelsteinsschleifer, Sssteinmetzzs und Zzsiegelmacher, wollen du michssz helfen?"
-english, "job" -> "I'm a gem grinder, massson and bricksss maker, do you wantssz to help Ssseleseth?"
-"job" -> "Ich binss Edelsteinsschleifer, Sssteinmetzzs und Zzsiegelmacher, wollen du michssz helfen?"
+"water" -> "Zze water iz life giving, iz all. *She smiles and bows her head, obviously deep in thought*"
+"Wasser" -> "Dass Wassser isst Leben sspendend, ist alles. 'Sie lächelt und neigt ihren Kopf, offenbar tief in Gedanken versunken.'"
+"prayer", "worship" -> "Pray to zze Mozzer and sshe will help you on your way."
+"Gebet", "Andacht" -> "Ich binss Edelsteinsschleifer, Sssteinmetzzs und Zzsiegelmacher, wollen du michssz helfen?"
+english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full life, wizz many hatchlingss, and lead me here to zziss wonderful place in my old age. 				"
+"Tanora", "Zelphia" -> "Mutter hat Zzenia geholfen ein gutess Leben zu führen, mit vielen Jungen. Und ssie führte mich in meinen alten Tagen zu diessen wunderbaren Platz."
 
 -- Quests
---fastforward to gem cutting training b/c of digging and brickmaking being moved from Galmair
-queststatus(709) = 0, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 0, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 0, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 0, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 1, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 1, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 1, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 1, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 2, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 2, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 2, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 2, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
+--Show the rope you are given at the altar (use altar)
+queststatus(502) = 0, english, "quest", "mission" -> inform("[New quest] Praise Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
+queststatus(502) = 0, "quest", "mission" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
+queststatus(502) = 0, english, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
+queststatus(502) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333),queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
+--not done
+queststatus(502) = 1, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
+queststatus(502) = 1, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten bete zzur Mutter."
+queststatus(502) = 1, english, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
+queststatus(502) = 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten bete zzur Mutter."
+--done
+queststatus(502) = 2, english, "quest", "mission" -> queststatus(502) = 3, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
+queststatus(502) = 2, "quest", "mission" -> queststatus(502) = 3, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
+queststatus(502) = 2, english, "task", "adventure", "order" -> queststatus(502) = 3, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
+queststatus(502) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(502) = 3, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
+
+--Recieve second quest
+--collect 20 logs for Zenia
+
 queststatus(709) = 3, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
 queststatus(709) = 3, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
 queststatus(709) = 3, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
