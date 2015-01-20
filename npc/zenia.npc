@@ -88,84 +88,79 @@ english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full l
 --Show the rope you are given at the altar (use altar)
 queststatus(502) = 0, english, "quest", "mission" -> inform("[New quest] Praise Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
 queststatus(502) = 0, "quest", "mission" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333), queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
-queststatus(502) = 0, english, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
+queststatus(502) = 0, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia"), item(2760, 4, 333), queststatus(502) = 1, "Sseems zze Mozzer ssent you to learn ssome zzingss. If you wissh to return to zze main island you musst firsst pray to zze Mozzer for guidance. Zzen, Zenia will aid you in your return, sshow zze Mozzer the rope I have graciously given you."
 queststatus(502) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia I"), item(2760, 4, 333),queststatus(502) = 1, "Scheint dasss Mutter dich geschickt hat, um einige Dinge zu lernen. Wenn du zzurück auf die Hauptinssel willsst, mussst du zzuersst Mutter um Führung anbeten. Dann wird Zzenia dir bei deiner Rückkehr helfen. Zzeig Mutter das Sseil, dass Zzenia dir gnädigerweisse überlasssen hat."
---not done
+--if not done
 queststatus(502) = 1, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
 queststatus(502) = 1, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten bete zzur Mutter."
-queststatus(502) = 1, english, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
+queststatus(502) = 1, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can sstay here. I can alwayss usse anozzer fissherman. Ozzerwize pray to zze Mozzer."
 queststatus(502) = 1, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten bete zzur Mutter."
---done
+-- if done
 queststatus(502) = 2, english, "quest", "mission" -> queststatus(502) = 3, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
 queststatus(502) = 2, "quest", "mission" -> queststatus(502) = 3, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
-queststatus(502) = 2, english, "task", "adventure", "order" -> queststatus(502) = 3, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
+queststatus(502) = 2, "task", "adventure", "order" -> queststatus(502) = 3, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
 queststatus(502) = 2, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(502) = 3, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
 
 --Recieve second quest
 --collect 20 logs for Zenia
+queststatus(502) = 3, english, "quest", "mission" -> inform("[New quest] Praise Zelphia II"), item(74, 1, 333), queststatus(502) = 4, "You honour zze Mozzer sso I sshall help you gazzer materialss for a raft. Zze Mozzer providess all we need. Take zziss hatchet and cut 20 logs from zosse old trees. Bring me zze logs."
+queststatus(502) = 3, "quest", "mission" -> inform("[Neue Quest] Preisen Zelphia II"), item(74, 1, 333), queststatus(520) = 4, "Du ehrsst die Mutter, alsso hilft Zzenia dir Material für ein Flosss zu ssammeln. Die Mutter stellt alless bereit wass wir brauchen. Nimm diesse Axt und schlage 20 Stämme von diessen alten Bäumen. Bring ssie Zzenia dann."
+queststatus(502) = 3, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia II"), item(74, 1, 333), queststatus(520) = 4, "You honour zze Mozzer sso I sshall help you gazzer materialss for a raft. Zze Mozzer providess all we need. Take zziss hatchet and cut 20 logs from zosse old trees. Bring me zze logs."
+queststatus(502) = 3, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia II"), item(74, 1, 333), queststatus(520) = 4, "Du ehrsst die Mutter, alsso hilft Zzenia dir Material für ein Flosss zu ssammeln. Die Mutter stellt alless bereit wass wir brauchen. Nimm diesse Axt und schlage 20 Stämme von diessen alten Bäumen. Bring ssie Zzenia dann."
+-- if not done
+queststatus(502) = 4, item(3, all) < 20, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwize fetch 20 logs."
+queststatus(502) = 4, item(3, all) < 20, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten hole 20 Stämme."
+queststatus(502) = 4, item(3, all) < 20, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwize fetch 20 logs."
+queststatus(502) = 4, item(3, all) < 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten hole 20 Stämme."
+-- if done
+queststatus(502) = 4, item(3, all) >19, english, ".+" -> deleteItem(3, 10), queststatus(502) = 5, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
+queststatus(502) = 4, item(3, all) >19, ".+" -> deleteItem(3, 10), queststatus(502) = 5, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
 
-queststatus(709) = 3, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 3, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 3, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 3, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
+--Recieve third quest
+--collect 20 mud
+queststatus(502) = 5, english, "quest", "mission" -> inform("[New quest] Praise Zelphia III"), item(24, 1, 333), queststatus(502) = 6, "Well done, keep ten logs as you will need zzem for your journey back. Now I am in need of mud for my bed nesst. Take zeiss shovel. Gazzer 20 shovels full of mud from zee mud pit and return when you have zzem."
+queststatus(502) = 5, "quest", "mission" -> inform("[Neue Quest] Preisen Zelphia III"), item(24, 1, 333), queststatus(520) = 6, "Gut, gut. Behalte zzehn Stämme. Du wirsst ssie für deine Rückreisse brauchen. Nun braucht Zzenia aber Lehm für ihr Schlafnesst. Nimm die Schaufel und gehe zzu einer Lehmgrube. Dort ssammelsst du zzeht Schaufeln voll Lehm und bringsst ssie zzu Zzenia zzurück."
+queststatus(502) = 5, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia III"), item(24, 1, 333), queststatus(502) = 6, "Well done, keep ten logs as you will need zzem for your journey back. Now I am in need of mud for my bed nesst. Take zeiss shovel. Gazzer 20 shovels full of mud from zee mud pit and return when you have zzem."
+queststatus(502) = 5, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia III"), item(24, 1, 333), queststatus(502) = 6, "Gut, gut. Behalte zzehn Stämme. Du wirsst ssie für deine Rückreisse brauchen. Nun braucht Zzenia aber Lehm für ihr Schlafnesst. Nimm die Schaufel und gehe zzu einer Lehmgrube. Dort ssammelsst du zzeht Schaufeln voll Lehm und bringsst ssie zzu Zzenia zzurück."
+-- if not done
+queststatus(502) = 6, item(26, all) < 20, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwize, gazzer 20 shovels full of mud."
+queststatus(502) = 6, item(26, all) < 20, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten hole 20 Schaufeln voll Lehm."
+queststatus(502) = 6, item(26, all) < 20, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwize, gazzer 20 shovels full of mud."
+queststatus(502) = 6, item(26, all) < 20, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten hole 20 Schaufeln voll Lehm."
+--if done
+queststatus(502) = 6, item(26, all) >19, english, ".+" -> deleteItem(26, 10), queststatus(502) = 7, item(3572, 2, 333), "Yess you are getting zzere. Take zziss ssoup to nourish your body wizz zze giftss of zze Mozzer."
+queststatus(502) = 6, item(26, all) >19, ".+" -> deleteItem(26, 10), queststatus(502) = 7, item(3572, 2, 333), "Ja, du kommsst da hin. Nimm diesse Ssuppe, um deinen Körper mit den Geschenken der Mutter zzu ernähren."
 
----the real quest starting point now.
-queststatus(709) = 4, english, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 4, town = Galmair, "quest", "mission" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 4, town = Galmair, "task", "adventure", "order" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, tasssk? Yesss, Ssseleseth has tasksz for yous. Zzzs, now we makesz ssshiny gemsz! I'll givesss you eight raw amethyssstsz and a pair of tongsss. You grindz them at the gem grinder for me and ssshow me the resssult when you're done, zsss!"
-queststatus(709) = 4, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(251, 8, 333), item(2140, 1, 333), queststatus(709) = 5, "Zsss, Aufgabe? Ja, Ssseleseth haben Aufgabe für dichsss. Zzzz, nun wir machen glänzzsende Sssteine! Ich geben dir acht rohe Amethysssten und Zzange. Du sschleifen Amethysssten für michs am Edelssteinsschleifer neben mirs. Wenn du fertig, dann mir zeigen, zsss!"
-queststatus(709) = 5, item(197, all) > 7, english, town = Galmair, "quest", "mission", "amethyst" -> queststatus(709) = 6, "Well done. Pleasse keep the amethysssts for the next tasssk of Ssseleseth."
-queststatus(709) = 5, item(197, all) > 7, town = Galmair, "quest", "mission", "amethyst" -> queststatus(709) = 6, "Gut gemacht. Bittes behalten Amethyssten für nächsste Aufgabe von Ssseleseth."
-queststatus(709) = 5, item(197, all) > 7, town = Galmair, "task", "adventure", "order" -> queststatus(709) = 6, "Well done. Pleasse keep the amethysssts for the next tasssk of Ssseleseth."
-queststatus(709) = 5, item(197, all) > 7, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(709) = 6, "Gut gemacht. Bittes behalten Amethyssten für nächsste Aufgabe von Ssseleseth."
-queststatus(709) = 5, item(197, all) < 8, english, town = Galmair, ".+" -> "Zsss, I want eight amethyssstsz. Come back when you have finissshed the tasssk, zsss!"
-queststatus(709) = 5, item(197, all) < 8, town = Galmair, ".+" -> "Zsss, ich wollten acht Amethyssten. Komm wieder wenn du Aufgabe erledigt hassst, zsss!"
-queststatus(709) = 6, english, town = Galmair, "quest", "mission" -> queststatus(709) = 7, "Zss, now we make powder from the ssshiny gemsz. You go to the gem grinder again and make two bagsz of amethyssst powder from eight amethyssstsz for me, zsss!"
-queststatus(709) = 6, town = Galmair, "quest", "mission" -> queststatus(709) = 7, "Zss, nun wir machen aus glänzzsenden Sssteinen Staub. Du gehen zu Edelsteinschleifer und machen aus acht geschliffenen Amethyssten zwei Beutel Amethyststaub für michse, zsss!"
-queststatus(709) = 6, town = Galmair, "task", "adventure", "order" -> queststatus(709) = 7, "Zss, now we make powder from the ssshiny gemsz. You go to the gem grinder again and make two bagsz of amethyssst powder from eight amethyssstsz for me, zsss!"
-queststatus(709) = 6, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> queststatus(709) = 7, "Zss, nun wir machen aus glänzzsenden Sssteinen Staub. Du gehen zu Edelsteinschleifer und machen aus acht geschliffenen Amethyssten zwei Beutel Amethyststaub für michse, zsss!"
-queststatus(709) = 7, item(450, all) > 1, english, town = Galmair, "quest", "mission", "powder", "amethyst" -> deleteItem(450, 2), queststatus(709) = 8, "Zsss, well done! The quality of thisss powder isss very good. Pleassse assk, if you want another taskss."
-queststatus(709) = 7, item(450, all) > 1, town = Galmair, "quest", "mission", "staub", "amethyst" -> deleteItem(450, 2), queststatus(709) = 8, "Zsss, gut gemachts! Staub haben gute Qualität. Bitte fragt, wenn ihr eine andere Aufgabe wollt."
-queststatus(709) = 7, item(450, all) > 1, town = Galmair, "task", "adventure", "order" -> deleteItem(450, 2), queststatus(709) = 8, "Zsss, well done! The quality of thisss powder isss very good. Pleassse assk, if you want another taskss."
-queststatus(709) = 7, item(450, all) > 1, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> deleteItem(450, 2), queststatus(709) = 8, "Zsss, gut gemachts! Staub haben gute Qualität. Bitte fragt, wenn ihr eine andere Aufgabe wollt."
-queststatus(709) = 7, item(450, all) < 2, english, town = Galmair, ".+" -> "Zsss, I want two bagsss of amethyssst powder. Come back when you have the amethyssst powder!"
-queststatus(709) = 7, item(450, all) < 2, town = Galmair, ".+" -> "Zsss, ich wollte zwei Beutel Amethyssstssstaub, zsss. Komm wieder wenn Staub fertig!"
-queststatus(709) = 8, english, town = Galmair, "quest", "mission" -> item(737, 1, 333), item(735, 2, 333), queststatus(709) = 9, "Zsss, do you want to learn sssomething about masssonry? I'll give you two raw ssstonesz and a chisssel and you can makesz twenty sssmall ssstonesz for me with them! Raw ssstonesz can be found in minesz, a lot, zsss! Take the chisssel in your hand and ssstart cutting raw ssstonesz into ssstone blocksss, then you repeat that with the ssstone blocksss to make sssmall ssstonesz."
-queststatus(709) = 8, town = Galmair, "quest", "mission" -> item(737, 1, 333), item(735, 2, 333), queststatus(709) = 9, "Zsss, du wollen mehr über Steinmetz lernen? Ich geben dir zwei rohe Sssteine und Meissel, um 20 kleine Sssteine für mich zu machen, zsss. Rohe Sssteine gibtsss in der Mine viel! Du nehmen Meisel in die Hand und bearbeiten rohe Sssteine, danach Sssteinquadar bearbeiten zu kleinen Sssteinen und mir bringen 20, zss!"
-queststatus(709) = 8, town = Galmair, "task", "adventure", "order" -> item(737, 1, 333), item(735, 2, 333), queststatus(709) = 9, "Zsss, do you want to learn sssomething about masssonry? I'll give you two raw ssstonesz and a chisssel and you can makesz twenty sssmall ssstonesz for me with them! Raw ssstonesz can be found in minesz, a lot, zsss! Take the chisssel in your hand and ssstart cutting raw ssstonesz into ssstone blocksss, then you repeat that with the ssstone blocksss to make sssmall ssstonesz."
-queststatus(709) = 8, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> item(737, 1, 333), item(735, 2, 333), queststatus(709) = 9, "Zsss, du wollen mehr über Steinmetz lernen? Ich geben dir zwei rohe Sssteine und Meissel, um 20 kleine Sssteine für mich zu machen, zsss. Rohe Sssteine gibtsss in der Mine viel! Du nehmen Meisel in die Hand und bearbeiten rohe Sssteine, danach Sssteinquadar bearbeiten zu kleinen Sssteinen und mir bringen 20, zss!"
-queststatus(709) = 9, item(1266, all) > 19, english, town = Galmair, "quest", "mission", "stone", "small stone" -> deleteItem(1266, 20), queststatus(709) = 10, "Zsss, well done, thanksss you. Zsss, Ssseleseth says thanksss for the help and hopesss you learnt sssomething about gem grinding, masssonry and bricksss making."
-queststatus(709) = 9, item(1266, all) > 19, town = Galmair, "quest", "mission", "stein", "kleiner stein" -> deleteItem(1266, 20), queststatus(709) = 10, "Zsss, gut gemachts, dankes. Zsss, Ssseleseth sagen danke für Hilfess und hoffen du was über Edelssteinssschleifen, Sssteine bahauen und Zzziegel machen gelernt haben."
-queststatus(709) = 9, item(1266, all) > 19, town = Galmair, "task", "adventure", "order" -> deleteItem(1266, 20), queststatus(709) = 10, "Zsss, well done, thanksss you. Zsss, Ssseleseth says thanksss for the help and hopesss you learnt sssomething about gem grinding, masssonry and bricksss making."
-queststatus(709) = 9, item(1266, all) > 19, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> deleteItem(1266, 20), queststatus(709) = 10, "Zsss, gut gemachts, dankes. Zsss, Ssseleseth sagen danke für Hilfess und hoffen du was über Edelssteinssschleifen, Sssteine bahauen und Zzziegel machen gelernt haben."
-queststatus(709) = 9, item(1266, all) < 20, english, town = Galmair, ".+" -> "Zsss, they are not the twenty sssmall ssstonesz that I was looking for. Come backsss when you have the ssstonesz!"
-queststatus(709) = 9, item(1266, all) < 20, town = Galmair, ".+" -> "Zsss, dasss nicht ssein 20 kleine Steiness die ich wollte. Komm wieder wenn du Sssteine haben!"
+--Recieve fourth quest 
+--finally the raft
+queststatus(502) = 7, english, "quest", "mission"-> inform("[New quest] Praise Zelphia IV"), item(73, 10), queststatus(502) = 8, "Good, zeiss mud is perfect for my bed nesst. You may keep half zee mud. You will need fish for your offering to zze Mozzer, so I will give you ten finish for your work. Now take your offering and materials to the altar, kneel, and pray to zze Mother for help to reach zze portal to eze south. (Place all materials on the altar.)"
+queststatus(502) = 7, "quest", "mission"-> inform("[Neue Quest] Preisen Zelphia IV"), item(73, 10), queststatus(502) = 8, "Gut, diesser Lehm isst perfekt für Zzeniass Schlafnesst. Du kannsst die Hälfte dess Lehmss behalten. Du wirsst Fisch für die Opfergabe an Mutter brauchen. Zzenia gibt dir zzehn Stück dafür. Nimm die Opfergabe und dass Material und bringe es zzum Altar, knie nieder und bete zzur Mutter, damit ssie dir hilft dass Portal, dasss in den Ssüden führt, zzu erreichen."
+queststatus(502) = 7, "task", "adventure", "order" ->  inform("[New quest] Praise Zelphia IV"), item(73, 10), queststatus(502) = 8, "Good, zeiss mud is perfect for my bed nesst. You may keep half zee mud. You will need fish for your offering to zze Mozzer, so I will give you ten finish for your work. Now take your offering and materials to the altar, kneel, and pray to zze Mother for help to reach zze portal to eze south. (Place all materials on the altar.)"
+queststatus(502) = 7, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia IV"), item(73, 10), queststatus(502) = 8, "Gut, diesser Lehm isst perfekt für Zzeniass Schlafnesst. Du kannsst die Hälfte dess Lehmss behalten. Du wirsst Fisch für die Opfergabe an Mutter brauchen. Zzenia gibt dir zzehn Stück dafür. Nimm die Opfergabe und dass Material und bringe es zzum Altar, knie nieder und bete zzur Mutter, damit ssie dir hilft dass Portal, dasss in den Ssüden führt, zzu erreichen."
+--if not done
+queststatus(502) = 8, english, "quest", "mission" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwise, takez ze ssupplies for ze raft to ze altar and pray to ze Mozzer."
+queststatus(502) = 8, "quest", "mission" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten nimm die Materialien für dass Flosss mit zzum Altar und bete zzur Mutter."
+queststatus(502) = 8, "task", "adventure", "order" -> "Ksss. If you do not wish to leave you can stay here. I can always use another fisherman. Ozzerwise, takez ze ssupplies for ze raft to ze altar and pray to ze Mozzer."
+queststatus(502) = 8, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zss. Wenn du nicht gehen willsst, kannsst du auch hier bleiben. Zzenia kann auch einen anderen Fischer fragen. Anssonssten nimm die Materialien für dass Flosss mit zzum Altar und bete zzur Mutter."
+--if done then moved to small island
+--if you return to Zenia's nest
+queststatus(502) = 9, english, "quest", "mission"-> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."
+queststatus(502) = 9, "quest", "mission"-> inform("[Neue Quest] Preisen Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
+queststatus(502) = 9, "task", "adventure", "order" -> inform("[New quest] Praise Zelphia V"), item(355, 10), queststatus(502) = 10, "Oh, Zenia remember you from before! Take zzesse fissh, make offering and pray for zze Mozzer'ss help in getting back to zze big island."				
+queststatus(502) = 9, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Preisen Zelphia inform("[Neue Quest] Preisen Zelphia IV"),V"), item(355, 10), queststatus(502) = 10, "Oh, Zzenia erinnert sich an dir von früher. Nimm den Fisch, opfere ihn und bete um Mutterss Hilfe, um zzur grosssen Inssel zzurück zzu kommen."
 
--- Response after quest is done
-queststatus(709) = 10, english, town = Galmair, "quest", "mission" -> "Zsss, I don't have any other thingsss for yous to do. Thank yous for the help though, zsss!"
-queststatus(709) = 10, town = Galmair, "quest", "mission" -> "Zsss, ich haben nichts weiter für dich zu tun. Aber dankes nochmal für deine Hilfe, zsss!"
-queststatus(709) = 10, town = Galmair, "task", "adventure", "order" -> "Zsss, I don't have any other thingsss for yous to do. Thank yous for the help though, zsss!"
-queststatus(709) = 10, town = Galmair, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Zsss, ich haben nichts weiter für dich zu tun. Aber dankes nochmal für deine Hilfe, zsss!"
-
--- No quests for Non Galmairians
-english, "quest", "mission" -> "You are not a citizzsen of Galmairss. I don't have anything for yous to do, zsss."
-"quest", "mission" -> "Du ssscheint kein Bürgers Galmairs zu sssein. Ich hab nichtsss für dichss zu tun, zsss."
-"task", "adventure", "order" -> "You are not a citizzsen of Galmairss. I don't have anything for yous to do, zsss."
-"Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> "Du ssscheint kein Bürgers Galmairs zu sssein. Ich hab nichtsss für dichss zu tun, zsss."
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
 -- Every NPC should contain at least 10 of those messages.
 -- Emotes are possible also starting with "#me ....".
 
-cycletext "#me schaut sich gelangweilt um.", "#me looks around bored."
-cycletext "#me kratzt sich am Kopf.", "#me scratches his head."
-cycletext "Wenns du Hilfe beim Edelsssteinsschleifen, Sssteine behauen oder Zzziegelbrennen brauchst dann frag michss!", "If yous need any help in gem grinding, masssonry or bricksss making, jussst asssk me!"
-cycletext "Zsss...", "Zsss..."
-cycletext "Zsss!", "Zsss!"
-cycletext "Zsss?", "Zsss?"
-cycletext "#me zischelt.", "#me hisses."
-cycletext "Ssss...", "Ssss..."
-cycletext "Ssss?", "Ssss?"
-cycletext "Ssss!", "Ssss!"
-cycletext "Tsss...", "Tsss..."
-cycletext "#me lässt seinen Schwanz hin und her schnellen.", "#me wags his tail back and forth."
+cycletext "Dass Leben isst schön auf meiner Heimatinssel.", "Life iz good on my island home."
+cycletext "Wass könnte eine alte Echse wie ich im Leben mehr brauchen.", "What more could an old lizard like me assk for in life?"
+cycletext "#me schaut glücklich auf die Insel und das Wasser", "#me looks around happily at the island and the water."
+cycletext "Zzenia hat die Bäume hier sselbst hergebracht. Hat sie vom Ssetzzling an grosssgezzogen.", "Zenia brought in zzesse trees mysself! Nurtured zzem from jusst sseedlingsss."
+cycletext "#me verschlingt einen ganzen Fisch", "#me slurps a whole fish down her throat."
+cycletext "Erzzähl den Fanatikern nicht, dasss Zzenia hier lebt. Ssie wollem meinen schönen Platzz für ssich sselbsst.", "Don't tell zzem zealotss I'm living here. Zzey'll want my fine place for zzemsselvess."
+cycletext "#me klopft sich auf den Bauch, nachdem sie laut gerülpst hat 'Dass war ein ssehr Guter!'", "#me pounds her chest after burping loudly. 'Zzat wass a good one!'"
+cycletext "#me döst während sie am Ufer sitzt.", "#me dozes as she sits by the shore."
+cycletext "Mutter isst gut zzu Zzenia.", "Zze Mozzer iz good to Zenia."
+cycletext "Zzeniass Schlafnesst muss sstets in Stand gehalten werden. Zzenia braucht mehr Materialien.", "Zenia ssleeping nesst iz alwayss in need of repairsss, Zenia jusst need ssome more ssupliesss."
