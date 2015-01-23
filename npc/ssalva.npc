@@ -88,6 +88,24 @@ english, "Tanora", "Zelphia", "Mother", "Mozzer" -> "Zze Mozzer is everyzzing. Z
 english, "Zzarn'K'Ska of Zelphia", "rogue", "extremist" -> "Zziss group of zealotss are villifying zze Mozzer's name."
 "Zzarn'K'Ska von Zelphia", "Einzelgänger", "Extremist" -> ""
 
+-- Faction
+"archmage" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Erzmagier" -> ""
+english, "Elvaine", "Morgan" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Elvaine", "Morgan" -> ""
+english, "Runewick" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Runewick" -> ""
+english, "Valerio", "Guilianni", "Don" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Valerio", "Guilianni", "Don" -> ""
+english, "Galmair" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Galmair" -> ""
+"Queen" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Königin" -> ""
+english, "rosaline", "edwards" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"rosaline", "edwards" -> ""
+english, "Cadomyr" -> "Ssalva only hass alliance to zze Mozzer.  Zze otherss are of no importance."
+"Cadomyr" -> ""
+
 -- Quests
 --Find the entrance to the Lake of Life Dungeon
 queststatus(501) = 0, english, "quest", "mission" -> inform("[New quest] Zzarn'K'Ska of Zelphia I"), queststatus(501) = 1, "SKsss. Near here iss zze Underground Lake of Life. It iss an area zzat hass been taken over by radical religiouss zealotss of ze Mozzer.  Find a way to zzeir sstronghold. We musst errradicate zzem."
@@ -180,22 +198,37 @@ queststatus(501) = 30,  ".+"-> inform("[Quest gelöst] Du erhältst einhundertfünf
 
 --Receive seventh quest
 --Kill Lizard Templar warrior
+queststatus(501) = 31, english, "quest", "mission"-> inform("[New quest] Zzarn'K'Ska of Zelphia VII"), queststatus(501) = 32, "It'z time to take out zzeir leader. Kill ze temple warrior to break zzeir morale."
+queststatus(501) = 31, "quest", "mission"-> inform("[Neue Quest] Zzarn'K'Ska von Zelphia VII"), queststatus(501) = 32, ""
+queststatus(501) = 31, "task", "adventure", "order" -> inform("[New quest] Zzarn'K'Ska of Zelphia VII"), queststatus(501) = 32, "It'z time to take out zzeir leader. Kill ze temple warrior to break zzeir morale."
+queststatus(501) = 31, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] Zzarn'K'Ska von Zelphia VII"), queststatus(501) = 32, ""
+--if not done
+queststatus(501) > 31, queststatus(501) < 33, english, "quest", "mission" -> "Ksss! If zze leader issn't killed zzey will not break. Kill zze temple warrior to break zzeir morale."
+queststatus(501) > 31, queststatus(501) < 33, "quest", "mission" -> ""
+queststatus(501) > 31, queststatus(501) < 33, "task", "adventure", "order" -> "Ksss! If zze leader issn't killed zzey will not break. Kill zze temple warrior to break zzeir morale."
+queststatus(501) > 31, queststatus(501) < 33, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+--if done
+queststatus(501) = 33, english, ".+" -> inform("[Quest solved] You are awarded a pure water."), item(2554, 1, 999), queststatus(501) = 34, "Zzey should fall now.  Zzank you for your effortss.  Accept zziss gift of zze Mozzer as a token of gratitude."
+queststatus(501) = 33,  ".+"-> inform("[Quest gelöst] Du erhältst eine reines Wasser."), item(2554, 1, 999), queststatus(501) = 34, ""
 
-
-
+-- After finished
+queststatus(501) = 34, english, "quest", "mission" -> "Zzey should fall now.  Zzank you for your effortss. Ssalva hass nozzing else for you."
+queststatus(501) = 34, "quest", "mission" -> ""
+queststatus(501) = 34, "task", "adventure", "order" -> "Zzey should fall now.  Zzank you for your effortss. Ssalva hass nozzing else for you."
+queststatus(501) = 34, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
 -- Every NPC should contain at least 10 of those messages.
 -- Emotes are possible also starting with "#me ....".
 
-cycletext "Dass Leben isst schön auf meiner Heimatinssel.", "Life iz good on my island home."
-cycletext "Wass könnte eine alte Echse wie ich im Leben mehr brauchen.", "What more could an old lizard like me assk for in life?"
-cycletext "#me schaut glücklich auf die Insel und das Wasser", "#me looks around happily at the island and the water."
-cycletext "Zzenia hat die Bäume hier sselbst hergebracht. Hat sie vom Ssetzzling an grosssgezzogen.", "Zenia brought in zzesse trees mysself! Nurtured zzem from jusst sseedlingsss."
-cycletext "#me verschlingt einen ganzen Fisch", "#me slurps a whole fish down her throat."
-cycletext "Erzzähl den Fanatikern nicht, dasss Zzenia hier lebt. Ssie wollem meinen schönen Platzz für ssich sselbsst.", "Don't tell zzem zealotss I'm living here. Zzey'll want my fine place for zzemsselvess."
-cycletext "#me klopft sich auf den Bauch, nachdem sie laut gerülpst hat 'Dass war ein ssehr Guter!'", "#me pounds her chest after burping loudly. 'Zzat wass a good one!'"
-cycletext "#me döst während sie am Ufer sitzt.", "#me dozes as she sits by the shore."
-cycletext "Mutter isst gut zzu Zzenia.", "Zze Mozzer iz good to Zenia."
-cycletext "Zzeniass Schlafnesst muss sstets in Stand gehalten werden. Zzenia braucht mehr Materialien.", "Zenia ssleeping nesst iz alwayss in need of repairsss, Zenia jusst need ssome more ssupliesss."
+cycletext "", "May zze Mozzer sssave uss."
+cycletext "", "#me twitches her tail and looks around the area."
+cycletext "", "Ssss.  We hass to get zze roguess."
+cycletext "", "Roguess are defiling zze Mozzersss name.  Join me in eliminating zzem."
+cycletext "", "The Zzarn'K'Ska of Zelphia musst be sstopped."
+cycletext "", "#me swipes her tongue over her snout."
+cycletext "", "#me kneels, saying a prayer to the Mother."
+cycletext "", "#me runs a hand over the crest scales on her head while looking around worriedly."
+cycletext "", "#me sniffs at the air, flicking out her tongue for a taste."
+cycletext "", "#me leans back on her tail as she contimplates how to further rid the land of The Zzarn'K'Ska of Zelphia."

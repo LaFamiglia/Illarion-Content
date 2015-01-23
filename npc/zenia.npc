@@ -85,8 +85,9 @@ english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full l
 "Tanora", "Zelphia" -> "Mutter hat Zzenia geholfen ein gutess Leben zu führen, mit vielen Jungen. Und ssie führte mich in meinen alten Tagen zu diessen wunderbaren Platz."
 
 --------------------------------------------------Quest from Ssalva-------------------------------------------------------------------------------------------
-
-
+--- if you have quest from Ssalva to give gifts to Zenia -  1-custard pie, 2 fish soup, 20 eggs, and five of each fish type
+queststatus(501) = 13, english, "gift", "Ssalva" -> , queststatus(501) = 13, "Ksss.  Zat iss mosst interessting newss. If you can helpss me more, we will erradicate zzem."
+queststatus(501) = 13, "Ssalva", "Geschenk", "gabe" -> , queststatus(501) = 13, ""
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Quests
 --Show the rope you are given at the altar (use altar)
