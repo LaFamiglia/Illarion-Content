@@ -33,7 +33,7 @@ function M.MoveToField( User )
         User:warp(position(559 260 0));
 	    world:gfx(41,User.pos);
 	    world:makeSound(13,User.pos);
-		elseif User.pos == position(559,258,0) then -- back down to Lake of Life Main Dungeon
+	elseif User.pos == position(559,258,0) then -- back down to Lake of Life Main Dungeon
 		world:gfx(41,User.pos);
 	    world:makeSound(13,User.pos);
         User:warp(position(797 295 -9));
