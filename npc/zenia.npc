@@ -85,9 +85,25 @@ english, "Tanora", "Zelphia" -> "Zze Mozzer hass helped Zenia lead a good full l
 "Tanora", "Zelphia" -> "Mutter hat Zzenia geholfen ein gutess Leben zu führen, mit vielen Jungen. Und ssie führte mich in meinen alten Tagen zu diessen wunderbaren Platz."
 
 --------------------------------------------------Quest from Ssalva-------------------------------------------------------------------------------------------
---- if you have quest from Ssalva to give gifts to Zenia -  1-custard pie, 2 fish soup, 20 eggs, and five of each fish type
-queststatus(501) = 13, english, "gift", "Ssalva" -> , queststatus(501) = 13, "Ksss.  Zat iss mosst interessting newss. If you can helpss me more, we will erradicate zzem."
-queststatus(501) = 13, "Ssalva", "Geschenk", "gabe" -> , queststatus(501) = 13, ""
+--If you have quest from Ssalva to give gifts to Zenia -  1-custard pie, 2 fish soup, 20 eggs, and five of each fish type
+--Do not have all items
+queststatus(501) = 12, item(1153, all) < 1, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(1153, all) < 1, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(3572, all) < 2, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(3572, all) < 2, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(1210, all) < 5, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(1210, all) < 5, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(355, all) < 5, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(355, all) < 5, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(73, all) < 5, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(73, all) < 5, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(1209, all) < 5, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(1209, all) < 5, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+queststatus(501) = 12, item(1150, all) < 20, english, "gift", "Ssalva" -> "Ssalva did promisse Zenia more itemss zzan zziss. Are you ssure you have everyzzing?"
+queststatus(501) = 12, item(1150, all) < 20, "Ssalva", "Geschenk", "gabe" -> "Ssalva hat Zenia mehr Ssachen versprochen alss dasss. Bist du ssicher, dasss du alless hast?"
+--If you have all items
+queststatus(501) = 12, english, "gift", "Ssalva" -> deleteItem(1153, 1), deleteItem(3572, 2), deleteItem(1210, 5), deleteItem(1209, 5), deleteItem(355, 5), deleteItem(73, 5), deleteItem(1150, 20), queststatus(501) = 13, "A vissitor, how nicce, and you brought Zenia giftsss from my friend Ssalva you ssay? Oh, zziss remindss me, I have informazzion for Ssalva. Would you kindly tell Ssalva zzat zze zealotss are lead by a lizard temple warrior. Zenia iss mosst grateful for Zenia'ss giftss thiss day."
+queststatus(501) = 12, "Ssalva", "Geschenk", "gabe" -> deleteItem(1153, 1), deleteItem(3572, 2), deleteItem(1210, 5), deleteItem(1209, 5), deleteItem(355, 5), deleteItem(73, 5), deleteItem(1150, 20), queststatus(501) = 13, "Ein Bessucher, wie schön. Und du ssagst, du bringsst Geschenke von meinen Freund Ssalva? Oh, dass erinnert mich daran, dasss Zzenia Informationen für Ssalva hat. Wärsst du sso freundlich und teilsst Ssalva mit, dass die Fanatiker von einem Echsentempelkrieger angeführt werden? Zzenia isst diesse Tage ssehr glücklich über Zzenias Geschenke."
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Quests
 --Show the rope you are given at the altar (use altar)
