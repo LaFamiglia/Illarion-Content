@@ -41,7 +41,7 @@ end
 gemDE={"Je einen latenten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas.","Je einen bedingten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas.","Je einen leichten magischen Smaragd, Rubin, Obsidian, Saphir, Amethyst und Topas."}
 gemEN={"One latent magical emerald, ruby, obsidian, sapphire, amethyst and topaz.","One limited magical emerald, ruby, obsidian, sapphire, amethyst and topaz.","One slight magical emerald, ruby, obsidian, sapphire, amethyst and topaz."}
 
-gemItem={45,46,283,284,197,198}
+gemItem={3523,3521,3524,3522,3519,3525}
 
 
 
