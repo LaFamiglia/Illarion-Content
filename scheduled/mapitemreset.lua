@@ -72,6 +72,32 @@ function M.resetMapitem()
     skull.wear = 255
     world:changeItem(skull)
   end
+  
+    -- reset lake of life bridge
+  if (world:getItemOnField(position(720, 258, -9)).id ~= 434 or ~= 435 or ~=436) then
+    for xx = 722, 723 do
+        for yy = 240, 258 do
+            local pos = position(xx, yy, -9)
+            local bridge = world:getItemOnField(pos)
+            if bridge.id == 614 or bridge.id == 615 or bridge.id == 617 then
+                world:erase(bridge, bridge.number)
+            end
+        end
+    end
+  end
+  
+    if (world:getItemOnField(position(781, 188, -9)).id ~= 434 or ~= 435 or ~=436) then
+    for xx = 722, 723 do
+        for yy = 240, 258 do
+            local pos = position(xx, yy, -9)
+            local bridge = world:getItemOnField(pos)
+            if bridge.id == 614 or bridge.id == 615 or bridge.id == 617 then
+                world:erase(bridge, bridge.number)
+            end
+        end
+    end
+  end
+  
 end
 
 return M
