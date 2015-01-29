@@ -15,7 +15,17 @@ You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 
--- INSERT INTO triggerfields VALUES (789, 295, -9,'triggerfield.lakeoflife_teleport');
+-- INSERT INTO triggerfields VALUES (641, 266, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (640, 266, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (639, 245, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (731, 325, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (767, 305, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (666, 235, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (770, 293, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (769, 300, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (782, 293, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (779, 293, -9,'triggerfield.lakeoflife_triggers');
+-- INSERT INTO triggerfields VALUES (786, 294, -9,'triggerfield.lakeoflife_triggers');
 
 --Triggerfield events in the Lake of Life dungeon
 
@@ -32,7 +42,7 @@ function M.MoveToField( User )
     if Random.uniform(1, 4) == 1 then
 	    if User.pos == position(641, 266, -9) then -- inform
 	        common.InformNLS(User,"","As you round the iceflow, you can see a section of ice wall has been chisled away.")
-        elseif User.pos == position(641, 266, -9) then -- inform
+        elseif User.pos == position(640, 266, -9) then -- inform
 	        common.InformNLS(User,"","An eerie glow seems to come up through the ice floor and eminate out the ice walls.")
         elseif User.pos == position(639, 245, -9) then -- inform
 	        common.InformNLS(User,"","A loud cracking can be heard in the distance, followed by some crashing and splashing.")
