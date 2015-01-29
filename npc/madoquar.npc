@@ -42,8 +42,8 @@ author = "Estralis Seborian"
 
 lookatDE = "Dieser NPC ist Madoquar die Alterslose."
 lookatUS = "This NPC is Madoquar the Ageless."
-useMsgDE = "Fasst mich nicht an!"
-useMsgUS = "Do not touch me!"
+useMsgDE = "Das ist schon mehr als unangenehm. Fasst mich nicht an!"
+useMsgUS = "This is beyond irksome. Do not touch me!"
 wrongLangDE = "#me schaut verwirrt."
 wrongLangUS = "#me looks around confused."
 radius = 0
@@ -205,8 +205,8 @@ queststatus(112) = 9, "task", "adventure" -> "Banish that wraith now! Now, pleas
 queststatus(112) = 9, "Auftrag", "Aufgabe", "Abenteuer" -> "Treibt diesen Geist aus! Jetzt, bitte!"
 
 -- Quest 4 solved, reward: Magical amethyst, amethyst ring
-queststatus(112) = 10, english, ".+" -> inform("[Quest solved] You are awarded an amethyst ring and a magical amethyst."), item(277, 1, 799), item(197, 1, 333, "gemLevel" = "1"), queststatus(112) = 11, "I'll give you a ring and a secret... I killed that wraith while it was alive. Don't tell a soul, but my real name is Quantisha and that wraith was once the real Madoquar. Don't look at me with such condescending eyes, this happened 400 years ago and I have already learnt my lesson."
-queststatus(112) = 10, ".+" -> inform("[Quest gelöst] Du erhältst einen Amethystring und einen magischen Amethysten."), item(277, 1, 799), item(197, 1, 333, "gemLevel" = "1"), queststatus(112) = 11, "Ich gebe euch diesen Ring und ein Geheimnis. Ich tötete einst diesen Geist, als sie noch unter den Lebenden war. Sagt es niemanden, aber mein echter Name ist Quantisha und dieser Geist war einst die echte Madoquar. Schaut mich nicht so vorwurfsvoll an, all dies geschah vor vierhundert Jahren und ich habe bereits genug gebüßt."
+queststatus(112) = 10, english, ".+" -> inform("[Quest solved] You are awarded an amethyst ring and a magical amethyst."), item(277, 1, 799), item(3519, 1, 333, "gemLevel" = "1"), queststatus(112) = 11, "I'll give you a ring and a secret... I killed that wraith while it was alive. Don't tell a soul, but my real name is Quantisha and that wraith was once the real Madoquar. Don't look at me with such condescending eyes, this happened 400 years ago and I have already learnt my lesson."
+queststatus(112) = 10, ".+" -> inform("[Quest gelöst] Du erhältst einen Amethystring und einen magischen Amethysten."), item(277, 1, 799), item(3519, 1, 333, "gemLevel" = "1"), queststatus(112) = 11, "Ich gebe euch diesen Ring und ein Geheimnis. Ich tötete einst diesen Geist, als sie noch unter den Lebenden war. Sagt es niemanden, aber mein echter Name ist Quantisha und dieser Geist war einst die echte Madoquar. Schaut mich nicht so vorwurfsvoll an, all dies geschah vor vierhundert Jahren und ich habe bereits genug gebüßt."
 
 -- No more quests, just nice words of gratitude
 queststatus(112) = 11, english, "quest", "mission" -> "It's a nice day today, isn't it? It's thanks to you that I can enjoy these days for hundreds if not thousands more years as Madoquar."
