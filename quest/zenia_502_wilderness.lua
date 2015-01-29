@@ -53,7 +53,7 @@ Description[GERMAN][7] = "Rede mit Zenia, sie hat villeicht eine weitere Aufgabe
 Description[ENGLISH][7] = "Check with Zenia, she may have another task for you."
 
 Description[GERMAN][8] = ""
-Description[ENGLISH][8] = "Place all materials on the altar and pray to the Mother for help with your raft. (You will need ropes, logs, mud and fish)."
+Description[ENGLISH][8] = "Take all materials to the altar and pray to the Mother for help with your raft."
 
 Description[GERMAN][9] = ""
 Description[ENGLISH][9] = "With the help of the Mother you have successfully built a raft and left the island.  Zenia may be able to assist should you land there again."
