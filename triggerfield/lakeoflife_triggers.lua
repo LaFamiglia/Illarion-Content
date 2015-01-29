@@ -49,7 +49,7 @@ function M.MoveToField( User )
 		    world:makeSound(5, User.pos)
             world:makeSound(9, User.pos)
 	    elseif User.pos == position(731, 325, -9) then -- Knock out warp.
-		    common.InformNLS(User,"","You slip and fall into the water, washing ashore far from the dock.")
+		    common.InformNLS(User,"Du rutscht ab und fällst ins Wasser. Du wirst weit vom Dock wieder an Land gespühlt.","You slip and fall into the water, washing ashore far from the dock.")
 		    world:gfx(11, User.pos)
 	        world:makeSound(9, User.pos)
             User:warp(position(767, 305, -9))
