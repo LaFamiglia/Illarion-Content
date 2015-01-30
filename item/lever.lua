@@ -186,6 +186,13 @@ function M.init()
 	openDoor1:bind(1, sendmessage.sendMessage(position(538,557,-3), "Ich sperre die Türe zu!","I lock the door!", 10));
 	-- Doors in Halfling Dungeon end -----
 	
+	-- Bridge in Lake of Life Dungeon ----
+	lakeofLife = lever.Lever(position(720, 258, -9), true);
+    lakeofLife:bind(1, createbridge.createBridge(position(722, 258, -9), 0, 19));
+	lakeofLife:bind(1, createbridge.createBridge(position(723, 258, -9), 0,19));
+	lakeofLife:bind(1, sendmessage.sendMessage(position(720, 258, -9), "","You hear a grinding sound.", 10));
+	lakeofLife:bind(1, sendmessage.sendMessage(position(781, 188, -9), "","You hear a grinding sound a distance away.", 10));
+	
 	AddToLevers(elevator1);
 	AddToLevers(elevator2);
 	AddToLevers(evilrock1);
@@ -208,6 +215,7 @@ function M.init()
 	
 	AddToLevers(openDoor);
 	AddToLevers(openDoor1);
+	AddToLevers(lakeofLife);
 	----------------------------------------------------------------------------
 
 
