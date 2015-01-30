@@ -43,7 +43,7 @@ Description[GERMAN][3] = "Rede mit Ssalva, sie hat villeicht eine weitere Aufgab
 Description[ENGLISH][3] = "Check with Ssalva, she may have another task for you."
 
 Description[GERMAN][4] = ""
-Description[ENGLISH][4] = "Explore the Lake of Life Dungeon and find the path to the second major island before reporting back to Ssalva."
+Description[ENGLISH][4] = "Explore the Lake of Life Dungeon and find the second major island before reporting back to Ssalva."
 Description[GERMAN][5] = "Kehre zu Ssalva zurück, du hast ihre Aufgabe erledigt."
 Description[ENGLISH][5] = "Return to Ssalva, you have finished her task."
 
