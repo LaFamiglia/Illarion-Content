@@ -299,7 +299,7 @@ end
 
 
 stoneChamberStonePosition={position(957,170,-6),position(953,167,-6),position(948,168,-6),position(946,173,-6),position(948,178,-6),position(953,179,-6),position(957,176,-6)}
-stoneChamberStoneKind={283,197,46,285,45,198,284}
+stoneChamberStoneKind={3524,3519,3521,3520,3523,3525,3522}
 playerWithWrongWeight={}
 playerWithRightWeight={}
 clicksAmountDe={"einmaliges","dreimaliges","zweimaliges"}
