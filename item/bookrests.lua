@@ -236,6 +236,19 @@ function NecktieHomeTravel(User,factionNames,teleporterPos,selected)
     return false
 end
 
+local function akalutCadomyrBlockade(user)
+    local foundValue, value = ScriptVars:find("akalutCadomyrBlockade")
+    if not foundValue or tonumber(value) == 0 then
+        return false
+    end
+    
+    world:gfx(2, user.pos)
+    user:increaseAttrib("hitpoints",-1000)
+    user:inform("Ein Blitz kommt aus dem Teleporter geschossen.", "You are hit by a lightning coming from the teleporter.", Character.highPriority)
+    
+    return true
+end
+
 function StaticTeleporter(User, SourceItem)
 
     local names
@@ -252,6 +265,12 @@ function StaticTeleporter(User, SourceItem)
         local success = dialog:getSuccess()
         if success then
             local selected = dialog:getSelectedIndex() + 1
+            
+            if selected == 3 or User:distanceMetricToPosition(targetPos[3]) <= 5 then
+                if akalutCadomyrBlockade(User) then
+                    return
+                end
+            end
             local userFaction = factions.getMembershipByName(User)
             -- Check wether the char has enough money or travels from necktie to hometown or vice versa
             if (money.CharHasMoney(User,500) or NecktieHomeTravel(User,names,targetPos,selected)) then
