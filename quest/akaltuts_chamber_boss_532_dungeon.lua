@@ -33,59 +33,59 @@ Title[ENGLISH] = "Akaltut's Chambers Boss Fight"
 local Description = {}
 Description[GERMAN] = {}
 Description[ENGLISH] = {}
-Description[GERMAN][1] = "Töte Drow für den Defensor Primus. Du benötigst noch 20."
-Description[ENGLISH][1] = "Kill drow for Defensor Primus.  You still need 20."
-Description[GERMAN][2] = "Töte Drow für den Defensor Primus. Du benötigst noch 19."
-Description[ENGLISH][2] = "Kill drow for Defensor Primus.  You still need 19."
-Description[GERMAN][3] = "Töte Drow für den Defensor Primus. Du benötigst noch 18."
-Description[ENGLISH][3] = "Kill drow for Defensor Primus. You still need 18."
-Description[GERMAN][4] = "Töte Drow für den Defensor Primus. Du benötigst noch 17."
-Description[ENGLISH][4] = "Kill drow for Defensor Primus. You still need 17."
-Description[GERMAN][5] = "Töte Drow für den Defensor Primus. Du benötigst noch 16."
-Description[ENGLISH][5] = "Kill drow for Defensor Primus. You still need 16."
-Description[GERMAN][6] = "Töte Drow für den Defensor Primus. Du benötigst noch 15."
-Description[ENGLISH][6] = "Kill drow for Defensor Primus. You still need 15."
-Description[GERMAN][7] = "Töte Drow für den Defensor Primus. Du benötigst noch 14."
-Description[ENGLISH][7] = "Kill drow for Defensor Primus. You still need 14."
-Description[GERMAN][8] = "Töte Drow für den Defensor Primus. Du benötigst noch 13."
-Description[ENGLISH][8] = "Kill drow for Defensor Primus. You still need 13."
-Description[GERMAN][9] = "Töte Drow für den Defensor Primus. Du benötigst noch 12."
-Description[ENGLISH][9] = "Kill drow for Defensor Primus.  You still need 12."
-Description[GERMAN][10] = "Töte Drow für den Defensor Primus. Du benötigst noch 11"
-Description[ENGLISH][10] = "Kill drow for Defensor Primus.  You still need 11."
-Description[GERMAN][11] = "Töte Drow für den Defensor Primus. Du benötigst noch 10."
-Description[ENGLISH][11] = "Kill drow for Defensor Primus. You still need 10."
-Description[GERMAN][12] = "Töte Drow für den Defensor Primus. Du benötigst noch 9."
-Description[ENGLISH][12] = "Kill drow for Defensor Primus. You still need 9."
-Description[GERMAN][13] = "Töte Drow für den Defensor Primus. Du benötigst noch 8."
-Description[ENGLISH][13] = "Kill drow for Defensor Primus. You still need 8."
-Description[GERMAN][14] = "Töte Drow für den Defensor Primus. Du benötigst noch 7."
-Description[ENGLISH][14] = "Kill drow for Defensor Primus. You still need 7."
-Description[GERMAN][15] = "Töte Drow für den Defensor Primus. Du benötigst noch 6."
-Description[ENGLISH][15] = "Kill drow for Defensor Primus. You still need 6."
-Description[GERMAN][16] = "Töte Drow für den Defensor Primus. Du benötigst noch 5."
-Description[ENGLISH][16] = "Kill drow for Defensor Primus. You still need 5."
-Description[GERMAN][17] = "Töte Drow für den Defensor Primus. Du benötigst noch 4."
-Description[ENGLISH][17] = "Kill drow for Defensor Primus. You still need 4."
-Description[GERMAN][18] = "Töte Drow für den Defensor Primus. Du benötigst noch 3."
-Description[ENGLISH][18] = "Kill drow for Defensor Primus. You still need 3."
-Description[GERMAN][19] = "Töte Drow für den Defensor Primus. Du benötigst noch 2."
-Description[ENGLISH][19] = "Kill drow for Defensor Primus. You still need 2."
-Description[GERMAN][20] = "Töte Drow für den Defensor Primus. Du benötigst noch 1."
-Description[ENGLISH][20] = "Kill drow for Defensor Primus. You still need 1."
-Description[GERMAN][21] = "Kehre zurück zum Defensor Primus. Du hast seinen Test bestanden."
-Description[ENGLISH][21] = "Report back to Defensor Primus, you have finished his test."
+Description[GERMAN][1] = "Töte Drow für  Marcus. Du benötigst noch 20."
+Description[ENGLISH][1] = "Kill drow for Marcus.  You still need 20."
+Description[GERMAN][2] = "Töte Drow für  Marcus. Du benötigst noch 19."
+Description[ENGLISH][2] = "Kill drow for Marcus.  You still need 19."
+Description[GERMAN][3] = "Töte Drow für  Marcus. Du benötigst noch 18."
+Description[ENGLISH][3] = "Kill drow for Marcus. You still need 18."
+Description[GERMAN][4] = "Töte Drow für  Marcus. Du benötigst noch 17."
+Description[ENGLISH][4] = "Kill drow for Marcus. You still need 17."
+Description[GERMAN][5] = "Töte Drow für  Marcus. Du benötigst noch 16."
+Description[ENGLISH][5] = "Kill drow for Marcus. You still need 16."
+Description[GERMAN][6] = "Töte Drow für  Marcus. Du benötigst noch 15."
+Description[ENGLISH][6] = "Kill drow for Marcus. You still need 15."
+Description[GERMAN][7] = "Töte Drow für  Marcus. Du benötigst noch 14."
+Description[ENGLISH][7] = "Kill drow for Marcus. You still need 14."
+Description[GERMAN][8] = "Töte Drow für  Marcus. Du benötigst noch 13."
+Description[ENGLISH][8] = "Kill drow for Marcus. You still need 13."
+Description[GERMAN][9] = "Töte Drow für  Marcus. Du benötigst noch 12."
+Description[ENGLISH][9] = "Kill drow for Marcus.  You still need 12."
+Description[GERMAN][10] = "Töte Drow für  Marcus. Du benötigst noch 11"
+Description[ENGLISH][10] = "Kill drow for Marcus.  You still need 11."
+Description[GERMAN][11] = "Töte Drow für  Marcus. Du benötigst noch 10."
+Description[ENGLISH][11] = "Kill drow for Marcus. You still need 10."
+Description[GERMAN][12] = "Töte Drow für  Marcus. Du benötigst noch 9."
+Description[ENGLISH][12] = "Kill drow for Marcus. You still need 9."
+Description[GERMAN][13] = "Töte Drow für  Marcus. Du benötigst noch 8."
+Description[ENGLISH][13] = "Kill drow for Marcus. You still need 8."
+Description[GERMAN][14] = "Töte Drow für  Marcus. Du benötigst noch 7."
+Description[ENGLISH][14] = "Kill drow for Marcus. You still need 7."
+Description[GERMAN][15] = "Töte Drow für  Marcus. Du benötigst noch 6."
+Description[ENGLISH][15] = "Kill drow for Marcus. You still need 6."
+Description[GERMAN][16] = "Töte Drow für  Marcus. Du benötigst noch 5."
+Description[ENGLISH][16] = "Kill drow for Marcus. You still need 5."
+Description[GERMAN][17] = "Töte Drow für  Marcus. Du benötigst noch 4."
+Description[ENGLISH][17] = "Kill drow for Marcus. You still need 4."
+Description[GERMAN][18] = "Töte Drow für  Marcus. Du benötigst noch 3."
+Description[ENGLISH][18] = "Kill drow for Marcus. You still need 3."
+Description[GERMAN][19] = "Töte Drow für  Marcus. Du benötigst noch 2."
+Description[ENGLISH][19] = "Kill drow for Marcus. You still need 2."
+Description[GERMAN][20] = "Töte Drow für  Marcus. Du benötigst noch 1."
+Description[ENGLISH][20] = "Kill drow for Marcus. You still need 1."
+Description[GERMAN][21] = "Kehre zurück zum Marcus. Du hast seinen aufgabe bestanden."
+Description[ENGLISH][21] = "Report back to Marcus, you have finished his task."
 
-Description[GERMAN][22] = "Defensor Primus hat vielleicht eine Aufgabe für dich."
-Description[ENGLISH][22] = "Defensor Primus may have a task for you."
+Description[GERMAN][22] = "Marcus hat vielleicht eine Aufgabe für dich."
+Description[ENGLISH][22] = "Marcus may have a task for you."
 
 Description[GERMAN][23] = ""
-Description[ENGLISH][23] = "Kill Akaltut for Defensor Primus. He promises a great reward if you manage it."
-Description[GERMAN][24] = "Kehre zurück zum Defensor Primus. Du hast seinen Test bestanden."
-Description[ENGLISH][24] = "Report back to Defensor Primus, you have finished his test."
+Description[ENGLISH][23] = "Kill Akaltut for Marcus. He promises a great reward if you manage it."
+Description[GERMAN][24] = ""
+Description[ENGLISH][24] = "Report back to Marcus, you have vanquished Akaltut for him."
 
-Description[GERMAN][25] = "Du hast alle Prüfungen der Defensor Primus bestanden."
-Description[ENGLISH][25] = "You have passed all the tests of the Defensor Primus."
+Description[GERMAN][25] = ""
+Description[ENGLISH][25] = "You have completed all tasks for Marcus."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
 local Start = {}
@@ -103,7 +103,7 @@ monsterQuests.addQuest{
     queststatus = {from = 1, to = 21},
     questTitle = {german = Title[GERMAN], english = Title[ENGLISH]},
     monsterName = {german = "Dunkelelfen", english = "drows"},
-    npcName = "Defensor Primus",
+    npcName = "Marcus",
     monsterGroupIds = {6} -- all drows
 }
 monsterQuests.addQuest{
@@ -112,7 +112,7 @@ monsterQuests.addQuest{
     queststatus = {from = 23, to = 24},
     questTitle = {german = Title[GERMAN], english = Title[ENGLISH]},
     monsterName = {german = "Akaltut", english = "Akaltut"},
-    npcName = "Defensor Primus",
+    npcName = "Marcus",
     monsterIds = {1141} -- Akaltut
 }
 

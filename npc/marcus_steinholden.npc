@@ -1,0 +1,144 @@
+-- Illarion Server
+-- 
+-- This program is free software: you can redistribute it and/or modify it under
+-- the terms of the GNU Affero General Public License as published by the Free
+-- Software Foundation, either version 3 of the License, or (at your option) any
+-- later version.
+-- 
+-- This program is distributed in the hope that it will be useful, but WITHOUT
+-- ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+-- FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more
+-- details.
+-- 
+-- You should have received a copy of the GNU Affero General Public License
+-- along with this program.  If not, see <http://www.gnu.org/licenses/>.
+------------------------------------------------------------------------------AC
+-- NPC Name: Marcus Steinholden                                               --
+-- NPC Job:  Apprentice                                                       --
+--                                                                            --
+-- NPC Race: Human                      NPC Position:  486, 859, -9           --
+-- NPC Sex:  male                       NPC Direction: southwest              --
+--                                                                            --
+-- Author:   Evie                                                             --
+--                                                     easyNPC Parser v1.23.1 --
+--------------------------------------------------------------------------------
+name = "Marcus Steinholden"
+race = human
+sex = male
+position = 486, 859, -9
+direction = southwest
+job = "Mage Apprentice"
+
+language = common
+language = human
+defaultLanguage = common
+autointroduce = on
+
+author = "Evie"
+
+lookatDE = "Dies ist Marcus Steinholden."
+lookatUS = "This is Marcus Steinholden."
+useMsgDE = ""
+useMsgUS = "Don't h.h.hurt Marcus."
+wrongLangDE = "#me schaut dich verwirrt an."
+wrongLangUS = "#me looks at you confused."
+radius = 0
+hairID = 1
+colorHair = 0, 0, 0
+colorSkin = 230, 217, 193
+itemChest = 182
+itemMainHand = 323
+itemSecondHand =2447
+itemHands = 531
+itemTrousers = 34
+itemShoes = 1054
+
+-- QuestID=532
+--  0: No Quest taken
+--  1: Quest taken - Kill twenty drow, reward 30000cp
+-- 21: Quest 1 solved
+-- 23: Quest taken - Kill Akaltut
+-- 24: Quest 2 solved.
+
+-- Help
+"Help" -> inform("[Game Help] This NPC is Marcus Steindholden, ask for a tasl. Keywords: quest, Akaltut, drow, Defensor, name, punishment.")
+"Hilfe" -> inform("")
+
+-- General speech
+"Hello", "Greet", "Hail", "Good day", "Good morning", "Good Evening" -> "Mar..Marcus does greet you."
+"Grüß", "Gruß", "Grüss", "Gruss", "Guten Morgen", "Guten Tag", "Guten Abend", "Gute Nacht", "Mahlzeit", "Tach", "Moin", "Mohltied" -> ""
+english, "Hiho", "Hallo", "Hey", "Greeb" -> "Mar..Marcus does greet you."
+"Hiho", "Hallo", "Hey", "Greeb" -> ""
+"Farewell", "Bye", "Fare well", "See you" -> "Marcus wishes you safe travels. He hopes you come back again to help him."
+"Tschüß", "Tschüss", "Wiedersehen" -> ""
+english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Marcus wishes you safe travels. He hopes you come back again to help him."
+"Ciao", "Adieu", "Au revoir", "Farebba" -> ""
+"who are you", "who art thou" -> "Mar.. Marcus is Marcus.  He is the apprentice to the great Master Akaltut."
+"dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> ""
+english, "your name", "name" -> "Mar.. Marcus is Marcus.  He is the apprentice to the great Master Akaltut."
+"ihr name", "Name" -> ""
+
+-- Small talk: The talk here should focus on possible questions. Feel free to add more!
+"profession" -> "Marcus does stu..study magic when his Master is not busy punishing him.  For now he guards the doors because I failed to acquire Cadomyr for Master."
+"beruf" -> ""
+english, "job" -> "Marcus does stu..study magic when his Master is not busy punishing him.  For now he guards the doors because I failed to acquire Cadomyr for Master."
+"job" -> ""
+
+-- More small talk; add at least five triggers, e.g. about the profession of the NPC or his enviroment
+english, "Defensor" -> "The Defensors were animated by Master to test the mettle of all those wishing to seek her."
+"Defensor" -> ""
+english, "Drow" -> "The Drow are some of Masters most loyal servants. She aided them with her dark magic when they sought revenge."
+"Drow" -> ""
+english, "Akaltut" -> "Ma..Master Akaltuts is a power mage.  She .. she bonded with a Spider Queen.. now she is neither one nor the other."
+"Akaltut" -> ""
+
+-- Quests
+-- Marcus task one.  Kill twenty drow.
+-- If haven't completed previous Defensors tasks
+queststatus(530) < 27, english, "quest", "mission", "test" -> "Marcus can not let you pass if you don't finish the Defensors test.  He has no chose, Master won't let him."
+queststatus(530) < 27, "quest", "mission", "Test" -> ""
+queststatus(530) < 27, "task", "adventure", "order" -> "Marcus can not let you pass if you don't finish the Defensors test.  He has no chose, Master won't let him."
+queststatus(530) < 27, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+-- Receiving the task of Killing twenty drow
+queststatus(530) = 27, queststatus(532) = 0, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chambers Boss Fight 1"), queststatus(532) = 1, "Marcus made a foolish mistake when he .. he did sign Master contract.  To help me escape first you need to kill off twenty of the drow that are protecting Akaltut in her lair."
+queststatus(530) = 27, queststatus(532) = 0, "quest", "mission", "Test" -> inform("[Neue Quest] "), queststatus(532) = 1, ""
+queststatus(530) = 27, queststatus(532) = 0, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chambers Boss Fight 1"), queststatus(532) = 1, "Marcus made a foolish mistake when he .. he did sign Master contract.  To help me escape first you need to kill off twenty of the drow that are protecting Akaltut in her lair."
+queststatus(530) = 27, queststatus(532) = 0, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] "), queststatus(532) = 1, ""
+-- If quest received but task not finished
+queststatus(532) > 0, queststatus(532) < 21, english,"quest", "mission", "test" -> "Marcus can not escape if you do not eliminate twenty drow in the Lair. Please help me."
+queststatus(532) > 0, queststatus(532) < 21, "quest", "mission", "Test" -> ""
+queststatus(532) > 0, queststatus(532) < 21, "task", "adventure", "order" -> "Marcus can not escape if you do not eliminate twenty drow in the Lair. Please help me."
+queststatus(532) > 0, queststatus(532) < 21, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+-- If test is finished
+queststatus(532) = 21, english, ".+" -> inform("[Quest solved] You are awarded 300 silver coins."), money + 30000, queststatus(532) = 22, "Marcus does thank you. Please take these coins for your work. I have one more task if you are ready."
+queststatus(532) = 21, ".+" -> inform("[Quest gelöst] Du erhältst 300 Silberstücke."), money + 30000, queststatus(532) = 22,""
+
+-- Marcus task two: Kill Akaltut.
+-- Receiving the task of Killing Akaltut
+queststatus(532) = 22, english, "quest", "mission", "test" -> inform("[New quest] Akaltut's Chambers Boss Fight 2"), queststatus(532) = 23, "Marcus has one last request. Can..can you kill Master Akaltut for me?  Marcus thinks only that will break the bond she has over him."
+queststatus(532) = 22, "quest", "mission", "Test" -> inform("[Neue Quest] "), queststatus(532) = 23, ""
+queststatus(532) = 22, "task", "adventure", "order" -> inform("[New quest] Akaltut's Chambers Boss Fight 2"), queststatus(532) = 23, "Marcus has one last request. Can..can you kill Master Akaltut for me?  Marcus thinks only that will break the bond she has over him."
+queststatus(532) = 22, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> inform("[Neue Quest] "), queststatus(532) = 23, ""
+-- If quest received but task not finished
+queststatus(532) > 22, queststatus(532) < 24, english,"quest", "mission", "test" -> "Please kill Master Akaltut for Marcus to break their bond."
+queststatus(532) > 22, queststatus(532) < 24, "quest", "mission", "Test" -> ""
+queststatus(532) > 22, queststatus(532) < 24, "task", "adventure", "order" -> "Please kill Master Akaltut for Marcus to break their bond."
+queststatus(532) > 22, queststatus(532) < 24, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+-- If test is finished
+queststatus(532) = 24, english, ".+" -> inform("[Quest solved] You are awarded a limited topaz."), item(198, 1, 333, "gemLevel" = "2"), queststatus(532) = 25, "I feel the bond weakening even now. Marcus hopes in time he will get away. Marcus could not have done this without you. Take this gem as a thank you token."
+queststatus(532) = 24, ".+" -> inform("[Quest gelöst] "), item(198, 1, 333, "gemLevel" = "2"), queststatus(532) = 2,""
+
+-- All done.
+queststatus(532) = 25, english, "quest", "mission", "test" -> "You have done all Marcus could have expected.  Marcus must make his way on his own now."
+queststatus(532) = 25, "quest", "mission", "Test" -> ""
+queststatus(532) = 25, "task", "adventure", "order" -> "You have done all Marcus could have expected.  Marcus must make his way on his own now."
+queststatus(532) = 25, "Auftrag", "Aufgabe", "Abenteuer", "Befehl" -> ""
+
+------------------------------------------------------------------------------AC
+-- Cycle Texts - Messages spoken automatically in random intervals.
+-- Every NPC should contain at least 10 of those messages.
+-- Emotes are possible also starting with "#me ....".
+
+cycletext "", "#me draws runes in blood on his arm."
+cycletext "", "Ma..Ma..Master is mad at Marcus."
+cycletext "", ""
