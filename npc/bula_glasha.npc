@@ -16,8 +16,8 @@
 -- NPC Name: Bula Glasha                                              Galmair --
 -- NPC Job:  Informant                                                        --
 --                                                                            --
--- NPC Race: orc                        NPC Position:  407, 232, 0            --
--- NPC Sex:  female                     NPC Direction: west                   --
+-- NPC Race: orc                        NPC Position:  403, 229, 0            --
+-- NPC Sex:  female                     NPC Direction: south                   --
 --                                                                            --
 -- Author:   Evie                                                             --
 --                                                     easyNPC Parser v1.23.1 --
@@ -26,8 +26,8 @@
 name = "Bula Glasha"
 race = orc
 sex = female
-position = 407, 232, 0
-direction = west
+position = 403, 229, 0
+direction = south
 affiliation = "Galmair"
 job = "Informant"
 
