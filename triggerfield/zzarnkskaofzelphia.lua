@@ -33,7 +33,7 @@ function M.MoveToField(User)
     if  User.pos == position(638, 271, 0) then -- Player found Lake of Life Dungeon entrance.
         User:warp(position(638, 271, -9))
     
-	elseif User.pos == position(636, 271, 0)  or User.pos == position(636, 272, 0) or User.pos == position(636, 273, 0) or User.pos == position(636, 274, 0)  and User:getQuestProgress(501) == 1 then -- Player found Lake of Life Dungeon entrance.
+	elseif User:isInRangeToPosition((position (636 , 271, 0)), 4) and User:getQuestProgress(501) == 1 then -- Player found Lake of Life Dungeon entrance.
         User:setQuestProgress(501, 2)
         common.InformNLS(User, "Du hast den Eingang zum See des Lebens gefunden. Kehre zu Salva zurück, du hast ihre Aufgabe erfüllt.", "You have found the entrance to the Lake of Life. Return to Ssalva, you have finished her task.")
 		
@@ -49,10 +49,10 @@ local altarPlate = position(782, 297, -9)
 
 
 function M.PutItemOnField(Item,User)
-    if  User:getQuestProgress(501) == 9 and Item.pos == altarPlate and Item.id == 767 then --  doing the quest - water blossom on the altar
+    if  User:getQuestProgress(501) == 14 and Item.pos == altarPlate and Item.id == 767 then --  doing the quest - water blossom on the altar
 	    world:gfx(46, Item.pos) -- nice GFX
         world:erase(Item, 1) -- delete the item
-	    User:setQuestProgress(501, 10)
+	    User:setQuestProgress(501, 15)
 		common.InformNLS(User, "Du hast deine Gabe dargebracht. Kehre zu Salva zurück, du hast ihre Aufgabe erfüllt.", "You have placed your offering. Return to Ssalva, you have finished her task.")
         end
 	end
