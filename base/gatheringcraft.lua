@@ -124,10 +124,10 @@ function GatheringCraft:FindRandomItem(User)
   end
 
 	-- check for Noobia
-	if (common.IsOnNoobia(User.pos)) then
+	if (common.isOnNoobia(User.pos)) then
 		return false;
 	end
-	
+
 	-- check for Prison Mine
 	if (common.isInPrison(User.pos)) then
        return false
@@ -144,8 +144,11 @@ function GatheringCraft:FindRandomItem(User)
 	if (#self.Monsters > 0) then
 		local ra = math.random(#self.Monsters);
 		local pa = math.random();
-		if (pa < self.Monsters[ra].Probability*self.FastActionFactor) then
-			local TargetPos = common.getFreePos(User.pos, 1)
+		if (pa < self.Monsters[ra].Probability*self.FastActionFactor) then 
+            local TargetPos = common.GetFreePositions(User.pos, 1, true, true)()
+            if TargetPos == nil then
+                return false
+            end
 			world:createMonster(self.Monsters[ra].MonsterID, TargetPos, 20);
 			if ( self.Monsters[ra].GFX ~= nil ) then
 				world:gfx(self.Monsters[ra].GFX, TargetPos);
