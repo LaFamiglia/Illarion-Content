@@ -59,6 +59,50 @@ local monsterHooks = require("monster.base.hooks")
 
 local M = {}
 
+local CalculateMovepoints
+local NewbieIsland
+local LoadWeapons
+local GetAttackType
+local LoadAttribsSkills
+local CheckRange
+local CheckAttackOK
+local HandleAmmunition
+local CheckCriticals
+local Specials
+local HandleMovepoints
+local ShowAttackGFX
+local CoupDeGrace
+local HitChance
+local DropAmmo
+local CalculateDamage
+local ArmourAbsorption
+local ConstitutionEffect
+local CauseDamage
+local ArmourDegrade
+local ShowEffects
+local LearnSuccess
+local GetArmourType
+local PlayParrySound
+local WeaponDegrade
+local Counter
+local setArcherMonsterOnRoute
+local DropBlood
+local DropMuchBlood
+
+local function NotNil(val)
+    if val==nil then
+        return 0
+    end
+    return val
+end
+
+local function NoNils(val)
+    if val==nil then
+        return false
+    end
+    return true
+end
+
 local firstTimeList = {}
 
 local function getRangeOfDistanceWeaponInSlot(char, slot)
@@ -101,9 +145,9 @@ local function isPossibleTarget(monster, candidate)
     if range > 0 then
         if candidate:isInRange(monster, range) then
             local blockList = world:LoS( monster.pos, candidate.pos )
-            local next = next	-- make next-iterator local
-            if (next(blockList)~=nil) then	-- see if there is a "next" (first) object in blockList!
-                return false				-- something blocks
+            local next = next -- make next-iterator local
+            if (next(blockList)~=nil) then -- see if there is a "next" (first) object in blockList!
+                return false -- something blocks
             end
         else
             return false
@@ -137,6 +181,65 @@ function M.setTarget(monster, candidates)
         firstTimeList[monsterId] = candidate.id
     end
     return target
+end
+
+-- List to store all information for aiming time
+local AIMING_TIME_LIST = {}
+
+--- Store all necessary information in the global list for aiming time
+-- @param Attacker The character attacking
+-- @param Defender The character defender
+-- @param WeaponId Id of the weapon used
+local function FillAimingTimeList(Attacker,Defender,weaponId)
+    AIMING_TIME_LIST[Attacker.id] = {}
+    AIMING_TIME_LIST[Attacker.id]["counter"] = 1 -- increased on every call; normally every 1/10 seconds
+    AIMING_TIME_LIST[Attacker.id]["started"] = world:getTime("unix") -- we use that as a security measure. In case onAttack is not called every 1/10 (e.g. lack of ap), the action is excecuted then ext full sec(e.g. if 1.7 seconds are necessary but onAttack hasnt been called properly, the action is xeceuted after 2 sec)
+    AIMING_TIME_LIST[Attacker.id]["weapon"] = weaponId
+    AIMING_TIME_LIST[Attacker.id]["target"] = Defender.id
+    AIMING_TIME_LIST[Attacker.id]["position"] = Attacker.pos.x.." "..Attacker.pos.y.." "..Attacker.pos.z
+end
+
+--- Calculate time necessary to aim, depedning on attribute and weapon.
+-- @param Attacker The character attacking
+-- @param Weapon The weapon used
+-- @return The time needed for an attack in 1/10 seconds
+local function GetNecessaryAimingTime(Attacker)
+    -- we use a default value for every character and weapon; the differences in attributes and weapons come in play when the movepoints are lowered/regenerated
+    return math.floor(CalculateMovepoints(Attacker)+0.5)
+end
+
+--- Check if enough aiming time has passed for the archer in order to shoot
+-- @param AttackerList List containing Attacker and weapon
+-- @param Defender The defending character
+-- @param inRange Boolean if the defender is in range to aim/shoot at him
+local function CheckAimingTime(AttackerList,Defender,inRange)
+    local Attacker = AttackerList["Char"]
+    --[[
+    if not inRange then
+        AIMING_TIME_LIST[Attacker.id] = nil
+        return false
+    end
+    ]]
+    if AIMING_TIME_LIST[Attacker.id] == nil then
+        FillAimingTimeList(Attacker,Defender,AttackerList.Weapon.id)
+        return false
+    else
+        -- Check if weapon and target are the same and if the attacker hasn't moved
+        if AttackerList.Weapon.id ~= AIMING_TIME_LIST[Attacker.id]["weapon"] or Defender.id ~= AIMING_TIME_LIST[Attacker.id]["target"] or Attacker.pos.x.." "..Attacker.pos.y.." "..Attacker.pos.z ~= AIMING_TIME_LIST[Attacker.id]["position"] then
+            FillAimingTimeList(Attacker,Defender,AttackerList.Weapon.id)
+            return false
+        elseif (world:getTime("unix") - AIMING_TIME_LIST[Attacker.id]["started"])*10 > GetNecessaryAimingTime(AttackerList) + 20 then
+            -- that is needed to prevent that someone aims, stops aiming, waits a long time and as soon as he targets the same character again, shoots immediately.
+            -- this has to be done since there is no way to clear the list when someone stops targeting the target
+            AIMING_TIME_LIST[Attacker.id]["counter"] = 1
+            AIMING_TIME_LIST[Attacker.id]["started"] = world:getTime("unix")
+            return false
+        elseif AIMING_TIME_LIST[Attacker.id]["counter"] <= GetNecessaryAimingTime(AttackerList) and (world:getTime("unix") - AIMING_TIME_LIST[Attacker.id]["started"])*10 < math.ceil(GetNecessaryAimingTime(AttackerList)) then
+            AIMING_TIME_LIST[Attacker.id]["counter"] = AIMING_TIME_LIST[Attacker.id]["counter"] + 1
+        else
+            return true
+        end
+    end
 end
 
 --- Main Attack function. This function is called by the server to start an
@@ -252,77 +355,6 @@ end
 -- calculations to perform a proper fight.                                    --
 --------------------------------------------------------------------------------
 
--- List to store all information for aiming time
-local AIMING_TIME_LIST = {}
-
--- Check if enough aiming time has passed for the archer in order to shoot
--- @param AttackerList List containing Attacker and weapon
--- @param Defender The defending character
--- @param inRange Boolean if the defender is in range to aim/shoot at him
-function CheckAimingTime(AttackerList,Defender,inRange)
-    local Attacker = AttackerList["Char"]
-    --[[
-    if not inRange then
-        AIMING_TIME_LIST[Attacker.id] = nil
-        return false
-    end
-    ]]
-    if AIMING_TIME_LIST[Attacker.id] == nil then
-        FillAimingTimeList(Attacker,Defender,AttackerList.Weapon.id)
-        return false
-    else
-        -- Check if weapon and target are the same and if the attacker hasn't moved
-        if AttackerList.Weapon.id ~= AIMING_TIME_LIST[Attacker.id]["weapon"] or Defender.id ~= AIMING_TIME_LIST[Attacker.id]["target"] or Attacker.pos.x.." "..Attacker.pos.y.." "..Attacker.pos.z ~= AIMING_TIME_LIST[Attacker.id]["position"] then
-            FillAimingTimeList(Attacker,Defender,AttackerList.Weapon.id)
-            return false
-        elseif (world:getTime("unix") - AIMING_TIME_LIST[Attacker.id]["started"])*10 > GetNecessaryAimingTime(AttackerList) + 20 then
-            -- that is needed to prevent that someone aims, stops aiming, waits a long time and as soon as he targets the same character again, shoots immediately.
-            -- this has to be done since there is no way to clear the list when someone stops targeting the target
-            AIMING_TIME_LIST[Attacker.id]["counter"] = 1
-            AIMING_TIME_LIST[Attacker.id]["started"] = world:getTime("unix")
-            --ShowAimingGfx(AttackerList)
-            return false
-        elseif AIMING_TIME_LIST[Attacker.id]["counter"] <= GetNecessaryAimingTime(AttackerList) and (world:getTime("unix") - AIMING_TIME_LIST[Attacker.id]["started"])*10 < math.ceil(GetNecessaryAimingTime(AttackerList)) then
-            -- not enough time has passed; display a nice gfx to show that the character is aiming and increase counter
-            --ShowAimingGfx(AttackerList)
-            AIMING_TIME_LIST[Attacker.id]["counter"] = AIMING_TIME_LIST[Attacker.id]["counter"] + 1
-        else
-            return true
-        end
-    end
-end
-
--- Show aiming gfx. The char has to have been standing still for some calls of onAttack before the gfx starts
--- @param Attacker The character attacking
-function ShowAimingGfx(AttackerList)
-    local Attacker = AttackerList["Char"]
-    if AIMING_TIME_LIST[Attacker.id]["counter"] % 7 == 0 then
-        world:gfx(21,Attacker.pos)
-    end
-end
-
--- Store all necessary information in the global list for aiming time
--- @param Attacker The character attacking
--- @param Defender The character defender
--- @param WeaponId Id of the weapon used
-function FillAimingTimeList(Attacker,Defender,weaponId)
-    AIMING_TIME_LIST[Attacker.id] = {}
-    AIMING_TIME_LIST[Attacker.id]["counter"] = 1 -- increased on every call; normally every 1/10 seconds
-    AIMING_TIME_LIST[Attacker.id]["started"] = world:getTime("unix") -- we use that as a security measure. In case onAttack is not called every 1/10 (e.g. lack of ap), the action is excecuted then ext full sec(e.g. if 1.7 seconds are necessary but onAttack hasnt been called properly, the action is xeceuted after 2 sec)
-    AIMING_TIME_LIST[Attacker.id]["weapon"] = weaponId
-    AIMING_TIME_LIST[Attacker.id]["target"] = Defender.id
-    AIMING_TIME_LIST[Attacker.id]["position"] = Attacker.pos.x.." "..Attacker.pos.y.." "..Attacker.pos.z
-end
-
--- Calculate time necessary to aim, depedning on attribute and weapon.
--- @param Attacker The character attacking
--- @param Weapon The weapon used
--- @return The time needed for an attack in 1/10 seconds
-function GetNecessaryAimingTime(Attacker)
-    -- we use a default value for every character and weapon; the differences in attributes and weapons come in play when the movepoints are lowered/regenerated
-    return math.floor(CalculateMovepoints(Attacker)+0.5)
-end
-
 --- Calculate the damage that is absorbed by the armor and reduce the stored
 -- armor value by this amount.
 -- @param Attacker The table that stores the data of the attacker
@@ -333,13 +365,11 @@ function ArmourAbsorption(Attacker, Defender, Globals)
     GetArmourType(Defender, Globals)
 
     local armourfound, armour = world:getArmorStruct(Globals.HittedItem.id)
-    local armourValue = 0
+    local armourValue
     local skillmod = 1
     local qualitymod = 0.82+0.02*math.floor(Globals.HittedItem.quality/100)
 
     --Essentially what this does is choose how much the values are divided. So stroke is half as effective as punc is half as effective as thrust for one type etc.
-
-    -- B I G mistake below: Level 0 armours have a armourValue of exactly 0. A dude in plate armour has the same armorValue as a naked moron- FIX!!! ~Estralis
     local ArmourDefenseScalingFactor = 2
     local GeneralScalingFactor = 2.8
 
@@ -390,27 +420,20 @@ function ArmourAbsorption(Attacker, Defender, Globals)
         armourValue = armourValue/Noobmessupmalus
     end
 
-    local Rarity = NotNil(tonumber(Globals.HittedItem:getData("RareArmour")))
-
-    if(Rarity<0) then -- Armour is broken
-        armourValue = armourValue/2
-    elseif(Rarity>0) then -- Armour is a rare artifact
-        --Each bonus is equivalent to 20 skill levels of equipment.
-        local RarityBonus = 20*Rarity
-        armourValue = armourValue+RarityBonus
-    end
-
     if(Globals.criticalHit==6) then
         --Armour pierce
-        armourValue=0
+        armourValue = nil
     end
 
     -- This Armour Scaling Factor (ASF) is important. You can think of it like this:
     -- If ASF = 5, the top armour in the game is 5x as good as the worst armour in the game
     local ArmourScalingFactor = 5
 
-    if(armourValue>0) then
+    -- Naked means value 0, whereas armour level 0 scales higher
+    if armourValue ~= nil then
         armourValue = (100/ArmourScalingFactor) + armourValue*(1-1/ArmourScalingFactor)
+    else
+        armourValue = 0
     end
 
     --Race armour for monsters
@@ -439,31 +462,7 @@ function ArmourDegrade(Defender, Globals)
         return
     end
 
-    --WHAT IS THIS? Pleae use comments. ~Estralis
-    local Rarity = NotNil(tonumber(Globals.HittedItem:getData("RareArmour")))
-
-    if(Rarity<0) then
-        local durability = math.fmod(Globals.HittedItem.quality, 100)
-        local quality = (Globals.HittedItem.quality - durability) / 100
-        local nameText=world:getItemName(Globals.HittedItem.id,Defender.Char:getPlayerLanguage())
-
-        durability = durability - 20
-        if (durability <= 0) then
-            common.InformNLS(Defender.Char,
-          "Dein Artefakt '"..nameText.."' zerbricht. Das nächste Mal solltest du dich besser darum kümmern.",
-          "Your artifact '"..nameText.."' shatters. You should take better care of it next time.")
-          world:erase(Globals.HittedItem, 1)
-          return true
-        end
-
-        Globals.HittedItem.quality = quality * 100 + durability
-        --world:changeItem(Globals.HittedItem.WeaponItem);
-        world:changeItem(Globals.HittedItem)
-
-        common.InformNLS(Defender.Char,
-        "Du solltest dein kaputtes Artefakt '"..nameText.."' ablegen bevor es zerbricht!",
-        "You should take off your broken artifact '"..nameText.."' before it shatters!")
-    elseif (common.Chance(Globals.Damage, 12000)) and (Globals.HittedItem.id ~= 0) then -- do not damage non existing items
+    if (common.Chance(Globals.Damage, 12000)) and (Globals.HittedItem.id ~= 0) then -- do not damage non existing items
         local durability = math.fmod(Globals.HittedItem.quality, 100)
         local quality = (Globals.HittedItem.quality - durability) / 100
         local nameText=world:getItemName(Globals.HittedItem.id,Defender.Char:getPlayerLanguage())
@@ -494,30 +493,8 @@ end
 -- @param Defender The table that stores the data of the defender
 -- @param ParryWeapon The item which was used to parry
 function WeaponDegrade(Attacker, Defender, ParryWeapon)
-    local Rarity = NotNil(tonumber(Attacker.WeaponItem:getData("RareWeapon")))
-    local nameText=world:getItemName(Attacker.WeaponItem.id,Attacker.Char:getPlayerLanguage())
-
-    if(Rarity<0) and Attacker.Char:getType() == Character.player then
-        local durability = math.fmod(Attacker.WeaponItem.quality, 100)
-        local quality = (Attacker.WeaponItem.quality - durability) / 100
-
-        durability = durability - 20
-        if (durability <= 0) then
-            common.InformNLS(Attacker.Char,
-          "Dein Artefakt '"..nameText.."' zerbricht. Das nächste Mal solltest du dich besser darum kümmern.",
-          "Your artifact '"..nameText.."' shatters. You should take better care of it next time.")
-          world:erase(Attacker.WeaponItem, 1)
-          return true
-        end
-
-        Attacker.WeaponItem.quality = quality * 100 + durability
-        --world:changeItem(Globals.HittedItem.WeaponItem);
-        world:changeItem(Attacker.WeaponItem)
-
-        common.InformNLS(Defender.Char,
-        "Du solltest aufhören, dein kaputtes Artefakt '"..nameText.."' zu verwenden, bevor es zerbricht!",
-        "You should stop wielding your broken artifact '"..nameText.."' before it shatters!")
-    elseif (common.Chance(1, 20)) and (Attacker.WeaponItem.id ~= 0) and Attacker.Char:getType() == Character.player then
+    local nameText = world:getItemName(Attacker.WeaponItem.id,Attacker.Char:getPlayerLanguage())
+    if (common.Chance(1, 20)) and (Attacker.WeaponItem.id ~= 0) and Attacker.Char:getType() == Character.player then
         local durability = math.fmod(Attacker.WeaponItem.quality, 100)
         local quality = (Attacker.WeaponItem.quality - durability) / 100
 
@@ -540,30 +517,8 @@ function WeaponDegrade(Attacker, Defender, ParryWeapon)
         end
     end
 
-    Rarity = NotNil(tonumber(ParryWeapon:getData("RareWeapon")))
     local nameText=world:getItemName(ParryWeapon.id,Defender.Char:getPlayerLanguage())
-
-    if(Rarity<0) and Defender.Char:getType() == Character.player then
-        local durability = math.fmod(ParryWeapon.quality, 100)
-        local quality = (ParryWeapon.quality - durability) / 100
-
-        durability = durability - 20
-        if (durability <= 0) then
-            common.InformNLS(Defender.Char,
-          "Dein Artefakt '"..nameText.."' zerbricht. Das nächste Mal solltest du dich besser darum kümmern.",
-          "Your artifact '"..nameText.."' shatters. You should take better care of it next time.")
-          world:erase(ParryWeapon, 1)
-          return true
-        end
-
-        ParryWeapon.quality = quality * 100 + durability
-        --world:changeItem(Globals.HittedItem.WeaponItem);
-        world:changeItem(ParryWeapon)
-
-        common.InformNLS(Defender.Char,
-        "Du solltest aufhören, dein kaputtes Artefakt '"..nameText.."' zu verwenden, bevor es zerbricht!",
-        "You should stop wielding your broken artifact '"..nameText.."' before it shatters!")
-    elseif (common.Chance(1, 60)) and (ParryWeapon.id ~= 0) and Defender.Char:getType() == Character.player then
+    if (common.Chance(1, 60)) and (ParryWeapon.id ~= 0) and Defender.Char:getType() == Character.player then
         local durability = math.fmod(ParryWeapon.quality, 100)
         local quality = (ParryWeapon.quality - durability) / 100
 
@@ -604,17 +559,6 @@ function CalculateDamage(Attacker, Globals)
 
     if Attacker.IsWeapon then
         BaseDamage = Attacker.Weapon.Attack * 10
-
-        -- If it has RareWeapon data 1, 2 or 3 it's a special version. Has more attack.
-        local Rarity = NotNil(tonumber(Attacker.WeaponItem:getData("RareWeapon")))
-        if (Rarity>0) then
-            --This "20" corresponds to how many skill levels it should boost by. 20 is the value for now. Might be OP. If so, lower.
-            local RarityBonus = 20*Rarity
-            --This "6" value isn't a frickelfactor. It comes from the fact that attack for eachh weapon is derived by:
-            --AP/Accuracy*(150+ASL*6), where ASL is Associated Skill Level. This means a level 100 weapon is 5x as good as a base one.
-            --This formula is used because the base WF values are based on 1.5+ASL*6/100
-            BaseDamage = BaseDamage + Attacker.Weapon.ActionPoints/Attacker.Weapon.Accuracy*6*RarityBonus
-        end
     else
         BaseDamage = fighting.GetWrestlingAttack( Attacker.Race ) * 10
     end
@@ -661,9 +605,6 @@ function CauseDamage(Attacker, Defender, Globals)
     Globals.Damage=math.min(Globals.Damage,4999) --Damage is capped at 4999 Hitpoints to prevent "one hit kills"
     Globals.Damage=math.floor(Globals.Damage) --Hitpoints are an integer
 
-    --Attacker.Char:inform("Dealt damage: ".. Globals.Damage .. " HP."); --Debugging
-    --Defender.Char:inform("Received damage: ".. Globals.Damage .. " HP."); --Debugging
-
     if character.IsPlayer(Defender.Char) and not Defender.Char:isAdmin() and character.WouldDie(Defender.Char, Globals.Damage + 1) and not character.AtBrinkOfDeath(Defender.Char) then
         -- Character would die. Nearly killing him and moving him back in case it's possible
         character.ToBrinkOfDeath(Defender.Char)
@@ -677,15 +618,13 @@ function CauseDamage(Attacker, Defender, Globals)
         end
 
         if (CharOffsetY > 0) then
-            CharOffsetY = (range - math.abs(CharOffsetX) + 1)
-                * (-1)
+            CharOffsetY = (range - math.abs(CharOffsetX) + 1) * (-1)
         elseif (CharOffsetY < 0) then
             CharOffsetY = (range - math.abs( CharOffsetX ) + 1)
         end
 
         if (CharOffsetX > 0) then
-            CharOffsetX = (range - math.abs(CharOffsetY) + 1)
-                * (-1)
+            CharOffsetX = (range - math.abs(CharOffsetY) + 1) * (-1)
         elseif (CharOffsetX < 0) then
             CharOffsetX = (range - math.abs(CharOffsetY) + 1)
         end
@@ -705,8 +644,7 @@ function CauseDamage(Attacker, Defender, Globals)
         end
 
         common.CreateLine(Defender.Char.pos, newPos, isNotBlocked)
-
-        if targetPos ~= startPos then
+        if targetPos ~= nil then
             Defender.Char:warp(targetPos)
         end
 
@@ -733,7 +671,6 @@ function CauseDamage(Attacker, Defender, Globals)
     end
 end
 
-
 --- Check that the attack hits
 -- @param Defender The character who attacks
 -- @param Defender The character who is attacked
@@ -746,7 +683,6 @@ function HitChance(Attacker, Defender, Globals)
 
     --Miss chance. 2% bonus to hit chance for 18 perc, 1.75% malus for 3 perc. Added onto weapon accuracy.
     local chancetohit
-
     if Attacker.IsWeapon then
         chancetohit = Attacker.Weapon.Accuracy*(1+(Attacker.perception-10)/500)
     else --unarmed
@@ -815,12 +751,8 @@ function HitChance(Attacker, Defender, Globals)
 
     --The Shield Scaling Factor (SSF). Changes how much the top shield is better than the worse one.
     local ShieldScalingFactor =5 --For what do we have database numbers!? ~Estralis
-    local Rarity = NotNil(tonumber(parryItem:getData("RareWeapon")))
-    if (parryWeapon.WeaponType~=14) then
-        Rarity = 0
-    end
 
-    local parryweapondefense = parryWeapon.Defence+Rarity*20
+    local parryweapondefense = parryWeapon.Defence
     local defenderdefense = (100/ShieldScalingFactor) + parryweapondefense*(1-1/ShieldScalingFactor)
 
     --THIS IS SHIT!!! EITHER YOU TAKE THE DB VALUES OR NOT! ~Estralis
@@ -866,11 +798,6 @@ function CheckAttackOK(CharStruct)
     if (CharStruct.Char.effects:find(24)) then -- Attacker is tied up
         return false
     end
-
-    --Uncomment this line if rares should be unuseable
-    --[[if (NotNil(tonumber(CharStruct.WeaponItem:getData("RareWeapon")))<0) then -- Item is a broken artifact
-        return false;
-    end;]]
 
     if (CharStruct.SecIsWeapon) then
         -- there is something in the second hand
@@ -1398,7 +1325,7 @@ function Specials(Attacker, Defender, Globals)
 
         common.CreateLine(Defender.Char.pos, newPos, isNotBlocked)
 
-        if targetPos ~= startPos then
+        if targetPos ~= nil then
             Defender.Char:warp(targetPos)
             common.ParalyseCharacter(Defender.Char, 2, false, true)
         end
@@ -1593,20 +1520,6 @@ function LearnSuccess(Attacker, Defender, AP, Globals)
     end
 end
 
-function NotNil(val)
-    if val==nil then
-        return 0
-    end
-    return val
-end
-
-function NoNils(val)
-    if val==nil then
-        return false
-    end
-    return true
-end
-
 --- Load the attributes and skills of a character. Depending on the offensive
 -- parameter the skills for attacking or for defending are load.
 -- @param CharStruct The character table of the char the values are load for
@@ -1616,22 +1529,17 @@ function LoadAttribsSkills(CharStruct, Offensive)
     if Offensive then
         CharStruct["strength"] = NotNil(CharStruct.Char:increaseAttrib("strength", 0))
         CharStruct["agility"] = NotNil(CharStruct.Char:increaseAttrib("agility", 0))
-        CharStruct["perception"]
-            = NotNil(CharStruct.Char:increaseAttrib("perception", 0))
+        CharStruct["perception"] = NotNil(CharStruct.Char:increaseAttrib("perception", 0))
         if CharStruct.Skillname == nil then
             CharStruct["skill"] = 0
         else
             CharStruct["skill"] = NotNil(CharStruct.Char:getSkill(CharStruct.Skillname))
         end
         CharStruct["natpoison"] = 0
-        --CharStruct["tactics"] = NotNil(CharStruct.Char:getSkill(Character.tactics));
-        CharStruct["dexterity"]
-            = NotNil(CharStruct.Char:increaseAttrib("dexterity", 0))
+        CharStruct["dexterity"] = NotNil(CharStruct.Char:increaseAttrib("dexterity", 0))
     else
-        CharStruct["dexterity"]
-            = NotNil(CharStruct.Char:increaseAttrib("dexterity", 0))
-        CharStruct["constitution"]
-            = NotNil(CharStruct.Char:increaseAttrib("constitution", 0))
+        CharStruct["dexterity"] = NotNil(CharStruct.Char:increaseAttrib("dexterity", 0))
+        CharStruct["constitution"] = NotNil(CharStruct.Char:increaseAttrib("constitution", 0))
         CharStruct["parry"] = NotNil(CharStruct.Char:getSkill(Character.parry))
         CharStruct["agility"] = NotNil(CharStruct.Char:increaseAttrib("agility", 0))
     end
@@ -1688,6 +1596,8 @@ function LoadWeapons(CharStruct)
     CharStruct["SecWeapon"] = lAttWeapon
 end
 
+local _AntiSpamVar = {}
+
 --- Check if the character is on newbie island and reject the attack in that.
 -- This is required to allow newbie island to work correctly.
 -- @param Attacker The character who is attacking
@@ -1717,10 +1627,6 @@ function NewbieIsland(Attacker, Defender)
 
     -- So now the character is on newbie island and not allowed to Attack.
     -- Some lines to ensure the player is not spammed to death if messages
-    local _AntiSpamVar
-    if (_AntiSpamVar==nil) then
-        _AntiSpamVar = {}
-    end
     if (_AntiSpamVar[Attacker.id] == nil) then
         _AntiSpamVar[Attacker.id] = 0
     elseif (_AntiSpamVar[Attacker.id] < 280) then

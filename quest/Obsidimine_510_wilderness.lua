@@ -14,7 +14,7 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
--- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (111, 'quest.beror_oakaxe_111_cadomyr');
+-- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (510, 'quest.obsidimine_510_wilderness');
 
 local common = require("base.common")
 local factions = require("base.factions")
@@ -51,55 +51,122 @@ Description[GERMAN][8] = "Kehre zu Obsidimine zurück."
 Description[ENGLISH][8] = "Return to Obsidimine."
 Description[GERMAN][9] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
 Description[ENGLISH][9] = "Go back to Obsidimine he will surely have another task for you."
-Description[GERMAN][10] = "Kehre zu Beror zurück."
-Description[ENGLISH][10] = "Return to Beror."
-Description[GERMAN][11] = "Geh zu Beror Oakaxe, der sich im Lagerraum des Quartiermeisters von Cadomyr aufhält. Er hat bestimmt noch eine Aufgabe für dich."
-Description[ENGLISH][11] = "Go back to Beror Oakaxe in the Quartermaster Store of Cadomyr, he will certainly have another task for you."
-Description[GERMAN][12] = "Geh zu dem Gasthof zur Hanfschlinge, dem Versteck des Dons in Galmair und in die Kammer des Erzmagiers in Runewick. Kehre dann zu Beror zurück."
-Description[ENGLISH][12] = "Go to the Hemp Necktie Inn, the Don's hideout in Galmair and the Archmage's chamber in Runewick. Then return to Beror."
-Description[GERMAN][13] = "Kehre zu Beror zurück."
-Description[ENGLISH][13] = "Return to Beror."
-Description[GERMAN][14] = "Geh zu Beror Oakaxe, der sich im Lagerraum des Quartiermeisters von Cadomyr aufhält. Er hat bestimmt noch eine Aufgabe für dich."
-Description[ENGLISH][14] = "Go back to Beror Oakaxe in the Quartermaster Store of Cadomyr, he will certainly have another task for you."
-Description[GERMAN][15] = "Besorge zwanzig Naldorholzbretter und bringe sie Beror. Du kannst sie bei einem Händler kaufen oder säge Naldorholz mit der Säge in der Hand bei der Werkbank zu Brettern. Werkbänke findest du in Runewick oder Galmair."
-Description[ENGLISH][15] = "Produce twenty naldor wood boards and bring them to Beror. You can buy them from a merchant or saw naldor wood into boards by using a workbench as you stand in front of it, with the saw in your hand. You can find workbenches in Runewick or Galmair."
-Description[GERMAN][16] = "Geh zu Beror Oakaxe, der sich im Lagerraum des Quartiermeisters von Cadomyr aufhält. Er hat bestimmt noch eine Aufgabe für dich."
-Description[ENGLISH][16] = "Go back to Beror Oakaxe in the Quartermaster Store of Cadomyr, he will certainly have another task for you."
-Description[GERMAN][17] = "Besorge ein Eisvogelamulett, einen Erzmagierring und eine Vase und bringe sie Beror. Du kannst sie als Goldschmied bzw. Glasbläser herstellen. Dazu nimmst du den Feinschmiedhammer in die Hand und benutzt ihn, während du vor einem Amboss stehst und das Glasblasrohr, während du vor einem Glasschmelzofen stehst."
-Description[ENGLISH][17] = "Produce a charm of the icebird and a vase and bring them to Beror. You can produce them as goldsmith and glass blower respectively. Therefor use the finesmithing hammer in your hand, while standing in front of an anvil or use the glass blow pipe in your hand, while standing in front of an glass melting oven."
-Description[GERMAN][18] = "Du hast alle Aufgaben von Beror Oakaxe erfüllt."
-Description[ENGLISH][18] = "You have fulfilled all the tasks for Beror Oakaxe."
-
+Description[GERMAN][10] = "."
+Description[ENGLISH][10] = "Locate all the levels of the volcano and dragon cave and report back to Obsidimine. (All levels must be visited. Hint there are five checkpoints.)"
+Description[GERMAN][11] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][11] = "Return to Obsidimine."
+Description[GERMAN][12] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][12] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][13] = ""
+Description[ENGLISH][13] = "Search all the vases in the lower levels and find a dragon gem of every colour for Obsidimine."
+Description[GERMAN][14] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][14] = "Return to Obsidimine."
+Description[GERMAN][15] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][15] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][16] = ""
+Description[ENGLISH][16] = "Check the tombstones in the caverns below and find out which dragon was know as the 'Bunny Eater'."
+Description[GERMAN][17] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][17] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][18] = ""
+Description[ENGLISH][18] = "Check the hedge maze below for a vision about what happened to Eme."
+Description[GERMAN][19] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][19] = "Return to Obsidimine."
+Description[GERMAN][20] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][20] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][21] = ""
+Description[ENGLISH][21] = "Search the coffins below for some evidence of Eme's demise."
+Description[GERMAN][22] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][22] = "Return to Obsidimine."
+Description[GERMAN][23] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][23] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][24] = ""
+Description[ENGLISH][24] = "Obsidimine believe Eme dropped a family locket in a barrel or chest in the caverns below. Find it for him."
+Description[GERMAN][25] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][25] = "Return to Obsidimine."
+Description[GERMAN][26] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][26] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][27] = ""
+Description[ENGLISH][27] = "Search the lute in the lower dragons lair and take one of the golden strings from it for Obsidimine offering to Irmorom."
+Description[GERMAN][28] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][28] = "Return to Obsidimine."
+Description[GERMAN][29] = "Geh zu Obsidimine. Er hat bestimmt noch eine Aufgabe für dich."
+Description[ENGLISH][29] = "Go back to Obsidimine he will surely have another task for you."
+Description[GERMAN][30] = ""
+Description[ENGLISH][30] = "Kill the Dragon of Death so that Obsidimine may have peace over Eme's death."
+Description[GERMAN][31] = "Kehre zu Obsidimine zurück."
+Description[ENGLISH][31] = "Return to Obsidimine."
+Description[GERMAN][32] = ""
+Description[ENGLISH][32] = "You have completed all tasks for Obsidimine."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
-Start = {135, 620, 0}
+Start = {809, 676, 0}
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
 local QuestTarget = {}
-QuestTarget[1] = {position(135, 620, 0), position(125, 566, 0)} -- statue
-QuestTarget[2] = {position(135, 620, 0)} 
-QuestTarget[3] = {position(135, 620, 0)} 
-QuestTarget[4] = {position(135, 620, 0), position(107, 556, 0), position(122, 544, 0), position(114, 635, 0)} -- notary's office, the palace and the gate
-QuestTarget[5] = {position(135, 620, 0)} 
-QuestTarget[6] = {position(135, 620, 0)} 
-QuestTarget[7] = {position(135, 620, 0), position(123, 614, 0), position(143, 586, 0)} -- Händler,Schmelzofen
-QuestTarget[8] = {position(135, 620, 0)} 
-QuestTarget[9] = {position(135, 620, 0), position(136, 696, 0), position(261, 678, 0), position(236, 439, 0), position(471, 795, 0)} --Candour Foundation, the Circle of Blood, the northern bridge and the eastern border
-QuestTarget[10] = {position(135, 620, 0)} 
-QuestTarget[11] = {position(135, 620, 0)} 
-QuestTarget[12] = {position(135, 620, 0), position(698, 314, 0), position(347, 229, 0), position(903, 769, 2)} -- Hanfschlinge,Galmair,Runewick
-QuestTarget[13] = {position(135, 620, 0)} 
-QuestTarget[14] = {position(135, 620, 0)} 
-QuestTarget[15] = {position(135, 620, 0), position(896, 816, 1), position(902, 825, 0), position(373, 268, 0), position(382, 269, 0)} --händler,werkbank
-QuestTarget[16] = {position(135, 620, 0)} 
-QuestTarget[17] = {position(135, 620, 0), position(125, 603, 0), position(143, 586, 0), position(138, 589, 0)} --händler,Schmelzofen,amboss
-QuestTarget[18] = {position(135, 620, 0)} 
-
+QuestTarget[1] = {position(809, 676, 0)} -- npc
+QuestTarget[2] = {position(809, 676, 0)} 
+QuestTarget[3] = {position(809, 676, 0), position(805, 632, 0)} -- volcano base
+QuestTarget[4] = {position(809, 676, 0), position(805, 632, 0)} -- volcano base
+QuestTarget[5] = {position(809, 676, 0)}  
+QuestTarget[6] = {position(809, 676, 0)}  
+QuestTarget[7] = {position(809, 676, 0), position(826, 643, 2)} -- Upper level of volcano
+QuestTarget[8] = {position(809, 676, 0)} 
+QuestTarget[9] = {position(809, 676, 0)} 
+QuestTarget[10] = {position(809, 676, 0), position(826, 643, 2), position(821, 661, 1), position(657, 701, -3), position(822, 622, -3), position(668, 658, -6)} --checkpoints for looking at all levels
+QuestTarget[11] = {position(809, 676, 0)}  
+QuestTarget[12] = {position(809, 676, 0)}
+QuestTarget[13] = {position(809, 676, 0)} 
+QuestTarget[14] = {position(809, 676, 0)} 
+QuestTarget[15] = {position(809, 676, 0)}
+QuestTarget[16] = {position(809, 676, 0)} 
+QuestTarget[17] = {position(809, 676, 0)} 
+QuestTarget[18] = {position(809, 676, 0)} 
+QuestTarget[19] = {position(809, 676, 0)}
+QuestTarget[20] = {position(809, 676, 0)}
+QuestTarget[21] = {position(809, 676, 0)}
+QuestTarget[22] = {position(809, 676, 0)}
+QuestTarget[23] = {position(809, 676, 0)}
+QuestTarget[24] = {position(809, 676, 0)}
+QuestTarget[25] = {position(809, 676, 0)}
+QuestTarget[26] = {position(809, 676, 0)}
+QuestTarget[27] = {position(809, 676, 0), position(701, 614, -6)}
+QuestTarget[28] = {position(809, 676, 0)}
+QuestTarget[29] = {position(809, 676, 0)}
+QuestTarget[30] = {position(809, 676, 0)}
+QuestTarget[31] = {position(809, 676, 0)}
+QuestTarget[32] = {position(809, 676, 0)}
 
 -- Insert the quest status which is reached at the end of the quest
-local FINAL_QUEST_STATUS = 18
+local FINAL_QUEST_STATUS = 32
 
-
+-- Register the monster kill parts of the quest.
+monsterQuests.addQuest{
+    questId = 510,
+    location = {position = position(805, 632, 0), radius = 50},
+    queststatus = {from = 3, to = 5},
+    questTitle = {german = "Höhlenforscher II", english = "Spelunker II"},
+    monsterName = {german = "Höllenhund", english = "hell hound"},
+    npcName = "Obsidimine",
+    monsterIds = {861, 883} -- bloodsniffer and crippled ghost beast
+}
+monsterQuests.addQuest{
+    questId = 510,
+    location = {position = position(826, 643, 2), radius = 100},
+    queststatus = {from = 7, to = 8},
+    questTitle = {german = "Höhlenforscher III", english = "Spelunker III"},
+    monsterName = {german = "Feuerspeier", english = "firespitter"},
+    npcName = "Obsidimine",
+    monsterIds = {795} -- Firespitter
+}
+monsterQuests.addQuest{
+    questId = 510,
+    location = {position = position(686, 635, -6), radius = 50},
+    queststatus = {from = 30, to = 31},
+    questTitle = {german = "Höhlenforscher XI", english = "Spelunker XI"},
+    monsterName = {german = "Todesdrachen", english = "Dragon of Death"},
+    npcName = "Obsidimine",
+    monsterIds = {1123} -- dragon of death
+}
 function M.QuestTitle(user)
     return common.GetNLS(user, Title[GERMAN], Title[ENGLISH])
 end

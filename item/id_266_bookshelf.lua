@@ -86,7 +86,7 @@ M.bookList["lizardmen_history_and_culture"] = {english = "Lizardmen History and 
 M.bookList["orcish_history_and_culture"] = {english = "Orcish History and Culture",german =  "Orkische Geschichte und Kultur", bookId = 22, bookGraphic = bookBlackValuable}
 M.bookList["god_malachin"] = {english = "Malachín",german =  "Malachín", bookId = 23, bookGraphic = Pell}
 M.bookList["god_sirani"] = {english = "Sirani",german =  "Sirani", bookId = 24, bookGraphic = Pell}
-M.bookList["god_zhambra"] = {english = "Zhambia",german =  "Zhambia", bookId = 25, bookGraphic = Pell}
+M.bookList["god_zhambra"] = {english = "Zhambra",german =  "Zhambra", bookId = 25, bookGraphic = Pell}
 M.bookList["zodiac_sign"] = {english = "The zodiac sign of Illarion",german =  "Die Tierkreiszeichen", bookId = 26, bookGraphic = bookYellowVeryHeavy}
 M.bookList["alchemy"] = {english = "Book of Alchemy",german =  "Buch der Alchemie", bookId = 101, bookGraphic = bookWhiteRune}
 M.bookList["journal_of_abbot_elzechiel"] = {english = "Journal of Abbot Elzechiel",german =  "Tagebuch des Abtes Elzechiel", bookId = 201, bookGraphic = Pell}
@@ -157,6 +157,8 @@ M.bookList["revelations_of_tialdin"] = {english = "The Revelations of Tialdin",g
 M.bookList["origin_halflings_race"] = {english = "The origin of the Halfling Race",german =  "Die Entstehung der Halblinge", bookId = 365, bookGraphic = bookGreenLight}
 M.bookList["cadoson_letnason"] = {english = "Coadoson and Letnason",german =  "Cadoson und Letnason", bookId = 366, bookGraphic = bookBlackLong}
 M.bookList["the_pointy_end"] = {english = "The pointy end - manual for a recruit",german =  "Das spitze Ende - Handbuch des Rekruten", bookId = 367, bookGraphic = bookBrownSmall}
+M.bookList["broken_wreath"] = {english = "The broken wreath",german =  "Der zerbrochene Kranz", bookId = 368, bookGraphic = bookBlackLong}
+M.bookList["statute_hamlet_greenbriar"] = {english = "Laws of the Hamlet Greenbriar (23)",german =  "Gesetze des Hamlets Greenbriar (23)", bookId = 369, bookGraphic = bookRedHeavy}
 M.bookList["cadomyr_order1"] = {english = "Order 04. Findos 38 AW",german =  "Befehl 04. Findos 38 n.VdH", bookId = 501, bookGraphic = Pell}
 M.bookList["speech_rosaline_32_11_05"] = {english = "Speech 04. Findos 38 AW",german =  "Rede 05. Findos 38 n.VdH", bookId = 502, bookGraphic = Pell}
 M.bookList["galmair_adjutant"] = {english = "Wanted! Adjutant",german =  "Gesucht! Adjutant", bookId = 506, bookGraphic = Pell}
