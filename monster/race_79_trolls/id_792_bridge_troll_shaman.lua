@@ -17,7 +17,7 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 --ID 792, Bridge Troll Shaman, Level: 5, Armourtype: light, Weapontype: slashing
 
 local base = require("monster.base.base")
-local mageBehaviour = require("monster.base.behaviour.mage")bk and 
+local mageBehaviour = require("monster.base.behaviour.mage")
 local monstermagic = require("monster.base.monstermagic")
 local trolls = require("monster.race_79_trolls.base")
 
@@ -37,7 +37,7 @@ magic.addWarping{probability = 0.15, usage = magic.ONLY_NEAR_ENEMY}
 
 magic.addIcestrike{probability = 0.07, damage = {from = 1000, to = 1500}}
 magic.addIcestrike{probability = 0.001, damage = {from =  750, to = 1000}, targetCount = 4}
-magic.addLighting{probability = 0.05, damage = {from =  1200, to = 1800}}
+magic.addLighting{probability = 0.005, damage = {from =  1200, to = 1800}}
 magic.addLighting{probability = 0.001, damage = {from =  500, to = 1100}, targetCount = 3}
 
 M = magic.addCallbacks(M)
