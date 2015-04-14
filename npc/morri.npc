@@ -166,14 +166,6 @@ english, "Ushara" -> "Honor to you, Mother of the rock, stone and soil."
 -- Last catch: Think about keywords the player might say and that are not caught until here
 "morri" -> "Arr. Bura'zak-ka! - Welches Essen wollt Ihr mir abkaufen?"
 english, "morri" -> "Arr. Bura'zak-ka! What meal would you like to buy?"
-"Yes" -> "Arr. It's good.", "D'kraga...so, and not otherwise!", "It should be fine by me."
-"Ja" -> "Arr. Ist gut!", "D'kraga... so, und nicht anders!", "Mir soll's auch recht sein."
-"No" -> "Hrm, is this your last word?", "Arr. If that's what you want..", "Of course."
-"Nein" -> "Hrm, ist das Euer letztes Wort?", "Arr. Wenn Ihr's so wollt.", "Natürlich."
-
--- Optional: Everything a player says and is not caught earlier. Response is only given 1/5 of the time
-english, chance(20.0), ".*" -> "Arr.", "#me wrinkles his nose and shows his tongue in disgust, 'Do you smell that too?'"
-german, chance(20.0), ".*" -> "Arr.", "#me rümpft die Nase und streckt angewidert die Zunge heraus: 'Riecht ihr das auch?'"
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.
@@ -183,7 +175,7 @@ german, chance(20.0), ".*" -> "Arr.", "#me rümpft die Nase und streckt angewider
 cycletext "#me brummt schlecht gelaunt und wirft einen missmutigen Blick auf die Straße.", "#me grumbles moodily and looks at the street with a discontent glance."
 cycletext "#me knurrt kopfschüttelnd: 'Dieser Fisch ist niemals frisch...'", "#me grumbles and shakes his head, 'This fish is not fresh...'"
 cycletext "#me rümpft die Nase.", "#me wrinkles his nose."
-cycletext "#me hält sich die Nase zu und streckt die Zunge heraus: 'Igittigitt!'", "#me covers his nose and shows his tongue, 'Igittigitt!'"
+cycletext "#me hält sich die Nase zu und streckt die Zunge heraus: 'Igittigitt!'", "#me covers his nose and shows his tongue, 'Yuck!'"
 cycletext "#me fasst sich mit einer verzweifelt wirkenden Geste, beidhändig in den langen schwarzen Bart und zieht daran. Dabei gibt er ein lautes Grunzen von sich.", "#me pulls his long black beard with both hands despairingly and grunts loudly."
 cycletext "Essen! Feinste Gerichte aller Art! Tretet näher und deckt Euch ein!", "Food! Finest dishes of every kind! Come closer, go ahead take a look and buy!"
 cycletext "Frisches Brot! Schmackhafte Kuchen! Unverwüstliche Kekse!", "Fresh bread! Tasty cakes! Indestructible cookies!"
