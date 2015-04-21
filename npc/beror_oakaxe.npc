@@ -109,6 +109,10 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Dismissed.", "Best of luck.
 "your name", "who are you", "who art thou" -> "I am the royal quartermaster, Beror Oakaxe, and yes, I am a dwarf. An angry dwarf!"
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "Ich bin der königliches Quartiermeister Beror Oakaxe. Und ja, ich bin ein Zwerg. Ein zorniger Zwerg!"
 
+--Optional Triggers
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin kein Händler."
+
 -- Catching quest triggers of other factions' members
 english, town = Galmair, "quest", "mission" -> "I do not issue quests to honourless commoners, sorry."
 town = Galmair, "quest", "mission" -> "Ich vergebe keine Aufgaben an ehrloses Gesindel."
@@ -336,10 +340,6 @@ english, "Zhambra" -> "The doctrines of Zhambra's followers are also mine. Does 
 -- Last catch: Think about keywords the player might say and that are not caught until here
 english, "Beror", "Oakaxe" -> "At your service?", "What is it?", "Is this supposed to be a report!?"
 "Beror", "Oakaxe" -> "Stets zu Diensten?", "Was gibt es?", "Soll das eine Meldung sein?"
-"Yes" -> "Acknowledged.", "Affirmative.", "Confirmed."
-"Ja" -> "Zur Kenntnis genommen.", "Verstanden.", "Bestätigt."
-"No" -> "Acknowledged.", "Affirmative.", "Confirmed."
-"Nein" -> "Zur Kenntnis genommen.", "Verstanden.", "Bestätigt."
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.

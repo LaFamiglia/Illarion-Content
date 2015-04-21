@@ -101,6 +101,8 @@ english, "Ciao", "Adieu", "Au revoir" -> "Farewell!", "Oldra's blessing!", "Come
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Mir geht es gut.", "Vielen Dank!", "Nun, ich habe dieses Rezept im Kopf, welches ich gerne ausprobieren würde."
 "your name", "who are you", "who art thou" -> "I am Nana Winterbutter.", "I'm a cook as you might have noticed, and a good one I might add"
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "Ich bin Nana Winterbutter.", "Ich bin eine Köchin, wie Ihr vielleicht bereits bemerkt habt. Und eine gute, wenn ich das hinzufügen darf."
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin keine Marktfrau."
 
 -- Tool hints
 queststatus(70) = 0, "recipe" -> "I have this special recipe in mind. I don't want to reveal too much about it but I would be grateful if you could help me with a quest."
@@ -312,10 +314,6 @@ english, "Sirani" -> "Why I pray to Sirani? Good friends become even better frie
 -- Last catch: Think about keywords the player might say and that are not caught until here
 english, "Nana", "Winterbutter" -> "That's me!", "Oh, indeed, I am Nana Winterbutter.", "At your service."
 "Nana", "Winterbutter" -> "Das bin ich!", "Oh, ja, ich bin Nana Winterbutter.", "Stets zu Diensten."
-"Yes" -> "Pardon, I don't understand what you are referring to.", "What do you mean with 'Yes'?"
-"Ja" -> "Verzeiht, aber ich verstehe nicht, worauf Ihr Euch bezieht.", "Was meint Ihr mit 'Ja'?"
-"No" -> "Pardon, I don't understand what you are referring to.", "What do you mean with 'No'?"
-"Nein" -> "Verzeiht, aber ich verstehe nicht, worauf Ihr Euch bezieht.", "Was meint Ihr mit 'Nein'?"
 
 ------------------------------------------------------------------------------AC
 -- Cycle Texts - Messages spoken automatically in random intervals.

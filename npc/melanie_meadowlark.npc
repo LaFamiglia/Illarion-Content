@@ -89,6 +89,8 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Look at the wonderful world
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Ich fühle mich großartig.", "Ich bin von den Fünfen gesegnet.", "Mir ist danach zu musizieren."
 "your name", "who are you", "who art thou" -> "I'm Melanie Meadowlark.", "I'm the ranger Melanie.", "You can call me Mel, protector of the fairies."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "Ich bin Melanie Meadowlark.", "Ich bin eine Waldläuferin namens Melanie.", "Ihr könnt mich Mel nennen, Beschützerin der Feen."
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin keine Marktfrau."
 
 -- Quest 1: gather 10 honeycombs for 500cp
 queststatus(500) = 0, english, "quest", "mission" -> inform("[New quest] Elstree Ranger I"), queststatus(500) = 1, "Help! We need assistance in the fairy bakery. We are short of honey, please bring me ten honeycombs."
@@ -205,10 +207,6 @@ english, "Ushara" -> "Ushara blessed us with this rich and fertile land."
 -- Last catch: Think about keywords the player might say and that are not caught until here
 english, "Mel", "Melanie" -> "Mel is my name!"
 "Mel", "Melanie" -> "Mel ist mein Name!"
-"Yes" -> "Good for you.", "Aye, I see.", "Are you sure?", "If you say so."
-"Ja" -> "Gut für dich.", "Aye, in Ordnung.", "Seid Ihr sicher?", "Wenn Ihr das sagst."
-"No" -> "What a shame.", "Maybe you'll change your mind.", "Well..."
-"Nein" -> "Schade.", "Vielleicht ändert Ihr Eure Meinung noch.", "Nun..."
 
 -- Cycletext: Please add at least(!) five cycletext messages. The more, the better. You can use emotes (#me is green), too.
 

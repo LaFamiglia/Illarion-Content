@@ -14,18 +14,24 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
---ID 903, Shadow Dancer, Level: 6, Armourtype: medium, Weapontype: slashing
+local spellRing = require("monster.base.spells.ring")
 
-local monstermagic = require("monster.base.monstermagic")
-local blackImps = require("monster.race_90_black_imp.base")
+local function _isTable(value)
+    return type(value) == "table"
+end
 
-local magic = monstermagic()
+return function(params)
+    if params == nil then
+        params = {}
+    end
+    if not _isTable(params) then
+        error("The parameters for the fire cone spell aren't a table.")
+    end
 
-magic.addWarping{probability = 0.05, usage = magic.ONLY_NEAR_ENEMY}
+    if params.gfxId == nil then params.gfxId = 8 end
+    if params.sfxId == nil then params.sfxId = 5 end
+    if params.itemId == nil then params.itemId = 372 end
+    if params.itemProbability == nil then params.itemProbability = 0.8 end
 
-magic.addSummon{probability = 0.055, monsters = {592, 982, 594, 622, 623}} -- Angry chicken, Crazy Chicken, and beetles
-magic.addSummon{probability = 0.010, monsters = {981, 983}} -- beetles
-magic.addSummon{probability = 0.0001, monsters = {984}} -- bonescraper beetle
-
-local M = blackImps.generateCallbacks()
-return magic.addCallbacks(M)
+    return spellRing(params)
+end

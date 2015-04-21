@@ -99,6 +99,8 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "See you later!", "Aye, good
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Gut, so lange ich genug zum Schlachten habe", "Gut wie immer.", "Mir geht's gut und euch?"
 "your name", "who are you", "who art thou" -> "I am Henry the butcher.", "Just good, old Henry", "Henry Darter."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "Ich bin Henry der Schlachter", "Der gute alte Henry.", "Henry Darter."
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin kein Händler."
 
 -- Catching quest triggers. Modify if the NPC does quests.
 -- 1st quest: Take a tool and gather 10 raw materials for 50cp.
@@ -252,10 +254,6 @@ english, "Henry", "Darter" -> "My mother once told me that she named me Henry be
 "Henry", "Darter" -> "Meine Mutter hat mir einst erzählt, dass ich nach einem berühmten Koch aus Gynk benannt wurde. Merkwürdigerweise konnte ich meinen unbekannten Vater nie über diese Dinge befragen."
 "mother", "father", "family", "shop" -> "My family - my mother and me - once had a shop here, but then, the water came... I am still here, though, and I won't yield!"
 "Mutter", "Vater", "Familie", "Laden", "Geschäft" -> "Meine Familie - also meine Mutter und ich - hatten hier einst einen Laden. Aber dann kam das Wasser... Ich bleibe hier, ich werde nicht weichen!"
-"Yes" -> "Pardon?", "Can I help you?", "Let's butcher something!"
-"Ja" -> "Pardon?", "Kann ich helfen?", "Lasst uns was schlachten!"
-"No" -> "Pardon?", "Can I help you?", "Let's butcher something!"
-"Nein" -> "Pardon?", "Kann ich helfen?", "Lasst uns was schlachten!"
 
 -- Cycletext: Please add at least(!) five cycletext messages. The more, the better. You can use emotes (#me is green), too.
 
@@ -274,3 +272,4 @@ cycletext "Willst du ein Schnitzel?", "Do you want a Schnitzel?"
 cycletext "Jägerschnitzel, hmm...", "Escalope chasseur, hmm..."
 cycletext "Wer würde so wahnsinnig sein und Hackfleisch zwischen zwei Brothälften packen!?", "Who would dare to put minced meat between two bread halfs?"
 cycletext "Pürierte Tomaten zu einem Steak? Wer macht denn sowas!", "Mashed tomatoes with a steak? Who would do such a thing!"
+cycletext "Lasst uns was schlachten!", "Let's butcher something!"

@@ -89,6 +89,8 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "#me rubs his chin looking c
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Ausgezeichnet. Aber das tut nichts zur Sache. Sagt was kann der Don für euch tun, %CHARNAME?", "#me winkt ab 'Oh noch etwas aufgeregt vom allwöchentlichen Anschlag auf mein Leben.'", "Wie? Ein treffender Vergleich wäre dies: Wie der einsame Leitwolf, der seine Stellung im Rudel verteidigen muss."
 "your name", "who are you", "who art thou" -> "#me makes a broad welcoming gesture with his hands. 'Ah forgive my manners. Valerio Guilianni is my name but call me 'The Don'.", "Hm, you're not too bright are ya? I thought my residence and hoards of servants would have given you a hint.", "#me sighs, '%CHARNAME, how can one be so naive? Where's the respect? I am the Don.'"
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "#me macht eine ausladende willkommende Geste 'Ah meine Manieren. Valerio Guilianni ist mein Name aber nennt mich 'Mein Don'.", "Hm, der hellste Blitz scheint ihr nicht zu sein. Und ich dachte die Residenz und Dienerschaft wären Hinweis genug.", "#me seufzt '%CHARNAME, wie kann man nur so blauäugig sein? Wo bleibt der Respekt? Ich bin der Don.'"
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin kein Händler."
 
 -- Mirarie Bragolin Quest (Writing history V
 queststatus(317) = 12, english, "Mirarie", "Bragolin", "quest", "mission" -> queststatus(317) = 13, "A letter from Cadomyr? Oh, thank you very much. What? Ah, I see. I'll take care of that, you may leave now."
@@ -218,10 +220,6 @@ english, "Zhambra" -> "Family is all that matters, you remember that. You rely o
 -- Last catch: Think about keywords the player might say and that are not caught until here
 english, "Valerio", "Guilianni", "Don" -> "#me bows ever so slightly. 'That's me. How can I help you, %CHARNAME ?'", "You've heard about me I see very good, very good. Ask and the Don will help you.", "What do you want from him? Who sent you? Guards! Has this meat bag been searched for weapons?"
 "Valerio", "Guilianni", "Don" -> "#me deutet eine Verbeugung an. 'Das bin ich. Wie kann ich euch helfen, %CHARNAME ?'", "Ihr habt also von mir gehört. Sehr schön, sehr schön. Bittet und der Don wird euch helfen.", "Was wollt ihr von ihm? Wer hat euch geschickt? Wache! Wurde diese Person auf Waffen untersucht?"
-"Yes" -> "Good to hear, Good to hear.", "The Don approves."
-"Ja" -> "In der Tat.", "Der Don stimmt zu.", "Der Don heißt dies gut."
-"No" -> "'No'? Don't force the Don to make the impossible possible.", "'No'? Well, you may keep your opinion. One can sell everything else with a profit anyway.", "And this negative attitude divides success from failure. That's why you're just a petitioner before the Don."
-"Nein" -> "'Nein'? Zwingt den Don nicht das unmögliche möglich zu machen.", "'Nein'? Nun gut ihr könnt eure Meinung behalten. Alles andere kann man ja mit Gewinn verkaufen.", "Und genau diese negative Einstellung entscheidet über Erfolg und Misserfolg. Deswegen seid ihr nur ein Bittsteller vor dem Don."
 
 -- Cycletext: Please add at least(!) ten cycletext messages. The more, the better. You can use emotes (#me is green), too.
 

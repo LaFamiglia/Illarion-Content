@@ -92,6 +92,8 @@ english, "Ciao", "Adieu", "Au revoir", "Farebba" -> "Go with the blessing of the
 "Wie geht", "Wie fühlst", "Wie ist es ergangen" -> "Ich beerdige diejenigen, die starben. Wie meint ihr wohl, fühle ich mich dabei? Den Wert eines Lebens zu schätzen ist fürwahr nicht einfach."
 "your name", "who are you", "who art thou" -> "My name is Gregor Remethar, I am delighted to meet you and to be able to - still - talk to you."
 "ihr name", "dein name", "wer bist du", "wer seid ihr", "wie heißt", "wie heisst" -> "Mein Name ist Gregor Remethar, es freut mich, mit mich euch - noch -unterhalten zu können."
+"sell", "buy", "wares", "price", "trade", "purchase" -> "I am not a trader."
+"kauf", "waren", "preis", "Handel", "veräußer", "veräusser", "erwerb" -> "Ich bin kein Händler."
 
 -- Catching quest triggers. Modify if the NPC does quests.
 -- Quest 1: Take lamp oil (469) and make sure that the light in the tomb is burning
@@ -223,10 +225,6 @@ english, "Cherga" -> "I do not love Cherga, but I honour her. Her acts as Guardi
 -- Last catch: Think about keywords the player might say and that are not caught until here.
 english, "Gregor", "Remethar" -> "I am the local mortician. Nobody loves me, but everyone needs me - eventually."
 "Gregor", "Remethar" -> "Ich bin hier der Leichenbestatter. Niemand liebt mich, aber jeder braucht mich - eines Tages."
-"Yes" -> "Really.", "By Cherga, could you put that differently?", "Honour the dead."
-"Ja" -> "Wirklich.", "Bei Cherga, könntet ihr das anders ausdrücken?", "Ehret die Toten."
-"No" -> "Should I take your measurements for a coffin now or later?", "I do not quite understand. I would have some?", "Pardon?"
-"Nein" -> "Soll ich eure Maße für einen Sarg jetzt aufnehmen oder später?", "Ich verstehe nicht recht. Müßte ich etwa?", "Pardon?"
 
 -- Cycletext: Add as many random messages as possible
 
@@ -245,3 +243,4 @@ cycletext "#me rollt bedächtig ein Maßband aus.", "#me slowly rolls out a measur
 cycletext "Soll ich eure Maße jetzt oder später aufnehmen?", "Should I take your measurements now or later?"
 cycletext "Mein Geschäft ist sicher - gestorben wird immer!", "My business is safe - there will always be death."
 cycletext "#me keucht wiederholt auf.", "#me coughs repeatedly."
+cycletext "Ehret die Toten.", "Honour the dead."
