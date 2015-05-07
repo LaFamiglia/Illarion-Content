@@ -1,4 +1,4 @@
--[[
+--[[
 Illarion Server
 
 This program is free software: you can redistribute it and/or modify it under
@@ -14,11 +14,17 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
-local common = require("base.common")
-local lookat = require("base.lookat")
+-- INSERT INTO triggerfields VALUES (809,443,0,'triggerfield.elstree_spirit_661');
+-- INSERT INTO triggerfields VALUES (814,448,0,'triggerfield.elstree_spirit_661');
+-- INSERT INTO triggerfields VALUES (819,443,0,'triggerfield.elstree_spirit_661');
+-- INSERT INTO triggerfields VALUES (814,438,0,'triggerfield.elstree_spirit_661');
 
+local elementDrop = require("content.elementDrop")
 local M = {}
 
--- UPDATE items SET itm_script='item.desk' WHERE itm_id IN (1167);
+function M.MoveToField(char)
+    -- pure spirit will be created
+    elementDrop.chanceForElementDrop(char, 3607)
+end
 
-function M.UseItem(User, SourceItem)
+return M
