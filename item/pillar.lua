@@ -18,10 +18,11 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 local common = require("base.common")
 local lookat = require("base.lookat")
 local vision = require("content.vision")
+local altars = require("item.altars")
 
 local M = {}
 
--- UPDATE items SET itm_script='item.pillar' WHERE itm_id IN (272, 440, 441, 442, 443, 467, 692, 693, 694, 695, 2805);
+-- UPDATE items SET itm_script='item.pillar' WHERE itm_id IN (272, 440, 441, 442, 443, 464, 467, 692, 693, 694, 695, 2805);
 
 local function RosalineLookAt(User, Item)
     local itemLookat = lookat.GenerateLookAt(User, Item, lookat.NONE)
@@ -79,6 +80,10 @@ end
 
 function M.LookAtItem(User, Item)
 
+    if Item:getData("elaraStatueRunewick") == "true" then
+        return altars.LookAtItem(User, Item)
+    end
+
     -- Endurance Cave Quest
     if Item.pos == position(7, 11, -15) then
         local stage = User:getQuestProgress(204)
@@ -132,6 +137,11 @@ end
 
 
 function M.UseItem(User, SourceItem, ltstate)
+
+    if SourceItem:getData("elaraStatueRunewick") == "true" then
+        altars.UseItem(User, SourceItem)
+        return
+    end
 
     vision.UseDarkColumnsPuzzle(User, SourceItem, ltstate)
     vision.UseDarkColumns(User, SourceItem, ltstate)
