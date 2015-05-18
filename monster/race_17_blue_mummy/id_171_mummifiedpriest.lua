@@ -14,7 +14,19 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
---ID 172, Mummiefied Templeservant, Level: 2, Armourtype: light, Weapontype: slashing
+--ID 171, Mummiefied Priest, Level: 3, Armourtype: light, Weapontype: slashing
 
-local blueMummies = require("monster.race_17_blue_mummy.base")
-return blueMummies.generateCallbacks()
+local mageBehaviour = require("monster.base.behaviour.mage")
+local monstermagic = require("monster.base.monstermagic")
+local bluemummy = require("monster.race_17_blue_mummy.base")
+local M = bluemummy.generateCallbacks()
+
+
+local magic = monstermagic()
+magic.addWarping{probability = 0.15, usage = magic.ONLY_NEAR_ENEMY}
+
+magic.addHealing{probability = 0.05, damage = {from = 500, to = 1500}}
+magic.addHealing{probability = 0.005, damage = {from = 250, to = 750}, targetCount = 3}
+
+M = magic.addCallbacks(M)
+return mageBehaviour.addCallbacks(magic, M)
