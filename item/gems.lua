@@ -146,21 +146,21 @@ end
 
 function M.UseItem(User, SourceItem, ltstate)
     if SourceItem:getData(levelDataKey) == "" then
-	    analysis.AnalysisMain(User,SourceItem)
-		return
-	end
+        analysis.AnalysisMain(User,SourceItem)
+        return
+    end
 
-	local TargetItemEvilRock = common.GetItemInArea(User.pos, 2805);
-	local AmountDarkColumnEvilrock = #vision.darkColumnEvilrock
-	if TargetItemEvilRock ~= nil then
-		for i = 1,AmountDarkColumnEvilrock do
-			if TargetItemEvilRock.pos == vision.darkColumnEvilrock[i] then
-				common.TurnTo(User,TargetItemEvilRock.pos); -- turn if necessary
-				vision.UseDarkColumns(User,TargetItemEvilRock,ltstate)
-				return
-			end
-		end
-	end
+    local TargetItemEvilRock = common.GetItemInArea(User.pos, 2805);
+    local AmountDarkColumnEvilrock = #vision.darkColumnEvilrock
+    if TargetItemEvilRock ~= nil then
+        for i = 1,AmountDarkColumnEvilrock do
+            if TargetItemEvilRock.pos == vision.darkColumnEvilrock[i] then
+                common.TurnTo(User,TargetItemEvilRock.pos); -- turn if necessary
+                vision.UseDarkColumns(User,TargetItemEvilRock,ltstate)
+                return
+            end
+        end
+    end
 
     handleSocketing(User, SourceItem)
 end
@@ -176,7 +176,7 @@ function handleSocketing(user, gem)
         return
     end
 
-	local callback = function(dialog)
+    local callback = function(dialog)
         local success = dialog:getSuccess()
         if success and common.CheckItem(user, gem) then
             local selected = dialog:getSelectedIndex() + 1
@@ -204,7 +204,7 @@ function handleSocketing(user, gem)
 
     local language = user:getPlayerLanguage()
     local caption = common.GetNLS(user, "Sockeln", "Socketing")
-    local description = common.GetNLS(user, "Bitte wähle eine Waffe die gesockelt werden soll:", "Please select a weapon to insert the gem into:")
+    local description = common.GetNLS(user, "Bitte wähle einen Gegenstand der gesockelt werden soll:", "Please select an item to insert the gem into:")
     local dialog = SelectionDialog(caption, description, callback)
     dialog:setCloseOnMove()
 
@@ -221,6 +221,11 @@ end
 local slots = {}
 table.insert(slots, Character.left_tool)
 table.insert(slots, Character.right_tool)
+table.insert(slots, Character.head)
+table.insert(slots, Character.breast)
+table.insert(slots, Character.hands)
+table.insert(slots, Character.legs)
+table.insert(slots, Character.feet)
 table.insert(slots, Character.belt_pos_1)
 table.insert(slots, Character.belt_pos_2)
 table.insert(slots, Character.belt_pos_3)
@@ -267,24 +272,35 @@ function getUnsocketablePositions(user, filter)
 end
 
 function isSocketable(itemId)
-    -- currently only weapons can be socketed
-	local weaponfound, weaponitem = world:getWeaponStruct(itemId);
+    -- weapons can be socketed
+    local weaponfound, weaponitem = world:getWeaponStruct(itemId)
+    if weaponfound then
+        local weapontype=weaponitem.WeaponType
+        if weapontype== WeaponStruct.firearm or weapontype==WeaponStruct.arrow or weapontype==WeaponStruct.bolt
+                or weapontype==WeaponStruct.stone or weapontype==WeaponStruct.shield then
+            return false  -- Throwing weapon, ammo or shield. Not socketable
+        else
+            return true
+        end
+    end
 
-	if weaponfound then
-		local weapontype=weaponitem.WeaponType;
-		if weapontype==10 or weapontype==11 or weapontype==14 then -- Ammo or shield. Not socketable
-			return false;
-		else
-			return true;
-		end
-	end
+    -- armours can also be socketed
+    local armorfound, armorItem = world:getArmorStruct(itemId)
+    if armorfound then
+        local armortype = armorItem.Type
+        if armortype ==  ArmorStruct.clothing or armortype == ArmorStruct.general or armortype == ArmorStruct.juwellery then
+            return false
+        else
+            return true
+        end
+    end
 
-    return false;
+    return false
 end
 
 function isUnsocketable(itemId)
-    -- currently only weapons can be socketed
-    return world:getWeaponStruct(itemId);
+    -- currently only weapons and armours can be socketed
+    return world:getWeaponStruct(itemId) or world:getArmorStruct(itemId)
 end
 
 function M.magicSmith(npc, player)

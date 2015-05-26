@@ -14,17 +14,17 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
--- INSERT INTO triggerfields VALUES (478,31,0,'triggerfield.northernislands_air_661');
--- INSERT INTO triggerfields VALUES (479,31,0,'triggerfield.northernislands_air_661');
--- INSERT INTO triggerfields VALUES (478,32,0,'triggerfield.northernislands_air_661');
--- INSERT INTO triggerfields VALUES (479,32,0,'triggerfield.northernislands_air_661');
+-- INSERT INTO triggerfields VALUES (389,35,0,'triggerfield.northernislands_spirit_661');
+-- INSERT INTO triggerfields VALUES (390,35,0,'triggerfield.northernislands_spirit_661');
+-- INSERT INTO triggerfields VALUES (389,36,0,'triggerfield.northernislands_spirit_661');
+-- INSERT INTO triggerfields VALUES (390,36,0,'triggerfield.northernislands_spirit_661');
 
 local elementDrop = require("content.elementDrop")
 local M = {}
 
 function M.MoveFromField(char)
-    -- pure air will be created
-    elementDrop.chanceForElementDrop(char, {successItemID = 2551, failItemID = 372, failGfxID = 8})
+    -- pure spirit will be created
+    elementDrop.chanceForElementDrop(char, {successItemID = 3607, failItemID = 467, failGfxID = 16})
 end
 
 return M

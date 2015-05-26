@@ -59,7 +59,12 @@ end
 
 local function elementNoDrop(User, itemID, gfxID)
     -- player get informed s/he missed chance after a while
-    scheduledFunction.registerFunction(math.random(5, 10), function()
+    scheduledFunction.registerFunction(math.random(5, 10), function() 
+        -- check if character has already logged out
+        if not isValidChar(User) then
+            return
+        end
+
         User:inform("Es sieht nicht danach aus als würde eine Fee heute ein Element verlieren.", "It does not look like as any fairy would drop an element today.")
     end)
 
@@ -97,6 +102,11 @@ local function elementDrop(User, itemID, gfxID)
 
     -- drop item after a while and inform user
     scheduledFunction.registerFunction(math.random(1, 4), function()
+        -- check if character has already logged out
+        if not isValidChar(User) then
+            return
+        end
+
         world:createItemFromId(itemID, 1, dropPos, true, 333, nil)
         world:gfx(gfxID, dropPos)
 
