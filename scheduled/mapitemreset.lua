@@ -16,7 +16,7 @@ with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]
 local common = require("base.common")
 
--- INSERT INTO scheduledscripts VALUES('scheduled.mapitemreset', 30, 30, 'resetMapitem');
+-- INSERT INTO scheduledscripts VALUES('scheduled.mapitemreset', 30, 30, 'resetMapitem')
 
 local M = {}
 
@@ -49,6 +49,27 @@ function M.resetMapitem()
       "A rock wall appears out of nowhere.");
     end
   end
+
+  -- reset the fires at Ronagan Dungeon
+    local function unlightFire(pos)
+        local item = world:getItemOnField(pos)
+        if (item.id == 12) then
+            world:erase(item, 1) --lit fire
+            world:createItemFromId(298, 1, pos, true, 333, nil) --unlit fire
+        end
+    end
+    unlightFire(position(898, 600, -9))
+    unlightFire(position(898, 597, -9))
+    unlightFire(position(894, 600, -9))
+    unlightFire(position(894, 597, -9))
+    unlightFire(position(898, 594, -9))
+    unlightFire(position(894, 594, -9))
+    unlightFire(position(894, 591, -9))
+    unlightFire(position(898, 588, -9))
+    unlightFire(position(894, 588, -9))
+    unlightFire(position(898, 585, -9))
+    unlightFire(position(894, 585, -9))
+    unlightFire(position(898, 591, -9))
 
   -- reset akultut burning room
   if (world:getItemOnField(position(480, 834, -9)).id ~= 2039) then

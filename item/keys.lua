@@ -22,6 +22,7 @@ local common = require("base.common")
 local doors = require("base.doors")
 local factions = require("base.factions")
 local lookat = require("base.lookat")
+local money = require("base.money")
 
 local M = {}
 
@@ -60,6 +61,17 @@ function M.UseItem(User, SourceItem)
         return
     end
 
+    local itemData
+    local isRonaganTrap = (SourceItem:getData("ronaganTrap") == "true")
+    if (isRonaganTrap == true) then
+        User:inform("Ein Dieb hat dich in eine Falle gelockt. Er springt aus einem der Schatten und stielt dir ein paar Münzen.", "A thief has lured you into a trap, jumping out from a shadow, he steals some coins from you.")
+
+        -- steal 1% - 5% of characters money in inventroy
+        local wealth = money.CharCoinsToMoney(User)
+        money.TakeMoneyFromChar(User, math.random(math.floor(wealth / 100), math.floor(wealth / 20)))
+        return
+   end
+    
     local doorItem = getDoor(User)
     if not doorItem then
         return
