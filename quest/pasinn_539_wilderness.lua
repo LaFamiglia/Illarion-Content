@@ -14,9 +14,10 @@ details.
 You should have received a copy of the GNU Affero General Public License along
 with this program.  If not, see <http://www.gnu.org/licenses/>. 
 ]]
--- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (539, 'quest.pasinn_69_wilderness');
+-- INSERT INTO "quests" ("qst_id", "qst_script") VALUES (539, 'quest.pasinn_539_wilderness');
 
 local common = require("base.common")
+local monsterQuests = require("monster.base.quests")
 local M = {}
 
 local GERMAN = Player.german
@@ -60,7 +61,7 @@ Description[GERMAN][13] = "Du hast alle Aufgaben von Pasinn erfüllt."
 Description[ENGLISH][13] = "You have fulfilled all the tasks for Pasinn."
 
 -- Insert the position of the quest start here (probably the position of an NPC or item)
-local Start = {523, 205, 0}
+local Start = {}
 
 
 -- For each status insert a list of positions where the quest will continue, i.e. a new status can be reached there
@@ -87,16 +88,17 @@ monsterQuests.addQuest{
     questId = 539,
     location = {position = position(575, 190, -3), radius = 75},
     queststatus = {from = 8, to = 9},
-    questTitle = {german = "Viridian Nadeln Höhle IV", english = "Viridian Needles Lair IV"},
+    questTitle = {german = Title[GERMAN], english = Title[ENGLISH]},
     monsterName = {german = "Sumpfmonster", english = "Swamp Monster"},
     npcName = "Pasinn",
     raceIds = {872} -- swamp beast
 }
+
 monsterQuests.addQuest{
     questId = 539,
     location = {position = position(575, 190, -3), radius = 75},
     queststatus = {from = 11, to = 12},
-    questTitle = {german = "Viridian Nadeln Höhle V", english = "Viridian Needles Lair V"},
+    questTitle = {german = Title[GERMAN], english = Title[ENGLISH]},
     monsterName = {german = "Rattenalchemist", english = "Rat Alchemist"},
     npcName = "Pasinn",
     raceIds = {877} -- Rat Alchemist
@@ -115,7 +117,7 @@ end
 
 function M.QuestStart()
     return Start
-    end
+end
 
 function M.QuestTargets(user, status)
     return QuestTarget[status]
@@ -123,6 +125,10 @@ end
 
 function M.QuestFinalStatus()
     return FINAL_QUEST_STATUS
+end
+
+function M.QuestAvailability(user, status)
+    return Player.questAvailable
 end
 
 return M
